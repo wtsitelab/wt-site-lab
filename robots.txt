@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /portfolio/
+Disallow: /capacraft/
+
+Sitemap: https://www.wtsitelab.com.br/sitemap.xml
