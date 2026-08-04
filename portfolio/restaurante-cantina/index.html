@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cantina da Nonna — Cozinha Italiana Tradicional</title>
+<meta name="description" content="Cantina da Nonna: massas artesanais, pizzas no forno a lenha e receitas de família servidas com todo o carinho da cozinha italiana.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header" id="header">
+  <div class="wrap header-inner">
+    <a href="#top" class="brand">
+      <span class="brand-icon">🍝</span>
+      <span class="brand-name">Cantina <em>da Nonna</em></span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#cardapio">Cardápio</a>
+      <a href="#sobre">Nossa história</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#reservas">Reservas</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a href="#reservas" class="btn btn-primary nav-cta">Reservar mesa</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Cozinha italiana tradicional · desde 1987</p>
+        <h1>Receitas de família, <span class="hl">servidas com amor.</span></h1>
+        <p class="lead">Massas frescas feitas todos os dias, molhos que levam horas no fogo e pizzas no forno a lenha — a mesma receita que a Nonna Lucia trouxe da Itália há quase 40 anos.</p>
+        <div class="hero-actions">
+          <a href="#reservas" class="btn btn-primary">Reservar uma mesa</a>
+          <a href="#cardapio" class="btn btn-outline">Ver cardápio ↓</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="plate-illustration">
+          <div class="plate"></div>
+          <div class="pasta-swirl"></div>
+          <span class="basil">🌿</span>
+        </div>
+        <div class="floating-badge">⭐ 4.9 · +800 avaliações</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARDÁPIO -->
+  <section class="section" id="cardapio">
+    <div class="wrap">
+      <p class="section-eyebrow">Cardápio</p>
+      <h2 class="section-title">O que sai da nossa cozinha</h2>
+      <div class="menu-tabs" id="menuTabs">
+        <button class="tab-btn active" data-tab="entradas">Entradas</button>
+        <button class="tab-btn" data-tab="massas">Massas</button>
+        <button class="tab-btn" data-tab="pizzas">Pizzas</button>
+        <button class="tab-btn" data-tab="sobremesas">Sobremesas</button>
+      </div>
+      <div class="menu-list" id="menuList"></div>
+    </div>
+  </section>
+
+  <!-- SOBRE / HISTÓRIA -->
+  <section class="section section-alt" id="sobre">
+    <div class="wrap about-grid">
+      <div class="about-portrait" aria-hidden="true">👵🍝</div>
+      <div>
+        <p class="section-eyebrow">Nossa história</p>
+        <h2 class="section-title">Da cozinha da Nonna Lucia para Curitiba</h2>
+        <p>Em 1987, Lucia Bianchi trouxe da Toscana as receitas que aprendeu com a própria mãe e abriu as portas de um pequeno restaurante de bairro. Hoje, na terceira geração da família, a Cantina da Nonna continua fazendo tudo do mesmo jeito: massa fresca todos os dias, molho de tomate que cozinha por horas, e pizza no forno a lenha original.</p>
+        <p>Se você perguntar, vamos te contar com orgulho: nada aqui é congelado.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section class="section" id="galeria">
+    <div class="wrap">
+      <p class="section-eyebrow">Galeria</p>
+      <h2 class="section-title">Um gostinho do que te espera</h2>
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </div>
+  </section>
+
+  <!-- RESERVAS -->
+  <section class="section section-alt" id="reservas">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="section-eyebrow">Reservas</p>
+        <h2 class="section-title">Garanta sua mesa</h2>
+        <p>Aos finais de semana costuma lotar — reserve com antecedência.</p>
+        <ul class="contact-info">
+          <li>📍 Rua XV de Novembro, 450 — Centro, Curitiba/PR</li>
+          <li>🕐 Terça a domingo, 18h às 23h</li>
+          <li>📱 (41) 99887-1122</li>
+        </ul>
+      </div>
+      <form class="contact-form" id="reservaForm">
+        <div class="field">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" required placeholder="Seu nome">
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="data">Data</label>
+            <input type="date" id="data">
+          </div>
+          <div class="field">
+            <label for="pessoas">Pessoas</label>
+            <input type="number" id="pessoas" min="1" value="2">
+          </div>
+        </div>
+        <div class="field">
+          <label for="observacoes">Observações</label>
+          <textarea id="observacoes" rows="3" placeholder="Alguma preferência? (mesa externa, aniversário, etc.)"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Solicitar reserva</button>
+        <p class="form-note" id="formNote" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="contato">
+  <div class="wrap footer-inner">
+    <span>© <span id="year"></span> Cantina da Nonna. Site de demonstração.</span>
+    <span class="footer-note">Exemplo de portfólio — não é um restaurante real.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TorqueMax Performance — Preparação e Performance Automotiva</title>
+<meta name="description" content="TorqueMax: preparação de motor, remapeamento de ECU, suspensão esportiva e escapamento para quem quer performance de verdade.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header" id="header">
+  <div class="wrap header-inner">
+    <a href="#top" class="brand">
+      <span class="brand-name">TORQUE<span class="brand-accent">MAX</span></span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#servicos">Serviços</a>
+      <a href="#pacotes">Pacotes</a>
+      <a href="#builds">Builds</a>
+      <a href="#contato">Orçamento</a>
+    </nav>
+    <a href="#contato" class="btn btn-primary nav-cta">Quero mais potência</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-stripe" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Preparação e performance automotiva</p>
+      <h1>Mais potência.<br><span class="hl">Mais precisão.</span></h1>
+      <p class="hero-lead">Remapeamento de ECU, suspensão esportiva, escapamento e preparação de motor — feito por quem entende de performance de verdade, com dinamômetro próprio.</p>
+      <div class="hero-actions">
+        <a href="#contato" class="btn btn-primary">Quero mais potência</a>
+        <a href="#builds" class="btn btn-outline">Ver builds ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="section" id="servicos">
+    <div class="wrap">
+      <p class="section-eyebrow">Serviços</p>
+      <h2 class="section-title">O que fazemos performar</h2>
+      <div class="services-grid">
+        <article class="service-card"><span class="s-icon">💻</span><h3>Remapeamento de ECU</h3><p>Ganho real de potência e torque, com segurança para o motor.</p></article>
+        <article class="service-card"><span class="s-icon">🏁</span><h3>Escapamento Esportivo</h3><p>Sistemas de escape que liberam potência e mudam o som.</p></article>
+        <article class="service-card"><span class="s-icon">🔧</span><h3>Suspensão Esportiva</h3><p>Molas, amortecedores e geometria para mais aderência.</p></article>
+        <article class="service-card"><span class="s-icon">📊</span><h3>Dinamômetro</h3><p>Medição real de potência antes e depois da preparação.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACOTES -->
+  <section class="section section-dark" id="pacotes">
+    <div class="wrap">
+      <p class="section-eyebrow section-eyebrow-light">Pacotes de preparação</p>
+      <h2 class="section-title section-title-light">Do stage 1 ao completo</h2>
+      <div class="stage-grid">
+        <article class="stage-card"><span class="stage-tag">Stage 1</span><h3>Remap + Filtro Esportivo</h3><p>Ganho de potência sem trocar peças mecânicas.</p></article>
+        <article class="stage-card stage-card-highlight"><span class="stage-tag">Stage 2</span><h3>+ Escapamento e Intercooler</h3><p>Mais fluxo de ar e gases, com ganho ainda maior.</p></article>
+        <article class="stage-card"><span class="stage-tag">Stage 3</span><h3>Preparação Completa</h3><p>Internamente do motor para performance extrema.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILDS -->
+  <section class="section" id="builds">
+    <div class="wrap">
+      <p class="section-eyebrow">Builds recentes</p>
+      <h2 class="section-title">Alguns carros que já passaram por aqui</h2>
+      <div class="build-grid" id="buildGrid"></div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="section section-dark" id="contato">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="section-eyebrow section-eyebrow-light">Orçamento</p>
+        <h2 class="section-title section-title-light">Bora dar mais potência no seu carro?</h2>
+        <ul class="contact-info">
+          <li><strong>Endereço</strong> Rua José Loureiro, 890 — Curitiba/PR</li>
+          <li><strong>Telefone</strong> (41) 99456-1230</li>
+        </ul>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="field">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" required placeholder="Seu nome">
+        </div>
+        <div class="field">
+          <label for="veiculo">Carro</label>
+          <input type="text" id="veiculo" placeholder="Marca, modelo e motor">
+        </div>
+        <div class="field">
+          <label for="stage">Pacote de interesse</label>
+          <select id="stage">
+            <option>Stage 1</option>
+            <option>Stage 2</option>
+            <option>Stage 3</option>
+            <option>Ainda não sei</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Solicitar orçamento</button>
+        <p class="form-note" id="formNote" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>© <span id="year"></span> TorqueMax Performance. Site de demonstração.</span>
+    <span class="footer-note">Exemplo de portfólio — não é uma empresa real.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

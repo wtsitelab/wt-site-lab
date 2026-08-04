@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contabilidade Prime — Contabilidade que faz seu negócio crescer</title>
+<meta name="description" content="Contabilidade Prime: Imposto de Renda, MEI, Simples Nacional, abertura de empresas e planejamento tributário com clareza e precisão.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="ledger-line" aria-hidden="true"></div>
+
+<header class="site-header" id="header">
+  <div class="wrap header-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark">P</span>
+      <span class="brand-name">Contabilidade <strong>Prime</strong></span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#servicos">Serviços</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#equipe">Equipe</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a href="#contato" class="btn btn-primary nav-cta">Fale com um contador</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Contabilidade digital · desde 2013</p>
+        <h1>Seus números, <span class="hl">no azul</span>, todos os meses.</h1>
+        <p class="lead">Cuidamos do seu MEI, Simples Nacional ou Imposto de Renda enquanto você cuida do que faz seu negócio crescer. Sem planilha perdida, sem prazo estourado.</p>
+        <div class="hero-actions">
+          <a href="#contato" class="btn btn-primary">Solicitar orçamento gratuito</a>
+          <a href="#servicos" class="btn btn-ghost">Ver serviços ↓</a>
+        </div>
+        <div class="hero-trust">
+          <div class="trust-item"><strong>12+</strong><span>anos de mercado</span></div>
+          <div class="trust-item"><strong>480</strong><span>empresas atendidas</span></div>
+          <div class="trust-item"><strong>0</strong><span>multas por atraso*</span></div>
+        </div>
+      </div>
+
+      <div class="hero-panel" aria-hidden="true">
+        <div class="panel-card">
+          <div class="panel-card-head">
+            <span>Painel fiscal</span>
+            <span class="dot dot-live">● ao vivo</span>
+          </div>
+          <ul class="deadline-list" id="deadlineList">
+            <!-- injected via JS -->
+          </ul>
+          <div class="panel-foot">
+            <span>Próximo vencimento em</span>
+            <strong id="countdown">--d --h --m</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="section" id="servicos">
+    <div class="wrap">
+      <p class="section-eyebrow">O que fazemos</p>
+      <h2 class="section-title">Cinco frentes. Um único responsável.</h2>
+      <p class="section-lead">Cada serviço é conduzido por quem entende do assunto — sem terceirização e sem enrolação.</p>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <span class="service-index">IRPF</span>
+          <h3>Imposto de Renda</h3>
+          <p>Declaração completa, revisão de malha fina e simulação de restituição antes de enviar.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-index">MEI</span>
+          <h3>Microempreendedor</h3>
+          <p>Emissão de guias, DAS, controle de faturamento e alerta automático de limite anual.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-index">SN</span>
+          <h3>Simples Nacional</h3>
+          <p>Apuração mensal, enquadramento correto de anexo e folha de pagamento sem dor de cabeça.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-index">CNPJ</span>
+          <h3>Abertura de Empresas</h3>
+          <p>Do CNAE ao alvará: sua empresa formalizada e operando em até 10 dias úteis.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-index">PT</span>
+          <h3>Planejamento Tributário</h3>
+          <p>Análise de regime ideal e estratégias legais para reduzir sua carga de impostos.</p>
+        </article>
+        <article class="service-card service-card-cta">
+          <h3>Não sabe por onde começar?</h3>
+          <p>Fale com a gente e descubra o melhor caminho para o seu momento.</p>
+          <a href="#contato" class="btn btn-primary btn-sm">Diagnóstico gratuito</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARATIVO -->
+  <section class="section section-alt">
+    <div class="wrap">
+      <p class="section-eyebrow">Por que contabilidade próxima</p>
+      <h2 class="section-title">Contabilidade de gaveta vs. Prime</h2>
+      <div class="compare-table">
+        <div class="compare-col compare-before">
+          <h4>Contabilidade tradicional</h4>
+          <ul>
+            <li>Só ouve falar no fim do mês</li>
+            <li>Guias chegam em cima da hora</li>
+            <li>Atendimento por e-mail, sem resposta</li>
+            <li>Você descobre o problema depois da multa</li>
+          </ul>
+        </div>
+        <div class="compare-col compare-after">
+          <h4>Contabilidade Prime</h4>
+          <ul>
+            <li>Painel com seus números sempre à vista</li>
+            <li>Alertas de vencimento com antecedência</li>
+            <li>Time no WhatsApp em horário comercial</li>
+            <li>Planejamento evita o problema antes de existir</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="section" id="sobre">
+    <div class="wrap about-grid">
+      <div>
+        <p class="section-eyebrow">Quem somos</p>
+        <h2 class="section-title">Nascemos para tirar a contabilidade da caixa de e-mail.</h2>
+        <p>A Contabilidade Prime nasceu em Curitiba, em 2013, do incômodo de ver pequenos negócios pagando multas por falta de informação — não por má-fé. Hoje somos um time enxuto, especializado em MEI, autônomos e pequenas empresas dos setores de comércio e serviço.</p>
+        <p>Não somos a maior. Escolhemos ser a mais próxima.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat"><span class="stat-num">R$ 2,4M</span><span class="stat-label">em impostos economizados em 2025</span></div>
+        <div class="stat"><span class="stat-num">98%</span><span class="stat-label">de clientes que renovam contrato</span></div>
+        <div class="stat"><span class="stat-num">24h</span><span class="stat-label">tempo médio de resposta</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPE -->
+  <section class="section section-alt" id="equipe">
+    <div class="wrap">
+      <p class="section-eyebrow">Time</p>
+      <h2 class="section-title">Quem cuida do seu CNPJ</h2>
+      <div class="team-grid">
+        <article class="team-card">
+          <div class="team-avatar" style="--c1:#1E6FD9;--c2:#0B2A4A;">CM</div>
+          <h3>Camila Moraes</h3>
+          <span class="team-role">Contadora responsável · CRC ativo</span>
+          <p>15 anos apurando Simples Nacional e liderando a equipe fiscal.</p>
+        </article>
+        <article class="team-card">
+          <div class="team-avatar" style="--c1:#16A34A;--c2:#0B2A4A;">RT</div>
+          <h3>Rafael Torres</h3>
+          <span class="team-role">Especialista em MEI e abertura de empresas</span>
+          <p>Já formalizou mais de 300 pequenos negócios em Curitiba e região.</p>
+        </article>
+        <article class="team-card">
+          <div class="team-avatar" style="--c1:#0B2A4A;--c2:#1E6FD9;">JA</div>
+          <h3>Juliana Aquino</h3>
+          <span class="team-role">Planejamento tributário</span>
+          <p>Ajuda empresas a escolherem o regime tributário certo, com base em dados.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="section" id="contato">
+    <div class="wrap contact-grid">
+      <div class="contact-copy">
+        <p class="section-eyebrow">Vamos conversar</p>
+        <h2 class="section-title">Peça seu orçamento sem compromisso</h2>
+        <p>Responda algumas perguntas rápidas e retornamos em até 24h úteis com uma proposta sob medida.</p>
+        <ul class="contact-info">
+          <li>📍 Curitiba, PR — atendimento em todo o Brasil</li>
+          <li>📞 (41) 3000-1122</li>
+          <li>✉️ contato@contabilidadeprime.com.br</li>
+        </ul>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="field">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
+        </div>
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required placeholder="voce@empresa.com.br">
+        </div>
+        <div class="field">
+          <label for="tipo">Você é</label>
+          <select id="tipo" name="tipo">
+            <option>MEI</option>
+            <option>Empresa do Simples Nacional</option>
+            <option>Pessoa física (IRPF)</option>
+            <option>Ainda não tenho CNPJ</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="mensagem">Como podemos ajudar?</label>
+          <textarea id="mensagem" name="mensagem" rows="3" placeholder="Conte um pouco sobre sua necessidade"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Enviar solicitação</button>
+        <p class="form-note" id="formNote" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>© <span id="year"></span> Contabilidade Prime. Site institucional de demonstração.</span>
+    <span class="footer-note">Exemplo de portfólio — não é um serviço contábil real.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

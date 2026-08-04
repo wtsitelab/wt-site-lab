@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Âmbar Bistrô — Cozinha Contemporânea</title>
+<meta name="description" content="Âmbar Bistrô: cozinha autoral contemporânea, menu degustação sazonal e uma experiência gastronômica intimista em Curitiba.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header" id="header">
+  <div class="wrap header-inner">
+    <a href="#top" class="brand">
+      <span class="brand-name">ÂMBAR</span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#menu">Menu Degustação</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="#chef">Chef</a>
+      <a href="#reservas">Reservas</a>
+    </nav>
+    <a href="#reservas" class="btn btn-primary nav-cta">Reservar</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Cozinha contemporânea · menu degustação sazonal</p>
+      <h1>Uma experiência,<br><span class="hl">não apenas um jantar.</span></h1>
+      <p class="hero-lead">Menu degustação de 7 tempos, ingredientes da estação e uma sala com apenas 28 lugares — para uma noite que você vai lembrar.</p>
+      <div class="hero-actions">
+        <a href="#reservas" class="btn btn-primary">Reservar uma mesa</a>
+        <a href="#menu" class="btn btn-outline">Ver o menu ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU DEGUSTAÇÃO -->
+  <section class="section" id="menu">
+    <div class="wrap">
+      <p class="section-eyebrow">Menu degustação</p>
+      <h2 class="section-title">Sete tempos, uma jornada</h2>
+      <p class="section-lead">O menu muda a cada estação, sempre com ingredientes locais selecionados a dedo.</p>
+
+      <div class="tasting-list" id="tastingList"></div>
+      <p class="tasting-price">Menu completo — <strong>R$ 385</strong> por pessoa <span>(harmonização de vinhos + R$ 180)</span></p>
+    </div>
+  </section>
+
+  <!-- EXPERIÊNCIA -->
+  <section class="section section-dark" id="experiencia">
+    <div class="wrap experience-grid">
+      <div>
+        <p class="section-eyebrow section-eyebrow-light">A experiência</p>
+        <h2 class="section-title section-title-light">Uma sala. Vinte e oito lugares. Nenhuma pressa.</h2>
+        <p>O Âmbar nasceu para ser pequeno de propósito. Sem pressa entre os pratos, sem mesas apertadas, sem menu genérico — cada detalhe da sala foi pensado para que a comida seja a protagonista da noite.</p>
+      </div>
+      <div class="experience-features">
+        <div class="feature-row"><span>28</span><p>lugares no salão principal</p></div>
+        <div class="feature-row"><span>7</span><p>tempos no menu degustação</p></div>
+        <div class="feature-row"><span>100%</span><p>ingredientes de produtores locais</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHEF -->
+  <section class="section" id="chef">
+    <div class="wrap chef-grid">
+      <div class="chef-portrait" aria-hidden="true">👨‍🍳</div>
+      <div>
+        <p class="section-eyebrow">O chef</p>
+        <h2 class="section-title">Rafael Toledo</h2>
+        <p>Formado em Paris e com passagens por cozinhas premiadas na Europa, Rafael Toledo voltou ao Brasil para criar uma cozinha que combina técnica francesa com ingredientes brasileiros pouco explorados.</p>
+        <p>"Cada prato do Âmbar conta uma pequena história — de um produtor, de uma estação, de uma memória."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVAS -->
+  <section class="section section-dark" id="reservas">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="section-eyebrow section-eyebrow-light">Reservas</p>
+        <h2 class="section-title section-title-light">Reserve sua noite</h2>
+        <p>Recomendamos reservar com pelo menos uma semana de antecedência.</p>
+        <ul class="contact-info">
+          <li>📍 Rua Comendador Araújo, 320 — Batel, Curitiba/PR</li>
+          <li>🕐 Quarta a sábado, a partir das 19h30</li>
+          <li>📱 (41) 99123-8877</li>
+        </ul>
+      </div>
+      <form class="contact-form" id="reservaForm">
+        <div class="field">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" required placeholder="Seu nome">
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="data">Data desejada</label>
+            <input type="date" id="data">
+          </div>
+          <div class="field">
+            <label for="pessoas">Nº de pessoas</label>
+            <input type="number" id="pessoas" min="1" value="2">
+          </div>
+        </div>
+        <div class="field">
+          <label for="ocasiao">Ocasião especial (opcional)</label>
+          <input type="text" id="ocasiao" placeholder="Aniversário, comemoração...">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Solicitar reserva</button>
+        <p class="form-note" id="formNote" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>© <span id="year"></span> Âmbar Bistrô. Site de demonstração.</span>
+    <span class="footer-note">Exemplo de portfólio — não é um restaurante real.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

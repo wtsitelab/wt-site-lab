@@ -1,0 +1,125 @@
+/* ===== Chave Imóveis — tokens ===== */
+:root{
+  --navy: #16324F;
+  --navy-deep: #0D2038;
+  --terracotta: #C1440E;
+  --terracotta-light: #E06B34;
+  --cream: #F7F3EC;
+  --white: #FFFFFF;
+  --ink: #1C2B3A;
+  --ink-soft: #5C6B7A;
+  --border: #E3DDD0;
+
+  --font-display: 'Newsreader', serif;
+  --font-body: 'Epilogue', sans-serif;
+  --radius: 14px;
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{ margin:0; background: var(--cream); color: var(--ink); font-family: var(--font-body); line-height:1.65; -webkit-font-smoothing:antialiased; }
+h1,h2,h3{ font-family: var(--font-display); color: var(--navy); margin:0 0 .4em; line-height:1.2; font-weight:600; }
+p{ margin:0 0 1em; color: var(--ink-soft); }
+a{ color:inherit; text-decoration:none; }
+ul{ list-style:none; margin:0; padding:0; }
+.wrap{ max-width:1140px; margin:0 auto; padding:0 24px; }
+
+/* ===== Buttons ===== */
+.btn{ display:inline-flex; align-items:center; justify-content:center; gap:.5em; padding:.9em 1.9em; border-radius:10px; font-weight:600; font-size:.95rem; border:1px solid transparent; cursor:pointer; transition:all .2s ease; }
+.btn-primary{ background: var(--terracotta); color:#fff; box-shadow: 0 10px 24px -8px rgba(193,68,14,.4); }
+.btn-primary:hover{ background:#A2380B; transform: translateY(-2px); }
+.btn-outline{ border-color: var(--navy); color: var(--navy); }
+.btn-outline:hover{ background: rgba(22,50,79,.06); }
+.btn-block{ width:100%; }
+
+/* ===== Header ===== */
+.site-header{ position:sticky; top:0; z-index:50; background: rgba(247,243,236,.9); backdrop-filter: blur(8px); border-bottom:1px solid var(--border); }
+.header-inner{ display:flex; align-items:center; gap:26px; height:78px; }
+.brand{ display:flex; align-items:center; gap:.5em; margin-right:auto; }
+.brand-icon{ font-size:1.4rem; }
+.brand-name{ font-family: var(--font-display); font-size:1.2rem; color: var(--navy); }
+.brand-name em{ font-style:italic; color: var(--terracotta); }
+.main-nav{ display:flex; gap:24px; }
+.main-nav a{ font-size:.9rem; font-weight:600; color: var(--ink-soft); }
+.main-nav a:hover{ color: var(--terracotta); }
+.nav-cta{ font-size:.85rem; padding:.7em 1.4em; }
+.menu-toggle{ display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; }
+.menu-toggle span{ width:22px; height:2px; background: var(--navy); border-radius:2px; }
+
+/* ===== Hero ===== */
+.hero{ padding:100px 0 60px; }
+.hero-inner{ max-width:760px; }
+.eyebrow{ font-size:.82rem; letter-spacing:.03em; text-transform:uppercase; color: var(--terracotta); font-weight:700; margin-bottom:16px; }
+.hero h1{ font-size: clamp(2.2rem, 4.2vw, 3.3rem); }
+.hl{ color: var(--terracotta); font-style:italic; }
+.hero-lead{ font-size:1.06rem; max-width:58ch; margin:22px 0 32px; }
+.hero-actions{ display:flex; gap:14px; flex-wrap:wrap; }
+
+/* ===== Sections ===== */
+.section{ padding:88px 0; }
+.section-dark{ background: var(--navy); }
+.section-dark p{ color: rgba(255,255,255,.65); }
+.section-eyebrow{ font-size:.8rem; text-transform:uppercase; letter-spacing:.03em; color: var(--terracotta); font-weight:700; margin-bottom:10px; }
+.section-eyebrow-light{ color: var(--terracotta-light); }
+.section-title{ font-size: clamp(1.7rem, 3.2vw, 2.3rem); max-width:24ch; }
+.section-title-light{ color:#fff; }
+
+/* ===== Listagem de imóveis ===== */
+.listing-filters{ display:flex; gap:10px; margin-bottom:28px; }
+.filter-btn{ padding:.6em 1.4em; border-radius:999px; border:1px solid var(--border); background:#fff; color: var(--ink-soft); font-family: var(--font-body); font-weight:600; font-size:.88rem; cursor:pointer; transition: all .2s ease; }
+.filter-btn:hover{ border-color: var(--terracotta); }
+.filter-btn.active{ background: var(--navy); color:#fff; border-color: var(--navy); }
+.listing-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:22px; }
+.listing-card{ background:#fff; border:1px solid var(--border); border-radius: var(--radius); overflow:hidden; transition: transform .2s ease, box-shadow .2s ease; }
+.listing-card:hover{ transform: translateY(-5px); box-shadow: 0 20px 36px -20px rgba(22,50,79,.2); }
+.listing-visual{ height:150px; display:flex; align-items:center; justify-content:center; font-size:2.4rem; position:relative; }
+.listing-tag{ position:absolute; top:12px; left:12px; font-size:.7rem; text-transform:uppercase; letter-spacing:.03em; background: rgba(0,0,0,.4); color:#fff; padding:.3em .8em; border-radius:999px; }
+.listing-info{ padding:18px 20px; }
+.listing-info h4{ font-family: var(--font-display); font-size:1.1rem; margin:0 0 4px; color: var(--navy); }
+.listing-info p{ font-size:.85rem; margin:0 0 10px; }
+.listing-price{ font-weight:700; color: var(--terracotta); font-size:1.05rem; }
+
+/* ===== Como funciona ===== */
+.steps-track{ display:grid; grid-template-columns: repeat(4,1fr); gap:1px; background: rgba(255,255,255,.1); border-radius: var(--radius); overflow:hidden; }
+.step-item{ background: rgba(255,255,255,.04); padding:26px 20px; }
+.step-item span{ font-family: var(--font-display); font-size:1.5rem; color: var(--terracotta-light); display:block; margin-bottom:10px; }
+.step-item p{ margin:0; font-size:.86rem; color: rgba(255,255,255,.75); }
+
+/* ===== Sobre ===== */
+.about-grid{ display:grid; grid-template-columns: 1.2fr .8fr; gap:50px; align-items:center; }
+.about-stats{ display:flex; flex-direction:column; gap:16px; }
+.stat{ background:#fff; border:1px solid var(--border); border-radius: var(--radius); padding:18px 22px; }
+.stat strong{ display:block; font-family: var(--font-display); font-size:1.5rem; color: var(--terracotta); }
+.stat span{ font-size:.85rem; color: var(--ink-soft); }
+
+/* ===== Contato ===== */
+.contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:50px; }
+.contact-info{ display:flex; flex-direction:column; gap:14px; margin-top:20px; }
+.contact-info li{ font-size:.92rem; color: rgba(255,255,255,.8); }
+.contact-info strong{ display:block; font-size:.72rem; text-transform:uppercase; letter-spacing:.04em; color: var(--terracotta-light); margin-bottom:2px; }
+.contact-form{ background:#fff; border-radius: var(--radius); padding:30px; box-shadow: 0 20px 40px -26px rgba(0,0,0,.3); display:flex; flex-direction:column; gap:16px; }
+.field{ display:flex; flex-direction:column; gap:6px; }
+.field label{ font-size:.82rem; font-weight:600; color: var(--navy); }
+.field input, .field select, .field textarea{ padding:.8em 1em; border-radius:8px; border:1px solid var(--border); font-family: var(--font-body); font-size:.95rem; background:#FBF8F3; }
+.field input:focus, .field select:focus, .field textarea:focus{ outline:2px solid var(--terracotta); outline-offset:1px; }
+.form-note{ font-size:.85rem; color: var(--terracotta); min-height:1.2em; margin:0; }
+
+.site-footer{ padding:26px 0; background:#fff; border-top:1px solid var(--border); }
+.footer-inner{ display:flex; justify-content:space-between; font-size:.78rem; color: var(--ink-soft); flex-wrap:wrap; gap:8px; }
+
+/* ===== Reveal ===== */
+[data-reveal]{ opacity:0; transform: translateY(16px); transition: opacity .55s ease, transform .55s ease; }
+[data-reveal].is-visible{ opacity:1; transform:none; }
+
+/* ===== Responsive ===== */
+@media (max-width:900px){
+  .listing-grid{ grid-template-columns: repeat(2,1fr); }
+  .steps-track{ grid-template-columns: repeat(2,1fr); }
+  .about-grid, .contact-grid{ grid-template-columns:1fr; }
+  .main-nav, .nav-cta{ display:none; }
+  .menu-toggle{ display:flex; }
+  .main-nav.open{ display:flex; position:absolute; top:78px; left:0; right:0; background:#fff; flex-direction:column; padding:20px 24px; border-bottom:1px solid var(--border); gap:16px; }
+}
+@media (max-width:560px){
+  .listing-grid, .steps-track{ grid-template-columns:1fr; }
+}

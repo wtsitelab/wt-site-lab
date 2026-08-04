@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Traço Arquitetura — Projetos Residenciais e Comerciais</title>
+<meta name="description" content="Traço Arquitetura: projetos residenciais, comerciais e de interiores com linguagem minimalista e atenção a cada detalhe construtivo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header" id="header">
+  <div class="wrap header-inner">
+    <a href="#top" class="brand">
+      <span class="brand-name">TRAÇO</span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#projetos">Projetos</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#estudio">Estúdio</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a href="#contato" class="btn btn-primary nav-cta">Iniciar projeto</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Arquitetura &amp; Interiores</p>
+      <h1>Espaços que respiram <span class="hl">simplicidade.</span></h1>
+      <p class="hero-lead">Projetamos casas, escritórios e interiores com uma linguagem enxuta — onde cada elemento tem um motivo claro para existir.</p>
+      <div class="hero-actions">
+        <a href="#contato" class="btn btn-primary">Iniciar um projeto</a>
+        <a href="#projetos" class="btn btn-outline">Ver projetos ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETOS -->
+  <section class="section" id="projetos">
+    <div class="wrap">
+      <p class="section-eyebrow">Projetos</p>
+      <h2 class="section-title">Uma seleção do nosso trabalho</h2>
+      <div class="project-filters" id="projectFilters">
+        <button class="filter-btn active" data-filter="todos">Todos</button>
+        <button class="filter-btn" data-filter="residencial">Residencial</button>
+        <button class="filter-btn" data-filter="comercial">Comercial</button>
+        <button class="filter-btn" data-filter="interiores">Interiores</button>
+      </div>
+      <div class="project-grid" id="projectGrid"></div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="section section-dark" id="servicos">
+    <div class="wrap">
+      <p class="section-eyebrow section-eyebrow-light">Serviços</p>
+      <h2 class="section-title section-title-light">Do conceito à obra pronta</h2>
+      <div class="service-list">
+        <article class="service-row"><span>01</span><div><h3>Projeto Arquitetônico</h3><p>Do estudo preliminar ao projeto executivo, com acompanhamento em cada etapa.</p></div></article>
+        <article class="service-row"><span>02</span><div><h3>Design de Interiores</h3><p>Definição de materiais, mobiliário e iluminação para cada ambiente.</p></div></article>
+        <article class="service-row"><span>03</span><div><h3>Consultoria e Reforma</h3><p>Otimização de espaços existentes, sem precisar demolir tudo.</p></div></article>
+        <article class="service-row"><span>04</span><div><h3>Acompanhamento de Obra</h3><p>Visitas técnicas periódicas para garantir fidelidade ao projeto.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTÚDIO -->
+  <section class="section" id="estudio">
+    <div class="wrap about-grid">
+      <div>
+        <p class="section-eyebrow">O estúdio</p>
+        <h2 class="section-title">Arquitetura sem excesso</h2>
+        <p>O Traço nasceu em 2015 com uma convicção simples: bons espaços não precisam de ornamentos, precisam de intenção. Cada projeto começa com uma pergunta — o que essa família ou empresa realmente precisa desse espaço? — e o desenho nasce dessa resposta.</p>
+        <p>Hoje somos uma equipe de 6 pessoas, entre arquitetos e designers de interiores, atuando em Curitiba e região.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat"><strong>60+</strong><span>projetos entregues</span></div>
+        <div class="stat"><strong>9</strong><span>anos de estúdio</span></div>
+        <div class="stat"><strong>6</strong><span>pessoas na equipe</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="section section-dark" id="contato">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="section-eyebrow section-eyebrow-light">Contato</p>
+        <h2 class="section-title section-title-light">Conte sobre o seu projeto</h2>
+        <p>Respondemos em até 2 dias úteis com os próximos passos.</p>
+        <ul class="contact-info">
+          <li><strong>Endereço</strong> Rua Mateus Leme, 2000 — Curitiba/PR</li>
+          <li><strong>Telefone</strong> (41) 3022-9910</li>
+          <li><strong>E-mail</strong> projetos@traco.arq.br</li>
+        </ul>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="field">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" required placeholder="Seu nome">
+        </div>
+        <div class="field">
+          <label for="tipo">Tipo de projeto</label>
+          <select id="tipo">
+            <option>Residencial</option>
+            <option>Comercial</option>
+            <option>Interiores</option>
+            <option>Reforma</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="mensagem">Conte sobre o espaço</label>
+          <textarea id="mensagem" rows="4" placeholder="Metragem, localização, ideia inicial..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Enviar mensagem</button>
+        <p class="form-note" id="formNote" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>© <span id="year"></span> Traço Arquitetura. CAU A12345-6 — site de demonstração.</span>
+    <span class="footer-note">Exemplo de portfólio — não é um escritório real.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

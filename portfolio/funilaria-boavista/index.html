@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Funilaria & Pintura Boa Vista — Tradição em Reparo Automotivo</title>
+<meta name="description" content="Funilaria & Pintura Boa Vista: mais de 20 anos de bairro cuidando do seu carro com honestidade e preço justo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header" id="header">
+  <div class="wrap header-inner">
+    <a href="#top" class="brand">
+      <span class="brand-icon">🚙</span>
+      <span class="brand-name">Boa Vista</span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#servicos">Serviços</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a href="#contato" class="btn btn-primary nav-cta">Pedir orçamento</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Funilaria e pintura · desde 2003</p>
+        <h1>O funileiro de confiança <span class="hl">do seu bairro.</span></h1>
+        <p class="lead">Mais de vinte anos consertando carros em Curitiba com honestidade, preço justo e aquele cuidado de quem trata o carro do cliente como se fosse o próprio.</p>
+        <div class="hero-actions">
+          <a href="#contato" class="btn btn-primary">Pedir orçamento</a>
+          <a href="#servicos" class="btn btn-outline">Ver serviços ↓</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">🔧</div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="section" id="servicos">
+    <div class="wrap">
+      <p class="section-eyebrow">Serviços</p>
+      <h2 class="section-title">O que fazemos</h2>
+      <div class="services-grid">
+        <article class="service-card"><span class="s-icon">🔨</span><h3>Funilaria</h3><p>Reparo de amassados e para-choques, com ou sem seguro.</p></article>
+        <article class="service-card"><span class="s-icon">🎨</span><h3>Pintura</h3><p>Pintura parcial ou completa, com cor idêntica à original.</p></article>
+        <article class="service-card"><span class="s-icon">🔩</span><h3>Reparo de Lataria</h3><p>Recuperação de estrutura após batidas e amassados profundos.</p></article>
+        <article class="service-card"><span class="s-icon">✨</span><h3>Polimento</h3><p>Recuperação de brilho e remoção de riscos superficiais.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="section section-alt" id="sobre">
+    <div class="wrap about-grid">
+      <div>
+        <p class="section-eyebrow">Nossa história</p>
+        <h2 class="section-title">Duas décadas no mesmo endereço</h2>
+        <p>O Seu Aparecido abriu a Funilaria Boa Vista em 2003, no mesmo terreno onde funcionamos até hoje. Muitos dos nossos clientes já trouxeram o segundo, terceiro carro da família — e é essa confiança que a gente mais valoriza.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat"><strong>20+</strong><span>anos de bairro</span></div>
+        <div class="stat"><strong>3</strong><span>gerações de clientes</span></div>
+        <div class="stat"><strong>100%</strong><span>orçamento sem compromisso</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="section" id="contato">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="section-eyebrow">Contato</p>
+        <h2 class="section-title">Peça seu orçamento</h2>
+        <ul class="contact-info">
+          <li>📍 Rua Professor Pedro Viriato Parigot, 890 — Boa Vista, Curitiba/PR</li>
+          <li>📞 (41) 3256-7712</li>
+          <li>🕐 Segunda a sexta, 8h às 18h</li>
+        </ul>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="field">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" required placeholder="Seu nome">
+        </div>
+        <div class="field">
+          <label for="veiculo">Veículo</label>
+          <input type="text" id="veiculo" placeholder="Marca, modelo e ano">
+        </div>
+        <div class="field">
+          <label for="mensagem">O que precisa ser feito?</label>
+          <textarea id="mensagem" rows="3" placeholder="Conte o que aconteceu com o carro"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Pedir orçamento</button>
+        <p class="form-note" id="formNote" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>© <span id="year"></span> Funilaria & Pintura Boa Vista. Site de demonstração.</span>
+    <span class="footer-note">Exemplo de portfólio — não é uma empresa real.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

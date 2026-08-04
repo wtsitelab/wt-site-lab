@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faxina Fácil — Limpeza Residencial sem Complicação</title>
+<meta name="description" content="Faxina Fácil: agende a limpeza da sua casa em poucos cliques, com profissionais de confiança e planos mensais, quinzenais ou avulsos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header" id="header">
+  <div class="wrap header-inner">
+    <a href="#top" class="brand">
+      <span class="brand-icon">🧽</span>
+      <span class="brand-name">Faxina <em>Fácil</em></span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#planos">Planos</a>
+      <a href="#area">Área de atendimento</a>
+      <a href="#agendar">Agendar</a>
+    </nav>
+    <a href="#agendar" class="btn btn-primary nav-cta">Agendar limpeza</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Limpeza residencial descomplicada</p>
+        <h1>Sua casa limpa, <span class="hl">sem você levantar um dedo.</span></h1>
+        <p class="lead">Agende em minutos, escolha o profissional e pronto — a gente cuida do resto. Sem contrato longo, sem burocracia.</p>
+        <div class="hero-actions">
+          <a href="#agendar" class="btn btn-primary">Agendar minha limpeza</a>
+          <a href="#como-funciona" class="btn btn-outline">Como funciona ↓</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="bubble-illustration">🧼</div>
+        <span class="floating-icon fi-1">✨</span>
+        <span class="floating-icon fi-2">🧺</span>
+        <span class="floating-icon fi-3">🪣</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="section" id="como-funciona">
+    <div class="wrap">
+      <p class="section-eyebrow">Como funciona</p>
+      <h2 class="section-title">Três passos e pronto</h2>
+      <div class="steps-grid">
+        <article class="step-card"><span class="step-num">1</span><h3>Escolha o plano</h3><p>Avulso, quinzenal ou mensal — você decide a frequência.</p></article>
+        <article class="step-card"><span class="step-num">2</span><h3>Marque o dia</h3><p>Escolha data e horário que funcionam pra sua rotina.</p></article>
+        <article class="step-card"><span class="step-num">3</span><h3>Relaxe</h3><p>Nossa equipe chega, limpa tudo, e você só aproveita.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANOS -->
+  <section class="section section-alt" id="planos">
+    <div class="wrap">
+      <p class="section-eyebrow">Planos</p>
+      <h2 class="section-title">Escolha a frequência ideal</h2>
+      <div class="plans-grid">
+        <article class="plan-card">
+          <h3>Avulso</h3>
+          <p class="plan-desc">Pra quando você só precisa de uma força pontual.</p>
+          <div class="plan-price"><span>a partir de</span><strong>R$ 150</strong></div>
+        </article>
+        <article class="plan-card plan-card-highlight">
+          <span class="plan-badge">Mais popular</span>
+          <h3>Quinzenal</h3>
+          <p class="plan-desc">Sua casa sempre em dia, a cada 15 dias.</p>
+          <div class="plan-price"><span>a partir de</span><strong>R$ 130</strong><small>/visita</small></div>
+        </article>
+        <article class="plan-card">
+          <h3>Mensal</h3>
+          <p class="plan-desc">Ideal para manutenção com faxinas próprias no meio.</p>
+          <div class="plan-price"><span>a partir de</span><strong>R$ 140</strong><small>/visita</small></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÁREA DE ATENDIMENTO -->
+  <section class="section" id="area">
+    <div class="wrap">
+      <p class="section-eyebrow">Área de atendimento</p>
+      <h2 class="section-title">Onde a gente chega</h2>
+      <div class="area-chips">
+        <span>Curitiba</span><span>Água Verde</span><span>Batel</span><span>Cabral</span>
+        <span>Santa Felicidade</span><span>Boa Vista</span><span>Bigorrilho</span><span>Cristo Rei</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENDAR -->
+  <section class="section section-alt" id="agendar">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="section-eyebrow">Agendar</p>
+        <h2 class="section-title">Marque sua primeira limpeza</h2>
+        <p>Preencha os dados abaixo — confirmamos por WhatsApp em poucos minutos.</p>
+        <ul class="contact-info">
+          <li>📱 (41) 99567-3421</li>
+          <li>✉️ ola@faxinafacil.com.br</li>
+        </ul>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="field">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" required placeholder="Seu nome">
+        </div>
+        <div class="field">
+          <label for="plano">Plano desejado</label>
+          <select id="plano">
+            <option>Avulso</option>
+            <option>Quinzenal</option>
+            <option>Mensal</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="bairro">Seu bairro</label>
+          <input type="text" id="bairro" placeholder="Onde fica sua casa?">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Solicitar agendamento</button>
+        <p class="form-note" id="formNote" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>© <span id="year"></span> Faxina Fácil. Site de demonstração.</span>
+    <span class="footer-note">Exemplo de portfólio — não é uma empresa real.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doce Encanto — Confeitaria Artesanal</title>
+<meta name="description" content="Doce Encanto: bolos, tortas, doces, salgados e bebidas artesanais feitos com carinho para o seu momento especial.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header" id="header">
+  <div class="wrap header-inner">
+    <a href="#top" class="brand">
+      <span class="brand-icon">🍰</span>
+      <span class="brand-name">Doce <em>Encanto</em></span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#produtos">Produtos</a>
+      <a href="#cardapio">Cardápio</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a href="#contato" class="btn btn-primary nav-cta">Fazer encomenda</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Confeitaria artesanal · Curitiba</p>
+        <h1>Doces que viram <span class="hl">memória afetiva</span>.</h1>
+        <p class="lead">Bolos, tortas e docinhos feitos à mão, com ingredientes selecionados e todo o carinho para o seu aniversário, casamento ou aquele café da tarde.</p>
+        <div class="hero-actions">
+          <a href="#contato" class="btn btn-primary">Encomendar agora</a>
+          <a href="#cardapio" class="btn btn-ghost">Ver cardápio ↓</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="cake-illustration">
+          <div class="cake-layer cake-layer-3"></div>
+          <div class="cake-layer cake-layer-2"></div>
+          <div class="cake-layer cake-layer-1"></div>
+          <div class="cake-cherry"></div>
+        </div>
+        <div class="floating-icon fi-1">🧁</div>
+        <div class="floating-icon fi-2">🍓</div>
+        <div class="floating-icon fi-3">✨</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUTOS -->
+  <section class="section" id="produtos">
+    <div class="wrap">
+      <p class="section-eyebrow">O que fazemos</p>
+      <h2 class="section-title">Nossas categorias</h2>
+      <div class="category-grid">
+        <div class="category-card"><span class="cat-icon">🎂</span><h3>Bolos</h3><p>Recheados, decorados e personalizados para cada ocasião.</p></div>
+        <div class="category-card"><span class="cat-icon">🥧</span><h3>Tortas</h3><p>Doces e salgadas, geladas ou assadas na hora.</p></div>
+        <div class="category-card"><span class="cat-icon">🍬</span><h3>Doces</h3><p>Brigadeiros gourmet, docinhos finos e mesa de doces.</p></div>
+        <div class="category-card"><span class="cat-icon">🥐</span><h3>Salgados</h3><p>Coxinhas, quiches e mini salgados para festas.</p></div>
+        <div class="category-card"><span class="cat-icon">🥤</span><h3>Bebidas</h3><p>Sucos naturais, chás gelados e drinks sem álcool.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARDÁPIO -->
+  <section class="section section-alt" id="cardapio">
+    <div class="wrap">
+      <p class="section-eyebrow">Cardápio</p>
+      <h2 class="section-title">Sabores que encantam</h2>
+      <div class="menu-tabs" id="menuTabs">
+        <button class="tab-btn active" data-tab="bolos">Bolos</button>
+        <button class="tab-btn" data-tab="tortas">Tortas</button>
+        <button class="tab-btn" data-tab="doces">Doces</button>
+        <button class="tab-btn" data-tab="salgados">Salgados</button>
+        <button class="tab-btn" data-tab="bebidas">Bebidas</button>
+      </div>
+      <div class="menu-list" id="menuList"></div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section class="section" id="galeria">
+    <div class="wrap">
+      <p class="section-eyebrow">Galeria</p>
+      <h2 class="section-title">Alguns momentos doces</h2>
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="section section-alt" id="sobre">
+    <div class="wrap about-grid">
+      <div class="about-photo" aria-hidden="true">👩‍🍳</div>
+      <div>
+        <p class="section-eyebrow">Nossa história</p>
+        <h2 class="section-title">Da cozinha de casa para a sua festa</h2>
+        <p>A Doce Encanto começou em 2016 na cozinha da confeiteira Marina Alves, fazendo docinhos para os aniversários da vizinhança. Hoje, atendemos festas e eventos em toda a região, sem nunca perder o cuidado artesanal do primeiro bolo.</p>
+        <p>Cada encomenda é feita sob medida — sabor, tamanho e decoração pensados para o seu momento.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="section" id="contato">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="section-eyebrow">Encomendas</p>
+        <h2 class="section-title">Vamos planejar seu doce?</h2>
+        <p>Preencha os dados abaixo e retornamos com opções de sabor, tamanho e valores.</p>
+        <ul class="contact-info">
+          <li>📍 Curitiba, PR — entregamos na região metropolitana</li>
+          <li>📱 (41) 99876-5432 (WhatsApp)</li>
+          <li>✉️ ola@doceencanto.com.br</li>
+        </ul>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="field">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" required placeholder="Seu nome">
+        </div>
+        <div class="field">
+          <label for="ocasiao">Ocasião</label>
+          <select id="ocasiao">
+            <option>Aniversário</option>
+            <option>Casamento</option>
+            <option>Evento corporativo</option>
+            <option>Só porque sim 🍰</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="data">Data desejada</label>
+          <input type="date" id="data">
+        </div>
+        <div class="field">
+          <label for="mensagem">Detalhes da encomenda</label>
+          <textarea id="mensagem" rows="3" placeholder="Quantidade de pessoas, sabor preferido, etc."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Enviar pedido</button>
+        <p class="form-note" id="formNote" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>© <span id="year"></span> Doce Encanto Confeitaria. Site de demonstração.</span>
+    <span class="footer-note">Exemplo de portfólio — não é uma confeitaria real.</span>
+  </div>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Fechar">×</button>
+  <div class="lightbox-content" id="lightboxContent"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

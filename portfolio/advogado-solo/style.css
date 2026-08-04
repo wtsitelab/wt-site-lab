@@ -1,0 +1,146 @@
+/* ===== Dra. Camila Rezende — tokens ===== */
+:root{
+  --terracotta: #C0603E;
+  --terracotta-light: #E0916F;
+  --sage: #7A8C74;
+  --sage-light: #A8B9A0;
+  --cream: #FBF6F0;
+  --white: #FFFFFF;
+  --ink: #3A2E28;
+  --ink-soft: #7A6D64;
+  --border: #ECE0D4;
+
+  --font-display: 'Lora', serif;
+  --font-body: 'Mulish', sans-serif;
+  --radius: 16px;
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0; background: var(--cream); color: var(--ink);
+  font-family: var(--font-body); line-height:1.7; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{ font-family: var(--font-display); color: var(--ink); margin:0 0 .4em; line-height:1.25; font-weight:600; }
+p{ margin:0 0 1em; color: var(--ink-soft); }
+a{ color:inherit; text-decoration:none; }
+ul{ list-style:none; margin:0; padding:0; }
+.wrap{ max-width:1120px; margin:0 auto; padding:0 24px; }
+
+/* ===== Buttons ===== */
+.btn{ display:inline-flex; align-items:center; justify-content:center; gap:.5em; padding:.9em 1.9em; border-radius: 999px; font-weight:600; font-size:.95rem; border:1px solid transparent; cursor:pointer; transition: all .2s ease; }
+.btn-primary{ background: var(--terracotta); color:#fff; box-shadow: 0 10px 24px -8px rgba(192,96,62,.4); }
+.btn-primary:hover{ background:#A94F30; transform: translateY(-2px); }
+.btn-outline{ border-color: var(--terracotta); color: var(--terracotta); }
+.btn-outline:hover{ background: rgba(192,96,62,.08); }
+.btn-sm{ padding:.6em 1.3em; font-size:.85rem; }
+.btn-block{ width:100%; }
+
+/* ===== Header ===== */
+.site-header{ position:sticky; top:0; z-index:50; background: rgba(251,246,240,.9); backdrop-filter: blur(8px); border-bottom:1px solid var(--border); }
+.header-inner{ display:flex; align-items:center; gap:26px; height:78px; }
+.brand{ margin-right:auto; }
+.brand-name{ font-family: var(--font-display); font-size:1.25rem; color: var(--ink); font-style:italic; }
+.brand-name em{ font-style:normal; color: var(--terracotta); font-weight:600; }
+.main-nav{ display:flex; gap:24px; }
+.main-nav a{ font-size:.88rem; font-weight:600; color: var(--ink-soft); }
+.main-nav a:hover{ color: var(--terracotta); }
+.nav-cta{ font-size:.85rem; padding:.7em 1.4em; }
+.menu-toggle{ display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; }
+.menu-toggle span{ width:22px; height:2px; background: var(--ink); border-radius:2px; }
+
+/* ===== Hero ===== */
+.hero{ padding: 76px 0 40px; }
+.hero-grid{ display:grid; grid-template-columns: 1.15fr .85fr; gap:50px; align-items:center; }
+.eyebrow{ font-size:.82rem; letter-spacing:.05em; text-transform:uppercase; color: var(--terracotta); font-weight:700; margin-bottom:16px; }
+.hero h1{ font-size: clamp(2rem, 3.8vw, 3rem); }
+.hl{ color: var(--terracotta); font-style:italic; }
+.lead{ font-size:1.06rem; max-width:52ch; }
+.hero-actions{ display:flex; gap:14px; flex-wrap:wrap; margin-top:26px; }
+
+.hero-portrait{ display:flex; flex-direction:column; align-items:center; gap:18px; }
+.portrait-frame{
+  width:220px; height:260px; border-radius: 50% 50% 46% 46% / 55% 55% 45% 45%;
+  background: linear-gradient(160deg, var(--terracotta-light), var(--sage-light));
+  display:grid; place-items:center; box-shadow: 0 30px 50px -24px rgba(58,46,40,.35);
+}
+.portrait-initials{ font-family: var(--font-display); font-size:3.4rem; color:#fff; font-weight:600; }
+.portrait-badge{ background:#fff; border:1px solid var(--border); border-radius:999px; padding:.6em 1.3em; font-size:.82rem; font-weight:600; color: var(--terracotta); box-shadow: 0 10px 20px -12px rgba(58,46,40,.2); }
+
+/* ===== Sections ===== */
+.section{ padding: 86px 0; }
+.section-alt{ background:#fff; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+.section-eyebrow{ font-size:.8rem; text-transform:uppercase; letter-spacing:.05em; color: var(--terracotta); font-weight:700; margin-bottom:10px; }
+.section-title{ font-size: clamp(1.6rem, 3vw, 2.2rem); max-width:24ch; }
+
+/* ===== Como posso ajudar ===== */
+.help-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:20px; }
+.help-card{ background:#fff; border:1px solid var(--border); border-radius: var(--radius); padding:28px 24px; transition: transform .2s ease, box-shadow .2s ease; }
+.help-card:hover{ transform: translateY(-4px); box-shadow: 0 18px 34px -20px rgba(58,46,40,.2); }
+.help-icon{ font-size:1.8rem; display:block; margin-bottom:14px; }
+.help-card h3{ font-size:1.08rem; }
+.help-card p{ font-size:.9rem; margin:0; }
+.help-card-cta{ background: linear-gradient(160deg, var(--terracotta), #A94F30); color:#fff; }
+.help-card-cta h3{ color:#fff; }
+.help-card-cta p{ color: rgba(255,255,255,.85); }
+
+/* ===== Sobre mim ===== */
+.about-grid{ display:grid; grid-template-columns: .5fr 1.5fr; gap:50px; align-items:center; }
+.about-portrait{
+  aspect-ratio:1; border-radius: 46% 54% 40% 60% / 50% 45% 55% 50%;
+  background: linear-gradient(160deg, var(--sage-light), var(--terracotta-light));
+  display:grid; place-items:center;
+}
+.about-portrait span{ font-family: var(--font-display); font-size:2.6rem; color:#fff; font-weight:600; }
+.about-tags{ display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+.about-tags span{ background: var(--cream); border:1px solid var(--border); border-radius:999px; padding:.5em 1.1em; font-size:.8rem; font-weight:600; color: var(--ink-soft); }
+
+/* ===== Depoimentos ===== */
+.testimonial-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:22px; }
+.testimonial-card{ background:#fff; border:1px solid var(--border); border-radius: var(--radius); padding:26px; }
+.testimonial-stars{ color: var(--terracotta); letter-spacing:.15em; margin-bottom:12px; }
+.testimonial-card p{ font-size:.92rem; }
+.testimonial-author{ display:block; margin-top:12px; font-weight:700; color: var(--ink); font-size:.88rem; }
+
+/* ===== FAQ ===== */
+.faq-wrap{ max-width:760px; }
+.faq-list{ display:flex; flex-direction:column; gap:12px; }
+.faq-item{ border:1px solid var(--border); border-radius:14px; background:#FBF6F0; overflow:hidden; }
+.faq-question{ width:100%; display:flex; justify-content:space-between; align-items:center; gap:16px; background:none; border:none; color: var(--ink); text-align:left; cursor:pointer; padding:18px 22px; font-family: var(--font-body); font-size:.96rem; font-weight:700; }
+.faq-icon{ font-family: var(--font-display); font-size:1.2rem; color: var(--terracotta); transition: transform .3s ease; }
+.faq-item.is-open .faq-icon{ transform: rotate(45deg); }
+.faq-answer{ max-height:0; overflow:hidden; transition: max-height .35s ease; }
+.faq-answer p{ padding:0 22px 18px; font-size:.9rem; margin:0; }
+.faq-item.is-open .faq-answer{ max-height:200px; }
+
+/* ===== Contato ===== */
+.contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:50px; }
+.contact-info{ display:flex; flex-direction:column; gap:10px; margin-top:20px; font-size:.92rem; }
+.contact-form{ background:#fff; border:1px solid var(--border); border-radius: var(--radius); padding:30px; box-shadow: 0 20px 40px -26px rgba(58,46,40,.25); display:flex; flex-direction:column; gap:16px; }
+.field{ display:flex; flex-direction:column; gap:6px; }
+.field label{ font-size:.82rem; font-weight:700; color: var(--ink); }
+.field input, .field select, .field textarea{ padding:.8em 1em; border-radius:10px; border:1px solid var(--border); font-family: var(--font-body); font-size:.95rem; background:#FBF6F0; }
+.field input:focus, .field select:focus, .field textarea:focus{ outline:2px solid var(--terracotta); outline-offset:1px; }
+.form-note{ font-size:.85rem; color: var(--terracotta); min-height:1.2em; margin:0; }
+
+.site-footer{ padding:26px 0; background:#fff; border-top:1px solid var(--border); }
+.footer-inner{ display:flex; justify-content:space-between; font-size:.78rem; color: var(--ink-soft); flex-wrap:wrap; gap:8px; }
+
+/* ===== Reveal ===== */
+[data-reveal]{ opacity:0; transform: translateY(16px); transition: opacity .55s ease, transform .55s ease; }
+[data-reveal].is-visible{ opacity:1; transform:none; }
+
+/* ===== Responsive ===== */
+@media (max-width: 900px){
+  .hero-grid, .about-grid, .contact-grid{ grid-template-columns:1fr; }
+  .help-grid, .testimonial-grid{ grid-template-columns: repeat(2,1fr); }
+  .main-nav, .nav-cta{ display:none; }
+  .menu-toggle{ display:flex; }
+  .main-nav.open{
+    display:flex; position:absolute; top:78px; left:0; right:0; background:#fff;
+    flex-direction:column; padding:20px 24px; border-bottom:1px solid var(--border); gap:16px;
+  }
+}
+@media (max-width: 560px){
+  .help-grid, .testimonial-grid{ grid-template-columns:1fr; }
+}

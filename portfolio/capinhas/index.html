@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Store — Capinhas para todos os celulares</title>
+<meta name="description" content="Case Store: capinhas para iPhone, Samsung, Motorola e Xiaomi com estilo, proteção e entrega rápida.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="promo-bar">🚚 Frete grátis para todo o Brasil em compras acima de R$ 99 · Use o cupom <strong>CASE10</strong></div>
+
+<header class="site-header" id="header">
+  <div class="wrap header-inner">
+    <a href="#top" class="brand">
+      <span class="brand-name">Case<span class="brand-dot">.</span>Store</span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#produtos">Produtos</a>
+      <a href="#categorias">Categorias</a>
+      <a href="#promocoes">Promoções</a>
+      <a href="#avaliacoes">Avaliações</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a href="#produtos" class="btn btn-primary nav-cta">Comprar agora</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO com customizador -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Nova coleção · proteção + estilo</p>
+        <h1>Sua capinha.<br><span class="hl">Sua cara.</span></h1>
+        <p class="lead">Monte a combinação perfeita: escolha o modelo do seu celular e a cor da capa. Proteção militar contra quedas, sem abrir mão do design.</p>
+        <div class="hero-actions">
+          <a href="#produtos" class="btn btn-primary">Ver produtos</a>
+          <a href="#customizador" class="btn btn-outline">Monte a sua ↓</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="phone-mock" id="phoneMock">
+          <div class="camera-module"><span class="lens"></span><span class="lens"></span><span class="flash"></span></div>
+          <span class="case-wordmark">CASE STORE</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOMIZADOR -->
+  <section class="section section-dark" id="customizador">
+    <div class="wrap customizer-grid">
+      <div class="customizer-preview">
+        <div class="phone-mock phone-mock-lg" id="phoneMockLg">
+          <div class="camera-module"><span class="lens"></span><span class="lens"></span><span class="flash"></span></div>
+          <span class="case-wordmark">CASE STORE</span>
+        </div>
+        <span class="control-label" id="previewCaption" style="margin:0;">Prévia · iPhone</span>
+      </div>
+      <div class="customizer-controls">
+        <p class="section-eyebrow section-eyebrow-light">Monte a sua</p>
+        <h2 class="section-title section-title-light">Escolha o modelo e personalize</h2>
+        <div class="control-group">
+          <span class="control-label">Modelo</span>
+          <div class="chip-row" id="modelChips">
+            <button class="chip active" data-model="iPhone">iPhone</button>
+            <button class="chip" data-model="Samsung">Samsung</button>
+            <button class="chip" data-model="Motorola">Motorola</button>
+            <button class="chip" data-model="Xiaomi">Xiaomi</button>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <span class="control-label">Como personalizar</span>
+          <div class="mode-row" id="modeRow">
+            <button class="mode-btn active" data-mode="color">Cor sólida</button>
+            <button class="mode-btn" data-mode="photo">Minha foto</button>
+          </div>
+        </div>
+
+        <div class="control-group" id="colorGroup">
+          <span class="control-label">Cor da capa</span>
+          <div class="color-row" id="colorChips">
+            <button class="color-dot active" style="--dot:#D4AF37" data-color="#D4AF37" aria-label="Dourado"></button>
+            <button class="color-dot" style="--dot:#0B0B0D" data-color="#0B0B0D" aria-label="Preto Fosco"></button>
+            <button class="color-dot" style="--dot:#F5F0E6" data-color="#F5F0E6" aria-label="Branco Pérola"></button>
+            <button class="color-dot" style="--dot:#7A1F2B" data-color="#7A1F2B" aria-label="Bordô"></button>
+            <button class="color-dot" style="--dot:#C0C0C0" data-color="#C0C0C0" aria-label="Prata"></button>
+          </div>
+        </div>
+
+        <div class="control-group" id="photoGroup" hidden>
+          <span class="control-label">Sua foto</span>
+          <label class="photo-upload" for="photoInput" id="photoUploadLabel">
+            <input type="file" accept="image/*" id="photoInput" hidden>
+            <span class="photo-upload-icon">📷</span>
+            <span class="photo-upload-text" id="photoUploadText">Clique para enviar uma foto <br><strong>e veja como fica na capinha</strong></span>
+          </label>
+          <div class="photo-thumb-row" id="photoThumbRow" hidden>
+            <img id="photoThumb" class="photo-thumb" alt="Prévia da foto enviada">
+            <button type="button" class="photo-remove" id="photoRemove">Remover foto</button>
+          </div>
+        </div>
+
+        <div class="customizer-price">
+          <span>Preço estimado</span>
+          <strong id="customPrice">R$ 59,90</strong>
+        </div>
+        <a href="#" target="_blank" rel="noopener" class="btn btn-primary btn-block" id="whatsappCTA">Gostei, quero pelo WhatsApp</a>
+        <p class="customizer-hint">Ao clicar, vamos abrir o WhatsApp com os detalhes da sua capinha personalizada.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIAS -->
+  <section class="section" id="categorias">
+    <div class="wrap">
+      <p class="section-eyebrow">Categorias</p>
+      <h2 class="section-title">Encontre pelo seu celular</h2>
+      <div class="brand-grid">
+        <button class="brand-card" data-filter="iPhone"><span>📱</span>iPhone</button>
+        <button class="brand-card" data-filter="Samsung"><span>📱</span>Samsung</button>
+        <button class="brand-card" data-filter="Motorola"><span>📱</span>Motorola</button>
+        <button class="brand-card" data-filter="Xiaomi"><span>📱</span>Xiaomi</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUTOS -->
+  <section class="section section-dark" id="produtos">
+    <div class="wrap">
+      <div class="section-head-row">
+        <div>
+          <p class="section-eyebrow section-eyebrow-light">Catálogo</p>
+          <h2 class="section-title section-title-light">Produtos em destaque</h2>
+        </div>
+        <span class="filter-status" id="filterStatus">Mostrando todos os modelos</span>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+    </div>
+  </section>
+
+  <!-- PROMOÇÕES -->
+  <section class="section" id="promocoes">
+    <div class="wrap">
+      <p class="section-eyebrow">Promoções</p>
+      <h2 class="section-title">Ofertas da semana</h2>
+      <div class="promo-grid">
+        <article class="promo-card promo-card-1">
+          <span class="promo-badge">-30%</span>
+          <h3>Leve 2, pague 1 em capinhas transparentes</h3>
+          <p>Válido para todos os modelos, até domingo.</p>
+        </article>
+        <article class="promo-card promo-card-2">
+          <span class="promo-badge">Novidade</span>
+          <h3>Linha MagSafe compatível chegou</h3>
+          <p>Encaixe magnético perfeito para carregadores sem fio.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVALIAÇÕES -->
+  <section class="section section-dark" id="avaliacoes">
+    <div class="wrap">
+      <p class="section-eyebrow section-eyebrow-light">Depoimentos</p>
+      <h2 class="section-title section-title-light">O que dizem nossos clientes</h2>
+      <div class="reviews-grid" id="reviewsGrid"></div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="section" id="contato">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="section-eyebrow">Fale conosco</p>
+        <h2 class="section-title">Dúvidas sobre seu pedido?</h2>
+        <p>Nosso time responde rápido pelo WhatsApp ou e-mail.</p>
+        <ul class="contact-info">
+          <li>📱 (41) 99803-3898</li>
+          <li>✉️ vendas@case.store</li>
+          <li>📦 Envios para todo o Brasil</li>
+        </ul>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="field">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" required placeholder="Seu nome">
+        </div>
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" required placeholder="voce@email.com">
+        </div>
+        <div class="field">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" rows="3" placeholder="Como podemos ajudar?"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Enviar mensagem</button>
+        <p class="form-note" id="formNote" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>© <span id="year"></span> Case Store. Site de demonstração.</span>
+    <span class="footer-note">Exemplo de portfólio — não é uma loja real.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
