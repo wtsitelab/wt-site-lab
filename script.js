@@ -4,6 +4,9 @@
 
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  const REDUCE_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const HAS_FINE_POINTER = window.matchMedia('(pointer: fine)').matches;
+
   // ==========================================================================
   // Mobile menu
   // ==========================================================================
@@ -56,29 +59,102 @@
   }
 
   // ==========================================================================
-  // Tilt 3D nos cards ao passar o mouse
+  // Cursor customizado (ponto + anel com atraso) — só em desktop com mouse
   // ==========================================================================
   try {
-    const tiltCards = document.querySelectorAll('.tilt-card');
-    tiltCards.forEach(card => {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const px = (e.clientX - rect.left) / rect.width - 0.5;
-        const py = (e.clientY - rect.top) / rect.height - 0.5;
-        card.style.setProperty('--tilt-rx', (px * 8).toFixed(2) + 'deg');
-        card.style.setProperty('--tilt-ry', (py * -8).toFixed(2) + 'deg');
+    if (HAS_FINE_POINTER && !REDUCE_MOTION) {
+      const dot = document.createElement('div');
+      dot.className = 'cursor-dot';
+      const ring = document.createElement('div');
+      ring.className = 'cursor-ring';
+      document.body.appendChild(dot);
+      document.body.appendChild(ring);
+      document.body.classList.add('has-custom-cursor');
+
+      let mouseX = window.innerWidth / 2;
+      let mouseY = window.innerHeight / 2;
+      let ringX = mouseX;
+      let ringY = mouseY;
+
+      document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+      }, { passive: true });
+
+      function ringLoop() {
+        ringX += (mouseX - ringX) * 0.18;
+        ringY += (mouseY - ringY) * 0.18;
+        ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
+        requestAnimationFrame(ringLoop);
+      }
+      requestAnimationFrame(ringLoop);
+
+      document.querySelectorAll('a, button, .magnet').forEach(el => {
+        el.addEventListener('mouseenter', () => ring.classList.add('is-active'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('is-active'));
       });
-      card.addEventListener('mouseleave', () => {
-        card.style.setProperty('--tilt-rx', '0deg');
-        card.style.setProperty('--tilt-ry', '0deg');
+    }
+  } catch (err) {
+    console.error('[WT Site Lab] Erro no cursor customizado:', err);
+  }
+
+  // ==========================================================================
+  // Botões magnéticos — seguem o mouse quando ele se aproxima
+  // ==========================================================================
+  try {
+    if (HAS_FINE_POINTER && !REDUCE_MOTION) {
+      const strength = 8;
+      const padding = 50;
+      document.querySelectorAll('.magnet').forEach(el => {
+        function onMove(e) {
+          const rect = el.getBoundingClientRect();
+          const cx = rect.left + rect.width / 2;
+          const cy = rect.top + rect.height / 2;
+          const dx = e.clientX - cx;
+          const dy = e.clientY - cy;
+          const maxDist = Math.max(rect.width, rect.height) / 2 + padding;
+          if (Math.hypot(dx, dy) < maxDist) {
+            el.style.transition = 'transform .3s ease-out';
+            el.style.transform = `translate3d(${dx / strength}px, ${dy / strength}px, 0)`;
+          }
+        }
+        function onLeave() {
+          el.style.transition = 'transform .6s cubic-bezier(.16,.84,.24,1)';
+          el.style.transform = 'translate3d(0,0,0)';
+        }
+        document.addEventListener('mousemove', onMove, { passive: true });
+        el.addEventListener('mouseleave', onLeave);
       });
+    }
+  } catch (err) {
+    console.error('[WT Site Lab] Erro no efeito magnético dos botões:', err);
+  }
+
+  // ==========================================================================
+  // Tilt 3D nos cards ao passar o mouse
+  // ==========================================================================
+  function attachTilt(card) {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const px = (e.clientX - rect.left) / rect.width - 0.5;
+      const py = (e.clientY - rect.top) / rect.height - 0.5;
+      card.style.setProperty('--tilt-rx', (px * 8).toFixed(2) + 'deg');
+      card.style.setProperty('--tilt-ry', (py * -8).toFixed(2) + 'deg');
     });
+    card.addEventListener('mouseleave', () => {
+      card.style.setProperty('--tilt-rx', '0deg');
+      card.style.setProperty('--tilt-ry', '0deg');
+    });
+  }
+  try {
+    document.querySelectorAll('.tilt-card').forEach(attachTilt);
   } catch (err) {
     console.error('[WT Site Lab] Erro no efeito de tilt:', err);
   }
 
   // ==========================================================================
-  // Contador animado (hero-meta e estatística do comparativo)
+  // Contador animado (hero-meta)
   // ==========================================================================
   try {
     function animarContador(el) {
@@ -99,7 +175,7 @@
       requestAnimationFrame(passo);
     }
 
-    const contadores = document.querySelectorAll('.meta-item strong, .stat-banner-number');
+    const contadores = document.querySelectorAll('.meta-item strong');
     if ('IntersectionObserver' in window) {
       const contadorObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -113,6 +189,80 @@
     }
   } catch (err) {
     console.error('[WT Site Lab] Erro no contador animado:', err);
+  }
+
+  // ==========================================================================
+  // Anel de progresso animado (estatística Sebrae)
+  // ==========================================================================
+  try {
+    const ringFill = document.getElementById('statRingFill');
+    const ringNumber = document.getElementById('statRingNumber');
+    if (ringFill && ringNumber && 'IntersectionObserver' in window) {
+      const target = parseFloat(ringFill.dataset.target || '0');
+      const circumference = 2 * Math.PI * 50; // r=50, ver CSS/SVG
+      const ringObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          ringFill.style.strokeDashoffset = (circumference * (1 - target / 100)).toFixed(1);
+          const duracao = 1400;
+          const inicio = performance.now();
+          function passo(agora) {
+            const progresso = Math.min((agora - inicio) / duracao, 1);
+            const valor = (target * progresso).toFixed(1).replace('.', ',');
+            ringNumber.textContent = valor + '%';
+            if (progresso < 1) requestAnimationFrame(passo);
+          }
+          requestAnimationFrame(passo);
+          ringObserver.unobserve(entry.target);
+        });
+      }, { threshold: 0.5 });
+      ringObserver.observe(ringFill);
+    }
+  } catch (err) {
+    console.error('[WT Site Lab] Erro no anel de progresso:', err);
+  }
+
+  // ==========================================================================
+  // Faixa dupla (marquee) reativa ao scroll — linhas em direções opostas
+  // ==========================================================================
+  try {
+    const section = document.getElementById('marqueeSection');
+    const track1 = document.getElementById('marqueeTrack1');
+    const track2 = document.getElementById('marqueeTrack2');
+    if (section && track1 && track2) {
+      // Triplica o conteúdo de cada faixa para permitir loop contínuo e limitado
+      [track1, track2].forEach(track => {
+        const original = track.innerHTML;
+        track.innerHTML = original + original + original;
+      });
+
+      if (REDUCE_MOTION) {
+        // Mantém as faixas estáticas para quem prefere menos movimento
+      } else {
+        let ticking = false;
+        function updateMarquee() {
+          ticking = false;
+          const raw = (window.scrollY - section.offsetTop + window.innerHeight) * 0.22;
+          const w1 = track1.scrollWidth / 3 || 1;
+          const w2 = track2.scrollWidth / 3 || 1;
+          let m1 = raw % w1; if (m1 < 0) m1 += w1;
+          let m2 = raw % w2; if (m2 < 0) m2 += w2;
+          track1.style.transform = `translate3d(${-m1}px,0,0)`;
+          track2.style.transform = `translate3d(${m2 - w2}px,0,0)`;
+        }
+        function onScrollMarquee() {
+          if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(updateMarquee);
+          }
+        }
+        window.addEventListener('scroll', onScrollMarquee, { passive: true });
+        window.addEventListener('resize', onScrollMarquee, { passive: true });
+        updateMarquee();
+      }
+    }
+  } catch (err) {
+    console.error('[WT Site Lab] Erro na faixa de segmentos (marquee):', err);
   }
 
   // ==========================================================================
@@ -142,17 +292,85 @@
   }
 
   // ==========================================================================
-  // FAQ — acordeão
+  // Texto "Sobre" — revelação caractere a caractere conforme o scroll
+  // ==========================================================================
+  try {
+    const reveals = document.querySelectorAll('.reveal-text');
+    if (reveals.length && !REDUCE_MOTION) {
+      const updaters = [];
+      reveals.forEach(el => {
+        const texto = el.textContent;
+        el.textContent = '';
+        const chars = [];
+        for (const ch of texto) {
+          if (ch === ' ') {
+            el.appendChild(document.createTextNode(' '));
+            continue;
+          }
+          const span = document.createElement('span');
+          span.className = 'ch';
+          span.textContent = ch;
+          el.appendChild(span);
+          chars.push(span);
+        }
+        updaters.push(function update() {
+          const rect = el.getBoundingClientRect();
+          const vh = window.innerHeight;
+          const start = vh * 0.88;
+          const end = vh * 0.3;
+          let progresso = (start - rect.top) / (start - end);
+          progresso = Math.max(0, Math.min(1, progresso));
+          const n = chars.length || 1;
+          chars.forEach((span, i) => {
+            const p = Math.max(0, Math.min(1, progresso * n - i));
+            span.style.opacity = (0.2 + 0.8 * p).toFixed(2);
+          });
+        });
+      });
+
+      let ticking = false;
+      function updateReveals() {
+        ticking = false;
+        updaters.forEach(fn => fn());
+      }
+      function onScrollReveal() {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(updateReveals);
+        }
+      }
+      window.addEventListener('scroll', onScrollReveal, { passive: true });
+      window.addEventListener('resize', onScrollReveal, { passive: true });
+      updateReveals();
+    }
+  } catch (err) {
+    console.error('[WT Site Lab] Erro na revelação de texto da seção Sobre:', err);
+  }
+
+  // ==========================================================================
+  // FAQ — acordeão (altura calculada dinamicamente pelo conteúdo real)
   // ==========================================================================
   try {
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
       const question = item.querySelector('.faq-question');
-      if (!question) return;
+      const answer = item.querySelector('.faq-answer');
+      if (!question || !answer) return;
+      question.setAttribute('aria-expanded', 'false');
       question.addEventListener('click', () => {
         const jaAberto = item.classList.contains('is-open');
-        faqItems.forEach(i => i.classList.remove('is-open'));
-        if (!jaAberto) item.classList.add('is-open');
+        faqItems.forEach(i => {
+          i.classList.remove('is-open');
+          const a = i.querySelector('.faq-answer');
+          const q = i.querySelector('.faq-question');
+          if (a) a.style.maxHeight = '0px';
+          if (q) q.setAttribute('aria-expanded', 'false');
+        });
+        if (!jaAberto) {
+          item.classList.add('is-open');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          question.setAttribute('aria-expanded', 'true');
+        }
       });
     });
   } catch (err) {
@@ -160,12 +378,24 @@
   }
 
   // ==========================================================================
-  // Scroll reveal — pequenas animações ao rolar a página
+  // Scroll reveal — pequenas animações ao rolar a página (com stagger --i)
   // ==========================================================================
   try {
     if ('IntersectionObserver' in window) {
+      const grupos = [
+        '.compare-col', '.stat-banner', '.price-callout',
+        '.category-card', '.portfolio-card', '.faq-item'
+      ];
+      grupos.forEach(seletor => {
+        document.querySelectorAll(seletor).forEach((el, i) => {
+          if (!el.style.getPropertyValue('--i')) {
+            el.style.setProperty('--i', Math.min(i, 6));
+          }
+        });
+      });
+
       const revealTargets = document.querySelectorAll(
-        '.benefit-card, .service-step, .portfolio-card, .highlight-card, .compare-col, .stat-banner, .faq-item, .price-callout'
+        '.benefit-card, .service-row, .portfolio-card, .highlight-card, .compare-col, .stat-banner, .faq-item, .price-callout, .category-card'
       );
       revealTargets.forEach(el => el.setAttribute('data-reveal', ''));
       const observer = new IntersectionObserver((entries) => {
@@ -251,6 +481,7 @@
       }
     });
   }
+
   // ==========================================================================
   // Portfólio — categorias e exemplos (orientado a dados)
   // ==========================================================================
@@ -355,13 +586,13 @@
             ${temExemplos ? `${cat.exemplos.length} exemplo${cat.exemplos.length > 1 ? 's' : ''}` : 'Em breve'}
           </span>
         `;
-        card.addEventListener('click', () => mostrarCategoria(cat, card));
+        card.addEventListener('click', () => abrirCategoriaComTransicao(cat, card));
         categoryGrid.appendChild(card);
       });
 
       function mostrarCategoria(cat, cardEl) {
         document.querySelectorAll('.category-card').forEach(c => c.classList.remove('is-active'));
-        cardEl.classList.add('is-active');
+        if (cardEl) cardEl.classList.add('is-active');
 
         examplesIcon.textContent = cat.icone;
         examplesTitle.textContent = cat.nome;
@@ -401,28 +632,51 @@
         }
       }
 
+      // "Card-birth": o cartão clicado se expande visualmente até virar o
+      // painel de exemplos, em vez de o painel simplesmente aparecer.
+      function abrirCategoriaComTransicao(cat, cardEl) {
+        try {
+          if (REDUCE_MOTION || !cardEl || typeof cardEl.getBoundingClientRect !== 'function') {
+            mostrarCategoria(cat, cardEl);
+            return;
+          }
+          const startRect = cardEl.getBoundingClientRect();
+          const gridRect = categoryGrid.getBoundingClientRect();
+          const overlay = document.createElement('div');
+          overlay.className = 'card-birth-overlay';
+          overlay.style.top = startRect.top + 'px';
+          overlay.style.left = startRect.left + 'px';
+          overlay.style.width = startRect.width + 'px';
+          overlay.style.height = startRect.height + 'px';
+          document.body.appendChild(overlay);
+          // força reflow para garantir que a transição parta do estado inicial
+          void overlay.getBoundingClientRect();
+
+          requestAnimationFrame(() => {
+            overlay.style.top = (gridRect.bottom + 36) + 'px';
+            overlay.style.left = gridRect.left + 'px';
+            overlay.style.width = gridRect.width + 'px';
+            overlay.style.height = Math.min(window.innerHeight * 0.62, 460) + 'px';
+            overlay.style.borderRadius = '32px';
+          });
+
+          setTimeout(() => {
+            mostrarCategoria(cat, cardEl);
+            overlay.style.opacity = '0';
+            setTimeout(() => overlay.remove(), 400);
+          }, 520);
+        } catch (err) {
+          console.error('[WT Site Lab] Erro na transição do portfólio:', err);
+          mostrarCategoria(cat, cardEl);
+        }
+      }
+
       if (examplesClose) {
         examplesClose.addEventListener('click', () => {
           examplesWrap.hidden = true;
           document.querySelectorAll('.category-card').forEach(c => c.classList.remove('is-active'));
         });
       }
-    }
-
-    // Aplica o mesmo efeito de tilt 3D usado nos outros cards (função definida
-    // mais abaixo neste arquivo é reaproveitada via referência global abaixo)
-    function attachTilt(card) {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const px = (e.clientX - rect.left) / rect.width - 0.5;
-        const py = (e.clientY - rect.top) / rect.height - 0.5;
-        card.style.setProperty('--tilt-rx', (px * 8).toFixed(2) + 'deg');
-        card.style.setProperty('--tilt-ry', (py * -8).toFixed(2) + 'deg');
-      });
-      card.addEventListener('mouseleave', () => {
-        card.style.setProperty('--tilt-rx', '0deg');
-        card.style.setProperty('--tilt-ry', '0deg');
-      });
     }
   } catch (err) {
     console.error('[WT Site Lab] Erro no sistema de categorias do portfólio:', err);

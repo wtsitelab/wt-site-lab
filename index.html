@@ -10,7 +10,7 @@
 <meta name="language" content="pt-BR">
 <meta name="author" content="WT Site Lab">
 <link rel="canonical" href="https://www.wtsitelab.com.br/">
-<meta name="theme-color" content="#0089FD">
+<meta name="theme-color" content="#0C0C0C">
 
 <!-- Open Graph / Facebook, WhatsApp, LinkedIn -->
 <meta property="og:type" content="website">
@@ -32,7 +32,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="stylesheet" href="style.css">
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
@@ -77,7 +77,7 @@
       <a href="#sobre">Sobre</a>
       <a href="#contato">Contato</a>
     </nav>
-    <a href="https://wa.me/5541998033898?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20um%20site." target="_blank" rel="noopener" class="btn btn-primary nav-cta">Solicitar orçamento</a>
+    <a href="https://wa.me/5541998033898?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20um%20site." target="_blank" rel="noopener" class="btn btn-primary nav-cta magnet">Solicitar orçamento</a>
     <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -93,14 +93,14 @@
     <svg class="glow-swoosh" viewBox="0 0 1600 900" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
       <defs>
         <linearGradient id="swooshGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#0089FD" stop-opacity="0"/>
-          <stop offset="45%" stop-color="#0089FD" stop-opacity=".55"/>
-          <stop offset="100%" stop-color="#3FC5FF" stop-opacity="0"/>
+          <stop offset="0%" stop-color="#B600A8" stop-opacity="0"/>
+          <stop offset="45%" stop-color="#B600A8" stop-opacity=".45"/>
+          <stop offset="100%" stop-color="#D9A6FF" stop-opacity="0"/>
         </linearGradient>
         <linearGradient id="swooshGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#3FC5FF" stop-opacity="0"/>
-          <stop offset="50%" stop-color="#0089FD" stop-opacity=".4"/>
-          <stop offset="100%" stop-color="#0064D1" stop-opacity="0"/>
+          <stop offset="0%" stop-color="#BE4C00" stop-opacity="0"/>
+          <stop offset="50%" stop-color="#7621B0" stop-opacity=".4"/>
+          <stop offset="100%" stop-color="#18011F" stop-opacity="0"/>
         </linearGradient>
         <filter id="swooshBlur" x="-50%" y="-50%" width="200%" height="200%">
           <feGaussianBlur stdDeviation="18"/>
@@ -112,80 +112,98 @@
     <img src="assets/logo-icon.png" alt="" aria-hidden="true" class="hero-watermark">
     <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
-    <div class="wrap hero-inner">
-      <div class="hero-copy">
-        <p class="eyebrow">WT Site Lab · estúdio de desenvolvimento web</p>
-        <h1>Sites profissionais que transformam <span class="hl">visitantes em clientes.</span></h1>
+    <div class="wrap hero-top">
+      <p class="eyebrow">WT Site Lab · estúdio de desenvolvimento web</p>
+    </div>
+
+    <div class="hero-giant-wrap">
+      <h1 class="hero-giant">
+        <span class="hero-giant-line">Sites que</span>
+        <span class="hero-giant-line grad-text">transformam visitantes em clientes.</span>
+      </h1>
+    </div>
+
+    <div class="wrap hero-bottombar">
+      <div class="hero-bottombar-left">
         <p class="hero-lead">Criamos sites rápidos, modernos e responsivos para empresas que desejam crescer e fortalecer sua presença digital.</p>
-        <div class="hero-actions">
-          <a href="https://wa.me/5541998033898?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20um%20site." target="_blank" rel="noopener" class="btn btn-primary">Solicitar orçamento</a>
-          <a href="#portfolio" class="btn btn-outline">Ver portfólio ↓</a>
-        </div>
         <div class="hero-meta">
           <div class="meta-item"><strong>4+</strong><span>segmentos no portfólio</span></div>
           <div class="meta-item"><strong>100%</strong><span>responsivo e otimizado</span></div>
           <div class="meta-item"><strong>∞</strong><span>possibilidades de evolução</span></div>
         </div>
       </div>
-
-      <div class="hero-visual" aria-hidden="true">
-        <div class="hero-browser" id="heroBrowser">
-          <div class="hero-browser-bar">
-            <span class="hb-dot"></span><span class="hb-dot"></span><span class="hb-dot"></span>
-            <span class="hero-browser-url" id="heroBrowserUrl">seunegocio.com.br</span>
-          </div>
-          <div class="hero-browser-body" id="heroBrowserBody">
-            <div class="hb-nav">
-              <span class="hb-logo"></span>
-              <span class="hb-navlink"></span><span class="hb-navlink"></span><span class="hb-navlink"></span>
-              <span class="hb-navbtn"></span>
-            </div>
-            <div class="hb-hero">
-              <div class="hb-line hb-line-title"></div>
-              <div class="hb-line hb-line-title hb-line-short"></div>
-              <div class="hb-line hb-line-sub"></div>
-              <div class="hb-cta"></div>
-            </div>
-            <div class="hb-cards">
-              <span class="hb-card"></span><span class="hb-card"></span><span class="hb-card"></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-phone-float" aria-hidden="true">
-          <div class="hero-phone-notch"></div>
-          <div class="hero-phone-line"></div>
-          <div class="hero-phone-line hero-phone-line-short"></div>
-          <div class="hero-phone-btn"></div>
-        </div>
-
-        <div class="hero-chip hero-chip-speed">⚡ Carregamento rápido</div>
-        <div class="hero-chip hero-chip-mobile">📱 100% responsivo</div>
+      <div class="hero-bottombar-right">
+        <a href="https://wa.me/5541998033898?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20um%20site." target="_blank" rel="noopener" class="btn btn-primary magnet">Solicitar orçamento</a>
+        <a href="#portfolio" class="btn btn-outline magnet">Ver portfólio ↓</a>
       </div>
     </div>
   </section>
 
-  <!-- FAIXA DE SEGMENTOS (marquee) -->
-  <div class="niches-marquee" aria-hidden="true">
-    <div class="niches-track">
-      <span>Contabilidade</span><span>•</span>
-      <span>Advocacia</span><span>•</span>
-      <span>Confeitaria</span><span>•</span>
-      <span>E-commerce</span><span>•</span>
-      <span>Clínicas</span><span>•</span>
-      <span>Academias</span><span>•</span>
-      <span>Restaurantes</span><span>•</span>
-      <span>Imobiliárias</span><span>•</span>
-      <span>Salões de Beleza</span><span>•</span>
-      <span>Contabilidade</span><span>•</span>
-      <span>Advocacia</span><span>•</span>
-      <span>Confeitaria</span><span>•</span>
-      <span>E-commerce</span><span>•</span>
-      <span>Clínicas</span><span>•</span>
-      <span>Academias</span><span>•</span>
-      <span>Restaurantes</span><span>•</span>
-      <span>Imobiliárias</span><span>•</span>
-      <span>Salões de Beleza</span><span>•</span>
+  <!-- FAIXA DE VITRINE — mockup animado do site, em banda própria abaixo do hero -->
+  <div class="hero-showcase">
+    <div class="wrap hero-showcase-inner" aria-hidden="true">
+      <div class="hero-browser" id="heroBrowser">
+        <div class="hero-browser-bar">
+          <span class="hb-dot"></span><span class="hb-dot"></span><span class="hb-dot"></span>
+          <span class="hero-browser-url" id="heroBrowserUrl">seunegocio.com.br</span>
+        </div>
+        <div class="hero-browser-body" id="heroBrowserBody">
+          <div class="hb-nav">
+            <span class="hb-logo"></span>
+            <span class="hb-navlink"></span><span class="hb-navlink"></span><span class="hb-navlink"></span>
+            <span class="hb-navbtn"></span>
+          </div>
+          <div class="hb-hero">
+            <div class="hb-line hb-line-title"></div>
+            <div class="hb-line hb-line-title hb-line-short"></div>
+            <div class="hb-line hb-line-sub"></div>
+            <div class="hb-cta"></div>
+          </div>
+          <div class="hb-cards">
+            <span class="hb-card"></span><span class="hb-card"></span><span class="hb-card"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-phone-float">
+        <div class="hero-phone-notch"></div>
+        <div class="hero-phone-line"></div>
+        <div class="hero-phone-line hero-phone-line-short"></div>
+        <div class="hero-phone-btn"></div>
+      </div>
+
+      <div class="hero-chip hero-chip-speed">⚡ Carregamento rápido</div>
+      <div class="hero-chip hero-chip-mobile">📱 100% responsivo</div>
+    </div>
+  </div>
+
+  <!-- MARQUEE — reativo ao scroll (duas faixas, direções opostas) -->
+  <div class="marquee-v2" id="marqueeSection" aria-hidden="true">
+    <div class="marquee-row marquee-row-1">
+      <div class="marquee-track" id="marqueeTrack1">
+        <span class="marquee-chip"><span class="chip-icon">📊</span>Contabilidade</span>
+        <span class="marquee-chip"><span class="chip-icon">⚖️</span>Advocacia</span>
+        <span class="marquee-chip"><span class="chip-icon">🍰</span>Confeitaria</span>
+        <span class="marquee-chip"><span class="chip-icon">🛍️</span>E-commerce</span>
+        <span class="marquee-chip"><span class="chip-icon">🩺</span>Clínicas</span>
+        <span class="marquee-chip"><span class="chip-icon">🏋️</span>Academias</span>
+        <span class="marquee-chip"><span class="chip-icon">🍽️</span>Restaurantes</span>
+        <span class="marquee-chip"><span class="chip-icon">🏠</span>Imobiliárias</span>
+        <span class="marquee-chip"><span class="chip-icon">💇</span>Salões de Beleza</span>
+      </div>
+    </div>
+    <div class="marquee-row marquee-row-2">
+      <div class="marquee-track" id="marqueeTrack2">
+        <span class="marquee-chip"><span class="chip-icon">⚖️</span>Serviços Jurídicos</span>
+        <span class="marquee-chip"><span class="chip-icon">📊</span>Contabilidade &amp; Finanças</span>
+        <span class="marquee-chip"><span class="chip-icon">🍽️</span>Alimentação</span>
+        <span class="marquee-chip"><span class="chip-icon">🩺</span>Saúde</span>
+        <span class="marquee-chip"><span class="chip-icon">📐</span>Arquitetura &amp; Design</span>
+        <span class="marquee-chip"><span class="chip-icon">🔧</span>Automotivo</span>
+        <span class="marquee-chip"><span class="chip-icon">🧹</span>Limpeza &amp; Serviços</span>
+        <span class="marquee-chip"><span class="chip-icon">🏠</span>Imóveis</span>
+        <span class="marquee-chip"><span class="chip-icon">🛍️</span>Loja Virtual</span>
+      </div>
     </div>
   </div>
 
@@ -197,42 +215,42 @@
       <p class="section-lead">Além de bonito, um bom site precisa ser rápido, encontrável e pronto para crescer com o seu negócio.</p>
 
       <div class="vantagens-grid">
-        <article class="benefit-card tilt-card">
+        <article class="benefit-card tilt-card" style="--i:0">
           <span class="benefit-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
           </span>
           <h3>Totalmente responsivo</h3>
           <p>Layout perfeito em celular, tablet e computador, sem perder qualidade em nenhuma tela.</p>
         </article>
-        <article class="benefit-card tilt-card">
+        <article class="benefit-card tilt-card" style="--i:1">
           <span class="benefit-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="13 2 3 14 11 14 10 22 21 10 13 10 13 2"/></svg>
           </span>
           <h3>Carregamento rápido</h3>
           <p>Código limpo e otimizado, sem plugins pesados desnecessários, para uma navegação fluida.</p>
         </article>
-        <article class="benefit-card tilt-card">
+        <article class="benefit-card tilt-card" style="--i:2">
           <span class="benefit-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           </span>
           <h3>Otimizado para Google</h3>
           <p>Estrutura pensada para SEO, ajudando seu negócio a ser encontrado nas buscas.</p>
         </article>
-        <article class="benefit-card tilt-card">
+        <article class="benefit-card tilt-card" style="--i:3">
           <span class="benefit-icon benefit-icon-whatsapp" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.7 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.2-3.5-.7-2.9-1.1-4.8-4-5-4.2-.1-.2-1.2-1.6-1.2-3s.7-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .5 0 .7.5.3.7.9 2.2 1 2.4.1.2.1.4 0 .6-.1.2-.2.3-.4.5l-.5.6c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.2 2.4 1.5 2.7 1.7.3.2.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1.3.1 1.8.9 2.1 1 .3.2.5.2.6.3.1.2.1.9-.1 1.6Z"/></svg>
           </span>
           <h3>Integração com WhatsApp</h3>
           <p>Botão flutuante que leva seu cliente direto para uma conversa, sem fricção.</p>
         </article>
-        <article class="benefit-card tilt-card">
+        <article class="benefit-card tilt-card" style="--i:4">
           <span class="benefit-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="M3 16l9 5 9-5"/><path d="M3 11l9 5 9-5"/></svg>
           </span>
           <h3>Design moderno</h3>
           <p>Identidade visual própria, tipografia cuidada e animações discretas que passam profissionalismo.</p>
         </article>
-        <article class="benefit-card tilt-card">
+        <article class="benefit-card tilt-card" style="--i:5">
           <span class="benefit-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
           </span>
@@ -244,10 +262,10 @@
   </section>
 
   <!-- COMPARATIVO -->
-  <section class="section section-dark">
+  <section class="section section-dark section-stack section-stack-top">
     <div class="wrap">
       <p class="section-eyebrow section-eyebrow-light">O impacto de ter um site</p>
-      <h2 class="section-title section-title-light">Com site vs. sem site</h2>
+      <h2 class="section-title section-title-light">Com site <span class="grad-text">vs.</span> sem site</h2>
       <div class="compare-grid">
         <div class="compare-col">
           <h4>Sem site</h4>
@@ -270,7 +288,13 @@
       </div>
 
       <div class="stat-banner">
-        <div class="stat-banner-number">50,2%</div>
+        <div class="stat-ring-wrap">
+          <svg class="stat-ring" viewBox="0 0 112 112" aria-hidden="true">
+            <circle class="stat-ring-track" cx="56" cy="56" r="50"></circle>
+            <circle class="stat-ring-fill" id="statRingFill" cx="56" cy="56" r="50" data-target="50.2"></circle>
+          </svg>
+          <span class="stat-ring-number" id="statRingNumber">0%</span>
+        </div>
         <div class="stat-banner-text">
           <p>dos pequenos negócios que usam recursos digitais registraram aumento nas vendas — quase o dobro dos <strong>27,1%</strong> entre os que não usam nenhum canal digital.</p>
           <span class="stat-banner-source">Fonte: Sebrae, Boletim Radar — 4º trimestre de 2023</span>
@@ -283,29 +307,41 @@
   <section class="section" id="servicos">
     <div class="wrap">
       <p class="section-eyebrow">Serviços</p>
-      <h2 class="section-title">Do simples ao completo</h2>
+      <h2 class="section-title">Do simples ao <span class="grad-text">completo</span></h2>
       <p class="section-lead">Cada projeto começa de um jeito — o seu pode crescer sempre que precisar, sem reconstruir do zero.</p>
 
-      <div class="services-track">
-        <article class="service-step">
-          <span class="step-tag">Institucional</span>
-          <h3>Site institucional</h3>
-          <p>Home, serviços, sobre e contato. Ideal para apresentar seu negócio com credibilidade.</p>
+      <div class="services-list">
+        <article class="service-row" style="--i:0">
+          <span class="service-num">01</span>
+          <div class="service-copy">
+            <span class="step-tag">Institucional</span>
+            <h3>Site institucional</h3>
+            <p>Home, serviços, sobre e contato. Ideal para apresentar seu negócio com credibilidade.</p>
+          </div>
         </article>
-        <article class="service-step">
-          <span class="step-tag">Vitrine</span>
-          <h3>Catálogo &amp; loja virtual</h3>
-          <p>Produtos, categorias, promoções e carrinho — sua vitrine funcionando o tempo todo.</p>
+        <article class="service-row" style="--i:1">
+          <span class="service-num">02</span>
+          <div class="service-copy">
+            <span class="step-tag">Vitrine</span>
+            <h3>Catálogo &amp; loja virtual</h3>
+            <p>Produtos, categorias, promoções e carrinho — sua vitrine funcionando o tempo todo.</p>
+          </div>
         </article>
-        <article class="service-step">
-          <span class="step-tag">Sistema</span>
-          <h3>Área administrativa</h3>
-          <p>Login, cadastro de conteúdo e painel próprio para você gerenciar tudo sem depender de mim.</p>
+        <article class="service-row" style="--i:2">
+          <span class="service-num">03</span>
+          <div class="service-copy">
+            <span class="step-tag">Sistema</span>
+            <h3>Área administrativa</h3>
+            <p>Login, cadastro de conteúdo e painel próprio para você gerenciar tudo sem depender de mim.</p>
+          </div>
         </article>
-        <article class="service-step">
-          <span class="step-tag">Avançado</span>
-          <h3>Banco de dados &amp; integrações</h3>
-          <p>Agendamentos, orçamentos online e blog dinâmico com Supabase, Firebase ou MySQL.</p>
+        <article class="service-row" style="--i:3">
+          <span class="service-num">04</span>
+          <div class="service-copy">
+            <span class="step-tag">Avançado</span>
+            <h3>Banco de dados &amp; integrações</h3>
+            <p>Agendamentos, orçamentos online e blog dinâmico com Supabase, Firebase ou MySQL.</p>
+          </div>
         </article>
       </div>
     </div>
@@ -324,18 +360,18 @@
           <p>Criar um site de qualidade não precisa ser um investimento fora da realidade.</p>
           <p>Trabalhamos com valores muito abaixo da média praticada pelo mercado, oferecendo uma excelente relação entre custo e qualidade.</p>
           <p>Além disso, cada projeto é analisado de forma individual. O investimento é adaptado às necessidades, objetivos e ao perfil de cada cliente, garantindo que você pague apenas pelo que realmente faz sentido para o seu negócio.</p>
-          <a href="https://wa.me/5541998033898?text=Ol%C3%A1!%20Gostaria%20de%20saber%20o%20valor%20do%20meu%20site." target="_blank" rel="noopener" class="btn btn-primary">Quero um orçamento</a>
+          <a href="https://wa.me/5541998033898?text=Ol%C3%A1!%20Gostaria%20de%20saber%20o%20valor%20do%20meu%20site." target="_blank" rel="noopener" class="btn btn-primary magnet">Quero um orçamento</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- PORTFÓLIO -->
-  <section class="section section-dark" id="portfolio">
+  <section class="section section-dark section-stack section-stack-top" id="portfolio">
     <div class="dot-grid dot-grid-corner" aria-hidden="true"></div>
     <div class="wrap">
       <p class="section-eyebrow section-eyebrow-light">Portfólio</p>
-      <h2 class="section-title section-title-light">Exemplos por segmento</h2>
+      <h2 class="section-title section-title-light">Exemplos por <span class="grad-text">segmento</span></h2>
       <p class="section-lead section-lead-light">Escolha uma área abaixo para ver exemplos de sites completos e funcionais daquele segmento.</p>
 
       <div class="category-grid" id="categoryGrid"></div>
@@ -358,9 +394,9 @@
     <div class="wrap about-grid">
       <div>
         <p class="section-eyebrow">Sobre</p>
-        <h2 class="section-title">Um estúdio, muitos segmentos</h2>
-        <p>A WT Site Lab nasceu para resolver um problema comum: pequenas e médias empresas que precisam de um site de verdade, mas encontram só modelos genéricos ou soluções caras demais.</p>
-        <p>Cada projeto é desenhado do zero — cores, tipografia e estrutura pensadas para o seu segmento, com código limpo e pronto para crescer.</p>
+        <h2 class="section-title">Um estúdio, muitos <span class="grad-text">segmentos</span></h2>
+        <p class="reveal-text" id="sobreP1">A WT Site Lab nasceu para resolver um problema comum: pequenas e médias empresas que precisam de um site de verdade, mas encontram só modelos genéricos ou soluções caras demais.</p>
+        <p class="reveal-text" id="sobreP2">Cada projeto é desenhado do zero — cores, tipografia e estrutura pensadas para o seu segmento, com código limpo e pronto para crescer.</p>
       </div>
       <div class="about-highlights">
         <div class="highlight-card"><span>01</span><p>Reunião de briefing para entender seu negócio</p></div>
@@ -375,7 +411,7 @@
   <section class="section" id="faq">
     <div class="wrap faq-wrap">
       <p class="section-eyebrow">Dúvidas frequentes</p>
-      <h2 class="section-title">Antes de perguntar, pergunte aqui</h2>
+      <h2 class="section-title">Antes de perguntar, <span class="grad-text">pergunte aqui</span></h2>
 
       <div class="faq-list" id="faqList">
         <div class="faq-item">
@@ -428,12 +464,12 @@
   </section>
 
   <!-- CONTATO -->
-  <section class="section section-dark" id="contato">
+  <section class="section section-dark section-stack section-stack-top" id="contato">
     <div class="dot-grid dot-grid-corner" aria-hidden="true"></div>
     <div class="wrap contact-grid">
       <div>
         <p class="section-eyebrow section-eyebrow-light">Orçamento</p>
-        <h2 class="section-title section-title-light">Vamos construir seu site?</h2>
+        <h2 class="section-title section-title-light">Vamos construir <span class="grad-text">seu site?</span></h2>
         <p class="section-lead-light">Fale agora mesmo pelo WhatsApp ou envie os detalhes do seu projeto pelo formulário ao lado.</p>
         <a href="https://wa.me/5541998033898?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20um%20site." target="_blank" rel="noopener" class="fale-conosco-box">
           <span class="fale-conosco-icon">
@@ -476,7 +512,7 @@
           <label for="mensagem">Conte sobre seu projeto</label>
           <textarea id="mensagem" name="mensagem" rows="3" placeholder="O que você precisa?"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary btn-block" id="formSubmitBtn">Enviar mensagem</button>
+        <button type="submit" class="btn btn-primary btn-block magnet" id="formSubmitBtn">Enviar mensagem</button>
         <p class="form-note" id="formNote" role="status"></p>
       </form>
     </div>
