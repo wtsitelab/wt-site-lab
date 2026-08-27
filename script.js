@@ -59,6 +59,141 @@
   }
 
   // ==========================================================================
+  // Fundo tecnológico animado do hero — rede de partículas conectadas
+  // (nós à deriva, linhas entre pontos próximos, repelidos suavemente pelo
+  // mouse). Roda em canvas 2D puro, sem dependências externas.
+  // ==========================================================================
+  try {
+    const heroEl = document.querySelector('.hero');
+    const canvas = document.getElementById('heroParticles');
+    const ctx = canvas && canvas.getContext ? canvas.getContext('2d') : null;
+
+    if (heroEl && ctx && !REDUCE_MOTION) {
+      let width = 0, height = 0, dpr = 1;
+      let particles = [];
+      const mouse = { x: -9999, y: -9999 };
+      let rafId = null;
+      let running = false;
+
+      function resize() {
+        const rect = heroEl.getBoundingClientRect();
+        width = rect.width;
+        height = rect.height;
+        dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+        canvas.width = Math.round(width * dpr);
+        canvas.height = Math.round(height * dpr);
+        canvas.style.width = width + 'px';
+        canvas.style.height = height + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        const count = Math.max(28, Math.min(80, Math.round((width * height) / 16000)));
+        particles = Array.from({ length: count }, () => ({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.22,
+          vy: (Math.random() - 0.5) * 0.22,
+          r: 1.2 + Math.random() * 1.6,
+        }));
+      }
+
+      function step() {
+        ctx.clearRect(0, 0, width, height);
+
+        particles.forEach(p => {
+          const dx = p.x - mouse.x;
+          const dy = p.y - mouse.y;
+          const dist = Math.hypot(dx, dy);
+          if (dist < 120) {
+            const force = (120 - dist) / 120;
+            p.vx += (dx / (dist || 1)) * force * 0.03;
+            p.vy += (dy / (dist || 1)) * force * 0.03;
+          }
+          p.vx *= 0.98;
+          p.vy *= 0.98;
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.x < -20) p.x = width + 20; else if (p.x > width + 20) p.x = -20;
+          if (p.y < -20) p.y = height + 20; else if (p.y > height + 20) p.y = -20;
+        });
+
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const a = particles[i], b = particles[j];
+            const dist = Math.hypot(a.x - b.x, a.y - b.y);
+            if (dist < 130) {
+              ctx.strokeStyle = `rgba(217,166,255,${((1 - dist / 130) * 0.22).toFixed(3)})`;
+              ctx.lineWidth = 1;
+              ctx.beginPath();
+              ctx.moveTo(a.x, a.y);
+              ctx.lineTo(b.x, b.y);
+              ctx.stroke();
+            }
+          }
+        }
+
+        particles.forEach(p => {
+          ctx.beginPath();
+          ctx.fillStyle = 'rgba(217,166,255,.65)';
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fill();
+        });
+
+        if (running) rafId = requestAnimationFrame(step);
+      }
+
+      function start() {
+        if (running) return;
+        running = true;
+        rafId = requestAnimationFrame(step);
+      }
+      function stop() {
+        running = false;
+        if (rafId) cancelAnimationFrame(rafId);
+      }
+
+      resize();
+
+      // O canvas só deve animar quando as DUAS condições forem verdadeiras ao
+      // mesmo tempo: o hero está visível na tela E a aba está em primeiro
+      // plano. Cada condição é controlada por um observer independente, então
+      // guardamos os dois estados e recalculamos "running" a partir dos dois
+      // juntos — evitar isso faria o canvas poder ficar travado pausado se um
+      // evento de visibilidade da aba disparasse sem uma nova mudança de
+      // interseção (já que o IntersectionObserver só dispara em transições).
+      let inViewport = true;
+      function syncRunning() {
+        if (inViewport && !document.hidden) start(); else stop();
+      }
+      syncRunning();
+
+      let resizeTicking = false;
+      window.addEventListener('resize', () => {
+        if (!resizeTicking) {
+          resizeTicking = true;
+          requestAnimationFrame(() => { resize(); resizeTicking = false; });
+        }
+      }, { passive: true });
+
+      heroEl.addEventListener('mousemove', (e) => {
+        const rect = heroEl.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+      });
+      heroEl.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
+
+      if ('IntersectionObserver' in window) {
+        const particlesObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => { inViewport = entry.isIntersecting; });
+          syncRunning();
+        }, { threshold: 0 });
+        particlesObserver.observe(heroEl);
+      }
+      document.addEventListener('visibilitychange', syncRunning);
+    }
+  } catch (err) {
+    console.error('[WT Site Lab] Erro no fundo de partículas do hero:', err);
+  }
+
+  // ==========================================================================
   // Cursor customizado (ponto + anel com atraso) — só em desktop com mouse
   // ==========================================================================
   try {
