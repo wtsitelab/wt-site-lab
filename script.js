@@ -71,9 +71,19 @@
     if (heroEl && ctx && !REDUCE_MOTION) {
       let width = 0, height = 0, dpr = 1;
       let particles = [];
+      let auroras = [];
+      let pulses = [];
+      let lastFrameTime = performance.now();
+      let pulseCooldown = 0;
       const mouse = { x: -9999, y: -9999 };
       let rafId = null;
       let running = false;
+
+      // Paleta de cores da marca — cada partícula sorteia uma dessas para dar
+      // variação de tom (lavanda, magenta, laranja), reforçando o gradiente
+      // usado nos botões e no texto.
+      const PALETTE = ['217,166,255', '224,110,220', '255,148,90'];
+      const AURORA_COLORS = ['217,166,255', '182,0,168', '190,76,0'];
 
       function resize() {
         const rect = heroEl.getBoundingClientRect();
@@ -85,27 +95,57 @@
         canvas.style.width = width + 'px';
         canvas.style.height = height + 'px';
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-        const count = Math.max(28, Math.min(80, Math.round((width * height) / 16000)));
+
+        const count = Math.max(46, Math.min(130, Math.round((width * height) / 9000)));
         particles = Array.from({ length: count }, () => ({
           x: Math.random() * width,
           y: Math.random() * height,
-          vx: (Math.random() - 0.5) * 0.22,
-          vy: (Math.random() - 0.5) * 0.22,
-          r: 1.2 + Math.random() * 1.6,
+          vx: (Math.random() - 0.5) * 0.26,
+          vy: (Math.random() - 0.5) * 0.26,
+          r: 1.3 + Math.random() * 2,
+          color: PALETTE[Math.floor(Math.random() * PALETTE.length)],
+          twinkle: Math.random() * Math.PI * 2,
         }));
+
+        auroras = AURORA_COLORS.map((color, i) => ({
+          x: width * (0.2 + 0.3 * i),
+          y: height * (0.25 + 0.2 * (i % 2)),
+          vx: (Math.random() - 0.5) * 0.12,
+          vy: (Math.random() - 0.5) * 0.12,
+          radius: Math.max(width, height) * (0.32 + i * 0.06),
+          color,
+        }));
+
+        pulses = [];
       }
 
-      function step() {
+      function step(now) {
+        const dt = Math.min(now - lastFrameTime, 48);
+        lastFrameTime = now;
         ctx.clearRect(0, 0, width, height);
 
+        // Camada 1 — manchas de luz suaves à deriva, dando profundidade e
+        // reforçando a paleta violeta/magenta/laranja da marca no fundo.
+        auroras.forEach(a => {
+          a.x += a.vx; a.y += a.vy;
+          if (a.x < -a.radius * 0.3) a.x = width + a.radius * 0.3; else if (a.x > width + a.radius * 0.3) a.x = -a.radius * 0.3;
+          if (a.y < -a.radius * 0.3) a.y = height + a.radius * 0.3; else if (a.y > height + a.radius * 0.3) a.y = -a.radius * 0.3;
+          const grad = ctx.createRadialGradient(a.x, a.y, 0, a.x, a.y, a.radius);
+          grad.addColorStop(0, `rgba(${a.color},.16)`);
+          grad.addColorStop(1, `rgba(${a.color},0)`);
+          ctx.fillStyle = grad;
+          ctx.fillRect(0, 0, width, height);
+        });
+
+        // Camada 2 — rede de nós à deriva, repelidos suavemente pelo cursor.
         particles.forEach(p => {
           const dx = p.x - mouse.x;
           const dy = p.y - mouse.y;
           const dist = Math.hypot(dx, dy);
-          if (dist < 120) {
-            const force = (120 - dist) / 120;
-            p.vx += (dx / (dist || 1)) * force * 0.03;
-            p.vy += (dy / (dist || 1)) * force * 0.03;
+          if (dist < 130) {
+            const force = (130 - dist) / 130;
+            p.vx += (dx / (dist || 1)) * force * 0.035;
+            p.vy += (dy / (dist || 1)) * force * 0.035;
           }
           p.vx *= 0.98;
           p.vy *= 0.98;
@@ -119,8 +159,8 @@
           for (let j = i + 1; j < particles.length; j++) {
             const a = particles[i], b = particles[j];
             const dist = Math.hypot(a.x - b.x, a.y - b.y);
-            if (dist < 130) {
-              ctx.strokeStyle = `rgba(217,166,255,${((1 - dist / 130) * 0.22).toFixed(3)})`;
+            if (dist < 140) {
+              ctx.strokeStyle = `rgba(${a.color},${((1 - dist / 140) * 0.35).toFixed(3)})`;
               ctx.lineWidth = 1;
               ctx.beginPath();
               ctx.moveTo(a.x, a.y);
@@ -131,10 +171,47 @@
         }
 
         particles.forEach(p => {
+          p.twinkle += dt * 0.0025;
+          const glow = 0.55 + Math.sin(p.twinkle) * 0.25;
+          ctx.save();
+          ctx.shadowColor = `rgba(${p.color},.9)`;
+          ctx.shadowBlur = 6;
           ctx.beginPath();
-          ctx.fillStyle = 'rgba(217,166,255,.65)';
+          ctx.fillStyle = `rgba(${p.color},${glow.toFixed(2)})`;
           ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
           ctx.fill();
+          ctx.restore();
+        });
+
+        // Camada 3 — pulsos de "dado" viajando por algumas conexões, como um
+        // circuito ativo — o toque final que remete à tecnologia.
+        pulseCooldown -= dt;
+        if (pulseCooldown <= 0 && pulses.length < 5 && particles.length > 4) {
+          const a = particles[Math.floor(Math.random() * particles.length)];
+          let target = null, bestDist = 150;
+          particles.forEach(b => {
+            if (b === a) return;
+            const d = Math.hypot(a.x - b.x, a.y - b.y);
+            if (d < bestDist) { bestDist = d; target = b; }
+          });
+          if (target) pulses.push({ a, b: target, t: 0, duration: 700 + Math.random() * 500 });
+          pulseCooldown = 260 + Math.random() * 340;
+        }
+        pulses = pulses.filter(p => {
+          p.t += dt;
+          const k = Math.min(p.t / p.duration, 1);
+          const x = p.a.x + (p.b.x - p.a.x) * k;
+          const y = p.a.y + (p.b.y - p.a.y) * k;
+          const fade = Math.sin(Math.PI * k);
+          ctx.save();
+          ctx.shadowColor = 'rgba(255,255,255,.9)';
+          ctx.shadowBlur = 10;
+          ctx.beginPath();
+          ctx.fillStyle = `rgba(255,255,255,${(fade * 0.9).toFixed(2)})`;
+          ctx.arc(x, y, 2, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+          return k < 1;
         });
 
         if (running) rafId = requestAnimationFrame(step);
