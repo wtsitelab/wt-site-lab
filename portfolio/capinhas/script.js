@@ -11,7 +11,7 @@ menuToggle.addEventListener('click', () => {
 mainNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mainNav.classList.remove('open')));
 
 // ===== Customizador =====
-const WHATSAPP_NUMBER = '5541998033898'; // mesmo número do site principal (WT Site Lab)
+const WHATSAPP_NUMBER = '5541988363816'; // mesmo número do site principal (WT Site Lab)
 
 const phoneMock = document.getElementById('phoneMock');
 const phoneMockLg = document.getElementById('phoneMockLg');

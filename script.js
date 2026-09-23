@@ -59,31 +59,38 @@
   }
 
   // ==========================================================================
-  // Fundo tecnológico animado do hero — rede de partículas conectadas
-  // (nós à deriva, linhas entre pontos próximos, repelidos suavemente pelo
-  // mouse). Roda em canvas 2D puro, sem dependências externas.
+  // Fundo tecnológico animado do hero — canvas 2D puro, sem dependências:
+  //  • rede de nós à deriva, com linhas entre pontos próximos;
+  //  • o cursor vira um "nó" extra: liga-se aos pontos vizinhos e os atrai
+  //    de leve, dando a sensação de que a rede reage a você;
+  //  • pulsos de dados viajando pelas conexões, com rastro, pulando de nó
+  //    em nó como um circuito;
+  //  • clique no fundo solta uma onda de choque que empurra os nós;
+  //  • holofote da grade azul (#gridLit) segue o mouse ou passeia sozinho.
   // ==========================================================================
   try {
     const heroEl = document.querySelector('.hero');
     const canvas = document.getElementById('heroParticles');
+    const gridLit = document.getElementById('gridLit');
     const ctx = canvas && canvas.getContext ? canvas.getContext('2d') : null;
 
     if (heroEl && ctx && !REDUCE_MOTION) {
       let width = 0, height = 0, dpr = 1;
       let particles = [];
-      let auroras = [];
       let pulses = [];
+      let waves = [];
       let lastFrameTime = performance.now();
+      let lastMouseMove = 0;
       let pulseCooldown = 0;
-      const mouse = { x: -9999, y: -9999 };
+      const mouse = { x: -9999, y: -9999, inside: false };
+      const spot = { x: 0, y: 0 };
       let rafId = null;
       let running = false;
 
-      // Paleta de cores da marca — cada partícula sorteia uma dessas para dar
-      // variação de tom (lavanda, magenta, laranja), reforçando o gradiente
-      // usado nos botões e no texto.
-      const PALETTE = ['217,166,255', '224,110,220', '255,148,90'];
-      const AURORA_COLORS = ['217,166,255', '182,0,168', '190,76,0'];
+      // Tons de azul do logo (azul elétrico, azul médio, ciano)
+      const PALETTE = ['11,99,246', '30,134,255', '19,181,234'];
+      const LINK_DIST = 150;
+      const MOUSE_DIST = 200;
 
       function resize() {
         const rect = heroEl.getBoundingClientRect();
@@ -96,27 +103,30 @@
         canvas.style.height = height + 'px';
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-        const count = Math.max(46, Math.min(130, Math.round((width * height) / 9000)));
+        const count = Math.max(40, Math.min(120, Math.round((width * height) / 10000)));
         particles = Array.from({ length: count }, () => ({
           x: Math.random() * width,
           y: Math.random() * height,
-          vx: (Math.random() - 0.5) * 0.26,
-          vy: (Math.random() - 0.5) * 0.26,
-          r: 1.3 + Math.random() * 2,
+          vx: (Math.random() - 0.5) * 0.4,
+          vy: (Math.random() - 0.5) * 0.4,
+          r: 1.3 + Math.random() * 1.9,
           color: PALETTE[Math.floor(Math.random() * PALETTE.length)],
           twinkle: Math.random() * Math.PI * 2,
         }));
-
-        auroras = AURORA_COLORS.map((color, i) => ({
-          x: width * (0.2 + 0.3 * i),
-          y: height * (0.25 + 0.2 * (i % 2)),
-          vx: (Math.random() - 0.5) * 0.12,
-          vy: (Math.random() - 0.5) * 0.12,
-          radius: Math.max(width, height) * (0.32 + i * 0.06),
-          color,
-        }));
-
         pulses = [];
+        waves = [];
+        spot.x = width * 0.7;
+        spot.y = height * 0.4;
+      }
+
+      function nearestNeighbor(from, exclude) {
+        let target = null, bestDist = LINK_DIST;
+        particles.forEach(c => {
+          if (c === from || c === exclude) return;
+          const d = Math.hypot(from.x - c.x, from.y - c.y);
+          if (d < bestDist && d > 40) { bestDist = d; target = c; }
+        });
+        return target;
       }
 
       function step(now) {
@@ -124,44 +134,75 @@
         lastFrameTime = now;
         ctx.clearRect(0, 0, width, height);
 
-        // Camada 1 — manchas de luz suaves à deriva, dando profundidade e
-        // reforçando a paleta violeta/magenta/laranja da marca no fundo.
-        auroras.forEach(a => {
-          a.x += a.vx; a.y += a.vy;
-          if (a.x < -a.radius * 0.3) a.x = width + a.radius * 0.3; else if (a.x > width + a.radius * 0.3) a.x = -a.radius * 0.3;
-          if (a.y < -a.radius * 0.3) a.y = height + a.radius * 0.3; else if (a.y > height + a.radius * 0.3) a.y = -a.radius * 0.3;
-          const grad = ctx.createRadialGradient(a.x, a.y, 0, a.x, a.y, a.radius);
-          grad.addColorStop(0, `rgba(${a.color},.16)`);
-          grad.addColorStop(1, `rgba(${a.color},0)`);
-          ctx.fillStyle = grad;
-          ctx.fillRect(0, 0, width, height);
+        // Holofote da grade: segue o mouse; parado há 2s ou fora do hero,
+        // passeia numa curva suave (Lissajous), mais pelo lado direito.
+        const idle = !mouse.inside || now - lastMouseMove > 2000;
+        const tx = idle ? width * (0.66 + 0.24 * Math.sin(now / 5200)) : mouse.x;
+        const ty = idle ? height * (0.45 + 0.32 * Math.sin(now / 3700 + 1)) : mouse.y;
+        spot.x += (tx - spot.x) * (idle ? 0.02 : 0.12);
+        spot.y += (ty - spot.y) * (idle ? 0.02 : 0.12);
+        if (gridLit) {
+          gridLit.style.setProperty('--lx', spot.x.toFixed(1) + 'px');
+          gridLit.style.setProperty('--ly', spot.y.toFixed(1) + 'px');
+        }
+
+        // Ondas de choque (clique no fundo)
+        waves = waves.filter(w => {
+          w.r += dt * 0.55;
+          const life = 1 - w.r / w.max;
+          if (life <= 0) return false;
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(11,99,246,${(life * 0.35).toFixed(3)})`;
+          ctx.lineWidth = 1.5;
+          ctx.arc(w.x, w.y, w.r, 0, Math.PI * 2);
+          ctx.stroke();
+          particles.forEach(p => {
+            const d = Math.hypot(p.x - w.x, p.y - w.y);
+            if (Math.abs(d - w.r) < 24) {
+              p.vx += ((p.x - w.x) / (d || 1)) * 0.5 * life;
+              p.vy += ((p.y - w.y) / (d || 1)) * 0.5 * life;
+            }
+          });
+          return true;
         });
 
-        // Camada 2 — rede de nós à deriva, repelidos suavemente pelo cursor.
+        // Movimento: deriva + leve atração ao cursor (sem colar nele)
         particles.forEach(p => {
-          const dx = p.x - mouse.x;
-          const dy = p.y - mouse.y;
-          const dist = Math.hypot(dx, dy);
-          if (dist < 130) {
-            const force = (130 - dist) / 130;
-            p.vx += (dx / (dist || 1)) * force * 0.035;
-            p.vy += (dy / (dist || 1)) * force * 0.035;
+          if (mouse.inside) {
+            const dx = mouse.x - p.x;
+            const dy = mouse.y - p.y;
+            const dist = Math.hypot(dx, dy);
+            if (dist < MOUSE_DIST && dist > 60) {
+              const force = (MOUSE_DIST - dist) / MOUSE_DIST;
+              p.vx += (dx / dist) * force * 0.012;
+              p.vy += (dy / dist) * force * 0.012;
+            } else if (dist <= 60) {
+              p.vx -= (dx / (dist || 1)) * 0.03;
+              p.vy -= (dy / (dist || 1)) * 0.03;
+            }
           }
-          p.vx *= 0.98;
-          p.vy *= 0.98;
+          // velocidade mínima para a rede nunca "parar"
+          const sp = Math.hypot(p.vx, p.vy);
+          if (sp < 0.12) {
+            p.vx = sp < 0.01 ? (Math.random() - 0.5) * 0.2 : p.vx * 1.04;
+            p.vy = sp < 0.01 ? (Math.random() - 0.5) * 0.2 : p.vy * 1.04;
+          }
+          p.vx *= 0.985;
+          p.vy *= 0.985;
           p.x += p.vx;
           p.y += p.vy;
           if (p.x < -20) p.x = width + 20; else if (p.x > width + 20) p.x = -20;
           if (p.y < -20) p.y = height + 20; else if (p.y > height + 20) p.y = -20;
         });
 
+        // Conexões entre nós
+        ctx.lineWidth = 1;
         for (let i = 0; i < particles.length; i++) {
           for (let j = i + 1; j < particles.length; j++) {
             const a = particles[i], b = particles[j];
             const dist = Math.hypot(a.x - b.x, a.y - b.y);
-            if (dist < 140) {
-              ctx.strokeStyle = `rgba(${a.color},${((1 - dist / 140) * 0.35).toFixed(3)})`;
-              ctx.lineWidth = 1;
+            if (dist < LINK_DIST) {
+              ctx.strokeStyle = `rgba(${a.color},${((1 - dist / LINK_DIST) * 0.3).toFixed(3)})`;
               ctx.beginPath();
               ctx.moveTo(a.x, a.y);
               ctx.lineTo(b.x, b.y);
@@ -170,49 +211,79 @@
           }
         }
 
+        // Conexões do cursor com os nós vizinhos
+        if (mouse.inside) {
+          particles.forEach(p => {
+            const dist = Math.hypot(p.x - mouse.x, p.y - mouse.y);
+            if (dist < MOUSE_DIST) {
+              ctx.strokeStyle = `rgba(11,99,246,${((1 - dist / MOUSE_DIST) * 0.5).toFixed(3)})`;
+              ctx.beginPath();
+              ctx.moveTo(mouse.x, mouse.y);
+              ctx.lineTo(p.x, p.y);
+              ctx.stroke();
+            }
+          });
+        }
+
+        // Nós, com halo suave nos maiores
         particles.forEach(p => {
-          p.twinkle += dt * 0.0025;
-          const glow = 0.55 + Math.sin(p.twinkle) * 0.25;
-          ctx.save();
-          ctx.shadowColor = `rgba(${p.color},.9)`;
-          ctx.shadowBlur = 6;
+          p.twinkle += dt * 0.003;
+          const glow = 0.5 + Math.sin(p.twinkle) * 0.25;
+          if (p.r > 2.6) {
+            ctx.beginPath();
+            ctx.fillStyle = `rgba(${p.color},${(glow * 0.18).toFixed(3)})`;
+            ctx.arc(p.x, p.y, p.r * 3.2, 0, Math.PI * 2);
+            ctx.fill();
+          }
           ctx.beginPath();
           ctx.fillStyle = `rgba(${p.color},${glow.toFixed(2)})`;
           ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
           ctx.fill();
-          ctx.restore();
         });
 
-        // Camada 3 — pulsos de "dado" viajando por algumas conexões, como um
-        // circuito ativo — o toque final que remete à tecnologia.
+        // Pulsos de dados viajando pelas conexões, com rastro
         pulseCooldown -= dt;
-        if (pulseCooldown <= 0 && pulses.length < 5 && particles.length > 4) {
+        if (pulseCooldown <= 0 && pulses.length < 10 && particles.length > 4) {
           const a = particles[Math.floor(Math.random() * particles.length)];
-          let target = null, bestDist = 150;
-          particles.forEach(b => {
-            if (b === a) return;
-            const d = Math.hypot(a.x - b.x, a.y - b.y);
-            if (d < bestDist) { bestDist = d; target = b; }
-          });
-          if (target) pulses.push({ a, b: target, t: 0, duration: 700 + Math.random() * 500 });
-          pulseCooldown = 260 + Math.random() * 340;
+          const target = nearestNeighbor(a, null);
+          if (target) pulses.push({ a, b: target, t: 0, duration: 600 + Math.random() * 500, hops: 2 + Math.floor(Math.random() * 3) });
+          pulseCooldown = 140 + Math.random() * 220;
         }
-        pulses = pulses.filter(p => {
+        const next = [];
+        pulses.forEach(p => {
           p.t += dt;
           const k = Math.min(p.t / p.duration, 1);
           const x = p.a.x + (p.b.x - p.a.x) * k;
           const y = p.a.y + (p.b.y - p.a.y) * k;
-          const fade = Math.sin(Math.PI * k);
-          ctx.save();
-          ctx.shadowColor = 'rgba(255,255,255,.9)';
-          ctx.shadowBlur = 10;
+          const kt = Math.max(0, k - 0.25);
+          const tx0 = p.a.x + (p.b.x - p.a.x) * kt;
+          const ty0 = p.a.y + (p.b.y - p.a.y) * kt;
+          const trail = ctx.createLinearGradient(tx0, ty0, x, y);
+          trail.addColorStop(0, 'rgba(19,181,234,0)');
+          trail.addColorStop(1, 'rgba(19,181,234,.85)');
+          ctx.strokeStyle = trail;
+          ctx.lineWidth = 2;
           ctx.beginPath();
-          ctx.fillStyle = `rgba(255,255,255,${(fade * 0.9).toFixed(2)})`;
-          ctx.arc(x, y, 2, 0, Math.PI * 2);
+          ctx.moveTo(tx0, ty0);
+          ctx.lineTo(x, y);
+          ctx.stroke();
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.fillStyle = 'rgba(19,181,234,.25)';
+          ctx.arc(x, y, 6, 0, Math.PI * 2);
           ctx.fill();
-          ctx.restore();
-          return k < 1;
+          ctx.beginPath();
+          ctx.fillStyle = 'rgba(11,99,246,.95)';
+          ctx.arc(x, y, 2.4, 0, Math.PI * 2);
+          ctx.fill();
+          if (k < 1) { next.push(p); return; }
+          // chegou: o pulso segue para o próximo vizinho (efeito de circuito)
+          if (p.hops > 0) {
+            const target = nearestNeighbor(p.b, p.a);
+            if (target) next.push({ a: p.b, b: target, t: 0, duration: p.duration, hops: p.hops - 1 });
+          }
         });
+        pulses = next;
 
         if (running) rafId = requestAnimationFrame(step);
       }
@@ -220,6 +291,7 @@
       function start() {
         if (running) return;
         running = true;
+        lastFrameTime = performance.now();
         rafId = requestAnimationFrame(step);
       }
       function stop() {
@@ -229,13 +301,8 @@
 
       resize();
 
-      // O canvas só deve animar quando as DUAS condições forem verdadeiras ao
-      // mesmo tempo: o hero está visível na tela E a aba está em primeiro
-      // plano. Cada condição é controlada por um observer independente, então
-      // guardamos os dois estados e recalculamos "running" a partir dos dois
-      // juntos — evitar isso faria o canvas poder ficar travado pausado se um
-      // evento de visibilidade da aba disparasse sem uma nova mudança de
-      // interseção (já que o IntersectionObserver só dispara em transições).
+      // O canvas só anima quando o hero está visível E a aba está em
+      // primeiro plano; os dois estados são combinados em syncRunning().
       let inViewport = true;
       function syncRunning() {
         if (inViewport && !document.hidden) start(); else stop();
@@ -254,8 +321,15 @@
         const rect = heroEl.getBoundingClientRect();
         mouse.x = e.clientX - rect.left;
         mouse.y = e.clientY - rect.top;
+        mouse.inside = true;
+        lastMouseMove = performance.now();
       });
-      heroEl.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
+      heroEl.addEventListener('mouseleave', () => { mouse.inside = false; mouse.x = -9999; mouse.y = -9999; });
+      heroEl.addEventListener('click', (e) => {
+        if (e.target.closest('a, button')) return;
+        const rect = heroEl.getBoundingClientRect();
+        waves.push({ x: e.clientX - rect.left, y: e.clientY - rect.top, r: 0, max: 420 });
+      });
 
       if ('IntersectionObserver' in window) {
         const particlesObserver = new IntersectionObserver((entries) => {
@@ -271,7 +345,9 @@
   }
 
   // ==========================================================================
-  // Cursor customizado (ponto + anel com atraso) — só em desktop com mouse
+  // Cursor customizado — ponto preciso + anel com leve atraso (só desktop).
+  // Cresce sobre links/botões, encolhe ao clicar, some sobre campos de texto
+  // (volta o cursor nativo de digitação) e ao sair da janela.
   // ==========================================================================
   try {
     if (HAS_FINE_POINTER && !REDUCE_MOTION) {
@@ -283,29 +359,44 @@
       document.body.appendChild(ring);
       document.body.classList.add('has-custom-cursor');
 
-      let mouseX = window.innerWidth / 2;
-      let mouseY = window.innerHeight / 2;
-      let ringX = mouseX;
-      let ringY = mouseY;
+      let mouseX = -100, mouseY = -100, ringX = -100, ringY = -100;
+      let ringRunning = false;
+
+      const INTERACTIVE = 'a, button, select, summary, label, [role="button"], .magnet, .category-card';
+      const TEXT_FIELD = 'input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), textarea';
+
+      function ringLoop() {
+        ringX += (mouseX - ringX) * 0.2;
+        ringY += (mouseY - ringY) * 0.2;
+        ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
+        if (Math.abs(mouseX - ringX) > 0.1 || Math.abs(mouseY - ringY) > 0.1) {
+          requestAnimationFrame(ringLoop);
+        } else {
+          ringRunning = false;
+        }
+      }
 
       document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
-        dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+        if (!document.body.classList.contains('cursor-visible')) {
+          ringX = mouseX; ringY = mouseY;
+          document.body.classList.add('cursor-visible');
+        }
+        dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+        if (!ringRunning) { ringRunning = true; requestAnimationFrame(ringLoop); }
+
+        const t = e.target instanceof Element ? e.target : null;
+        const isText = !!(t && t.closest(TEXT_FIELD));
+        const isInteractive = !isText && !!(t && t.closest(INTERACTIVE));
+        document.body.classList.toggle('cursor-text', isText);
+        ring.classList.toggle('is-active', isInteractive);
+        dot.classList.toggle('is-active', isInteractive);
       }, { passive: true });
 
-      function ringLoop() {
-        ringX += (mouseX - ringX) * 0.18;
-        ringY += (mouseY - ringY) * 0.18;
-        ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
-        requestAnimationFrame(ringLoop);
-      }
-      requestAnimationFrame(ringLoop);
-
-      document.querySelectorAll('a, button, .magnet').forEach(el => {
-        el.addEventListener('mouseenter', () => ring.classList.add('is-active'));
-        el.addEventListener('mouseleave', () => ring.classList.remove('is-active'));
-      });
+      document.addEventListener('mousedown', () => ring.classList.add('is-pressed'));
+      document.addEventListener('mouseup', () => ring.classList.remove('is-pressed'));
+      document.documentElement.addEventListener('mouseleave', () => document.body.classList.remove('cursor-visible'));
     }
   } catch (err) {
     console.error('[WT Site Lab] Erro no cursor customizado:', err);
@@ -316,7 +407,7 @@
   // ==========================================================================
   try {
     if (HAS_FINE_POINTER && !REDUCE_MOTION) {
-      const strength = 8;
+      const strength = 12;
       const padding = 50;
       document.querySelectorAll('.magnet').forEach(el => {
         function onMove(e) {
@@ -662,7 +753,7 @@
 
       if (!EMAILJS_CONFIGURADO || !window.emailjs) {
         note.textContent = 'Formulário ainda não configurado para enviar e-mail de verdade (veja EMAILJS-SETUP.md). Por enquanto, chame no WhatsApp — é mais rápido!';
-        note.style.color = '#F1D374';
+        note.style.color = '#B45309';
         return;
       }
 
@@ -684,7 +775,7 @@
       } catch (err) {
         console.error('[WT Site Lab] Erro ao enviar e-mail via EmailJS:', err);
         note.textContent = 'Não foi possível enviar agora. Tente novamente ou chame no WhatsApp.';
-        note.style.color = '#E5484D';
+        note.style.color = '#DC2626';
       } finally {
         if (submitBtn) {
           submitBtn.disabled = false;
@@ -702,6 +793,39 @@
       {
         id: 'juridico', icone: '⚖️', nome: 'Serviços Jurídicos',
         descricao: 'Escritórios de advocacia e advogados autônomos.',
+        // Sites de advocacia vêm com o pré-sistema de gestão incluso (sem
+        // mensalidade). Só as 3 integrações opcionais cobram taxa única.
+        bonus: {
+          selo: 'Pré-sistema de gestão incluso',
+          titulo: 'Todo site de advocacia vem com um pré-sistema de gestão',
+          texto: 'Além do site, você recebe um sistema pronto para organizar o dia a dia do escritório — clientes, processos, prazos e financeiro num só lugar. Sem mensalidade.',
+          itens: [
+            'Cadastro de clientes e processos',
+            'Prazos em Kanban com IA',
+            'Financeiro do escritório',
+            'Portal do cliente',
+            'WhatsApp integrado',
+            'App Android',
+            'Login com verificação em duas etapas',
+          ],
+          nota: 'Opcionais, com taxa única de implantação (nunca mensalidade): assinatura eletrônica, rastreamento processual em tempo real e Google Calendar.',
+          whatsapp: 'Olá! Tenho interesse no site de advocacia com o pré-sistema de gestão incluso.',
+          // Telas reais do sistema, capturadas com dados fictícios de demonstração.
+          galeria: {
+            advogado: [
+              { src: 'assets/sistema/adv-dashboard.jpg', legenda: 'Visão geral do escritório: clientes, processos ativos, recebimentos e audiências.' },
+              { src: 'assets/sistema/adv-processos-kanban.jpg', legenda: 'Processos em quadro Kanban, organizados por status.' },
+              { src: 'assets/sistema/adv-prazos-kanban.jpg', legenda: 'Prazos e desembargos em Kanban, com apoio de IA.' },
+              { src: 'assets/sistema/adv-financeiro.jpg', legenda: 'Financeiro: contas a receber, despesas e resultado.' },
+              { src: 'assets/sistema/adv-clientes.jpg', legenda: 'Cadastro de clientes pessoa física e jurídica, com acesso ao portal.' },
+            ],
+            cliente: [
+              { src: 'assets/sistema/cli-inicio.jpg', legenda: 'Início do portal: o cliente vê o andamento do caso sem precisar ligar.' },
+              { src: 'assets/sistema/cli-processos.jpg', legenda: 'Meus processos: o cliente acompanha o status de cada processo.' },
+              { src: 'assets/sistema/cli-documentos.jpg', legenda: 'Documentos: o cliente envia e baixa arquivos direto pelo portal.' },
+            ],
+          },
+        },
         exemplos: [
           { href: 'portfolio/advogado/index.html', url: 'oliveiramartins.adv.br', gradiente: ['#0A1428', '#C9A227'], titulo: 'Oliveira & Martins', sub: 'Trabalhista · Previdenciário · Civil', cardTitulo: 'Escritório de Advocacia', cardDesc: 'Áreas de atuação, equipe e blog jurídico.' },
           { href: 'portfolio/advogado-empresarial/index.html', url: 'barrosribeiro.adv.br', gradiente: ['#0D1210', '#10B981'], titulo: 'Barros Ribeiro', sub: 'Empresarial · LGPD · Compliance', cardTitulo: 'Advocacia Empresarial', cardDesc: 'Identidade corporativa, com insights e equipe.' },
@@ -777,6 +901,19 @@
       },
     ];
 
+    const svg = (p) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${p}</svg>`;
+    const ICONES = {
+      juridico: svg('<path d="M12 3v18M5 21h14M6 7h12M6 7l-3 7a3 3 0 0 0 6 0L6 7Zm12 0-3 7a3 3 0 0 0 6 0l-3-7Z"/>'),
+      contabilidade: svg('<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>'),
+      alimentacao: svg('<path d="M7 3v8a2 2 0 0 0 2 2v8M11 3v8a2 2 0 0 1-2 2M17 21V3c-2 0-3 2-3 5v5h3"/>'),
+      saude: svg('<path d="M20.8 5.6a5.5 5.5 0 0 0-7.8 0L12 6.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 22l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>'),
+      arquitetura: svg('<path d="M3 21 12 3l9 18M7.5 13h9"/>'),
+      automotivo: svg('<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4 2.6-2.6Z"/>'),
+      limpeza: svg('<path d="M12 3v7M8 10h8l1 11H7l1-11ZM4 14l2-1M20 14l-2-1"/>'),
+      imoveis: svg('<path d="M3 11 12 4l9 7M5 10v10h14V10M10 20v-6h4v6"/>'),
+      ecommerce: svg('<path d="M6 7h12l-1 13H7L6 7ZM9 7a3 3 0 0 1 6 0"/>'),
+    };
+
     const categoryGrid = document.getElementById('categoryGrid');
     const examplesWrap = document.getElementById('portfolioExamples');
     const examplesTitle = document.getElementById('examplesTitle');
@@ -791,9 +928,10 @@
         card.type = 'button';
         card.className = 'category-card';
         card.innerHTML = `
-          <span class="category-icon">${cat.icone}</span>
+          <span class="category-icon">${ICONES[cat.id] || cat.icone}</span>
           <h3>${cat.nome}</h3>
           <p>${cat.descricao}</p>
+          ${cat.bonus ? `<span class="category-bonus">${cat.bonus.selo}</span>` : ''}
           <span class="category-count ${temExemplos ? 'has-examples' : 'is-soon'}">
             ${temExemplos ? `${cat.exemplos.length} exemplo${cat.exemplos.length > 1 ? 's' : ''}` : 'Em breve'}
           </span>
@@ -802,13 +940,136 @@
         categoryGrid.appendChild(card);
       });
 
+      // Galeria do sistema: abas advogado/cliente, tela principal em moldura
+      // de navegador, miniaturas e ampliação em tela cheia (Esc/setas).
+      function montarGaleria(painel, galeria) {
+        const stageImg = painel.querySelector('.sys-shot img');
+        const caption = painel.querySelector('.sys-caption');
+        const thumbs = painel.querySelector('.sys-thumbs');
+        const url = painel.querySelector('.sys-frame-url');
+        let lado = 'advogado';
+        let indice = 0;
+
+        function render() {
+          const itens = galeria[lado];
+          const item = itens[indice];
+          stageImg.classList.remove('is-in');
+          void stageImg.offsetWidth;
+          stageImg.src = item.src;
+          stageImg.alt = item.legenda;
+          stageImg.classList.add('is-in');
+          caption.textContent = item.legenda;
+          url.textContent = lado === 'advogado' ? 'sistema.seuescritorio.com.br' : 'portal.seuescritorio.com.br';
+          thumbs.innerHTML = itens.map((it, i) => `
+            <button type="button" class="sys-thumb${i === indice ? ' is-active' : ''}" data-i="${i}" aria-label="${it.legenda}">
+              <img src="${it.src}" alt="" loading="lazy">
+            </button>`).join('');
+        }
+
+        painel.querySelectorAll('.sys-tab').forEach(tab => {
+          tab.addEventListener('click', () => {
+            lado = tab.dataset.lado;
+            indice = 0;
+            painel.querySelectorAll('.sys-tab').forEach(t => {
+              const ativo = t === tab;
+              t.classList.toggle('is-active', ativo);
+              t.setAttribute('aria-selected', String(ativo));
+            });
+            render();
+          });
+        });
+        thumbs.addEventListener('click', (e) => {
+          const btn = e.target.closest('.sys-thumb');
+          if (!btn) return;
+          indice = Number(btn.dataset.i);
+          render();
+        });
+        painel.querySelector('.sys-shot').addEventListener('click', () => abrirLightbox(galeria[lado], indice));
+        render();
+      }
+
+      function abrirLightbox(itens, inicio) {
+        let i = inicio;
+        const box = document.createElement('div');
+        box.className = 'sys-lightbox';
+        box.setAttribute('role', 'dialog');
+        box.setAttribute('aria-modal', 'true');
+        box.innerHTML = `
+          <button type="button" class="sys-lb-close" aria-label="Fechar">×</button>
+          <button type="button" class="sys-lb-nav sys-lb-prev" aria-label="Anterior">‹</button>
+          <figure><img alt=""><figcaption></figcaption></figure>
+          <button type="button" class="sys-lb-nav sys-lb-next" aria-label="Próxima">›</button>`;
+        const img = box.querySelector('img');
+        const cap = box.querySelector('figcaption');
+        function show() { img.src = itens[i].src; img.alt = itens[i].legenda; cap.textContent = itens[i].legenda; }
+        function fechar() { box.remove(); document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; }
+        function onKey(e) {
+          if (e.key === 'Escape') fechar();
+          if (e.key === 'ArrowRight') { i = (i + 1) % itens.length; show(); }
+          if (e.key === 'ArrowLeft') { i = (i - 1 + itens.length) % itens.length; show(); }
+        }
+        box.addEventListener('click', (e) => { if (e.target === box) fechar(); });
+        box.querySelector('.sys-lb-close').addEventListener('click', fechar);
+        box.querySelector('.sys-lb-prev').addEventListener('click', () => { i = (i - 1 + itens.length) % itens.length; show(); });
+        box.querySelector('.sys-lb-next').addEventListener('click', () => { i = (i + 1) % itens.length; show(); });
+        document.addEventListener('keydown', onKey);
+        document.body.style.overflow = 'hidden';
+        document.body.appendChild(box);
+        show();
+        box.querySelector('.sys-lb-close').focus();
+      }
+
       function mostrarCategoria(cat, cardEl) {
         document.querySelectorAll('.category-card').forEach(c => c.classList.remove('is-active'));
         if (cardEl) cardEl.classList.add('is-active');
 
-        examplesIcon.textContent = cat.icone;
+        examplesIcon.innerHTML = ICONES[cat.id] || cat.icone;
         examplesTitle.textContent = cat.nome;
         portfolioGrid.innerHTML = '';
+
+        const bonusAntigo = examplesWrap.querySelector('.bonus-panel');
+        if (bonusAntigo) bonusAntigo.remove();
+        if (cat.bonus) {
+          const b = cat.bonus;
+          const painel = document.createElement('div');
+          painel.className = 'bonus-panel';
+          painel.innerHTML = `
+            <div class="bonus-panel-head">
+              <span class="bonus-panel-tag">Bônus incluso</span>
+              <h4>${b.titulo}</h4>
+              <p>${b.texto}</p>
+            </div>
+            <ul class="bonus-panel-list">
+              ${b.itens.map(i => `<li>${i}</li>`).join('')}
+            </ul>
+            ${b.galeria ? `
+            <div class="sys-gallery">
+              <div class="sys-gallery-head">
+                <p class="sys-gallery-title">Veja o sistema por dentro</p>
+                <div class="sys-tabs" role="tablist" aria-label="Lado do sistema">
+                  <button type="button" role="tab" class="sys-tab is-active" data-lado="advogado" aria-selected="true">Painel do advogado</button>
+                  <button type="button" role="tab" class="sys-tab" data-lado="cliente" aria-selected="false">Portal do cliente</button>
+                </div>
+              </div>
+              <figure class="sys-stage">
+                <div class="sys-frame">
+                  <div class="sys-frame-bar"><span></span><span></span><span></span><em class="sys-frame-url">sistema.seuescritorio.com.br</em></div>
+                  <button type="button" class="sys-shot" aria-label="Ampliar tela"><img alt="" loading="lazy"></button>
+                </div>
+                <figcaption class="sys-caption"></figcaption>
+              </figure>
+              <div class="sys-thumbs"></div>
+              <p class="sys-note">Telas reais do sistema, com dados fictícios de demonstração.</p>
+            </div>` : ''}
+            <div class="bonus-panel-foot">
+              <p class="bonus-panel-note">${b.nota}</p>
+              <a class="btn btn-primary" target="_blank" rel="noopener"
+                 href="https://wa.me/5541988363816?text=${encodeURIComponent(b.whatsapp)}">Quero conhecer o sistema</a>
+            </div>
+          `;
+          examplesWrap.insertBefore(painel, portfolioGrid);
+          if (b.galeria) montarGaleria(painel, b.galeria);
+        }
 
         if (!cat.exemplos.length) {
           portfolioGrid.innerHTML = `<p class="examples-empty">Ainda estamos preparando exemplos para este segmento — volte em breve ou chame no WhatsApp que já te mostramos o que está em produção.</p>`;
