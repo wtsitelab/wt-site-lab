@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rocha Moraes — Direito Previdenciário</title>
+<meta name="description" content="Aposentadorias, BPC/LOAS, benefícios por incapacidade, pensão por morte e revisões. Simule as regras de transição da aposentadoria.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#12355B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Lexend:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../kit-juridico/base.css">
+<link rel="stylesheet" href="style.css">
+<script>
+  // aplica tamanho de fonte e contraste salvos antes de desenhar a página
+  try {
+    var t = localStorage.getItem('rm-fonte'); if (t) document.documentElement.style.setProperty('--escala', t);
+    if (localStorage.getItem('rm-contraste') === '1') document.documentElement.classList.add('alto-contraste');
+  } catch (e) {}
+</script>
+</head>
+<body data-page="home">
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="acess" role="region" aria-label="Acessibilidade">
+  <div class="jk-wrap acess-inner">
+    <span>Acessibilidade</span>
+    <div class="acess-btns">
+      <button type="button" data-fonte="-1" aria-label="Diminuir letra">A−</button>
+      <button type="button" data-fonte="0" aria-label="Tamanho padrão da letra">A</button>
+      <button type="button" data-fonte="1" aria-label="Aumentar letra">A+</button>
+      <button type="button" data-contraste aria-pressed="false">◐ Alto contraste</button>
+    </div>
+  </div>
+</div>
+
+<header class="site-header" data-header>
+  <div class="jk-wrap header-inner">
+    <a class="logo" href="index.html" aria-label="Rocha Moraes — início">
+      <span class="logo-sol" aria-hidden="true"></span>
+      <span class="logo-text">Rocha Moraes<small>Direito Previdenciário</small></span>
+    </a>
+    <nav class="nav" data-menu aria-label="Principal">
+      <a href="#simulador">Simulador</a>
+      <a href="#beneficios">Benefícios</a>
+      <a href="#documentos">Documentos</a>
+      <a href="#equipe">Equipe</a>
+      <a href="blog.html">Artigos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="btn btn-sol btn-sm header-cta" href="#contato">Falar com especialista</a>
+    <button class="menu-btn" data-menu-toggle aria-expanded="false" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="conteudo">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="jk-wrap hero-grid">
+      <div class="hero-copy">
+        <p class="selo">Londrina/PR · atendimento em todo o Brasil</p>
+        <h1 class="hero-title">Sua aposentadoria merece ser <span>calculada com cuidado.</span></h1>
+        <p class="hero-lead">Analisamos o seu histórico de contribuições, comparamos todas as regras e indicamos o melhor momento para pedir o benefício — com explicações claras, sem pressa.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-sol" href="#simulador">Simular minha aposentadoria</a>
+          <a class="btn btn-branco" href="#contato">Falar com um especialista</a>
+        </div>
+        <ul class="hero-garantias">
+          <li>Análise completa do CNIS</li>
+          <li>Atendimento presencial ou por vídeo</li>
+          <li>Linguagem simples</li>
+        </ul>
+      </div>
+      <div class="hero-arte" aria-hidden="true">
+        <svg viewBox="0 0 440 440">
+          <defs><clipPath id="circ"><circle cx="220" cy="220" r="200"/></clipPath></defs>
+          <g clip-path="url(#circ)">
+            <rect width="440" height="440" fill="#DCEBF2"/>
+            <circle class="h-sol" cx="220" cy="270" r="96" fill="#F4B942"/>
+            <g class="h-raios" stroke="#F4B942" stroke-width="4" stroke-linecap="round" opacity=".6">
+              <line x1="220" y1="130" x2="220" y2="100"/><line x1="120" y1="170" x2="98" y2="150"/><line x1="320" y1="170" x2="342" y2="150"/><line x1="90" y1="250" x2="60" y2="246"/><line x1="350" y1="250" x2="380" y2="246"/>
+            </g>
+            <rect class="h-f f1" x="0" y="290" width="440" height="30" fill="#1B8A8F"/>
+            <rect class="h-f f2" x="0" y="326" width="440" height="36" fill="#15707A"/>
+            <rect class="h-f f3" x="0" y="368" width="440" height="80" fill="#12355B"/>
+          </g>
+          <circle cx="220" cy="220" r="200" fill="none" stroke="#12355B" stroke-width="2" opacity=".15"/>
+        </svg>
+        <div class="hero-card"><strong>2026</strong><span>93 pontos (mulheres)<br>103 pontos (homens)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIMULADOR -->
+  <section class="sec simulador" id="simulador">
+    <div class="jk-wrap">
+      <div class="sec-head" data-reveal>
+        <p class="eyebrow">Simulador</p>
+        <h2 class="sec-title">Quando você pode se aposentar?</h2>
+        <p class="sec-lead">Preencha os dados abaixo. O simulador compara as regras da Reforma da Previdência e mostra quando cada uma pode ser cumprida, se você continuar contribuindo.</p>
+      </div>
+      <div class="sim" data-reveal>
+        <form class="sim-form" data-sim onsubmit="return false">
+          <fieldset class="sim-grupo">
+            <legend>Você é</legend>
+            <label class="opcao"><input type="radio" name="sexo" value="F" checked><span>Mulher</span></label>
+            <label class="opcao"><input type="radio" name="sexo" value="M"><span>Homem</span></label>
+          </fieldset>
+          <label class="sim-campo"><span>Data de nascimento</span><input type="date" name="nasc" value="1968-05-10" required></label>
+          <div class="sim-campo">
+            <span id="tc-label">Tempo de contribuição até hoje</span>
+            <div class="sim-duplo" role="group" aria-labelledby="tc-label">
+              <label><input type="number" name="anos" min="0" max="60" value="27" inputmode="numeric"><small>anos</small></label>
+              <label><input type="number" name="meses" min="0" max="11" value="4" inputmode="numeric"><small>meses</small></label>
+            </div>
+          </div>
+          <fieldset class="sim-grupo">
+            <legend>Começou a contribuir antes de 13/11/2019?</legend>
+            <label class="opcao"><input type="radio" name="antes" value="sim" checked><span>Sim</span></label>
+            <label class="opcao"><input type="radio" name="antes" value="nao"><span>Não</span></label>
+          </fieldset>
+          <p class="sim-aviso">Estimativa simplificada: considera contribuição contínua a partir de hoje e não inclui atividade especial, professor, pessoa com deficiência ou períodos a averbar.</p>
+        </form>
+        <div class="sim-res" data-sim-res aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFÍCIOS -->
+  <section class="sec" id="beneficios">
+    <div class="jk-wrap">
+      <div class="sec-head" data-reveal>
+        <p class="eyebrow">Benefícios</p>
+        <h2 class="sec-title">Todos os benefícios do INSS, em um só lugar.</h2>
+      </div>
+      <div class="benef">
+        <article class="benef-card" data-reveal><span class="b-ic">☀</span><h3>Aposentadorias</h3><p>Por idade, por tempo de contribuição nas regras de transição, especial e da pessoa com deficiência.</p></article>
+        <article class="benef-card" data-reveal><span class="b-ic">♥</span><h3>BPC/LOAS</h3><p>Um salário mínimo para idosos a partir de 65 anos e pessoas com deficiência de baixa renda.</p></article>
+        <article class="benef-card" data-reveal><span class="b-ic">✚</span><h3>Incapacidade</h3><p>Auxílio por incapacidade temporária e aposentadoria por incapacidade permanente, com acompanhamento de perícias.</p></article>
+        <article class="benef-card" data-reveal><span class="b-ic">❖</span><h3>Pensão por morte</h3><p>Orientação a cônjuges, companheiros e filhos, inclusive no reconhecimento de união estável.</p></article>
+        <article class="benef-card" data-reveal><span class="b-ic">↻</span><h3>Revisões</h3><p>Conferência do cálculo de benefícios já concedidos e inclusão de períodos que ficaram de fora.</p></article>
+        <article class="benef-card" data-reveal><span class="b-ic">◎</span><h3>Planejamento</h3><p>Estudo das regras e das contribuições futuras para escolher o momento e a regra mais vantajosos.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCUMENTOS -->
+  <section class="sec docs" id="documentos">
+    <div class="jk-wrap docs-grid">
+      <div data-reveal>
+        <p class="eyebrow eyebrow-claro">Prepare-se</p>
+        <h2 class="sec-title">Lista de documentos para a primeira consulta</h2>
+        <p class="sec-lead">Marque o que você já tem em mãos. Não se preocupe se faltar algo — ajudamos a conseguir o restante.</p>
+        <div class="docs-progresso" aria-live="polite"><div class="dp-barra"><span data-docs-barra></span></div><p data-docs-txt>0 de 8 documentos separados</p></div>
+      </div>
+      <ul class="docs-lista" data-docs data-reveal>
+        <li><label><input type="checkbox"><span><strong>Documento com foto e CPF</strong>RG, CNH ou outro documento oficial.</span></label></li>
+        <li><label><input type="checkbox"><span><strong>Extrato do CNIS</strong>Disponível no aplicativo ou no site Meu INSS.</span></label></li>
+        <li><label><input type="checkbox"><span><strong>Carteiras de trabalho</strong>Todas, inclusive as antigas e danificadas.</span></label></li>
+        <li><label><input type="checkbox"><span><strong>Carnês e guias de contribuição</strong>Para períodos como autônomo ou facultativo.</span></label></li>
+        <li><label><input type="checkbox"><span><strong>PPP e laudos técnicos</strong>Se trabalhou com ruído, produtos químicos ou outros agentes nocivos.</span></label></li>
+        <li><label><input type="checkbox"><span><strong>Certidão de casamento ou nascimento</strong>Necessária em pensões e alguns benefícios.</span></label></li>
+        <li><label><input type="checkbox"><span><strong>Laudos e exames médicos</strong>Nos benefícios por incapacidade e BPC.</span></label></li>
+        <li><label><input type="checkbox"><span><strong>Carta de indeferimento</strong>Se o INSS já negou algum pedido.</span></label></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="sec">
+    <div class="jk-wrap">
+      <div class="sec-head" data-reveal>
+        <p class="eyebrow">Como funciona</p>
+        <h2 class="sec-title">Um passo de cada vez.</h2>
+      </div>
+      <ol class="etapas">
+        <li data-reveal><span>1</span><h3>Conversa</h3><p>Você conta a sua história de trabalho. Pode ser no escritório, por telefone ou por vídeo.</p></li>
+        <li data-reveal><span>2</span><h3>Análise</h3><p>Conferimos o CNIS, os documentos e simulamos todas as regras possíveis.</p></li>
+        <li data-reveal><span>3</span><h3>Orientação</h3><p>Explicamos o resultado com calma e por escrito: qual regra, quando pedir e quanto receber.</p></li>
+        <li data-reveal><span>4</span><h3>Pedido e acompanhamento</h3><p>Fazemos o requerimento e acompanhamos até a decisão — e, se preciso, na Justiça.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- EQUIPE -->
+  <section class="sec sec-azul-claro" id="equipe">
+    <div class="jk-wrap">
+      <div class="sec-head" data-reveal>
+        <p class="eyebrow">Equipe</p>
+        <h2 class="sec-title">Especialistas em Previdência.</h2>
+      </div>
+      <div class="team-grid" data-team></div>
+    </div>
+  </section>
+
+  <!-- ARTIGOS -->
+  <section class="sec">
+    <div class="jk-wrap">
+      <div class="sec-head sec-head-row" data-reveal>
+        <div><p class="eyebrow">Artigos</p><h2 class="sec-title">Entenda os seus direitos.</h2></div>
+        <a class="btn btn-azul" href="blog.html">Ver todos os artigos</a>
+      </div>
+      <div class="post-grid" data-articles="3" data-featured></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sec sec-azul-claro">
+    <div class="jk-wrap faq-wrap">
+      <div class="sec-head" data-reveal>
+        <p class="eyebrow">Dúvidas frequentes</p>
+        <h2 class="sec-title">Perguntas que ouvimos todos os dias.</h2>
+      </div>
+      <div class="faq-list" data-reveal>
+        <details><summary>Preciso ir ao escritório?</summary><p>Não. Atendemos presencialmente em Londrina e por telefone ou videochamada em todo o Brasil. Os documentos podem ser enviados por foto.</p></details>
+        <details><summary>Já me aposentei. Ainda posso revisar o valor?</summary><p>Em muitos casos, sim. O prazo para pedir a revisão do cálculo é de 10 anos a partir do primeiro pagamento, e a análise do processo de concessão mostra se algo ficou de fora.</p></details>
+        <details><summary>Trabalhei na roça quando era jovem. Esse tempo conta?</summary><p>O trabalho rural pode ser reconhecido, desde que comprovado com documentos da época e, em geral, testemunhas. É um dos pontos que mais alteram o resultado de uma aposentadoria.</p></details>
+        <details><summary>Quem recebe BPC pode trabalhar?</summary><p>O BPC é pago a quem não tem meios de se sustentar. Se a renda da família aumentar, o benefício pode ser revisto. Há regras específicas para a pessoa com deficiência que começa a trabalhar — vale conversar antes.</p></details>
+        <details><summary>Como são definidos os honorários?</summary><p>Explicamos todas as condições por escrito antes de qualquer contratação, conforme a tabela da OAB e o Código de Ética da advocacia.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="sec contato" id="contato">
+    <div class="jk-wrap contato-grid">
+      <div data-reveal>
+        <p class="eyebrow eyebrow-claro">Contato</p>
+        <h2 class="sec-title">Estamos aqui para ajudar.</h2>
+        <div class="contato-destaque"><span>Telefone e WhatsApp</span><strong>(43) 0000-0000</strong></div>
+        <ul class="contato-info">
+          <li><strong>E-mail:</strong> contato@rochamoraes.exemplo</li>
+          <li><strong>Endereço:</strong> Centro · Londrina/PR</li>
+          <li><strong>Horário:</strong> segunda a sexta, das 8h às 18h</li>
+        </ul>
+      </div>
+      <form class="jk-form contato-form" data-demo-form data-reveal>
+        <div class="jk-field"><label for="p-nome">Seu nome</label><input id="p-nome" required autocomplete="name"></div>
+        <div class="jk-field"><label for="p-tel">Telefone ou WhatsApp</label><input id="p-tel" type="tel" required autocomplete="tel"></div>
+        <div class="jk-field"><label for="p-assunto">Sobre o que você quer falar?</label>
+          <select id="p-assunto"><option>Aposentadoria</option><option>BPC/LOAS</option><option>Auxílio por incapacidade</option><option>Pensão por morte</option><option>Revisão de benefício</option><option>Benefício negado</option></select>
+        </div>
+        <div class="jk-field"><label for="p-hora">Melhor horário para retorno</label>
+          <select id="p-hora"><option>Manhã</option><option>Tarde</option><option>Qualquer horário</option></select>
+        </div>
+        <label class="jk-check"><input type="checkbox" required> Autorizo o contato e o uso dos meus dados para este atendimento (LGPD).</label>
+        <button class="btn btn-sol" type="submit">Pedir retorno</button>
+        <p class="form-note" data-form-note role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="jk-wrap footer-inner">
+    <a class="logo" href="index.html"><span class="logo-sol" aria-hidden="true"></span><span class="logo-text">Rocha Moraes<small>Direito Previdenciário</small></span></a>
+    <nav class="footer-nav" aria-label="Rodapé"><a href="#simulador">Simulador</a><a href="#beneficios">Benefícios</a><a href="#documentos">Documentos</a><a href="blog.html">Artigos</a><a href="#contato">Contato</a></nav>
+    <p class="footer-legal">© <span data-year></span> Rocha Moraes Direito Previdenciário · Sociedade de advogados fictícia · Não possui vínculo com o INSS · Conteúdo informativo, elaborado conforme as regras de publicidade da OAB (Provimento 205/2021).</p>
+  </div>
+</footer>
+
+<script src="content.js"></script>
+<script src="../kit-juridico/engine.js"></script>
+<script src="site.js"></script>
+</body>
+</html>

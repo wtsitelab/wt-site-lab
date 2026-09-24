@@ -792,7 +792,7 @@
     const categorias = [
       {
         id: 'juridico', icone: '⚖️', nome: 'Serviços Jurídicos',
-        descricao: 'Escritórios de advocacia e advogados autônomos.',
+        descricao: 'Criminal, trabalhista, família, empresarial e previdenciário.',
         // Sites de advocacia vêm com o pré-sistema de gestão incluso (sem
         // mensalidade). Só as 3 integrações opcionais cobram taxa única.
         bonus: {
@@ -827,9 +827,11 @@
           },
         },
         exemplos: [
-          { href: 'portfolio/advogado/index.html', url: 'oliveiramartins.adv.br', gradiente: ['#0A1428', '#C9A227'], titulo: 'Oliveira & Martins', sub: 'Trabalhista · Previdenciário · Civil', cardTitulo: 'Escritório de Advocacia', cardDesc: 'Áreas de atuação, equipe e blog jurídico.' },
-          { href: 'portfolio/advogado-empresarial/index.html', url: 'barrosribeiro.adv.br', gradiente: ['#0D1210', '#10B981'], titulo: 'Barros Ribeiro', sub: 'Empresarial · LGPD · Compliance', cardTitulo: 'Advocacia Empresarial', cardDesc: 'Identidade corporativa, com insights e equipe.' },
-          { href: 'portfolio/advogado-solo/index.html', url: 'camilarezende.adv.br', gradiente: ['#C0603E', '#7A8C74'], titulo: 'Dra. Camila Rezende', sub: 'Família e Sucessões', cardTitulo: 'Advogada Autônoma', cardDesc: 'Site pessoal, tom humano, depoimentos e FAQ.' },
+          { href: 'portfolio/adv-criminal/index.html', url: 'valadarestoledo.adv.br', gradiente: ['#0E0C0B', '#8E1B1B'], titulo: 'Valadares Toledo', sub: 'Advocacia Criminal · Plantão 24h', cardTitulo: 'Advocacia Criminal', cardDesc: 'Guia de emergência interativo, fases do processo penal e artigos.' },
+          { href: 'portfolio/adv-trabalhista/index.html', url: 'pradonogueira.adv.br', gradiente: ['#0F3D2E', '#1F6B4F'], titulo: 'Prado Nogueira', sub: 'Trabalhista · empregados e empresas', cardTitulo: 'Advocacia Trabalhista', cardDesc: 'Calculadora de prazo, verificador de direitos e artigos.' },
+          { href: 'portfolio/adv-familia/index.html', url: 'limacastro.adv.br', gradiente: ['#C97A57', '#7C8C74'], titulo: 'Lima Castro', sub: 'Família & Sucessões', cardTitulo: 'Família e Sucessões', cardDesc: 'Ferramenta "qual caminho para o inventário?" e artigos.' },
+          { href: 'portfolio/adv-empresarial/index.html', url: 'kessleralmeida.adv.br', gradiente: ['#0E1A24', '#1F6F5C'], titulo: 'Kessler Almeida', sub: 'Empresarial & Tributário', cardTitulo: 'Empresarial e Tributário', cardDesc: 'Linha do tempo interativa da reforma tributária e insights.' },
+          { href: 'portfolio/adv-previdenciario/index.html', url: 'rochamoraes.adv.br', gradiente: ['#12355B', '#1B8A8F'], titulo: 'Rocha Moraes', sub: 'Direito Previdenciário', cardTitulo: 'Direito Previdenciário', cardDesc: 'Simulador de aposentadoria, acessibilidade e artigos.' },
         ],
       },
       {

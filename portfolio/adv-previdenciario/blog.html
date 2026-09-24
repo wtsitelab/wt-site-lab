@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Artigos — Rocha Moraes Direito Previdenciário</title>
+<meta name="description" content="Aposentadorias, BPC/LOAS, benefícios por incapacidade, pensão por morte e revisões. Simule as regras de transição da aposentadoria.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#12355B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Lexend:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../kit-juridico/base.css">
+<link rel="stylesheet" href="style.css">
+<script>
+  // aplica tamanho de fonte e contraste salvos antes de desenhar a página
+  try {
+    var t = localStorage.getItem('rm-fonte'); if (t) document.documentElement.style.setProperty('--escala', t);
+    if (localStorage.getItem('rm-contraste') === '1') document.documentElement.classList.add('alto-contraste');
+  } catch (e) {}
+</script>
+</head>
+<body data-page="blog">
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<div class="acess" role="region" aria-label="Acessibilidade">
+  <div class="jk-wrap acess-inner">
+    <span>Acessibilidade</span>
+    <div class="acess-btns">
+      <button type="button" data-fonte="-1" aria-label="Diminuir letra">A−</button>
+      <button type="button" data-fonte="0" aria-label="Tamanho padrão da letra">A</button>
+      <button type="button" data-fonte="1" aria-label="Aumentar letra">A+</button>
+      <button type="button" data-contraste aria-pressed="false">◐ Alto contraste</button>
+    </div>
+  </div>
+</div>
+<header class="site-header" data-header>
+  <div class="jk-wrap header-inner">
+    <a class="logo" href="index.html" aria-label="Rocha Moraes — início">
+      <span class="logo-sol" aria-hidden="true"></span>
+      <span class="logo-text">Rocha Moraes<small>Direito Previdenciário</small></span>
+    </a>
+    <nav class="nav" data-menu aria-label="Principal">
+      <a href="index.html#simulador">Simulador</a>
+      <a href="index.html#beneficios">Benefícios</a>
+      <a href="index.html#documentos">Documentos</a>
+      <a href="index.html#equipe">Equipe</a>
+      <a href="blog.html">Artigos</a>
+      <a href="index.html#contato">Contato</a>
+    </nav>
+    <a class="btn btn-sol btn-sm header-cta" href="index.html#contato">Falar com especialista</a>
+    <button class="menu-btn" data-menu-toggle aria-expanded="false" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main id="conteudo">
+  <section class="page-hero">
+    <div class="jk-wrap">
+      <p class="eyebrow">Artigos</p>
+      <h1>Previdência explicada<br><span>em linguagem simples.</span></h1>
+      <p>Aposentadoria, BPC, auxílios e revisões: textos escritos para quem quer entender os próprios direitos, sem complicação.</p>
+    </div>
+  </section>
+  <section class="blog-sec">
+    <div class="jk-wrap">
+      <div class="blog-tools">
+        <div class="chips" data-blog-chips></div>
+        <label class="blog-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span class="sr-only">Buscar artigos</span><input type="search" placeholder="Buscar nos artigos" data-blog-search></label>
+      </div>
+      <div class="post-grid" data-blog-grid></div>
+      <p class="blog-empty" data-blog-empty hidden>Nenhum artigo encontrado para essa busca.</p>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="jk-wrap footer-inner">
+    <a class="logo" href="index.html"><span class="logo-sol" aria-hidden="true"></span><span class="logo-text">Rocha Moraes<small>Direito Previdenciário</small></span></a>
+    <nav class="footer-nav" aria-label="Rodapé"><a href="index.html#simulador">Simulador</a><a href="index.html#beneficios">Benefícios</a><a href="index.html#documentos">Documentos</a><a href="blog.html">Artigos</a><a href="index.html#contato">Contato</a></nav>
+    <p class="footer-legal">© <span data-year></span> Rocha Moraes Direito Previdenciário · Sociedade de advogados fictícia · Não possui vínculo com o INSS · Conteúdo informativo, elaborado conforme as regras de publicidade da OAB (Provimento 205/2021).</p>
+  </div>
+</footer>
+<script src="content.js"></script>
+<script src="../kit-juridico/engine.js"></script>
+<script src="site.js"></script>
+</body>
+</html>
