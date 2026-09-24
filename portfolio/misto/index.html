@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roda Livre — Carros e motos em Londrina</title>
+<meta name="description" content="Carros e motos seminovos em Londrina e região, em um só lugar: filtros completos, financiamento e comparação.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0F2E2E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../kit-veiculos/css/base.css">
+<link rel="stylesheet" href="tema.css">
+</head>
+<body class="pg-busca">
+<a class="skip" href="#resultados">Pular para os resultados</a>
+
+<header class="topo">
+  <div class="wrap topo-inner">
+    <a class="logo" href="index.html" aria-label="Roda Livre — início"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="9" cy="20" r="6" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="23" cy="20" r="6" fill="none" stroke="#fff" stroke-width="3"/><path d="M9 20 15 9h6l2 11" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round"/></svg><span>roda livre</span></a>
+    <label class="busca-topo">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <span class="sr-only">Buscar</span>
+      <input type="search" placeholder="Busque carros ou motos por marca e modelo" data-q autocomplete="off">
+    </label>
+    <nav class="menu" aria-label="Principal">
+      <a href="index.html" aria-current="page">Comprar</a>
+      <a href="vender.html">Vender</a>
+      <a href="anuncio.html#financiamento">Financiar</a>
+      <a href="index.html?fav=1" class="menu-fav">Favoritos <span class="badge" data-fav-count hidden>0</span></a>
+    </nav>
+    <a class="btn btn-acento btn-sm" href="vender.html">Anunciar</a>
+  </div>
+</header>
+
+<section class="faixa">
+  <div class="wrap faixa-inner">
+    <div class="faixa-topo">
+      <div>
+        <nav class="migalhas" aria-label="Você está em"><a href="index.html">Início</a><span>›</span><a href="index.html">Veículos</a><span>›</span><span>Londrina e região</span></nav>
+        <h1 class="faixa-tit" data-titulo>Carros e motos em <em>Londrina</em></h1>
+      </div>
+      <div class="seg" role="group" aria-label="Tipo de veículo" data-tipo-seg></div>
+    </div>
+    <div class="tipos" role="group" aria-label="Categoria" data-tipos></div>
+  </div>
+</section>
+
+<main class="wrap busca" id="resultados">
+  <aside class="filtros" data-filtros aria-label="Filtros">
+    <div class="filtros-head">
+      <h2>Filtros</h2>
+      <button type="button" class="link" data-limpar>Limpar</button>
+      <button type="button" class="filtros-x" data-fechar-filtros aria-label="Fechar filtros">×</button>
+    </div>
+    <div class="filtros-corpo" data-filtros-corpo></div>
+    <div class="filtros-rodape"><button type="button" class="btn btn-acento btn-block" data-fechar-filtros>Ver <span data-total-btn>0</span> ofertas</button></div>
+  </aside>
+
+  <section class="resultados">
+    <div class="barra">
+      <p class="contagem" aria-live="polite"><strong data-total>—</strong> <span data-total-label>ofertas encontradas</span></p>
+      <div class="barra-acoes">
+        <button type="button" class="btn btn-claro btn-sm abrir-filtros" data-abrir-filtros><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>Filtros <span class="badge" data-n-filtros hidden>0</span></button>
+        <label class="ordem"><span>Ordenar por</span>
+          <select data-ordem>
+            <option value="relevancia">Relevância</option>
+            <option value="menorPreco">Menor preço</option>
+            <option value="maiorPreco">Maior preço</option>
+            <option value="menorKm">Menor quilometragem</option>
+            <option value="maisNovos">Mais novos</option>
+            <option value="recentes">Anunciados recentemente</option>
+          </select>
+        </label>
+      </div>
+    </div>
+    <div class="ativos" data-ativos></div>
+    <div class="grade" data-grade aria-busy="true"></div>
+    <div class="vazio" data-vazio hidden>
+      <svg viewBox="0 0 120 80" aria-hidden="true"><path d="M10 62h100M22 62c0-8 6-14 14-14s14 6 14 14M70 62c0-8 6-14 14-14s14 6 14 14M18 50l10-22h56l14 22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+      <h2>Nenhum resultado com esses filtros</h2>
+      <p>Tente ampliar a faixa de preço ou remover alguns filtros.</p>
+      <button type="button" class="btn btn-escuro" data-limpar>Limpar filtros</button>
+    </div>
+    <nav class="paginacao" data-paginacao aria-label="Páginas"></nav>
+
+    <section class="aviso-banco">
+      <div>
+        <h2>Pronto para um estoque de verdade</h2>
+        <p>Neste modelo, os anúncios vêm de um arquivo de demonstração. Na versão real, eles ficam em um <strong>banco de dados</strong>, com painel para lojistas cadastrarem veículos, fotos e preços — e a busca, os filtros e a paginação passam a consultar o banco diretamente.</p>
+      </div>
+      <a class="btn btn-acento" href="../../index.html#contato">Quero um site assim</a>
+    </section>
+  </section>
+</main>
+
+<div class="bandeja" data-bandeja aria-live="polite"></div>
+
+<footer class="rodape">
+  <div class="wrap rodape-grid">
+    <div>
+      <a class="logo logo-claro" href="index.html"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="9" cy="20" r="6" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="23" cy="20" r="6" fill="none" stroke="#fff" stroke-width="3"/><path d="M9 20 15 9h6l2 11" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round"/></svg><span>roda livre</span></a>
+      <p>Carros e motos seminovos — modelo de demonstração.</p>
+    </div>
+    <div><h3>Comprar</h3><a href="index.html?tipos=carro">Carros</a><a href="index.html?tipos=moto">Motos</a><a href="index.html?precoMax=20000">Até R$ 20 mil</a><a href="index.html?categorias=suv">SUVs</a></div>
+    <div><h3>Vender</h3><a href="vender.html">Anunciar</a><a href="vender.html#lojista">Área do lojista</a></div>
+    <div><h3>Institucional</h3><a href="../../index.html">WT Site Lab</a><a href="../../index.html#contato">Contato</a></div>
+  </div>
+  <p class="wrap rodape-legal">© <span data-year></span> Roda Livre · marca fictícia de demonstração. Anúncios, lojas, preços e valores de referência são ilustrativos. Fotos reais dos modelos via Wikimedia Commons, com créditos em cada anúncio. Marcas e modelos citados pertencem aos respectivos fabricantes.</p>
+</footer>
+
+<script src="data/estoque.js"></script>
+<script src="data/fotos.js"></script>
+<script src="conf.js"></script>
+<script src="../kit-veiculos/js/api.js"></script>
+<script src="../kit-veiculos/js/art.js"></script>
+<script src="../kit-veiculos/js/ui.js"></script>
+<script src="../kit-veiculos/js/busca.js"></script>
+</body>
+</html>

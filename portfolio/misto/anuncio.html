@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anúncio — Roda Livre</title>
+<meta name="description" content="Detalhes do anúncio, simulação de financiamento e contato com o vendedor.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0F2E2E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../kit-veiculos/css/base.css">
+<link rel="stylesheet" href="tema.css">
+</head>
+<body class="pg-carro">
+<a class="skip" href="#anuncio">Pular para o anúncio</a>
+
+<header class="topo">
+  <div class="wrap topo-inner">
+    <a class="logo" href="index.html" aria-label="Roda Livre — início"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="9" cy="20" r="6" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="23" cy="20" r="6" fill="none" stroke="#fff" stroke-width="3"/><path d="M9 20 15 9h6l2 11" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round"/></svg><span>roda livre</span></a>
+    <form class="busca-topo" action="index.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <label class="sr-only" for="q">Buscar</label>
+      <input id="q" name="q" type="search" placeholder="Busque carros ou motos por marca e modelo" autocomplete="off">
+    </form>
+    <nav class="menu" aria-label="Principal">
+      <a href="index.html">Comprar</a>
+      <a href="vender.html">Vender</a>
+      <a href="anuncio.html#financiamento">Financiar</a>
+      <a href="index.html?fav=1" class="menu-fav">Favoritos <span class="badge" data-fav-count hidden>0</span></a>
+    </nav>
+    <a class="btn btn-acento btn-sm" href="vender.html">Anunciar</a>
+  </div>
+</header>
+
+<main id="anuncio" class="wrap anuncio" aria-busy="true" data-anuncio>
+  <div class="sk sk-titulo"></div>
+  <div class="anuncio-grid"><div class="sk sk-galeria"></div><div class="sk sk-lateral"></div></div>
+</main>
+
+<section class="wrap similares" data-similares-sec hidden>
+  <h2>Você também pode gostar</h2>
+  <div class="grade grade-4" data-similares></div>
+</section>
+
+<div class="bandeja" data-bandeja aria-live="polite"></div>
+
+<footer class="rodape">
+  <div class="wrap rodape-grid">
+    <div>
+      <a class="logo logo-claro" href="index.html"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="9" cy="20" r="6" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="23" cy="20" r="6" fill="none" stroke="#fff" stroke-width="3"/><path d="M9 20 15 9h6l2 11" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round"/></svg><span>roda livre</span></a>
+      <p>Carros e motos seminovos — modelo de demonstração.</p>
+    </div>
+    <div><h3>Comprar</h3><a href="index.html?tipos=carro">Carros</a><a href="index.html?tipos=moto">Motos</a><a href="index.html?precoMax=20000">Até R$ 20 mil</a><a href="index.html?categorias=suv">SUVs</a></div>
+    <div><h3>Vender</h3><a href="vender.html">Anunciar</a><a href="vender.html#lojista">Área do lojista</a></div>
+    <div><h3>Institucional</h3><a href="../../index.html">WT Site Lab</a><a href="../../index.html#contato">Contato</a></div>
+  </div>
+  <p class="wrap rodape-legal">© <span data-year></span> Roda Livre · marca fictícia de demonstração. Anúncios, lojas, preços e valores de referência são ilustrativos. Fotos reais dos modelos via Wikimedia Commons, com créditos em cada anúncio. Marcas e modelos citados pertencem aos respectivos fabricantes.</p>
+</footer>
+
+<script src="data/estoque.js"></script>
+<script src="data/fotos.js"></script>
+<script src="conf.js"></script>
+<script src="../kit-veiculos/js/api.js"></script>
+<script src="../kit-veiculos/js/art.js"></script>
+<script src="../kit-veiculos/js/ui.js"></script>
+<script src="../kit-veiculos/js/anuncio.js"></script>
+</body>
+</html>

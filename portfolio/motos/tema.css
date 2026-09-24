@@ -1,0 +1,30 @@
+/* Identidade visual do Guidão — sobrescreve as variáveis do kit. */
+/* Guidão — escuro, esportivo, acento amarelo-lima */
+:root{
+  --bg:#0E0F12; --surface:#16181C; --surface-2:#1D2025; --ink:#F2F3F5; --ink-2:#C7CBD2; --muted:#8B919B; --line:#262A31; --line-2:#343942;
+  --acc:#D7F23A; --acc-2:#C4E01F; --acc-50:rgba(215,242,58,.12); --on-acc:#0B0C0E; --on-ink:#0B0C0E;
+  --topo:#08090B; --topo-2:#121418; --topo-3:#1C1F25;
+  --verde:#35C28A; --verde-50:rgba(53,194,138,.12); --verde-ink:#7CE2B7;
+  --demo-link:#D7F23A;
+  --f-display:'Unbounded', system-ui, sans-serif; --f-body:'DM Sans', system-ui, sans-serif;
+  --sombra:0 1px 2px rgba(0,0,0,.4), 0 16px 36px -20px rgba(0,0,0,.8);
+}
+body{ font-weight:500; }
+h1,h2,h3{ letter-spacing:-.01em; }
+.faixa-tit, .vender-hero h1{ text-transform:uppercase; font-weight:800; letter-spacing:-.02em; }
+.faixa{ background:radial-gradient(900px 300px at 85% -40%, rgba(215,242,58,.18), transparent 60%), repeating-linear-gradient(115deg, transparent 0 22px, rgba(255,255,255,.025) 22px 23px), var(--topo); }
+.card{ border-color:var(--line); }
+.card:hover{ border-color:var(--acc); box-shadow:0 0 0 1px var(--acc), 0 24px 44px -22px rgba(0,0,0,.9); }
+.card-preco{ color:var(--acc); }
+.sk{ background:linear-gradient(90deg, #1B1E23 0%, #252930 50%, #1B1E23 100%); background-size:200% 100%; }
+.selo-verde{ background:var(--acc); color:#0B0C0E; }
+.ordem select{ background-color:var(--surface); color:var(--ink); background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 6l4 4 4-4' fill='none' stroke='%23F2F3F5' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E"); }
+.tipo > span{ width:96px; }
+.aviso-banco, .fin-resultado, .band-inner{ border:1px solid var(--line-2); }
+.rodape{ border-top:1px solid var(--line); }
+.ref{ background:var(--surface-2); }
+.ref-marca{ background:var(--surface); border-color:var(--ink); }
+.fcheck em{ background:var(--surface-2); }
+.logo-mark{ color:var(--acc); }
+.passos-w li.is-atual{ color:var(--ink); }
+.vender-hero::after, .faixa::after{ opacity:.6; }

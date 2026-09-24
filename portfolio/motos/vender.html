@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anunciar — Guidão</title>
+<meta name="description" content="Anuncie em 3 passos e veja a prévia do anúncio em tempo real.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0A0B0D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../kit-veiculos/css/base.css">
+<link rel="stylesheet" href="tema.css">
+</head>
+<body class="pg-vender">
+<a class="skip" href="#anunciar">Pular para o formulário</a>
+
+<header class="topo">
+  <div class="wrap topo-inner">
+    <a class="logo" href="index.html" aria-label="Guidão — início"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M3 12c4-1 8-1 13 2 5-3 9-3 13-2" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M8 13v5M24 13v5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="16" cy="22" r="4" fill="currentColor"/></svg><span>guidão</span></a>
+    <form class="busca-topo" action="index.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <label class="sr-only" for="q">Buscar</label>
+      <input id="q" name="q" type="search" placeholder="Busque por marca, modelo ou cilindrada" autocomplete="off">
+    </form>
+    <nav class="menu" aria-label="Principal">
+      <a href="index.html">Comprar</a>
+      <a href="vender.html" aria-current="page">Vender</a>
+      <a href="anuncio.html#financiamento">Financiar</a>
+      <a href="index.html?fav=1" class="menu-fav">Favoritos <span class="badge" data-fav-count hidden>0</span></a>
+    </nav>
+    
+  </div>
+</header>
+
+<section class="vender-hero">
+  <div class="wrap">
+    <p class="vh-kicker">Vender</p>
+    <h1>Anuncie sua moto em <em>3 passos.</em></h1>
+    <p>Preencha os dados e veja, ao lado, como o anúncio vai aparecer para os compradores.</p>
+  </div>
+</section>
+
+<main class="wrap vender" id="anunciar">
+  <form class="wizard" data-wizard data-demo-form novalidate>
+    <ol class="passos-w" aria-label="Etapas">
+      <li class="is-atual" data-passo-ind="1"><span>1</span>Veículo</li>
+      <li data-passo-ind="2"><span>2</span>Detalhes e preço</li>
+      <li data-passo-ind="3"><span>3</span>Contato</li>
+    </ol>
+
+    <fieldset class="passo is-atual" data-passo="1">
+      <legend class="sr-only">Veículo</legend>
+      <div data-escolha-tipo></div>
+      <div class="campos">
+        <label><span>Marca</span><select name="marca" required></select></label>
+        <label><span>Modelo</span><input name="modelo" required placeholder="Ex.: CB 500F"></label>
+        <label class="col-2"><span>Versão</span><input name="versao" placeholder="Ex.: ABS"></label>
+        <label><span>Ano do modelo</span><input name="ano" type="number" min="1980" max="2027" required placeholder="2022"></label>
+        <label><span>Quilometragem</span><input name="km" type="number" min="0" required placeholder="18000"></label>
+        <label data-so="moto"><span>Cilindrada (cc)</span><input name="cilindrada" type="number" min="50" max="2500" placeholder="300"></label>
+      </div>
+      <p class="rotulo">Categoria</p>
+      <div class="opcoes-tipo" data-opcoes-tipo></div>
+      <p class="rotulo">Cor</p>
+      <div class="fcores" data-opcoes-cor></div>
+      <label class="upload">
+        <input type="file" accept="image/*" data-foto>
+        <span><strong>Adicionar foto</strong> (opcional) — a imagem fica só no seu navegador nesta demonstração</span>
+      </label>
+    </fieldset>
+
+    <fieldset class="passo" data-passo="2" hidden>
+      <legend class="sr-only">Detalhes e preço</legend>
+      <div class="campos">
+        <label><span>Câmbio</span><select name="cambio"></select></label>
+        <label><span>Combustível</span><select name="combustivel"></select></label>
+        <label class="col-2"><span>Preço (R$)</span><input name="preco" type="text" inputmode="numeric" required placeholder="R$ 0" data-preco></label>
+      </div>
+      <p class="rotulo">Opcionais</p>
+      <div class="fchips" data-opcionais></div>
+      <p class="rotulo">Procedência</p>
+      <div class="fswitches">
+        <label class="fswitch"><input type="checkbox" name="unicoDono"><span class="sw" aria-hidden="true"></span>Único dono</label>
+        <label class="fswitch"><input type="checkbox" name="revisado"><span class="sw" aria-hidden="true"></span>Revisões em dia</label>
+        <label class="fswitch"><input type="checkbox" name="laudo"><span class="sw" aria-hidden="true"></span>Laudo cautelar aprovado</label>
+      </div>
+    </fieldset>
+
+    <fieldset class="passo" data-passo="3" hidden>
+      <legend class="sr-only">Contato</legend>
+      <div class="campos">
+        <label class="col-2"><span>Nome</span><input name="nome" required autocomplete="name"></label>
+        <label><span>WhatsApp</span><input name="tel" type="tel" required autocomplete="tel" placeholder="(00) 00000-0000"></label>
+        <label><span>Cidade</span><input name="cidade" value="Curitiba" autocomplete="address-level2"></label>
+      </div>
+      <label class="fcheck"><input type="checkbox" required> Li e concordo com os termos de anúncio (demonstração).</label>
+      <p class="form-nota" data-form-note role="status"></p>
+    </fieldset>
+
+    <div class="wizard-nav">
+      <button type="button" class="btn btn-claro" data-voltar hidden>Voltar</button>
+      <button type="button" class="btn btn-acento" data-avancar>Continuar</button>
+    </div>
+  </form>
+
+  <aside class="previa" aria-label="Prévia do anúncio">
+    <p class="previa-rot">Prévia do anúncio</p>
+    <div class="grade grade-1" data-previa></div>
+    <p class="previa-dica">É assim que compradores verão seu anúncio na busca.</p>
+  </aside>
+</main>
+
+<section class="lojista" id="lojista">
+  <div class="wrap lojista-grid">
+    <div>
+      <p class="vh-kicker">Área do lojista</p>
+      <h2>Estoque inteiro, <em>um só painel.</em></h2>
+      <p>Na versão com banco de dados, cada loja tem login próprio para cadastrar e editar anúncios, subir fotos, acompanhar contatos e ver o desempenho do estoque.</p>
+    </div>
+    <ul class="lojista-lista">
+      <li><strong>Estoque</strong>Cadastro com fotos, importação por planilha e status vendido/reservado.</li>
+      <li><strong>Leads</strong>Cada mensagem de interessado chega organizada, com histórico de conversa.</li>
+      <li><strong>Destaques</strong>Anúncios em destaque no topo da busca por período.</li>
+      <li><strong>Relatórios</strong>Visualizações, favoritos e contatos por anúncio.</li>
+    </ul>
+  </div>
+</section>
+
+<footer class="rodape">
+  <div class="wrap rodape-grid">
+    <div>
+      <a class="logo logo-claro" href="index.html"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M3 12c4-1 8-1 13 2 5-3 9-3 13-2" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M8 13v5M24 13v5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="16" cy="22" r="4" fill="currentColor"/></svg><span>guidão</span></a>
+      <p>Marketplace de motos seminovas — modelo de demonstração.</p>
+    </div>
+    <div><h3>Comprar</h3><a href="index.html?categorias=trail,bigtrail">Trails</a><a href="index.html?categorias=naked">Nakeds</a><a href="index.html?precoMax=15000">Até R$ 15 mil</a><a href="index.html?categorias=scooter">Scooters</a></div>
+    <div><h3>Vender</h3><a href="vender.html">Anunciar</a><a href="vender.html#lojista">Área do lojista</a></div>
+    <div><h3>Institucional</h3><a href="../../index.html">WT Site Lab</a><a href="../../index.html#contato">Contato</a></div>
+  </div>
+  <p class="wrap rodape-legal">© <span data-year></span> Guidão · marca fictícia de demonstração. Anúncios, lojas, preços e valores de referência são ilustrativos. Fotos reais dos modelos via Wikimedia Commons, com créditos em cada anúncio. Marcas e modelos citados pertencem aos respectivos fabricantes.</p>
+</footer>
+
+<script src="data/estoque.js"></script>
+<script src="data/fotos.js"></script>
+<script src="conf.js"></script>
+<script src="../kit-veiculos/js/api.js"></script>
+<script src="../kit-veiculos/js/art.js"></script>
+<script src="../kit-veiculos/js/ui.js"></script>
+<script src="../kit-veiculos/js/vender.js"></script>
+</body>
+</html>

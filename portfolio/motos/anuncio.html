@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anúncio — Guidão</title>
+<meta name="description" content="Detalhes do anúncio, simulação de financiamento e contato com o vendedor.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0A0B0D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../kit-veiculos/css/base.css">
+<link rel="stylesheet" href="tema.css">
+</head>
+<body class="pg-carro">
+<a class="skip" href="#anuncio">Pular para o anúncio</a>
+
+<header class="topo">
+  <div class="wrap topo-inner">
+    <a class="logo" href="index.html" aria-label="Guidão — início"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M3 12c4-1 8-1 13 2 5-3 9-3 13-2" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M8 13v5M24 13v5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="16" cy="22" r="4" fill="currentColor"/></svg><span>guidão</span></a>
+    <form class="busca-topo" action="index.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <label class="sr-only" for="q">Buscar</label>
+      <input id="q" name="q" type="search" placeholder="Busque por marca, modelo ou cilindrada" autocomplete="off">
+    </form>
+    <nav class="menu" aria-label="Principal">
+      <a href="index.html">Comprar</a>
+      <a href="vender.html">Vender</a>
+      <a href="anuncio.html#financiamento">Financiar</a>
+      <a href="index.html?fav=1" class="menu-fav">Favoritos <span class="badge" data-fav-count hidden>0</span></a>
+    </nav>
+    <a class="btn btn-acento btn-sm" href="vender.html">Anunciar</a>
+  </div>
+</header>
+
+<main id="anuncio" class="wrap anuncio" aria-busy="true" data-anuncio>
+  <div class="sk sk-titulo"></div>
+  <div class="anuncio-grid"><div class="sk sk-galeria"></div><div class="sk sk-lateral"></div></div>
+</main>
+
+<section class="wrap similares" data-similares-sec hidden>
+  <h2>Você também pode gostar</h2>
+  <div class="grade grade-4" data-similares></div>
+</section>
+
+<div class="bandeja" data-bandeja aria-live="polite"></div>
+
+<footer class="rodape">
+  <div class="wrap rodape-grid">
+    <div>
+      <a class="logo logo-claro" href="index.html"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M3 12c4-1 8-1 13 2 5-3 9-3 13-2" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M8 13v5M24 13v5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="16" cy="22" r="4" fill="currentColor"/></svg><span>guidão</span></a>
+      <p>Marketplace de motos seminovas — modelo de demonstração.</p>
+    </div>
+    <div><h3>Comprar</h3><a href="index.html?categorias=trail,bigtrail">Trails</a><a href="index.html?categorias=naked">Nakeds</a><a href="index.html?precoMax=15000">Até R$ 15 mil</a><a href="index.html?categorias=scooter">Scooters</a></div>
+    <div><h3>Vender</h3><a href="vender.html">Anunciar</a><a href="vender.html#lojista">Área do lojista</a></div>
+    <div><h3>Institucional</h3><a href="../../index.html">WT Site Lab</a><a href="../../index.html#contato">Contato</a></div>
+  </div>
+  <p class="wrap rodape-legal">© <span data-year></span> Guidão · marca fictícia de demonstração. Anúncios, lojas, preços e valores de referência são ilustrativos. Fotos reais dos modelos via Wikimedia Commons, com créditos em cada anúncio. Marcas e modelos citados pertencem aos respectivos fabricantes.</p>
+</footer>
+
+<script src="data/estoque.js"></script>
+<script src="data/fotos.js"></script>
+<script src="conf.js"></script>
+<script src="../kit-veiculos/js/api.js"></script>
+<script src="../kit-veiculos/js/art.js"></script>
+<script src="../kit-veiculos/js/ui.js"></script>
+<script src="../kit-veiculos/js/anuncio.js"></script>
+</body>
+</html>

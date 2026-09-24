@@ -1,0 +1,19 @@
+/* Identidade visual do Roda Livre — sobrescreve as variáveis do kit. */
+/* Roda Livre — claro e quente, verde-petróleo com acento âmbar */
+:root{
+  --bg:#F6F3EE; --surface:#FFFFFF; --surface-2:#F8F5F0; --ink:#132A2A; --ink-2:#34494A; --muted:#6B7A7A; --line:#E6E0D6; --line-2:#D8D0C3;
+  --acc:#F2A012; --acc-2:#D98B05; --acc-50:#FDF1DC; --on-acc:#1B1405; --on-ink:#fff;
+  --topo:#0F2E2E; --topo-2:#163C3C; --topo-3:#1E4A49;
+  --demo-link:#F7C25A;
+  --f-display:'Outfit', system-ui, sans-serif; --f-body:'Figtree', system-ui, sans-serif;
+  --r:20px;
+}
+.faixa{ background:radial-gradient(700px 260px at 90% -30%, rgba(242,160,18,.28), transparent 60%), linear-gradient(180deg, var(--topo), var(--topo-2)); padding-bottom:26px; }
+.faixa-inner{ align-items:center; }
+.faixa-tit em, .vender-hero h1 em{ color:var(--acc); }
+.card{ border-radius:22px; }
+.card-img{ margin:8px 8px 0; border-radius:16px; }
+.selo-verde{ background:#1F7A5C; }
+.logo-mark{ color:var(--acc); }
+.tipo > span{ background:var(--topo-3); }
+.seg{ background:rgba(255,255,255,.08); }

@@ -879,6 +879,15 @@
         ],
       },
       {
+        id: 'veiculos', icone: '🚗', nome: 'Revenda de Veículos',
+        descricao: 'Marketplaces de carros, motos e revendas mistas.',
+        exemplos: [
+          { href: 'portfolio/carros/index.html', url: 'rodante.com.br', gradiente: ['#0B0F19', '#FF5A36'], titulo: 'Rodante', sub: 'Carros seminovos · Curitiba', cardTitulo: 'Marketplace de Carros', cardDesc: 'Busca com filtros, anúncio com financiamento, favoritos e comparação.' },
+          { href: 'portfolio/motos/index.html', url: 'guidao.com.br', gradiente: ['#08090B', '#9DB51C'], titulo: 'Guidão', sub: 'Motos seminovas · Curitiba', cardTitulo: 'Marketplace de Motos', cardDesc: 'Filtros por cilindrada e estilo, freio ABS, financiamento e comparação.' },
+          { href: 'portfolio/misto/index.html', url: 'rodalivre.com.br', gradiente: ['#0F2E2E', '#F2A012'], titulo: 'Roda Livre', sub: 'Carros e motos · Londrina', cardTitulo: 'Revenda de Carros e Motos', cardDesc: 'Carros e motos no mesmo lugar, com seletor por tipo e filtros próprios.' },
+        ],
+      },
+      {
         id: 'limpeza', icone: '🧹', nome: 'Limpeza & Serviços',
         descricao: 'Empresas de limpeza residencial e comercial.',
         exemplos: [
@@ -912,6 +921,7 @@
       arquitetura: svg('<path d="M3 21 12 3l9 18M7.5 13h9"/>'),
       automotivo: svg('<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4 2.6-2.6Z"/>'),
       limpeza: svg('<path d="M12 3v7M8 10h8l1 11H7l1-11ZM4 14l2-1M20 14l-2-1"/>'),
+      veiculos: svg('<path d="M5 16h14M3 16v-3l2-5h14l2 5v3h-2M5 16H3M7 16a2 2 0 1 0 4 0M13 16a2 2 0 1 0 4 0M6 11h12"/>'),
       imoveis: svg('<path d="M3 11 12 4l9 7M5 10v10h14V10M10 20v-6h4v6"/>'),
       ecommerce: svg('<path d="M6 7h12l-1 13H7L6 7ZM9 7a3 3 0 0 1 6 0"/>'),
     };
