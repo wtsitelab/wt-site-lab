@@ -1,64 +1,33 @@
-// ===== Lar Imóveis =====
-document.getElementById('year').textContent = new Date().getFullYear();
-
-const menuToggle = document.getElementById('menuToggle');
-const mainNav = document.getElementById('mainNav');
-menuToggle.addEventListener('click', () => {
-  const isOpen = mainNav.classList.toggle('open');
-  menuToggle.setAttribute('aria-expanded', String(isOpen));
-});
-mainNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mainNav.classList.remove('open')));
-
-// Imóveis selecionados (mock)
-const imoveis = [
-  { nome: 'Casa Alto da Glória', preco: 'R$ 780.000', desc: '3 quartos, jardim amplo', emoji: '🏡', bg: 'linear-gradient(160deg, #C98074, #6B6660)' },
-  { nome: 'Apartamento Juvevê', preco: 'R$ 540.000', desc: '2 quartos, 72m², reformado', emoji: '🏢', bg: 'linear-gradient(160deg, #E0A99E, #3A322D)' },
-  { nome: 'Cobertura Água Verde', preco: 'R$ 1.100.000', desc: '3 suítes, terraço gourmet', emoji: '🏙️', bg: 'linear-gradient(160deg, #6B6660, #C98074)' },
-];
-const listingGrid = document.getElementById('listingGrid');
-imoveis.forEach(im => {
-  const card = document.createElement('article');
-  card.className = 'listing-card';
-  card.innerHTML = `
-    <div class="listing-visual" style="background:${im.bg}"><span>${im.emoji}</span></div>
-    <div class="listing-info">
-      <h4>${im.nome}</h4>
-      <p>${im.desc}</p>
-      <span class="listing-price">${im.preco}</span>
-    </div>
-  `;
-  listingGrid.appendChild(card);
-});
-
-// Depoimentos (mock)
-const depoimentos = [
-  { texto: 'A Beatriz foi super honesta sobre um apartamento que eu tinha me apaixonado, mas tinha um problema estrutural. Isso me poupou uma dor de cabeça enorme.', autor: 'Felipe M.' },
-  { texto: 'Vendemos a casa da minha mãe com ela cuidando de tudo, inclusive da parte emocional do processo. Muito além do trabalho de corretora.', autor: 'Juliana K.' },
-  { texto: 'Procurava um apê pra alugar há meses sozinho. Com ela, fechei em duas semanas, no bairro certo e no valor que eu podia pagar.', autor: 'Thiago A.' },
-];
-const testimonialGrid = document.getElementById('testimonialGrid');
-depoimentos.forEach(d => {
-  const card = document.createElement('article');
-  card.className = 'testimonial-card';
-  card.innerHTML = `<div class="testimonial-stars">★★★★★</div><p>"${d.texto}"</p><span class="testimonial-author">${d.autor}</span>`;
-  testimonialGrid.appendChild(card);
-});
-
-// Scroll reveal
-const revealTargets = document.querySelectorAll('.listing-card, .testimonial-card');
-revealTargets.forEach(el => el.setAttribute('data-reveal', ''));
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
-  });
-}, { threshold: 0.15 });
-revealTargets.forEach(el => observer.observe(el));
-
-// Contato (demo)
-const form = document.getElementById('contactForm');
-const note = document.getElementById('formNote');
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  note.textContent = 'Mensagem recebida! Retorno pessoalmente em breve. (formulário de demonstração)';
-  form.reset();
-});
+// Lar Imóveis — simulador de financiamento (SAC e Price, valores ilustrativos).
+(function () {
+  'use strict';
+  const $ = (s, r = document) => r.querySelector(s);
+  const brl = (v) => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
+  const campos = { valor: $('[data-s-valor]'), entrada: $('[data-s-entrada]'), prazo: $('[data-s-prazo]'), taxa: $('[data-s-taxa]') };
+  function pinta(el) { el.style.setProperty('--p', ((el.value - el.min) / (el.max - el.min) * 100) + '%'); }
+  function calcular() {
+    const valor = Number(campos.valor.value), ent = Number(campos.entrada.value) / 100;
+    const n = Number(campos.prazo.value) * 12, aa = Number(campos.taxa.value) / 100;
+    const i = Math.pow(1 + aa, 1 / 12) - 1;
+    const fin = valor * (1 - ent);
+    const sac = fin / n + fin * i;
+    const price = fin * i / (1 - Math.pow(1 + i, -n));
+    $('[data-o-valor]').textContent = brl(valor);
+    $('[data-o-entrada]').textContent = `${Math.round(ent * 100)}% · ${brl(valor * ent)}`;
+    $('[data-o-prazo]').textContent = `${n / 12} anos`;
+    $('[data-o-taxa]').textContent = `${String(Number(campos.taxa.value).toFixed(2)).replace(/0$/, '').replace('.', ',')}%`;
+    $('[data-r-sac]').textContent = brl(sac);
+    $('[data-r-price]').textContent = brl(price);
+    $('[data-r-fin]').textContent = brl(fin);
+    Object.values(campos).forEach(pinta);
+  }
+  Object.values(campos).forEach(c => c.addEventListener('input', calcular));
+  document.querySelectorAll('[data-simular]').forEach(b => b.addEventListener('click', () => {
+    campos.valor.value = b.dataset.simular;
+    calcular();
+    const r = document.querySelector('.sim-resultado');
+    r.classList.remove('pisca'); void r.offsetWidth; r.classList.add('pisca');
+    document.getElementById('simulador').scrollIntoView({ behavior: 'smooth' });
+  }));
+  calcular();
+})();

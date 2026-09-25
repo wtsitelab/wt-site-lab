@@ -3,144 +3,160 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cantina da Nonna — Cozinha Italiana Tradicional</title>
-<meta name="description" content="Cantina da Nonna: massas artesanais, pizzas no forno a lenha e receitas de família servidas com todo o carinho da cozinha italiana.">
+<title>Cantina da Nonna — Cozinha italiana tradicional desde 1987</title>
+<meta name="description" content="Massas frescas feitas todos os dias, molhos que levam horas no fogo e pizzas no forno a lenha. Receitas de família desde 1987.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FBF4E8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../kit-negocios/base.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
-<header class="site-header" id="header">
-  <div class="wrap header-inner">
-    <a href="#top" class="brand">
-      <span class="brand-icon">🍝</span>
-      <span class="brand-name">Cantina <em>da Nonna</em></span>
-    </a>
-    <nav class="main-nav" id="mainNav">
+<header class="nb-header">
+  <div class="wrap nb-header-inner">
+    <a class="nb-logo" href="#topo"><span class="logo-nonna" aria-hidden="true">N</span>Cantina da Nonna<small>desde 1987</small></a>
+    <nav class="nb-nav" aria-label="Principal">
+      <a href="#hoje">Prato do dia</a>
       <a href="#cardapio">Cardápio</a>
-      <a href="#sobre">Nossa história</a>
-      <a href="#galeria">Galeria</a>
+      <a href="#historia">Nossa história</a>
       <a href="#reservas">Reservas</a>
-      <a href="#contato">Contato</a>
     </nav>
-    <a href="#reservas" class="btn btn-primary nav-cta">Reservar mesa</a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <a class="btn btn-acc btn-sm nb-header-cta" href="#reservas">Reservar mesa</a>
+    <button class="nb-menu-btn" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<main id="top">
-
-  <!-- HERO -->
-  <section class="hero">
+<main id="conteudo">
+  <section class="hero" id="topo">
     <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow">Cozinha italiana tradicional · desde 1987</p>
-        <h1>Receitas de família, <span class="hl">servidas com amor.</span></h1>
-        <p class="lead">Massas frescas feitas todos os dias, molhos que levam horas no fogo e pizzas no forno a lenha — a mesma receita que a Nonna Lucia trouxe da Itália há quase 40 anos.</p>
-        <div class="hero-actions">
-          <a href="#reservas" class="btn btn-primary">Reservar uma mesa</a>
-          <a href="#cardapio" class="btn btn-outline">Ver cardápio ↓</a>
+      <div class="hero-texto">
+        <p class="eyebrow">Cozinha italiana tradicional</p>
+        <h1 class="hero-titulo">Receitas de família, <em>servidas com amor.</em></h1>
+        <p class="lead">Massa fresca feita todos os dias, molhos que levam horas no fogo e pizza no forno a lenha — as mesmas receitas que a Nonna Lucia trouxe da Toscana.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-acc btn-lg" href="#reservas">Reservar uma mesa</a>
+          <a class="btn btn-ghost btn-lg" href="#cardapio">Ver cardápio</a>
         </div>
+        <p class="hero-nota"><span class="estrelas">★★★★★</span> 4,9 · mais de 800 avaliações</p>
       </div>
-      <div class="hero-visual" aria-hidden="true">
-        <div class="plate-illustration">
-          <div class="plate"></div>
-          <div class="pasta-swirl"></div>
-          <span class="basil">🌿</span>
-        </div>
-        <div class="floating-badge">⭐ 4.9 · +800 avaliações</div>
+      <div class="hero-midia">
+        <div class="foto hero-foto"><img src="img/hero.jpg" alt="Pizza de forno a lenha com tomate e manjericão" fetchpriority="high"></div>
+        <div class="selo-forno"><span>forno a</span><strong>lenha</strong></div>
       </div>
     </div>
   </section>
 
-  <!-- CARDÁPIO -->
-  <section class="section" id="cardapio">
+  <div class="toalha" aria-hidden="true"></div>
+
+  <section class="sec" id="hoje">
+    <div class="wrap hoje" data-reveal>
+      <div class="hoje-foto foto"><img data-hoje-img alt=""></div>
+      <div class="hoje-txt">
+        <p class="eyebrow" data-hoje-dia>Hoje</p>
+        <h2 class="h-sec" data-hoje-nome></h2>
+        <p class="lead" data-hoje-desc></p>
+        <div class="dias" role="tablist" aria-label="Prato de cada dia" data-dias></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-alt" id="cardapio">
     <div class="wrap">
-      <p class="section-eyebrow">Cardápio</p>
-      <h2 class="section-title">O que sai da nossa cozinha</h2>
-      <div class="menu-tabs" id="menuTabs">
-        <button class="tab-btn active" data-tab="entradas">Entradas</button>
-        <button class="tab-btn" data-tab="massas">Massas</button>
-        <button class="tab-btn" data-tab="pizzas">Pizzas</button>
-        <button class="tab-btn" data-tab="sobremesas">Sobremesas</button>
+      <div class="sec-head sec-head-center" data-reveal>
+        <p class="eyebrow">Cardápio</p>
+        <h2 class="h-sec">O que sai da <em>nossa cozinha</em></h2>
       </div>
-      <div class="menu-list" id="menuList"></div>
+      <div class="cats" role="tablist" data-cats data-reveal>
+        <button role="tab" aria-selected="false" data-cat="entradas">Antipasti</button>
+        <button role="tab" aria-selected="true" data-cat="massas">Massas</button>
+        <button role="tab" aria-selected="false" data-cat="pizzas">Pizzas</button>
+        <button role="tab" aria-selected="false" data-cat="doces">Dolci</button>
+      </div>
+      <div class="cardapio" data-cardapio aria-live="polite"></div>
     </div>
   </section>
 
-  <!-- SOBRE / HISTÓRIA -->
-  <section class="section section-alt" id="sobre">
-    <div class="wrap about-grid">
-      <div class="about-portrait" aria-hidden="true">👵🍝</div>
-      <div>
-        <p class="section-eyebrow">Nossa história</p>
-        <h2 class="section-title">Da cozinha da Nonna Lucia para Curitiba</h2>
-        <p>Em 1987, Lucia Bianchi trouxe da Toscana as receitas que aprendeu com a própria mãe e abriu as portas de um pequeno restaurante de bairro. Hoje, na terceira geração da família, a Cantina da Nonna continua fazendo tudo do mesmo jeito: massa fresca todos os dias, molho de tomate que cozinha por horas, e pizza no forno a lenha original.</p>
-        <p>Se você perguntar, vamos te contar com orgulho: nada aqui é congelado.</p>
+  <section class="sec" id="historia">
+    <div class="wrap split">
+      <div class="historia-midia" data-reveal>
+        <div class="foto foto-4x3"><img src="img/salao.jpg" alt="Salão da cantina com toalhas xadrez" loading="lazy"></div>
+        <p class="recado">“Nada aqui é congelado.”<span>— Nonna Lucia</span></p>
+      </div>
+      <div data-reveal>
+        <p class="eyebrow">Nossa história</p>
+        <h2 class="h-sec">Da cozinha da Nonna <em>para Curitiba</em></h2>
+        <ol class="linha">
+          <li><strong>1987</strong>Lucia Bianchi abre um pequeno restaurante de bairro com as receitas da mãe.</li>
+          <li><strong>1998</strong>Chega o forno a lenha, construído por um artesão da colônia italiana.</li>
+          <li><strong>2012</strong>A segunda geração amplia o salão e cria o almoço de domingo.</li>
+          <li><strong>Hoje</strong>A terceira geração segue fazendo tudo do mesmo jeito.</li>
+        </ol>
       </div>
     </div>
   </section>
 
-  <!-- GALERIA -->
-  <section class="section" id="galeria">
+  <section class="sec sec-alt">
     <div class="wrap">
-      <p class="section-eyebrow">Galeria</p>
-      <h2 class="section-title">Um gostinho do que te espera</h2>
-      <div class="gallery-grid" id="galleryGrid"></div>
+      <div class="galeria" data-lightbox data-reveal>
+        <a href="img/lasanha.jpg" data-legenda="Lasanha à bolonhesa"><img src="img/lasanha.jpg" alt="Lasanha à bolonhesa" loading="lazy"></a>
+        <a href="img/margherita.jpg" data-legenda="Pizza margherita"><img src="img/margherita.jpg" alt="Pizza margherita" loading="lazy"></a>
+        <a href="img/tiramisu.jpg" data-legenda="Tiramisù da Nonna"><img src="img/tiramisu.jpg" alt="Tiramisù" loading="lazy"></a>
+        <a href="img/vongole.jpg" data-legenda="Spaghetti alle vongole"><img src="img/vongole.jpg" alt="Spaghetti alle vongole" loading="lazy"></a>
+      </div>
     </div>
   </section>
 
-  <!-- RESERVAS -->
-  <section class="section section-alt" id="reservas">
-    <div class="wrap contact-grid">
-      <div>
-        <p class="section-eyebrow">Reservas</p>
-        <h2 class="section-title">Garanta sua mesa</h2>
-        <p>Aos finais de semana costuma lotar — reserve com antecedência.</p>
-        <ul class="contact-info">
-          <li>📍 Rua XV de Novembro, 450 — Centro, Curitiba/PR</li>
-          <li>🕐 Terça a domingo, 18h às 23h</li>
-          <li>📱 (41) 99887-1122</li>
+  <section class="sec" id="reservas">
+    <div class="wrap reserva-caixa">
+      <div data-reveal>
+        <p class="eyebrow">Reservas</p>
+        <h2 class="h-sec">Garanta <em>sua mesa</em></h2>
+        <p class="lead">Aos fins de semana costuma lotar — reserve com antecedência.</p>
+        <ul class="contato-lista">
+          <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><strong>Endereço</strong>Rua Exemplo, 000 · Centro, Curitiba</div></li>
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><strong>Horário</strong>Terça a domingo, 18h às 23h · Domingo também no almoço</div></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><strong>Telefone</strong>(41) 0000-0000</div></li>
         </ul>
       </div>
-      <form class="contact-form" id="reservaForm">
-        <div class="field">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" required placeholder="Seu nome">
+      <form class="form reserva-form" data-demo-form data-reveal>
+        <div class="linha">
+          <div class="campo"><label for="c-nome">Nome</label><input id="c-nome" required autocomplete="name"></div>
+          <div class="campo"><label for="c-tel">Telefone</label><input id="c-tel" type="tel" autocomplete="tel"></div>
         </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="data">Data</label>
-            <input type="date" id="data">
-          </div>
-          <div class="field">
-            <label for="pessoas">Pessoas</label>
-            <input type="number" id="pessoas" min="1" value="2">
-          </div>
+        <div class="linha">
+          <div class="campo"><label for="c-data">Data</label><input id="c-data" type="date" required></div>
+          <div class="campo"><label for="c-pessoas">Pessoas</label><select id="c-pessoas"><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7 ou mais</option></select></div>
         </div>
-        <div class="field">
-          <label for="observacoes">Observações</label>
-          <textarea id="observacoes" rows="3" placeholder="Alguma preferência? (mesa externa, aniversário, etc.)"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary btn-block">Solicitar reserva</button>
-        <p class="form-note" id="formNote" role="status"></p>
+        <div class="campo"><label for="c-obs">Observações</label><textarea id="c-obs" placeholder="Aniversário, cadeira para bebê, restrição alimentar…"></textarea></div>
+        <label class="check"><input type="checkbox" required> Concordo com o uso dos meus dados para retorno (LGPD).</label>
+        <button class="btn btn-acc btn-lg" type="submit">Solicitar reserva</button>
+        <p class="form-nota" data-form-note role="status"></p>
       </form>
     </div>
   </section>
-
 </main>
 
-<footer class="site-footer" id="contato">
-  <div class="wrap footer-inner">
-    <span>© <span id="year"></span> Cantina da Nonna. Site de demonstração.</span>
-    <span class="footer-note">Exemplo de portfólio — não é um restaurante real.</span>
+<footer class="nb-footer">
+  <div class="wrap">
+    <div class="nb-footer-grid">
+      <div><a class="nb-logo" href="#topo"><span class="logo-nonna" aria-hidden="true">N</span>Cantina da Nonna<small>desde 1987</small></a><p>Cozinha italiana tradicional, receitas de família.</p></div>
+      <div><h4>Casa</h4><a href="#cardapio">Cardápio</a><a href="#hoje">Prato do dia</a><a href="#historia">Nossa história</a></div>
+      <div><h4>Reservas</h4><a href="#reservas">Reservar mesa</a><a href="#reservas">(41) 0000-0000</a></div>
+      <div><h4>Horário</h4><p>Terça a domingo<br>18h às 23h</p></div>
+    </div>
+    <div class="nb-legal"><span>© <span data-ano></span> Cantina da Nonna · restaurante fictício de demonstração</span><span>Preços ilustrativos</span></div>
+    <p class="nb-creditos" data-creditos></p>
   </div>
 </footer>
 
+<a class="nb-wa" href="#reservas" aria-label="Falar pelo WhatsApp (demonstração)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.7 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.2-3.5-.7-2.9-1.1-4.8-4-5-4.2-.1-.2-1.2-1.6-1.2-3s.7-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .5 0 .7.5.3.7.9 2.2 1 2.4.1.2.1.4 0 .6l-.9 1.1c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.2 2.4 1.5 2.7 1.7.3.2.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.2.6.3.1.2.1.9-.1 1.6Z"/></svg></a>
+
+<script src="img/creditos.js"></script>
+<script src="../kit-negocios/base.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

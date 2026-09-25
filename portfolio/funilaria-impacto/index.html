@@ -3,146 +3,178 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Funilaria Impacto Zero — Reparo Automotivo e Sinistros</title>
-<meta name="description" content="Funilaria Impacto Zero: reparo de funilaria e pintura com atendimento direto a seguradoras, orçamento digital e carro reserva.">
+<title>Impacto Zero — Funilaria, pintura e reparo de sinistros</title>
+<meta name="description" content="Funilaria e pintura com orçamento digital, carro reserva e atendimento direto com a seguradora. Acompanhe o reparo pelo celular.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0E1116">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../kit-negocios/base.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
-<header class="site-header" id="header">
-  <div class="wrap header-inner">
-    <a href="#top" class="brand">
-      <span class="brand-mark">IZ</span>
-      <span class="brand-name">Impacto <em>Zero</em></span>
-    </a>
-    <nav class="main-nav" id="mainNav">
+<header class="nb-header sobre-escuro">
+  <div class="wrap nb-header-inner">
+    <a class="nb-logo" href="#topo"><span class="logo-iz" aria-hidden="true">IZ</span>Impacto Zero</a>
+    <nav class="nb-nav" aria-label="Principal">
       <a href="#servicos">Serviços</a>
-      <a href="#seguradoras">Seguradoras</a>
-      <a href="#processo">Como funciona</a>
-      <a href="#contato">Orçamento</a>
+      <a href="#seguro">Seguro</a>
+      <a href="#acompanhe">Acompanhe</a>
+      <a href="#orcamento">Orçamento</a>
     </nav>
-    <a href="#contato" class="btn btn-primary nav-cta">Orçamento rápido</a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <a class="btn btn-acc btn-sm nb-header-cta" href="#orcamento">Orçamento rápido</a>
+    <button class="nb-menu-btn" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<main id="top">
-
-  <!-- HERO -->
-  <section class="hero">
+<main id="conteudo">
+  <section class="hero sob-header" id="topo">
+    <div class="hero-fundo"><img src="img/hero.jpg" alt="" fetchpriority="high"></div>
     <div class="wrap hero-inner">
-      <p class="eyebrow">Funilaria e pintura · atendimento a seguradoras</p>
-      <h1>Seu carro como <span class="hl">novo, sem burocracia.</span></h1>
-      <p class="hero-lead">Reparo de funilaria e pintura com orçamento digital, carro reserva disponível e atendimento direto com as principais seguradoras — você só precisa aparecer.</p>
-      <div class="hero-actions">
-        <a href="#contato" class="btn btn-primary">Solicitar orçamento</a>
-        <a href="#seguradoras" class="btn btn-outline">Trabalha com meu seguro? ↓</a>
+      <p class="hero-tag">Funilaria e pintura · atendimento a seguradoras</p>
+      <h1 class="hero-titulo">Seu carro como novo, <em>sem burocracia.</em></h1>
+      <p class="hero-lead">Orçamento digital, carro reserva e contato direto com a sua seguradora — você só precisa aparecer.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-acc btn-lg" href="#orcamento">Enviar fotos do dano</a>
+        <a class="btn btn-light btn-lg" href="#seguro">Trabalha com meu seguro?</a>
       </div>
-      <div class="hero-stats">
-        <div class="stat"><strong>+4.000</strong><span>reparos realizados</span></div>
-        <div class="stat"><strong>48h</strong><span>prazo médio de reparo</span></div>
-        <div class="stat"><strong>5 anos</strong><span>de garantia na pintura</span></div>
-      </div>
+      <ul class="hero-numeros">
+        <li><strong data-count="4000" data-prefixo="+">0</strong><span>reparos realizados</span></li>
+        <li><strong data-count="48" data-sufixo="h">0</strong><span>prazo médio de reparo</span></li>
+        <li><strong data-count="5" data-sufixo=" anos">0</strong><span>de garantia na pintura</span></li>
+      </ul>
     </div>
   </section>
 
-  <!-- SERVIÇOS -->
-  <section class="section" id="servicos">
+  <section class="sec" id="servicos">
     <div class="wrap">
-      <p class="section-eyebrow">Serviços</p>
-      <h2 class="section-title">Do amassado à pintura de fábrica</h2>
-      <div class="services-grid">
-        <article class="service-card"><span class="s-icon">🔨</span><h3>Funilaria</h3><p>Reparo de amassados, para-choques e estrutura, com equipamento de medição a laser.</p></article>
-        <article class="service-card"><span class="s-icon">🎨</span><h3>Pintura Automotiva</h3><p>Cabine de pintura climatizada e cor idêntica à original de fábrica.</p></article>
-        <article class="service-card"><span class="s-icon">🚗</span><h3>Funilaria de Sinistro</h3><p>Reparo completo de colisões, com laudo e acompanhamento da seguradora.</p></article>
-        <article class="service-card"><span class="s-icon">🔧</span><h3>Polimento e Estética</h3><p>Polimento técnico e proteção de pintura para deixar o carro impecável.</p></article>
+      <div class="sec-head sec-head-row" data-reveal>
+        <div><p class="eyebrow">Serviços</p><h2 class="h-sec">Do amassado à pintura de fábrica</h2></div>
+        <p class="lead">Equipamento de medição a laser e cabine de pintura climatizada.</p>
+      </div>
+      <div class="servicos" data-reveal-grupo>
+        <article class="servico servico-grande" data-reveal>
+          <div class="foto"><img src="img/vermelho.jpg" alt="Hatch vermelho com pintura impecável" loading="lazy"></div>
+          <div class="servico-txt"><span class="servico-num">01</span><h3>Pintura automotiva</h3><p>Cabine climatizada e cor idêntica à original, conferida por espectrofotômetro.</p></div>
+        </article>
+        <article class="servico" data-reveal><span class="servico-num">02</span><h3>Funilaria</h3><p>Amassados, para-choques e estrutura com medição a laser.</p></article>
+        <article class="servico" data-reveal><span class="servico-num">03</span><h3>Sinistros</h3><p>Reparo completo de colisões, com laudo e acompanhamento da seguradora.</p></article>
+        <article class="servico" data-reveal><span class="servico-num">04</span><h3>Martelinho de ouro</h3><p>Pequenos amassados sem repintura, quando a pintura original está intacta.</p></article>
+        <article class="servico" data-reveal><span class="servico-num">05</span><h3>Polimento e proteção</h3><p>Polimento técnico e vitrificação para deixar o carro impecável.</p></article>
       </div>
     </div>
   </section>
 
-  <!-- SEGURADORAS -->
-  <section class="section section-dark" id="seguradoras">
+  <section class="sec sec-alt" id="seguro">
     <div class="wrap">
-      <p class="section-eyebrow section-eyebrow-light">Seguradoras credenciadas</p>
-      <h2 class="section-title section-title-light">Trabalhamos direto com o seu seguro</h2>
-      <p class="section-lead-light">Enviamos o orçamento e a documentação direto para a seguradora — você só acompanha.</p>
-      <div class="insurer-grid">
-        <div class="insurer-chip">Porto Seguro</div>
-        <div class="insurer-chip">Bradesco Seguros</div>
-        <div class="insurer-chip">SulAmérica</div>
-        <div class="insurer-chip">HDI Seguros</div>
-        <div class="insurer-chip">Azul Seguros</div>
-        <div class="insurer-chip">Itaú Seguros</div>
+      <div class="sec-head sec-head-center" data-reveal>
+        <p class="eyebrow">Seguro</p>
+        <h2 class="h-sec">Qual é a sua situação?</h2>
+        <p class="lead">Atendemos as principais seguradoras do mercado. Escolha abaixo e veja como funciona.</p>
+      </div>
+      <div class="situacoes" data-abas data-reveal>
+        <div class="abas-lista situacoes-abas" role="tablist">
+          <button class="aba" data-aba="seguro" role="tab" aria-selected="true">Tenho seguro</button>
+          <button class="aba" data-aba="terceiro" role="tab" aria-selected="false">Fui atingido (terceiro)</button>
+          <button class="aba" data-aba="particular" role="tab" aria-selected="false">Particular</button>
+        </div>
+        <div class="aba-painel situacao" data-painel="seguro">
+          <ol class="fluxo"><li><strong>Abra o sinistro</strong>Ligue para a seguradora e escolha a Impacto Zero como oficina.</li><li><strong>Vistoria aqui</strong>O vistoriador avalia o carro na nossa oficina, sem você esperar.</li><li><strong>Reparo aprovado</strong>Negociamos peças e prazos direto com a seguradora.</li><li><strong>Carro pronto</strong>Você paga apenas a franquia, se houver.</li></ol>
+          <p class="situacao-nota">Carro reserva conforme a cobertura contratada na sua apólice.</p>
+        </div>
+        <div class="aba-painel situacao" data-painel="terceiro" hidden>
+          <ol class="fluxo"><li><strong>Boletim e dados</strong>Tenha o boletim de ocorrência e os dados do seguro do outro motorista.</li><li><strong>Abrimos o processo</strong>Cuidamos do contato com a seguradora do terceiro.</li><li><strong>Vistoria e reparo</strong>Assim que aprovado, o reparo começa.</li><li><strong>Sem custo para você</strong>O reparo é pago pela seguradora do terceiro.</li></ol>
+          <p class="situacao-nota">Ajudamos a reunir os documentos que a seguradora pede.</p>
+        </div>
+        <div class="aba-painel situacao" data-painel="particular" hidden>
+          <ol class="fluxo"><li><strong>Envie as fotos</strong>Pelo formulário ou WhatsApp, de frente e de lado para o dano.</li><li><strong>Orçamento em 2h</strong>Valor detalhado por peça e mão de obra.</li><li><strong>Agende a entrada</strong>Parcelamos o reparo no cartão.</li><li><strong>Retire com garantia</strong>Laudo e garantia de 5 anos na pintura.</li></ol>
+          <p class="situacao-nota">Às vezes o reparo particular sai mais barato que a franquia — a gente compara para você.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- PROCESSO -->
-  <section class="section" id="processo">
+  <section class="sec" id="acompanhe">
+    <div class="wrap acompanhe-grid">
+      <div data-reveal>
+        <p class="eyebrow">Acompanhe seu reparo</p>
+        <h2 class="h-sec">Saiba em que etapa seu carro está</h2>
+        <p class="lead">Cada cliente recebe um código para acompanhar o reparo pelo celular, com fotos de cada etapa.</p>
+        <form class="rastreio" data-rastreio>
+          <label for="r-cod" class="sr-only">Código do reparo</label>
+          <input id="r-cod" value="IZ-7421" autocomplete="off">
+          <button class="btn btn-acc" type="submit">Consultar</button>
+        </form>
+        <p class="rastreio-dica">Demonstração: experimente <button type="button" data-cod="IZ-7421">IZ-7421</button> ou <button type="button" data-cod="IZ-3310">IZ-3310</button>.</p>
+      </div>
+      <div class="status-card" data-reveal>
+        <div class="status-topo"><div><span>Reparo</span><strong data-st-cod>IZ-7421</strong></div><div><span>Veículo</span><strong data-st-carro>Sedã prata</strong></div></div>
+        <ol class="etapas" data-etapas></ol>
+        <p class="status-previsao" data-st-prev></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-dark">
     <div class="wrap">
-      <p class="section-eyebrow">Como funciona</p>
-      <h2 class="section-title">Do orçamento à retirada do carro</h2>
-      <div class="process-track">
-        <div class="process-step"><span>01</span><p>Envie fotos do dano pelo WhatsApp para orçamento rápido</p></div>
-        <div class="process-step"><span>02</span><p>Agendamos a entrada do veículo (com carro reserva, se precisar)</p></div>
-        <div class="process-step"><span>03</span><p>Reparo executado com atualização por WhatsApp</p></div>
-        <div class="process-step"><span>04</span><p>Retirada do carro com laudo de garantia</p></div>
+      <div class="sec-head sec-head-row" data-reveal>
+        <div><p class="eyebrow">Resultado</p><h2 class="h-sec">Acabamento que não denuncia o reparo</h2></div>
+        <p class="lead">Toque para ampliar.</p>
+      </div>
+      <div class="galeria" data-lightbox data-reveal>
+        <a class="g1" href="img/branco.jpg" data-legenda="Esportivo branco após polimento"><img src="img/branco.jpg" alt="Esportivo branco refletido no chão molhado" loading="lazy"></a>
+        <a href="img/prata.jpg" data-legenda="Cupê prata com pintura recuperada"><img src="img/prata.jpg" alt="Cupê prata" loading="lazy"></a>
+        <a href="img/roda.jpg" data-legenda="Para-lama recuperado sem repintura"><img src="img/roda.jpg" alt="Detalhe da roda e do para-lama" loading="lazy"></a>
+        <a href="img/tinta.jpg" data-legenda="Cor conferida antes da pintura"><img src="img/tinta.jpg" alt="Lata de tinta automotiva ao lado de uma miniatura" loading="lazy"></a>
       </div>
     </div>
   </section>
 
-  <!-- CONTATO -->
-  <section class="section section-dark" id="contato">
-    <div class="wrap contact-grid">
-      <div>
-        <p class="section-eyebrow section-eyebrow-light">Orçamento</p>
-        <h2 class="section-title section-title-light">Envie fotos e receba um orçamento rápido</h2>
-        <ul class="contact-info">
-          <li><strong>Endereço</strong> Av. das Torres, 3400 — CIC, Curitiba/PR</li>
-          <li><strong>Telefone</strong> (41) 3299-7810</li>
-          <li><strong>WhatsApp</strong> (41) 99123-4455</li>
+  <section class="sec" id="orcamento">
+    <div class="wrap orcamento-grid">
+      <div data-reveal>
+        <p class="eyebrow">Orçamento</p>
+        <h2 class="h-sec">Envie fotos e receba um orçamento rápido</h2>
+        <ul class="contato-lista">
+          <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><strong>Oficina</strong>Av. Exemplo, 0000 · CIC, Curitiba</div></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><strong>Telefone e WhatsApp</strong>(41) 0000-0000</div></li>
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><strong>Horário</strong>Seg a sex, 7h30 às 18h · Sáb, 8h às 12h</div></li>
         </ul>
       </div>
-      <form class="contact-form" id="contactForm">
-        <div class="field">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" required placeholder="Seu nome">
+      <form class="form orcamento-form" data-demo-form data-reveal>
+        <div class="linha">
+          <div class="campo"><label for="o-nome">Nome</label><input id="o-nome" required autocomplete="name"></div>
+          <div class="campo"><label for="o-carro">Veículo</label><input id="o-carro" placeholder="Modelo e ano"></div>
         </div>
-        <div class="field">
-          <label for="veiculo">Veículo</label>
-          <input type="text" id="veiculo" placeholder="Marca, modelo e ano">
-        </div>
-        <div class="field">
-          <label for="seguradora">Tem seguro?</label>
-          <select id="seguradora">
-            <option>Sim, tenho seguro</option>
-            <option>Não, é particular</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="mensagem">Descreva o dano</label>
-          <textarea id="mensagem" rows="3" placeholder="Conte o que aconteceu"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary btn-block">Solicitar orçamento</button>
-        <p class="form-note" id="formNote" role="status"></p>
+        <div class="campo"><label for="o-seg">Tem seguro?</label><select id="o-seg"><option>Sim, tenho seguro</option><option>Fui atingido por um terceiro</option><option>Não, é particular</option></select></div>
+        <div class="campo"><label for="o-msg">Descreva o dano</label><textarea id="o-msg"></textarea></div>
+        <div class="campo"><label for="o-fotos">Fotos</label><input id="o-fotos" type="file" accept="image/*" multiple></div>
+        <label class="check"><input type="checkbox" required> Concordo com o uso dos meus dados para retorno (LGPD).</label>
+        <button class="btn btn-acc btn-lg" type="submit">Solicitar orçamento</button>
+        <p class="form-nota" data-form-note role="status"></p>
       </form>
     </div>
   </section>
-
 </main>
 
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <span>© <span id="year"></span> Funilaria Impacto Zero. Site de demonstração.</span>
-    <span class="footer-note">Exemplo de portfólio — não é uma empresa real.</span>
+<footer class="nb-footer">
+  <div class="wrap">
+    <div class="nb-footer-grid">
+      <div><a class="nb-logo" href="#topo"><span class="logo-iz" aria-hidden="true">IZ</span>Impacto Zero</a><p>Funilaria, pintura e sinistros sem burocracia.</p></div>
+      <div><h4>Serviços</h4><a href="#servicos">Pintura</a><a href="#servicos">Funilaria</a><a href="#servicos">Sinistros</a></div>
+      <div><h4>Clientes</h4><a href="#seguro">Seguro</a><a href="#acompanhe">Acompanhe seu reparo</a></div>
+      <div><h4>Contato</h4><a href="#orcamento">(41) 0000-0000</a></div>
+    </div>
+    <div class="nb-legal"><span>© <span data-ano></span> Funilaria Impacto Zero · empresa fictícia de demonstração</span></div>
+    <p class="nb-creditos" data-creditos></p>
   </div>
 </footer>
 
+<script src="img/creditos.js"></script>
+<script src="../kit-negocios/base.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

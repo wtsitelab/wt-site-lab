@@ -838,44 +838,44 @@
         id: 'contabilidade', icone: '📊', nome: 'Contabilidade e Finanças',
         descricao: 'Escritórios contábeis e consultoria financeira.',
         exemplos: [
-          { href: 'portfolio/contador/index.html', url: 'contabilidadeprime.com.br', gradiente: ['#0B2A4A', '#1E6FD9'], titulo: 'Contabilidade Prime', sub: 'Imposto de Renda · MEI · Simples Nacional', cardTitulo: 'Escritório de Contabilidade', cardDesc: 'Institucional + painel de vencimentos fiscais.' },
+          { href: 'portfolio/contador/index.html', url: 'contabilidadeprime.com.br', gradiente: ['#0B1526', '#2563EB'], titulo: 'Contabilidade Prime', sub: 'Imposto de Renda · MEI · Simples Nacional', cardTitulo: 'Escritório de Contabilidade', cardDesc: 'Painel fiscal ao vivo, perfis por tipo de cliente.' },
         ],
       },
       {
         id: 'alimentacao', icone: '🍽️', nome: 'Alimentação',
         descricao: 'Confeitarias, padarias e restaurantes.',
         exemplos: [
-          { href: 'portfolio/doces/index.html', url: 'doceencanto.com.br', gradiente: ['#F8E1E7', '#6B4226'], titulo: 'Doce Encanto', sub: 'Bolos · Tortas · Doces · Salgados', cardTitulo: 'Confeitaria / Venda de Doces', cardDesc: 'Cardápio interativo, galeria e encomendas.' },
-          { href: 'portfolio/restaurante-cantina/index.html', url: 'cantinadanonna.com.br', gradiente: ['#A6423A', '#5C3A21'], titulo: 'Cantina da Nonna', sub: 'Cozinha italiana tradicional', cardTitulo: 'Restaurante Familiar', cardDesc: 'Cardápio por categorias, galeria e reservas.' },
-          { href: 'portfolio/restaurante-bistro/index.html', url: 'ambarbistro.com.br', gradiente: ['#14100D', '#C9962C'], titulo: 'Âmbar Bistrô', sub: 'Cozinha contemporânea', cardTitulo: 'Restaurante Alta Gastronomia', cardDesc: 'Identidade sofisticada, menu degustação.' },
+          { href: 'portfolio/doces/index.html', url: 'doceencanto.com.br', gradiente: ['#3B1F17', '#C8324F'], titulo: 'Doce Encanto', sub: 'Bolos · Tortas · Doces · Salgados', cardTitulo: 'Confeitaria / Venda de Doces', cardDesc: 'Cardápio com montagem de encomenda e galeria.' },
+          { href: 'portfolio/restaurante-cantina/index.html', url: 'cantinadanonna.com.br', gradiente: ['#C0392B', '#3F7D3A'], titulo: 'Cantina da Nonna', sub: 'Cozinha italiana tradicional', cardTitulo: 'Restaurante Familiar', cardDesc: 'Prato do dia, cardápio com fotos e reservas.' },
+          { href: 'portfolio/restaurante-bistro/index.html', url: 'ambarbistro.com.br', gradiente: ['#16110D', '#C8893A'], titulo: 'Âmbar Bistrô', sub: 'Cozinha contemporânea', cardTitulo: 'Restaurante Alta Gastronomia', cardDesc: 'Menu de 7 tempos, harmonização e reserva por noite.' },
         ],
       },
       {
         id: 'saude', icone: '🩺', nome: 'Saúde',
         descricao: 'Médicos, psicólogos e clínicas odontológicas.',
         exemplos: [
-          { href: 'portfolio/odonto-familia/index.html', url: 'sorrisopleno.com.br', gradiente: ['#3E9DC7', '#1F3A4D'], titulo: 'Sorriso Pleno', sub: 'Odontologia para toda a família', cardTitulo: 'Clínica Odontológica Familiar', cardDesc: 'Tom acolhedor, tratamentos e equipe.' },
-          { href: 'portfolio/odonto-premium/index.html', url: 'ortodental.com.br', gradiente: ['#0F2A43', '#00B8A9'], titulo: 'OrtoDental Curitiba', sub: 'Ortodontia digital de precisão', cardTitulo: 'Clínica Odontológica Premium', cardDesc: 'Identidade tech, tratamentos em abas.' },
+          { href: 'portfolio/odonto-familia/index.html', url: 'sorrisopleno.com.br', gradiente: ['#1F3A4D', '#FF7A59'], titulo: 'Sorriso Pleno', sub: 'Odontologia para toda a família', cardTitulo: 'Clínica Odontológica Familiar', cardDesc: 'Tratamentos por fase da vida, área infantil.' },
+          { href: 'portfolio/odonto-premium/index.html', url: 'ortodental.com.br', gradiente: ['#1B1D1F', '#8FA98F'], titulo: 'OrtoDental Curitiba', sub: 'Ortodontia digital de precisão', cardTitulo: 'Clínica Odontológica Premium', cardDesc: 'Simulação ilustrativa de alinhamento e jornada.' },
         ],
       },
       {
         id: 'arquitetura', icone: '📐', nome: 'Arquitetura & Design',
         descricao: 'Escritórios de arquitetura e design de interiores.',
         exemplos: [
-          { href: 'portfolio/arquitetura-traco/index.html', url: 'traco.arq.br', gradiente: ['#141414', '#A85C32'], titulo: 'Traço Arquitetura', sub: 'Projetos residenciais e comerciais', cardTitulo: 'Estúdio Minimalista', cardDesc: 'Portfólio de projetos com filtro por categoria.' },
-          { href: 'portfolio/arquitetura-urbana/index.html', url: 'urbana.arq.br', gradiente: ['#8A9A7E', '#B5563C'], titulo: 'Urbana Arquitetura', sub: 'Interiores e pequenas reformas', cardTitulo: 'Arquitetura & Interiores', cardDesc: 'Comparador "antes e depois" interativo.' },
+          { href: 'portfolio/arquitetura-traco/index.html', url: 'traco.arq.br', gradiente: ['#141414', '#A85C32'], titulo: 'Traço Arquitetura', sub: 'Projetos residenciais e comerciais', cardTitulo: 'Estúdio Minimalista', cardDesc: 'Portfólio de projetos com filtro e ampliação.' },
+          { href: 'portfolio/arquitetura-urbana/index.html', url: 'urbana.arq.br', gradiente: ['#2F3829', '#C4643B'], titulo: 'Urbana Arquitetura', sub: 'Interiores e pequenas reformas', cardTitulo: 'Arquitetura & Interiores', cardDesc: 'Comparador "antes e depois" interativo.' },
         ],
       },
       {
         id: 'automotivo', icone: '🔧', nome: 'Automotivo',
         descricao: 'Funilarias, auto elétricas e oficinas mecânicas.',
         exemplos: [
-          { href: 'portfolio/funilaria-impacto/index.html', url: 'impactozero.com.br', gradiente: ['#1A1A1A', '#FF6B35'], titulo: 'Impacto Zero', sub: 'Funilaria · atendimento a seguradoras', cardTitulo: 'Funilaria Moderna', cardDesc: 'Foco em sinistros, orçamento digital.' },
-          { href: 'portfolio/funilaria-boavista/index.html', url: 'funilariaboavista.com.br', gradiente: ['#1E3A5F', '#3D6491'], titulo: 'Funilaria Boa Vista', sub: 'Tradição de bairro desde 2003', cardTitulo: 'Funilaria Tradicional', cardDesc: 'Identidade familiar, história de bairro.' },
-          { href: 'portfolio/autoeletrica-volt/index.html', url: 'voltautoeletrica.com.br', gradiente: ['#0A0E1A', '#FFD60A'], titulo: 'Volt', sub: 'Diagnóstico eletrônico de precisão', cardTitulo: 'Auto Elétrica Tech', cardDesc: 'Identidade digital, diagnóstico computadorizado.' },
-          { href: 'portfolio/autoeletrica-central/index.html', url: 'autoeletricacentral.com.br', gradiente: ['#1C1C1C', '#FFC107'], titulo: 'Auto Elétrica Central', sub: 'Atendimento rápido e direto', cardTitulo: 'Auto Elétrica Tradicional', cardDesc: 'Simples, direto ao ponto, emergências.' },
-          { href: 'portfolio/oficina-rotacerta/index.html', url: 'rotacerta.com.br', gradiente: ['#2E7D32', '#1B2A38'], titulo: 'Rota Certa', sub: 'Revisão programada e confiança', cardTitulo: 'Oficina Mecânica Geral', cardDesc: 'Diagnóstico transparente, revisão programada.' },
-          { href: 'portfolio/oficina-torquemax/index.html', url: 'torquemax.com.br', gradiente: ['#0D0D0D', '#E10600'], titulo: 'TorqueMax', sub: 'Preparação e performance', cardTitulo: 'Oficina de Performance', cardDesc: 'Identidade agressiva, pacotes de preparação.' },
+          { href: 'portfolio/funilaria-impacto/index.html', url: 'impactozero.com.br', gradiente: ['#0E1116', '#E3262E'], titulo: 'Impacto Zero', sub: 'Funilaria · atendimento a seguradoras', cardTitulo: 'Funilaria Moderna', cardDesc: 'Fluxo com seguradora e acompanhamento do reparo.' },
+          { href: 'portfolio/funilaria-boavista/index.html', url: 'funilariaboavista.com.br', gradiente: ['#1F3A34', '#D1452B'], titulo: 'Funilaria Boa Vista', sub: 'Tradição de bairro desde 2003', cardTitulo: 'Funilaria Tradicional', cardDesc: 'Orçamento tocando nas partes do carro.' },
+          { href: 'portfolio/autoeletrica-volt/index.html', url: 'voltautoeletrica.com.br', gradiente: ['#0F1030', '#4F3BF5'], titulo: 'Volt', sub: 'Diagnóstico eletrônico de precisão', cardTitulo: 'Auto Elétrica Tech', cardDesc: 'Simulação de scanner, laudo e agenda de horários.' },
+          { href: 'portfolio/autoeletrica-central/index.html', url: 'autoeletricacentral.com.br', gradiente: ['#17181A', '#FFC21A'], titulo: 'Auto Elétrica Central', sub: 'Atendimento rápido e direto', cardTitulo: 'Auto Elétrica Tradicional', cardDesc: 'Guia de sintomas e status de atendimento.' },
+          { href: 'portfolio/oficina-rotacerta/index.html', url: 'rotacerta.com.br', gradiente: ['#0F2A2E', '#0E9F8E'], titulo: 'Rota Certa', sub: 'Revisão programada e confiança', cardTitulo: 'Oficina Mecânica Geral', cardDesc: 'Plano de revisão por quilometragem.' },
+          { href: 'portfolio/oficina-torquemax/index.html', url: 'torquemax.com.br', gradiente: ['#0B0B0C', '#9CC417'], titulo: 'TorqueMax', sub: 'Preparação e performance', cardTitulo: 'Oficina de Performance', cardDesc: 'Simulador de ganho por stage e curva de dinamômetro.' },
         ],
       },
       {
@@ -891,23 +891,23 @@
         id: 'limpeza', icone: '🧹', nome: 'Limpeza & Serviços',
         descricao: 'Empresas de limpeza residencial e comercial.',
         exemplos: [
-          { href: 'portfolio/limpeza-cleanpro/index.html', url: 'cleanpro.com.br', gradiente: ['#1565C0', '#0D3C6E'], titulo: 'CleanPro', sub: 'Limpeza comercial e predial', cardTitulo: 'Limpeza Corporativa', cardDesc: 'Institucional B2B, segmentos atendidos.' },
-          { href: 'portfolio/limpeza-faxina/index.html', url: 'faxinafacil.com.br', gradiente: ['#FFC93C', '#2EC4B6'], titulo: 'Faxina Fácil', sub: 'Limpeza residencial sob demanda', cardTitulo: 'Limpeza Residencial', cardDesc: 'Planos, agendamento simples e descontraído.' },
+          { href: 'portfolio/limpeza-cleanpro/index.html', url: 'cleanpro.com.br', gradiente: ['#0B2239', '#1AA7E0'], titulo: 'CleanPro', sub: 'Limpeza comercial e predial', cardTitulo: 'Limpeza Corporativa', cardDesc: 'Dimensionamento de equipe e auditoria de qualidade.' },
+          { href: 'portfolio/limpeza-faxina/index.html', url: 'faxinafacil.com.br', gradiente: ['#24123F', '#6D3FF0'], titulo: 'Faxina Fácil', sub: 'Limpeza residencial sob demanda', cardTitulo: 'Limpeza Residencial', cardDesc: 'Preço na hora, extras e checagem de bairro.' },
         ],
       },
       {
         id: 'imoveis', icone: '🏠', nome: 'Imóveis',
         descricao: 'Imobiliárias de pequeno e médio porte.',
         exemplos: [
-          { href: 'portfolio/imoveis-chave/index.html', url: 'chaveimoveis.com.br', gradiente: ['#16324F', '#C1440E'], titulo: 'Chave Imóveis', sub: 'Compra, venda e locação', cardTitulo: 'Imobiliária com Listagem', cardDesc: 'Catálogo de imóveis com filtro comprar/alugar.' },
-          { href: 'portfolio/imoveis-lar/index.html', url: 'larimoveis.com.br', gradiente: ['#C98074', '#6B6660'], titulo: 'Lar Imóveis', sub: 'Beatriz Andrade, corretora', cardTitulo: 'Corretora Autônoma', cardDesc: 'Site pessoal, curadoria de imóveis, depoimentos.' },
+          { href: 'portfolio/imoveis-chave/index.html', url: 'chaveimoveis.com.br', gradiente: ['#16324F', '#E8622C'], titulo: 'Chave Imóveis', sub: 'Compra, venda e locação', cardTitulo: 'Imobiliária com Listagem', cardDesc: 'Busca, filtros, favoritos e ficha do imóvel.' },
+          { href: 'portfolio/imoveis-lar/index.html', url: 'larimoveis.com.br', gradiente: ['#2E2724', '#B5654F'], titulo: 'Lar Imóveis', sub: 'Beatriz Andrade, corretora', cardTitulo: 'Corretora Autônoma', cardDesc: 'Curadoria comentada e simulador de financiamento.' },
         ],
       },
       {
         id: 'ecommerce', icone: '🛍️', nome: 'Loja Virtual',
         descricao: 'E-commerce e lojas virtuais personalizáveis.',
         exemplos: [
-          { href: 'portfolio/capinhas/index.html', url: 'case.store', gradiente: ['#7C3AED', '#0E0E12'], titulo: 'Case Store', sub: 'iPhone · Samsung · Motorola · Xiaomi', cardTitulo: 'Loja de Capinhas para Celular', cardDesc: 'Loja virtual com customizador interativo.' },
+          { href: 'portfolio/capinhas/index.html', url: 'case.store', gradiente: ['#0E0E10', '#FF4F8B'], titulo: 'Case Store', sub: 'iPhone · Samsung · Motorola · Xiaomi', cardTitulo: 'Loja de Capinhas para Celular', cardDesc: 'Loja com customizador, filtros e carrinho.' },
         ],
       },
     ];

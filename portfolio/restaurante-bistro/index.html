@@ -3,137 +3,143 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Âmbar Bistrô — Cozinha Contemporânea</title>
-<meta name="description" content="Âmbar Bistrô: cozinha autoral contemporânea, menu degustação sazonal e uma experiência gastronômica intimista em Curitiba.">
+<title>Âmbar Bistrô — Cozinha contemporânea e menu degustação</title>
+<meta name="description" content="Menu degustação sazonal de sete tempos, ingredientes de produtores locais e uma sala com apenas 28 lugares.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#16110D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../kit-negocios/base.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
-<header class="site-header" id="header">
-  <div class="wrap header-inner">
-    <a href="#top" class="brand">
-      <span class="brand-name">ÂMBAR</span>
-    </a>
-    <nav class="main-nav" id="mainNav">
-      <a href="#menu">Menu Degustação</a>
-      <a href="#experiencia">Experiência</a>
+<header class="nb-header sobre-escuro">
+  <div class="wrap nb-header-inner">
+    <a class="nb-logo" href="#topo">Âmbar<small>bistrô</small></a>
+    <nav class="nb-nav" aria-label="Principal">
+      <a href="#menu">Menu</a>
+      <a href="#experiencia">A experiência</a>
       <a href="#chef">Chef</a>
       <a href="#reservas">Reservas</a>
     </nav>
-    <a href="#reservas" class="btn btn-primary nav-cta">Reservar</a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <a class="btn btn-acc btn-sm nb-header-cta" href="#reservas">Reservar</a>
+    <button class="nb-menu-btn" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<main id="top">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-glow" aria-hidden="true"></div>
+<main id="conteudo">
+  <section class="hero sob-header" id="topo">
+    <div class="hero-fundo"><img src="img/hero.jpg" alt="" fetchpriority="high"></div>
     <div class="wrap hero-inner">
-      <p class="eyebrow">Cozinha contemporânea · menu degustação sazonal</p>
-      <h1>Uma experiência,<br><span class="hl">não apenas um jantar.</span></h1>
-      <p class="hero-lead">Menu degustação de 7 tempos, ingredientes da estação e uma sala com apenas 28 lugares — para uma noite que você vai lembrar.</p>
-      <div class="hero-actions">
-        <a href="#reservas" class="btn btn-primary">Reservar uma mesa</a>
-        <a href="#menu" class="btn btn-outline">Ver o menu ↓</a>
+      <p class="hero-tag">Cozinha contemporânea · menu degustação sazonal</p>
+      <h1 class="hero-titulo">Uma experiência,<br><em>não apenas um jantar.</em></h1>
+      <p class="hero-lead">Sete tempos, ingredientes da estação e uma sala com apenas 28 lugares — para uma noite que você vai lembrar.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-acc btn-lg" href="#reservas">Reservar uma mesa</a>
+        <a class="btn btn-light btn-lg" href="#menu">Ver o menu</a>
       </div>
+      <p class="hero-horario">Quarta a sábado · a partir das 19h30</p>
     </div>
   </section>
 
-  <!-- MENU DEGUSTAÇÃO -->
-  <section class="section" id="menu">
+  <section class="sec menu-sec" id="menu">
     <div class="wrap">
-      <p class="section-eyebrow">Menu degustação</p>
-      <h2 class="section-title">Sete tempos, uma jornada</h2>
-      <p class="section-lead">O menu muda a cada estação, sempre com ingredientes locais selecionados a dedo.</p>
-
-      <div class="tasting-list" id="tastingList"></div>
-      <p class="tasting-price">Menu completo — <strong>R$ 385</strong> por pessoa <span>(harmonização de vinhos + R$ 180)</span></p>
+      <div class="menu-topo" data-reveal>
+        <div>
+          <p class="eyebrow">Menu de primavera</p>
+          <h2 class="h-sec">Sete tempos, <em>uma jornada</em></h2>
+          <p class="lead">O menu muda a cada estação, sempre com ingredientes de produtores locais.</p>
+        </div>
+        <div class="menu-preco">
+          <label class="harmoniza"><input type="checkbox" data-harmoniza><span class="chave"></span><span>Com harmonização de vinhos</span></label>
+          <p><strong data-preco>R$ 385</strong><span>por pessoa</span></p>
+        </div>
+      </div>
+      <ol class="tempos" data-tempos></ol>
     </div>
   </section>
 
-  <!-- EXPERIÊNCIA -->
-  <section class="section section-dark" id="experiencia">
-    <div class="wrap experience-grid">
-      <div>
-        <p class="section-eyebrow section-eyebrow-light">A experiência</p>
-        <h2 class="section-title section-title-light">Uma sala. Vinte e oito lugares. Nenhuma pressa.</h2>
-        <p>O Âmbar nasceu para ser pequeno de propósito. Sem pressa entre os pratos, sem mesas apertadas, sem menu genérico — cada detalhe da sala foi pensado para que a comida seja a protagonista da noite.</p>
+  <section class="sec sec-alt" id="experiencia">
+    <div class="wrap split">
+      <div class="exp-fotos" data-reveal>
+        <div class="foto"><img src="img/salao.jpg" alt="Salão elegante com lustre e pé-direito alto" loading="lazy"></div>
+        <div class="foto"><img src="img/decanter.jpg" alt="Decanter e taças de vinho sobre a mesa" loading="lazy"></div>
       </div>
-      <div class="experience-features">
-        <div class="feature-row"><span>28</span><p>lugares no salão principal</p></div>
-        <div class="feature-row"><span>7</span><p>tempos no menu degustação</p></div>
-        <div class="feature-row"><span>100%</span><p>ingredientes de produtores locais</p></div>
+      <div data-reveal>
+        <p class="eyebrow">A experiência</p>
+        <h2 class="h-sec">Uma sala. Vinte e oito lugares. <em>Nenhuma pressa.</em></h2>
+        <p class="lead">O Âmbar nasceu pequeno de propósito. Sem mesas apertadas, sem menu genérico — cada detalhe foi pensado para a comida ser a protagonista da noite.</p>
+        <div class="stats exp-stats">
+          <div class="stat"><strong data-count="28">0</strong><span>lugares no salão</span></div>
+          <div class="stat"><strong data-count="7">0</strong><span>tempos no menu</span></div>
+          <div class="stat"><strong data-count="100" data-sufixo="%">0</strong><span>produtores locais</span></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CHEF -->
-  <section class="section" id="chef">
+  <section class="sec" id="chef">
     <div class="wrap chef-grid">
-      <div class="chef-portrait" aria-hidden="true">👨‍🍳</div>
-      <div>
-        <p class="section-eyebrow">O chef</p>
-        <h2 class="section-title">Rafael Toledo</h2>
-        <p>Formado em Paris e com passagens por cozinhas premiadas na Europa, Rafael Toledo voltou ao Brasil para criar uma cozinha que combina técnica francesa com ingredientes brasileiros pouco explorados.</p>
-        <p>"Cada prato do Âmbar conta uma pequena história — de um produtor, de uma estação, de uma memória."</p>
+      <div class="foto chef-foto" data-reveal><img src="img/principal.jpg" alt="Prato principal finalizado com molho" loading="lazy"></div>
+      <div data-reveal>
+        <p class="eyebrow">O chef</p>
+        <h2 class="h-sec">Rafael Toledo</h2>
+        <blockquote class="citacao">“Cada prato do Âmbar conta uma pequena história — de um produtor, de uma estação, de uma memória.”</blockquote>
+        <p>Formado em Paris e com passagens por cozinhas na Europa, Rafael voltou ao Brasil para criar uma cozinha que une técnica francesa a ingredientes brasileiros pouco explorados.</p>
       </div>
     </div>
   </section>
 
-  <!-- RESERVAS -->
-  <section class="section section-dark" id="reservas">
-    <div class="wrap contact-grid">
-      <div>
-        <p class="section-eyebrow section-eyebrow-light">Reservas</p>
-        <h2 class="section-title section-title-light">Reserve sua noite</h2>
-        <p>Recomendamos reservar com pelo menos uma semana de antecedência.</p>
-        <ul class="contact-info">
-          <li>📍 Rua Comendador Araújo, 320 — Batel, Curitiba/PR</li>
-          <li>🕐 Quarta a sábado, a partir das 19h30</li>
-          <li>📱 (41) 99123-8877</li>
+  <section class="sec sec-dark" id="reservas">
+    <div class="wrap reserva-grid">
+      <div data-reveal>
+        <p class="eyebrow">Reservas</p>
+        <h2 class="h-sec">Reserve <em>sua noite</em></h2>
+        <p class="lead">Recomendamos reservar com pelo menos uma semana de antecedência.</p>
+        <ul class="contato-lista">
+          <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><strong>Endereço</strong>Rua Exemplo, 000 · Batel, Curitiba</div></li>
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><strong>Horário</strong>Quarta a sábado, a partir das 19h30</div></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><strong>Telefone</strong>(41) 0000-0000</div></li>
         </ul>
       </div>
-      <form class="contact-form" id="reservaForm">
-        <div class="field">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" required placeholder="Seu nome">
+      <form class="form reserva-form" data-demo-form data-reveal>
+        <div class="campo"><span class="rotulo">Noite</span><div class="noites" data-noites></div></div>
+        <div class="linha">
+          <div class="campo"><span class="rotulo">Pessoas</span><div class="contador-p"><button type="button" data-menos aria-label="Menos pessoas">−</button><output data-pessoas>2</output><button type="button" data-mais aria-label="Mais pessoas">+</button></div></div>
+          <div class="campo"><span class="rotulo">Horário</span><div class="horas" data-horas><button type="button" aria-pressed="true">19h30</button><button type="button" aria-pressed="false">20h15</button><button type="button" aria-pressed="false">21h00</button></div></div>
         </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="data">Data desejada</label>
-            <input type="date" id="data">
-          </div>
-          <div class="field">
-            <label for="pessoas">Nº de pessoas</label>
-            <input type="number" id="pessoas" min="1" value="2">
-          </div>
+        <div class="linha">
+          <div class="campo"><label for="r-nome">Nome</label><input id="r-nome" required autocomplete="name"></div>
+          <div class="campo"><label for="r-tel">Telefone</label><input id="r-tel" type="tel" autocomplete="tel"></div>
         </div>
-        <div class="field">
-          <label for="ocasiao">Ocasião especial (opcional)</label>
-          <input type="text" id="ocasiao" placeholder="Aniversário, comemoração...">
-        </div>
-        <button type="submit" class="btn btn-primary btn-block">Solicitar reserva</button>
-        <p class="form-note" id="formNote" role="status"></p>
+        <div class="campo"><label for="r-oc">Ocasião especial ou restrição alimentar</label><input id="r-oc" placeholder="Opcional"></div>
+        <p class="resumo-reserva" data-resumo></p>
+        <label class="check"><input type="checkbox" required> Concordo com o uso dos meus dados para retorno (LGPD).</label>
+        <button class="btn btn-acc btn-lg" type="submit">Solicitar reserva</button>
+        <p class="form-nota" data-form-note role="status"></p>
       </form>
     </div>
   </section>
-
 </main>
 
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <span>© <span id="year"></span> Âmbar Bistrô. Site de demonstração.</span>
-    <span class="footer-note">Exemplo de portfólio — não é um restaurante real.</span>
+<footer class="nb-footer">
+  <div class="wrap">
+    <div class="nb-footer-grid">
+      <div><a class="nb-logo" href="#topo">Âmbar<small>bistrô</small></a><p>Cozinha contemporânea e menu degustação sazonal.</p></div>
+      <div><h4>Casa</h4><a href="#menu">Menu</a><a href="#experiencia">A experiência</a><a href="#chef">Chef</a></div>
+      <div><h4>Reservas</h4><a href="#reservas">Reservar</a><a href="#reservas">(41) 0000-0000</a></div>
+      <div><h4>Horário</h4><p>Quarta a sábado<br>a partir das 19h30</p></div>
+    </div>
+    <div class="nb-legal"><span>© <span data-ano></span> Âmbar Bistrô · restaurante fictício de demonstração</span><span>Aprecie com moderação · venda de bebidas alcoólicas proibida para menores de 18 anos</span></div>
+    <p class="nb-creditos" data-creditos></p>
   </div>
 </footer>
 
+<script src="img/creditos.js"></script>
+<script src="../kit-negocios/base.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

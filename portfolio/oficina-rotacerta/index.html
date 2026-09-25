@@ -3,143 +3,195 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Oficina Rota Certa — Manutenção Automotiva de Confiança</title>
-<meta name="description" content="Oficina Rota Certa: revisão programada, freios, suspensão e manutenção preventiva com diagnóstico transparente e preço justo.">
+<title>Oficina Rota Certa — Manutenção automotiva de confiança</title>
+<meta name="description" content="Revisão programada, freios, suspensão, motor e troca de óleo com orçamento por escrito antes de qualquer serviço.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F6F7F4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500;600;700&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../kit-negocios/base.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
-<header class="site-header" id="header">
-  <div class="wrap header-inner">
-    <a href="#top" class="brand">
-      <span class="brand-icon">🚗</span>
-      <span class="brand-name">Rota <em>Certa</em></span>
-    </a>
-    <nav class="main-nav" id="mainNav">
+<header class="nb-header">
+  <div class="wrap nb-header-inner">
+    <a class="nb-logo" href="#topo"><span class="logo-rc" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20 12 4l8 16M8 13h8"/></svg></span>Rota Certa<small>oficina mecânica</small></a>
+    <nav class="nb-nav" aria-label="Principal">
       <a href="#servicos">Serviços</a>
-      <a href="#planos">Revisão Programada</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#contato">Agendar</a>
+      <a href="#revisao">Revisão</a>
+      <a href="#transparencia">Como trabalhamos</a>
+      <a href="#agendar">Agendar</a>
     </nav>
-    <a href="#contato" class="btn btn-primary nav-cta">Agendar revisão</a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <a class="btn btn-acc btn-sm nb-header-cta" href="#agendar">Agendar revisão</a>
+    <button class="nb-menu-btn" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<main id="top">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap hero-inner">
-      <p class="eyebrow">Manutenção automotiva · diagnóstico transparente</p>
-      <h1>Seu carro no <span class="hl">caminho certo, sempre.</span></h1>
-      <p class="hero-lead">Revisão programada, freios, suspensão e motor — com orçamento claro antes de qualquer serviço e peças originais ou de qualidade equivalente.</p>
-      <div class="hero-actions">
-        <a href="#contato" class="btn btn-primary">Agendar revisão</a>
-        <a href="#servicos" class="btn btn-outline">Ver serviços ↓</a>
+<main id="conteudo">
+  <section class="hero" id="topo">
+    <div class="wrap hero-grid">
+      <div class="hero-texto">
+        <p class="eyebrow">Manutenção automotiva · diagnóstico transparente</p>
+        <h1 class="hero-titulo">Seu carro no caminho certo, <span>sempre.</span></h1>
+        <p class="lead">Revisão programada, freios, suspensão e motor — com orçamento por escrito antes de qualquer serviço e peças originais ou equivalentes.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-acc btn-lg" href="#agendar">Agendar revisão</a>
+          <a class="btn btn-ghost btn-lg" href="#revisao">Quando revisar?</a>
+        </div>
       </div>
-      <div class="hero-stats">
-        <div class="stat"><strong>18</strong><span>anos de oficina</span></div>
-        <div class="stat"><strong>+7.000</strong><span>carros atendidos</span></div>
-        <div class="stat"><strong>6 meses</strong><span>garantia nos serviços</span></div>
+      <div class="hero-midia">
+        <div class="foto hero-foto"><img src="img/elevador.jpg" alt="Carro erguido no elevador da oficina" fetchpriority="high"></div>
+        <div class="hero-cartao">
+          <div class="hc-linha"><span>Troca de óleo e filtro</span><b>✓</b></div>
+          <div class="hc-linha"><span>Pastilhas de freio</span><b>✓</b></div>
+          <div class="hc-linha pendente"><span>Alinhamento</span><b>em andamento</b></div>
+        </div>
       </div>
     </div>
-  </section>
-
-  <!-- SERVIÇOS -->
-  <section class="section" id="servicos">
     <div class="wrap">
-      <p class="section-eyebrow">Serviços</p>
-      <h2 class="section-title">Cuidamos de cada parte do seu carro</h2>
-      <div class="services-grid">
-        <article class="service-card"><span class="s-icon">🛞</span><h3>Freios e Suspensão</h3><p>Pastilhas, discos, amortecedores e alinhamento.</p></article>
-        <article class="service-card"><span class="s-icon">🔧</span><h3>Motor e Câmbio</h3><p>Diagnóstico, reparo e manutenção preventiva.</p></article>
-        <article class="service-card"><span class="s-icon">🛢️</span><h3>Troca de Óleo e Filtros</h3><p>Serviço rápido, com óleo adequado para cada motor.</p></article>
-        <article class="service-card"><span class="s-icon">🔍</span><h3>Diagnóstico Geral</h3><p>Checkup completo antes de viagens ou revisões periódicas.</p></article>
-      </div>
+      <ul class="numeros" data-reveal-grupo>
+        <li data-reveal><strong data-count="18">0</strong><span>anos de oficina</span></li>
+        <li data-reveal><strong data-count="7000" data-prefixo="+">0</strong><span>carros atendidos</span></li>
+        <li data-reveal><strong data-count="6" data-sufixo=" meses">0</strong><span>de garantia nos serviços</span></li>
+        <li data-reveal><strong data-count="4.9" data-casas="1">0</strong><span>de nota dos clientes</span></li>
+      </ul>
     </div>
   </section>
 
-  <!-- REVISÃO PROGRAMADA -->
-  <section class="section section-dark" id="planos">
+  <section class="sec" id="servicos">
     <div class="wrap">
-      <p class="section-eyebrow section-eyebrow-light">Revisão programada</p>
-      <h2 class="section-title section-title-light">Mantenha a garantia sem pagar preço de concessionária</h2>
-      <p class="section-lead-light">Seguimos o plano de revisão do fabricante, com peças de qualidade e muito mais em conta.</p>
-      <div class="plan-grid">
-        <div class="plan-item"><span>10.000 km</span><p>Revisão básica: óleo, filtros e checagem geral</p></div>
-        <div class="plan-item"><span>20.000 km</span><p>Revisão intermediária: freios e fluidos</p></div>
-        <div class="plan-item"><span>40.000 km</span><p>Revisão completa: correia, velas e suspensão</p></div>
+      <div class="sec-head sec-head-row" data-reveal>
+        <div><p class="eyebrow">Serviços</p><h2 class="h-sec">Cuidamos de cada parte do seu carro</h2></div>
+        <a class="btn btn-ghost" href="#agendar">Pedir orçamento</a>
+      </div>
+      <div class="servicos" data-reveal-grupo>
+        <article class="servico" data-reveal><div class="foto"><img src="img/roda.jpg" alt="Roda e pneu em detalhe" loading="lazy"></div><h3>Freios e suspensão</h3><p>Pastilhas, discos, amortecedores, alinhamento e balanceamento.</p></article>
+        <article class="servico" data-reveal><div class="foto"><img src="img/motor.jpg" alt="Cofre do motor com peças e frasco de óleo" loading="lazy"></div><h3>Motor e câmbio</h3><p>Diagnóstico, reparo e manutenção preventiva.</p></article>
+        <article class="servico" data-reveal><div class="foto"><img src="img/chaves.jpg" alt="Chaves de boca organizadas no painel" loading="lazy"></div><h3>Troca de óleo e filtros</h3><p>Serviço rápido, com o óleo certo para cada motor.</p></article>
+        <article class="servico" data-reveal><div class="foto"><img src="img/garagem.jpg" alt="Carro esportivo estacionado na garagem" loading="lazy"></div><h3>Checkup de viagem</h3><p>Revisão completa de itens de segurança antes de pegar a estrada.</p></article>
       </div>
     </div>
   </section>
 
-  <!-- SOBRE -->
-  <section class="section" id="sobre">
-    <div class="wrap about-grid">
-      <div>
-        <p class="section-eyebrow">Sobre a oficina</p>
-        <h2 class="section-title">Mecânica de confiança, sem letra miúda</h2>
-        <p>A Rota Certa nasceu para ser a oficina que explica o que está fazendo no seu carro — mostramos a peça, explicamos o problema e só executamos o serviço depois da sua aprovação.</p>
+  <section class="sec sec-alt" id="revisao">
+    <div class="wrap revisao-grid">
+      <div data-reveal>
+        <p class="eyebrow">Revisão programada</p>
+        <h2 class="h-sec">Mantenha a garantia sem pagar preço de concessionária</h2>
+        <p class="lead">Arraste para a quilometragem atual do seu carro e veja o que entra na próxima revisão.</p>
+        <div class="km-box">
+          <label for="km" class="km-rot">Quilometragem atual</label>
+          <output class="km-valor" data-km-valor for="km">34.000 km</output>
+          <input id="km" type="range" min="0" max="100000" step="1000" value="34000" data-km>
+          <div class="km-escala" aria-hidden="true"><span>0</span><span>50 mil</span><span>100 mil</span></div>
+        </div>
+        <p class="revisao-nota">Referência geral. Seguimos sempre o plano do manual do seu veículo.</p>
       </div>
-      <div class="about-highlights">
-        <div class="highlight-row"><span>✓</span><p>Orçamento por escrito antes de qualquer serviço</p></div>
-        <div class="highlight-row"><span>✓</span><p>Peça trocada fica com você, se quiser ver</p></div>
-        <div class="highlight-row"><span>✓</span><p>Carro reserva disponível para serviços maiores</p></div>
+      <div class="plano" data-reveal>
+        <div class="plano-topo">
+          <div><span>Próxima revisão</span><strong data-prox>40.000 km</strong></div>
+          <span class="plano-tipo" data-tipo>Completa</span>
+        </div>
+        <div class="plano-faltam"><i data-faltam-barra></i><span data-faltam>faltam 6.000 km</span></div>
+        <ul class="plano-itens" data-itens></ul>
+        <a class="btn btn-acc btn-block" href="#agendar" data-usar-plano>Agendar esta revisão</a>
       </div>
     </div>
   </section>
 
-  <!-- CONTATO -->
-  <section class="section section-dark" id="contato">
-    <div class="wrap contact-grid">
-      <div>
-        <p class="section-eyebrow section-eyebrow-light">Agendamento</p>
-        <h2 class="section-title section-title-light">Agende sua revisão</h2>
-        <ul class="contact-info">
-          <li><strong>Endereço</strong> Rua Padre Anchieta, 2100 — Curitiba/PR</li>
-          <li><strong>Telefone</strong> (41) 3078-2244</li>
-          <li><strong>Horário</strong> Segunda a sexta, 8h às 18h</li>
+  <section class="sec" id="transparencia">
+    <div class="wrap split">
+      <div class="orcamento-exemplo" data-reveal>
+        <div class="oe-topo"><strong>Orçamento nº 2381</strong><span>Hatch 1.0 · 62.400 km</span></div>
+        <table>
+          <thead><tr><th>Item</th><th>Tipo</th><th>Valor</th></tr></thead>
+          <tbody>
+            <tr><td>Pastilhas dianteiras</td><td><span class="tag-urg">Trocar agora</span></td><td>R$ 220,00</td></tr>
+            <tr><td>Fluido de freio</td><td><span class="tag-urg">Trocar agora</span></td><td>R$ 90,00</td></tr>
+            <tr><td>Discos dianteiros</td><td><span class="tag-pode">Pode esperar</span></td><td>R$ 380,00</td></tr>
+            <tr><td>Mão de obra</td><td>—</td><td>R$ 150,00</td></tr>
+          </tbody>
+        </table>
+        <p class="oe-nota">Valores ilustrativos. Você aprova item por item.</p>
+      </div>
+      <div data-reveal>
+        <p class="eyebrow">Como trabalhamos</p>
+        <h2 class="h-sec">Mecânica de confiança, sem letra miúda</h2>
+        <p class="lead">A Rota Certa nasceu para ser a oficina que explica o que está fazendo no seu carro.</p>
+        <ul class="lista-ok">
+          <li><strong>Orçamento por escrito</strong> antes de qualquer serviço.</li>
+          <li><strong>A peça trocada fica com você</strong>, se quiser ver.</li>
+          <li><strong>Separamos o urgente do que pode esperar</strong>, para você planejar.</li>
+          <li><strong>Carro reserva</strong> para serviços maiores.</li>
         </ul>
       </div>
-      <form class="contact-form" id="contactForm">
-        <div class="field">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" required placeholder="Seu nome">
+    </div>
+  </section>
+
+  <section class="sec sec-alt">
+    <div class="wrap">
+      <div class="sec-head sec-head-center" data-reveal>
+        <p class="eyebrow">Clientes</p>
+        <h2 class="h-sec">Quem confia o carro à Rota Certa</h2>
+      </div>
+      <div class="g3" data-reveal-grupo>
+        <figure class="depo" data-reveal><span class="estrelas">★★★★★</span><blockquote>“Me mostraram a pastilha gasta e explicaram tudo. Pela primeira vez entendi o que estava pagando.”</blockquote><figcaption><span class="inicial">FA</span><div><strong>Fernanda A.</strong><span>Freios</span></div></figcaption></figure>
+        <figure class="depo" data-reveal><span class="estrelas">★★★★★</span><blockquote>“Faço a revisão aqui desde que o carro saiu da garantia. Preço justo e sempre no prazo.”</blockquote><figcaption><span class="inicial">MP</span><div><strong>Marcos P.</strong><span>Revisão programada</span></div></figcaption></figure>
+        <figure class="depo" data-reveal><span class="estrelas">★★★★★</span><blockquote>“Checkup antes da viagem de férias. Encontraram um problema na correia antes de virar dor de cabeça.”</blockquote><figcaption><span class="inicial">JC</span><div><strong>Juliana C.</strong><span>Checkup de viagem</span></div></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="agendar">
+    <div class="wrap agendar-caixa">
+      <div data-reveal>
+        <p class="eyebrow">Agendamento</p>
+        <h2 class="h-sec">Agende sua revisão</h2>
+        <p class="lead">Escolha o serviço e o melhor dia. Confirmamos por telefone ou WhatsApp.</p>
+        <ul class="contato-lista">
+          <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><strong>Oficina</strong>Rua Exemplo, 0000 · Curitiba</div></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><strong>Telefone</strong>(41) 0000-0000</div></li>
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><strong>Horário</strong>Segunda a sexta, 8h às 18h</div></li>
+        </ul>
+      </div>
+      <form class="form agendar-form" data-demo-form data-reveal>
+        <div class="linha">
+          <div class="campo"><label for="g-nome">Nome</label><input id="g-nome" required autocomplete="name"></div>
+          <div class="campo"><label for="g-carro">Veículo e km atual</label><input id="g-carro" data-campo-km placeholder="Ex.: Onix · 34.000 km"></div>
         </div>
-        <div class="field">
-          <label for="veiculo">Veículo e km atual</label>
-          <input type="text" id="veiculo" placeholder="Ex: Onix 2020, 45.000 km">
+        <div class="linha">
+          <div class="campo"><label for="g-serv">Serviço</label><select id="g-serv" data-campo-serv><option>Revisão programada</option><option>Freios e suspensão</option><option>Motor / câmbio</option><option>Troca de óleo</option><option>Checkup de viagem</option></select></div>
+          <div class="campo"><label for="g-data">Data preferida</label><input id="g-data" type="date"></div>
         </div>
-        <div class="field">
-          <label for="servico">Serviço desejado</label>
-          <select id="servico">
-            <option>Revisão programada</option>
-            <option>Freios e suspensão</option>
-            <option>Motor / câmbio</option>
-            <option>Diagnóstico geral</option>
-          </select>
-        </div>
-        <button type="submit" class="btn btn-primary btn-block">Agendar revisão</button>
-        <p class="form-note" id="formNote" role="status"></p>
+        <div class="campo"><label for="g-msg">Observações</label><textarea id="g-msg"></textarea></div>
+        <label class="check"><input type="checkbox" required> Concordo com o uso dos meus dados para retorno (LGPD).</label>
+        <button class="btn btn-acc btn-lg" type="submit">Agendar revisão</button>
+        <p class="form-nota" data-form-note role="status"></p>
       </form>
     </div>
   </section>
-
 </main>
 
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <span>© <span id="year"></span> Oficina Rota Certa. Site de demonstração.</span>
-    <span class="footer-note">Exemplo de portfólio — não é uma empresa real.</span>
+<footer class="nb-footer">
+  <div class="wrap">
+    <div class="nb-footer-grid">
+      <div><a class="nb-logo" href="#topo"><span class="logo-rc" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20 12 4l8 16M8 13h8"/></svg></span>Rota Certa<small>oficina mecânica</small></a><p>Manutenção automotiva de confiança.</p></div>
+      <div><h4>Serviços</h4><a href="#servicos">Freios e suspensão</a><a href="#servicos">Motor e câmbio</a><a href="#revisao">Revisão programada</a></div>
+      <div><h4>Oficina</h4><a href="#transparencia">Como trabalhamos</a><a href="#agendar">Agendar</a></div>
+      <div><h4>Contato</h4><a href="#agendar">(41) 0000-0000</a></div>
+    </div>
+    <div class="nb-legal"><span>© <span data-ano></span> Oficina Rota Certa · empresa fictícia de demonstração</span></div>
+    <p class="nb-creditos" data-creditos></p>
   </div>
 </footer>
 
+<a class="nb-wa" href="#agendar" aria-label="Falar pelo WhatsApp (demonstração)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.7 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.2-3.5-.7-2.9-1.1-4.8-4-5-4.2-.1-.2-1.2-1.6-1.2-3s.7-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .5 0 .7.5.3.7.9 2.2 1 2.4.1.2.1.4 0 .6l-.9 1.1c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.2 2.4 1.5 2.7 1.7.3.2.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.2.6.3.1.2.1.9-.1 1.6Z"/></svg></a>
+
+<script src="img/creditos.js"></script>
+<script src="../kit-negocios/base.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

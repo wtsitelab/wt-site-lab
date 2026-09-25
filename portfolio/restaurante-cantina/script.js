@@ -1,92 +1,68 @@
-// ===== Cantina da Nonna =====
-document.getElementById('year').textContent = new Date().getFullYear();
+// Cantina da Nonna — prato do dia pela semana e cardápio por categoria.
+(function () {
+  'use strict';
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
-const menuToggle = document.getElementById('menuToggle');
-const mainNav = document.getElementById('mainNav');
-menuToggle.addEventListener('click', () => {
-  const isOpen = mainNav.classList.toggle('open');
-  menuToggle.setAttribute('aria-expanded', String(isOpen));
-});
-mainNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mainNav.classList.remove('open')));
+  // prato do dia (segunda: fechado)
+  const SEMANA = [
+    { dia: 'Domingo', nome: 'Lasanha à bolonhesa', desc: 'O almoço de domingo da família: camadas de massa fresca, ragu e bechamel.', img: 'lasanha' },
+    null,
+    { dia: 'Terça', nome: 'Spaghetti al pomodoro', desc: 'Molho de tomate italiano cozido por quatro horas, manjericão e parmesão.', img: 'aglio' },
+    { dia: 'Quarta', nome: 'Polpettone e spaghetti', desc: 'Almôndegas da Nonna ao sugo sobre spaghetti feito na casa.', img: 'almondegas' },
+    { dia: 'Quinta', nome: 'Tagliatelle ao ragu', desc: 'Massa fresca com ragu de carne cozido lentamente por seis horas.', img: 'tagliatelle' },
+    { dia: 'Sexta', nome: 'Spaghetti alle vongole', desc: 'Vôngoles frescos, alho, vinho branco e salsinha.', img: 'vongole' },
+    { dia: 'Sábado', nome: 'Margherita do forno a lenha', desc: 'Molho de tomate, mussarela de búfala e manjericão fresco.', img: 'margherita' },
+  ];
+  const ORDEM = [2, 3, 4, 5, 6, 0];
+  let hoje = new Date().getDay();
+  if (!SEMANA[hoje]) hoje = 2;
+  function mostrarDia(i) {
+    const p = SEMANA[i];
+    $('[data-hoje-dia]').textContent = i === new Date().getDay() ? `Hoje · ${p.dia}` : p.dia;
+    $('[data-hoje-nome]').textContent = p.nome;
+    $('[data-hoje-desc]').textContent = p.desc;
+    const img = $('[data-hoje-img]');
+    img.src = `img/${p.img}.jpg`; img.alt = p.nome;
+    img.parentElement.classList.remove('troca'); void img.offsetWidth; img.parentElement.classList.add('troca');
+    $$('[data-dias] button').forEach(b => b.setAttribute('aria-selected', String(Number(b.dataset.d) === i)));
+  }
+  $('[data-dias]').innerHTML = ORDEM.map(i => `<button role="tab" data-d="${i}" aria-selected="false">${SEMANA[i].dia.slice(0, 3)}</button>`).join('') + '<span class="fechado">Seg · fechado</span>';
+  $('[data-dias]').addEventListener('click', e => { const b = e.target.closest('[data-d]'); if (b) mostrarDia(Number(b.dataset.d)); });
+  mostrarDia(hoje);
 
-// Cardápio (mock)
-const cardapio = {
-  entradas: [
-    { nome: 'Bruschetta Clássica', desc: 'Pão italiano tostado, tomate confit e manjericão', preco: 'R$ 28' },
-    { nome: 'Carpaccio da Nonna', desc: 'Finas fatias de alcatra, alcaparras e parmesão', preco: 'R$ 42' },
-    { nome: 'Burrata Fresca', desc: 'Com tomates assados e pesto de manjericão', preco: 'R$ 48' },
-  ],
-  massas: [
-    { nome: 'Tagliatelle ao Ragu', desc: 'Massa fresca com molho de carne cozido por 6 horas', preco: 'R$ 62' },
-    { nome: 'Ravioli de Ricota e Espinafre', desc: 'Recheio artesanal, manteiga e sálvia', preco: 'R$ 58' },
-    { nome: 'Spaghetti alle Vongole', desc: 'Vôngoles frescas, alho e vinho branco', preco: 'R$ 68' },
-  ],
-  pizzas: [
-    { nome: 'Margherita', desc: 'Molho de tomate, mussarela de búfala e manjericão', preco: 'R$ 54' },
-    { nome: 'Quattro Formaggi', desc: 'Mussarela, gorgonzola, parmesão e provolone', preco: 'R$ 62' },
-    { nome: 'Diavola', desc: 'Calabresa artesanal e pimenta calabresa', preco: 'R$ 58' },
-  ],
-  sobremesas: [
-    { nome: 'Tiramisù da Nonna', desc: 'Receita original de família, feita todos os dias', preco: 'R$ 26' },
-    { nome: 'Panna Cotta', desc: 'Com calda de frutas vermelhas', preco: 'R$ 24' },
-    { nome: 'Cannoli Siciliano', desc: 'Recheio de ricota doce e gotas de chocolate', preco: 'R$ 22' },
-  ],
-};
-const tabs = document.querySelectorAll('.tab-btn');
-const menuList = document.getElementById('menuList');
-function renderMenu(cat){
-  menuList.innerHTML = '';
-  cardapio[cat].forEach(item => {
-    const el = document.createElement('div');
-    el.className = 'menu-item';
-    el.innerHTML = `<div><h4>${item.nome}</h4><p>${item.desc}</p></div><span class="menu-price">${item.preco}</span>`;
-    menuList.appendChild(el);
-  });
-}
-tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    tabs.forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
-    renderMenu(tab.dataset.tab);
-  });
-});
-renderMenu('entradas');
-
-// Galeria (ilustrativa)
-const galeria = [
-  { emoji:'🍝', bg:'linear-gradient(160deg,#F3E9D8,#A6423A)' },
-  { emoji:'🍕', bg:'linear-gradient(160deg,#E8C468,#7E2F29)' },
-  { emoji:'🍷', bg:'linear-gradient(160deg,#A6423A,#5C3A21)' },
-  { emoji:'🧀', bg:'linear-gradient(160deg,#F3E9D8,#6B7A4E)' },
-  { emoji:'🥖', bg:'linear-gradient(160deg,#E8C468,#5C3A21)' },
-  { emoji:'🍰', bg:'linear-gradient(160deg,#F3E9D8,#7E2F29)' },
-  { emoji:'🫒', bg:'linear-gradient(160deg,#6B7A4E,#5C3A21)' },
-  { emoji:'🍅', bg:'linear-gradient(160deg,#A6423A,#E8C468)' },
-];
-const galleryGrid = document.getElementById('galleryGrid');
-galeria.forEach(item => {
-  const div = document.createElement('div');
-  div.className = 'gallery-item';
-  div.style.background = item.bg;
-  div.innerHTML = `<span>${item.emoji}</span>`;
-  galleryGrid.appendChild(div);
-});
-
-// Scroll reveal
-const revealTargets = document.querySelectorAll('.menu-item, .gallery-item');
-revealTargets.forEach(el => el.setAttribute('data-reveal',''));
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting){ entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
-  });
-}, { threshold: 0.12 });
-revealTargets.forEach(el => observer.observe(el));
-
-// Reservas (demo)
-const form = document.getElementById('reservaForm');
-const note = document.getElementById('formNote');
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  note.textContent = 'Reserva solicitada! Confirmamos por telefone em breve. (formulário de demonstração)';
-  form.reset();
-});
+  const CARDAPIO = {
+    entradas: [
+      { nome: 'Bruschetta clássica', desc: 'Pão italiano tostado, tomate confit e manjericão', preco: 28 },
+      { nome: 'Carpaccio da Nonna', desc: 'Finas fatias de alcatra, alcaparras e parmesão', preco: 42 },
+      { nome: 'Burrata fresca', desc: 'Tomates assados e pesto de manjericão', preco: 48, tag: 'Para dividir' },
+    ],
+    massas: [
+      { nome: 'Tagliatelle ao ragu', desc: 'Massa fresca com molho de carne cozido por seis horas', preco: 62, img: 'tagliatelle', tag: 'A mais pedida' },
+      { nome: 'Spaghetti alle vongole', desc: 'Vôngoles frescos, alho e vinho branco', preco: 68, img: 'vongole' },
+      { nome: 'Lasanha à bolonhesa', desc: 'Camadas de massa fresca, ragu e bechamel', preco: 64, img: 'lasanha' },
+      { nome: 'Ravioli de ricota e espinafre', desc: 'Recheio artesanal, manteiga e sálvia', preco: 58 },
+    ],
+    pizzas: [
+      { nome: 'Margherita', desc: 'Molho de tomate, mussarela de búfala e manjericão', preco: 54, img: 'margherita', tag: 'Clássica' },
+      { nome: 'Quattro formaggi', desc: 'Mussarela, gorgonzola, parmesão e provolone', preco: 62 },
+      { nome: 'Diavola', desc: 'Calabresa artesanal e pimenta calabresa', preco: 58 },
+    ],
+    doces: [
+      { nome: 'Tiramisù da Nonna', desc: 'Receita original de família, feita todos os dias', preco: 26, img: 'tiramisu', tag: 'Receita original' },
+      { nome: 'Panna cotta', desc: 'Com calda de frutas vermelhas', preco: 24 },
+      { nome: 'Cannoli siciliano', desc: 'Ricota doce e gotas de chocolate', preco: 22 },
+    ],
+  };
+  const box = $('[data-cardapio]');
+  function render(cat) {
+    $$('[data-cats] button').forEach(b => b.setAttribute('aria-selected', String(b.dataset.cat === cat)));
+    const itens = CARDAPIO[cat];
+    const comFoto = itens.filter(i => i.img), semFoto = itens.filter(i => !i.img);
+    box.innerHTML =
+      comFoto.map((i, k) => `<article class="prato" style="--i:${k}"><div class="foto"><img src="img/${i.img}.jpg" alt="${i.nome}" loading="lazy"></div><div class="prato-txt">${i.tag ? `<span class="prato-tag">${i.tag}</span>` : ''}<h3>${i.nome}</h3><p>${i.desc}</p><strong>R$ ${i.preco}</strong></div></article>`).join('') +
+      (semFoto.length ? `<ul class="lista-simples">${semFoto.map((i, k) => `<li style="--i:${k + comFoto.length}"><div><h3>${i.nome}${i.tag ? ` <span class="prato-tag">${i.tag}</span>` : ''}</h3><p>${i.desc}</p></div><span class="pontos"></span><strong>R$ ${i.preco}</strong></li>`).join('')}</ul>` : '');
+  }
+  $$('[data-cats] button').forEach(b => b.addEventListener('click', () => render(b.dataset.cat)));
+  render('massas');
+})();

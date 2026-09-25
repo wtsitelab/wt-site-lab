@@ -3,129 +3,178 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TorqueMax Performance — Preparação e Performance Automotiva</title>
-<meta name="description" content="TorqueMax: preparação de motor, remapeamento de ECU, suspensão esportiva e escapamento para quem quer performance de verdade.">
+<title>TorqueMax Performance — Preparação automotiva com dinamômetro</title>
+<meta name="description" content="Remapeamento de ECU, escapamento, suspensão e preparação de motor com medição em dinamômetro próprio. Pacotes Stage 1, 2 e 3.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0B0B0C">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../kit-negocios/base.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
-<header class="site-header" id="header">
-  <div class="wrap header-inner">
-    <a href="#top" class="brand">
-      <span class="brand-name">TORQUE<span class="brand-accent">MAX</span></span>
-    </a>
-    <nav class="main-nav" id="mainNav">
+<header class="nb-header sobre-escuro">
+  <div class="wrap nb-header-inner">
+    <a class="nb-logo" href="#topo"><span class="logo-tm" aria-hidden="true"></span>TORQUE<b>MAX</b></a>
+    <nav class="nb-nav" aria-label="Principal">
       <a href="#servicos">Serviços</a>
-      <a href="#pacotes">Pacotes</a>
+      <a href="#stages">Stages</a>
+      <a href="#dino">Dinamômetro</a>
       <a href="#builds">Builds</a>
-      <a href="#contato">Orçamento</a>
     </nav>
-    <a href="#contato" class="btn btn-primary nav-cta">Quero mais potência</a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <a class="btn btn-acc btn-sm nb-header-cta" href="#orcamento">Quero mais potência</a>
+    <button class="nb-menu-btn" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<main id="top">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-stripe" aria-hidden="true"></div>
+<main id="conteudo">
+  <section class="hero sob-header" id="topo">
+    <div class="hero-fundo"><img src="img/turbo.jpg" alt="" fetchpriority="high"></div>
     <div class="wrap hero-inner">
-      <p class="eyebrow">Preparação e performance automotiva</p>
-      <h1>Mais potência.<br><span class="hl">Mais precisão.</span></h1>
-      <p class="hero-lead">Remapeamento de ECU, suspensão esportiva, escapamento e preparação de motor — feito por quem entende de performance de verdade, com dinamômetro próprio.</p>
-      <div class="hero-actions">
-        <a href="#contato" class="btn btn-primary">Quero mais potência</a>
-        <a href="#builds" class="btn btn-outline">Ver builds ↓</a>
+      <p class="hero-tag"><span></span>Preparação e performance automotiva</p>
+      <h1 class="hero-titulo">Mais potência.<br><em>Mais precisão.</em></h1>
+      <p class="hero-lead">Remapeamento de ECU, escapamento, suspensão e preparação de motor — feito por quem entende de performance, com dinamômetro próprio.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-acc btn-lg" href="#stages">Simular meu ganho</a>
+        <a class="btn btn-light btn-lg" href="#builds">Ver builds</a>
+      </div>
+      <div class="conta-giros" aria-hidden="true">
+        <svg viewBox="0 0 200 120"><path class="cg-fundo" d="M20 110 A80 80 0 0 1 180 110"/><path class="cg-valor" d="M20 110 A80 80 0 0 1 180 110"/></svg>
+        <div><strong data-count="7200">0</strong><span>rpm</span></div>
       </div>
     </div>
   </section>
 
-  <!-- SERVIÇOS -->
-  <section class="section" id="servicos">
+  <section class="sec" id="servicos">
     <div class="wrap">
-      <p class="section-eyebrow">Serviços</p>
-      <h2 class="section-title">O que fazemos performar</h2>
-      <div class="services-grid">
-        <article class="service-card"><span class="s-icon">💻</span><h3>Remapeamento de ECU</h3><p>Ganho real de potência e torque, com segurança para o motor.</p></article>
-        <article class="service-card"><span class="s-icon">🏁</span><h3>Escapamento Esportivo</h3><p>Sistemas de escape que liberam potência e mudam o som.</p></article>
-        <article class="service-card"><span class="s-icon">🔧</span><h3>Suspensão Esportiva</h3><p>Molas, amortecedores e geometria para mais aderência.</p></article>
-        <article class="service-card"><span class="s-icon">📊</span><h3>Dinamômetro</h3><p>Medição real de potência antes e depois da preparação.</p></article>
+      <div class="sec-head sec-head-row" data-reveal>
+        <div><p class="eyebrow">Serviços</p><h2 class="h-sec">O que fazemos performar</h2></div>
+        <p class="lead">Cada projeto começa e termina no dinamômetro: você vê o ganho real, não uma promessa.</p>
+      </div>
+      <div class="servicos" data-reveal-grupo>
+        <article class="servico" data-reveal><span class="s-cod">01</span><h3>Remapeamento de ECU</h3><p>Ganho de potência e torque com parâmetros seguros para o motor.</p></article>
+        <article class="servico" data-reveal><span class="s-cod">02</span><h3>Escapamento esportivo</h3><p>Sistemas que liberam fluxo e dão ao carro o ronco certo.</p></article>
+        <article class="servico" data-reveal><span class="s-cod">03</span><h3>Suspensão esportiva</h3><p>Molas, amortecedores e geometria para mais aderência.</p></article>
+        <article class="servico" data-reveal><span class="s-cod">04</span><h3>Turbo e intercooler</h3><p>Upgrade de turbina, intercooler e tubulação.</p></article>
       </div>
     </div>
   </section>
 
-  <!-- PACOTES -->
-  <section class="section section-dark" id="pacotes">
+  <section class="sec sec-alt" id="stages">
     <div class="wrap">
-      <p class="section-eyebrow section-eyebrow-light">Pacotes de preparação</p>
-      <h2 class="section-title section-title-light">Do stage 1 ao completo</h2>
-      <div class="stage-grid">
-        <article class="stage-card"><span class="stage-tag">Stage 1</span><h3>Remap + Filtro Esportivo</h3><p>Ganho de potência sem trocar peças mecânicas.</p></article>
-        <article class="stage-card stage-card-highlight"><span class="stage-tag">Stage 2</span><h3>+ Escapamento e Intercooler</h3><p>Mais fluxo de ar e gases, com ganho ainda maior.</p></article>
-        <article class="stage-card"><span class="stage-tag">Stage 3</span><h3>Preparação Completa</h3><p>Internamente do motor para performance extrema.</p></article>
+      <div class="sec-head sec-head-center" data-reveal>
+        <p class="eyebrow">Pacotes</p>
+        <h2 class="h-sec">Do Stage 1 à preparação completa</h2>
+        <p class="lead">Escolha o estágio e a potência original do seu carro para ver uma estimativa de ganho.</p>
+      </div>
+      <div class="simulador" data-reveal>
+        <div class="stages" role="tablist" data-stages>
+          <button role="tab" aria-selected="true" data-stage="1"><span>Stage 1</span><strong>Remap + filtro esportivo</strong><small>Ganho sem trocar peças mecânicas</small></button>
+          <button role="tab" aria-selected="false" data-stage="2"><span>Stage 2</span><strong>+ Escape e intercooler</strong><small>Mais fluxo de ar e de gases</small></button>
+          <button role="tab" aria-selected="false" data-stage="3"><span>Stage 3</span><strong>Preparação completa</strong><small>Turbo maior e internos forjados</small></button>
+        </div>
+        <div class="sim-painel">
+          <div class="sim-entrada">
+            <label for="cv">Potência original</label>
+            <output data-cv-valor for="cv">150 cv</output>
+            <input id="cv" type="range" min="100" max="350" step="5" value="150" data-cv>
+          </div>
+          <div class="barras">
+            <div class="barra"><span>Potência</span><div class="trilho"><i class="orig" data-b-cv-o></i><i class="novo" data-b-cv-n></i></div><strong data-t-cv>—</strong></div>
+            <div class="barra"><span>Torque</span><div class="trilho"><i class="orig" data-b-nm-o></i><i class="novo" data-b-nm-n></i></div><strong data-t-nm>—</strong></div>
+          </div>
+          <p class="sim-nota">Estimativa para motores turbo. O ganho real depende do motor e do estado de conservação, e é medido no dinamômetro antes e depois.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- BUILDS -->
-  <section class="section" id="builds">
-    <div class="wrap">
-      <p class="section-eyebrow">Builds recentes</p>
-      <h2 class="section-title">Alguns carros que já passaram por aqui</h2>
-      <div class="build-grid" id="buildGrid"></div>
+  <section class="sec sec-dark" id="dino">
+    <div class="wrap split">
+      <div data-reveal>
+        <p class="eyebrow">Dinamômetro próprio</p>
+        <h2 class="h-sec">Número medido, não prometido</h2>
+        <p class="lead">Todo carro passa pelo dinamômetro antes e depois. Você leva para casa o gráfico com a curva de potência e torque.</p>
+        <div class="foto foto-16x10 dino-foto"><img src="img/dinamometro.jpg" alt="Carro branco em teste no dinamômetro" loading="lazy"></div>
+      </div>
+      <div class="grafico" data-reveal>
+        <div class="grafico-leg"><span class="l-antes">Antes</span><span class="l-depois">Depois · Stage 2</span></div>
+        <svg viewBox="0 0 400 260" aria-label="Curva de potência antes e depois da preparação">
+          <g class="grade"><line x1="40" y1="30" x2="390" y2="30"/><line x1="40" y1="80" x2="390" y2="80"/><line x1="40" y1="130" x2="390" y2="130"/><line x1="40" y1="180" x2="390" y2="180"/><line x1="40" y1="230" x2="390" y2="230"/></g>
+          <g class="eixo"><text x="34" y="34">250</text><text x="34" y="134">150</text><text x="34" y="234">50</text><text x="60" y="252">2.000</text><text x="210" y="252">4.500</text><text x="350" y="252">7.000 rpm</text></g>
+          <path class="curva-antes" d="M50 205 C 110 170, 170 120, 230 104 S 330 100, 380 118"/>
+          <path class="curva-depois" d="M50 196 C 100 140, 160 70, 230 52 S 330 50, 380 70"/>
+        </svg>
+        <div class="grafico-dados"><div><span>Pico antes</span><strong>172 cv</strong></div><div><span>Pico depois</span><strong>228 cv</strong></div><div><span>Ganho</span><strong class="ganho">+32%</strong></div></div>
+      </div>
     </div>
   </section>
 
-  <!-- CONTATO -->
-  <section class="section section-dark" id="contato">
-    <div class="wrap contact-grid">
-      <div>
-        <p class="section-eyebrow section-eyebrow-light">Orçamento</p>
-        <h2 class="section-title section-title-light">Bora dar mais potência no seu carro?</h2>
-        <ul class="contact-info">
-          <li><strong>Endereço</strong> Rua José Loureiro, 890 — Curitiba/PR</li>
-          <li><strong>Telefone</strong> (41) 99456-1230</li>
+  <section class="sec" id="builds">
+    <div class="wrap">
+      <div class="sec-head sec-head-row" data-reveal>
+        <div><p class="eyebrow">Builds recentes</p><h2 class="h-sec">Alguns carros que passaram por aqui</h2></div>
+        <div class="filtros" data-filtrar="#grade-builds">
+          <button class="filtro" data-f="*" aria-pressed="true">Todos</button>
+          <button class="filtro" data-f="s1" aria-pressed="false">Stage 1</button>
+          <button class="filtro" data-f="s2" aria-pressed="false">Stage 2</button>
+          <button class="filtro" data-f="s3" aria-pressed="false">Stage 3</button>
+        </div>
+      </div>
+      <div class="builds" id="grade-builds" data-lightbox data-reveal>
+        <a class="build b-grande" href="img/rx7.jpg" data-item="s3" data-legenda="Cupê rotativo · Stage 3"><img src="img/rx7.jpg" alt="Cupê esportivo azul" loading="lazy"><div class="build-info"><span class="st">Stage 3</span><strong>Cupê rotativo</strong><em>255 → 360 cv</em></div></a>
+        <a class="build" href="img/bmw.jpg" data-item="s2" data-legenda="Sedã esportivo · Stage 2"><img src="img/bmw.jpg" alt="Sedã esportivo branco" loading="lazy"><div class="build-info"><span class="st">Stage 2</span><strong>Sedã esportivo</strong><em>306 → 380 cv</em></div></a>
+        <a class="build" href="img/mercedes.jpg" data-item="s1" data-legenda="Cupê de luxo · Stage 1"><img src="img/mercedes.jpg" alt="Cupê prata" loading="lazy"><div class="build-info"><span class="st">Stage 1</span><strong>Cupê de luxo</strong><em>388 → 450 cv</em></div></a>
+        <a class="build" href="img/gt.jpg" data-item="s2" data-legenda="Superesportivo · Stage 2"><img src="img/gt.jpg" alt="Superesportivo vermelho com faixas brancas" loading="lazy"><div class="build-info"><span class="st">Stage 2</span><strong>Superesportivo</strong><em>550 → 640 cv</em></div></a>
+        <a class="build" href="img/turbo-2.jpg" data-item="s3" data-legenda="Kit turbo instalado"><img src="img/turbo-2.jpg" alt="Turbina instalada no motor" loading="lazy"><div class="build-info"><span class="st">Stage 3</span><strong>Kit turbo</strong><em>Upgrade de turbina</em></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-alt" id="orcamento">
+    <div class="wrap orcamento-grid">
+      <div data-reveal>
+        <p class="eyebrow">Orçamento</p>
+        <h2 class="h-sec">Bora dar mais potência para o seu carro?</h2>
+        <p class="lead">Conte qual é o carro e o que você quer. Respondemos com o caminho mais seguro para chegar lá.</p>
+        <ul class="contato-lista">
+          <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><strong>Oficina</strong>Rua Exemplo, 000 · Curitiba</div></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><strong>WhatsApp</strong>(41) 00000-0000</div></li>
         </ul>
       </div>
-      <form class="contact-form" id="contactForm">
-        <div class="field">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" required placeholder="Seu nome">
+      <form class="form orcamento-form" data-demo-form data-reveal>
+        <div class="linha">
+          <div class="campo"><label for="t-nome">Nome</label><input id="t-nome" required autocomplete="name"></div>
+          <div class="campo"><label for="t-carro">Carro</label><input id="t-carro" placeholder="Modelo, motor e ano"></div>
         </div>
-        <div class="field">
-          <label for="veiculo">Carro</label>
-          <input type="text" id="veiculo" placeholder="Marca, modelo e motor">
-        </div>
-        <div class="field">
-          <label for="stage">Pacote de interesse</label>
-          <select id="stage">
-            <option>Stage 1</option>
-            <option>Stage 2</option>
-            <option>Stage 3</option>
-            <option>Ainda não sei</option>
-          </select>
-        </div>
-        <button type="submit" class="btn btn-primary btn-block">Solicitar orçamento</button>
-        <p class="form-note" id="formNote" role="status"></p>
+        <div class="campo"><label for="t-stage">Pacote de interesse</label><select id="t-stage" data-campo-stage><option>Stage 1</option><option>Stage 2</option><option>Stage 3</option><option>Ainda não sei</option></select></div>
+        <div class="campo"><label for="t-msg">O que você procura?</label><textarea id="t-msg" placeholder="Uso no dia a dia, pista, arrancada…"></textarea></div>
+        <label class="check"><input type="checkbox" required> Concordo com o uso dos meus dados para retorno (LGPD).</label>
+        <button class="btn btn-acc btn-lg" type="submit">Solicitar orçamento</button>
+        <p class="form-nota" data-form-note role="status"></p>
       </form>
     </div>
   </section>
-
 </main>
 
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <span>© <span id="year"></span> TorqueMax Performance. Site de demonstração.</span>
-    <span class="footer-note">Exemplo de portfólio — não é uma empresa real.</span>
+<footer class="nb-footer">
+  <div class="wrap">
+    <div class="nb-footer-grid">
+      <div><a class="nb-logo" href="#topo"><span class="logo-tm" aria-hidden="true"></span>TORQUE<b>MAX</b></a><p>Preparação automotiva com dinamômetro próprio.</p></div>
+      <div><h4>Serviços</h4><a href="#servicos">Remap de ECU</a><a href="#servicos">Escapamento</a><a href="#servicos">Suspensão</a></div>
+      <div><h4>Performance</h4><a href="#stages">Stages</a><a href="#dino">Dinamômetro</a><a href="#builds">Builds</a></div>
+      <div><h4>Contato</h4><a href="#orcamento">(41) 00000-0000</a></div>
+    </div>
+    <div class="nb-legal"><span>© <span data-ano></span> TorqueMax Performance · empresa fictícia de demonstração</span><span>Modificações devem respeitar a legislação de trânsito e ambiental</span></div>
+    <p class="nb-creditos" data-creditos></p>
   </div>
 </footer>
 
+<script src="img/creditos.js"></script>
+<script src="../kit-negocios/base.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

@@ -1,243 +1,175 @@
-// ===== Case Store =====
-document.getElementById('year').textContent = new Date().getFullYear();
+// Case Store — personalizador, catálogo com filtros e carrinho de demonstração
+// (o pedido é montado como mensagem de WhatsApp).
+(function () {
+  'use strict';
+  const WHATSAPP = '5541988363816'; // mesmo número do site principal (WT Site Lab)
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const moeda = (v) => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  const FRETE_GRATIS = 99;
 
-// Mobile menu
-const menuToggle = document.getElementById('menuToggle');
-const mainNav = document.getElementById('mainNav');
-menuToggle.addEventListener('click', () => {
-  const isOpen = mainNav.classList.toggle('open');
-  menuToggle.setAttribute('aria-expanded', String(isOpen));
-});
-mainNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mainNav.classList.remove('open')));
+  // ---------- catálogo ----------
+  const PRODUTOS = [
+    { id: 1, nome: 'Silicone Soft Touch', tipo: 'silicone', marcas: ['iPhone', 'Samsung', 'Motorola', 'Xiaomi'], preco: 49.9, de: null, classe: 'c-rosa', nota: 4.9, av: 612, selo: 'Mais vendida' },
+    { id: 2, nome: 'Anti-impacto Military', tipo: 'anti-impacto', marcas: ['iPhone', 'Samsung', 'Motorola'], preco: 79.9, de: 99.9, classe: 'c-grafite c-robusta', nota: 4.9, av: 488, selo: '-20%' },
+    { id: 3, nome: 'Transparente Crystal', tipo: 'transparente', marcas: ['iPhone', 'Samsung', 'Motorola', 'Xiaomi'], preco: 39.9, de: 59.9, classe: 'c-transp', nota: 4.7, av: 530, selo: 'Leve 2, pague 1' },
+    { id: 4, nome: 'MagSafe Clear', tipo: 'magsafe', marcas: ['iPhone'], preco: 89.9, de: null, classe: 'c-transp c-mag', nota: 4.8, av: 204, selo: 'Novo' },
+    { id: 5, nome: 'Couro Premium', tipo: 'couro', marcas: ['iPhone', 'Samsung'], preco: 119.9, de: null, classe: 'c-couro', nota: 4.8, av: 141, selo: null },
+    { id: 6, nome: 'Silicone Lima', tipo: 'silicone', marcas: ['iPhone', 'Xiaomi'], preco: 49.9, de: null, classe: 'c-lima', nota: 4.8, av: 97, selo: null },
+    { id: 7, nome: 'Anti-impacto Azul-céu', tipo: 'anti-impacto', marcas: ['Samsung', 'Motorola', 'Xiaomi'], preco: 69.9, de: 79.9, classe: 'c-ceu c-robusta', nota: 4.7, av: 176, selo: null },
+    { id: 8, nome: 'Estampa Ondas', tipo: 'silicone', marcas: ['iPhone', 'Samsung', 'Motorola'], preco: 59.9, de: null, classe: 'c-ondas', nota: 4.9, av: 233, selo: 'Edição limitada' },
+    { id: 9, nome: 'MagSafe Grafite', tipo: 'magsafe', marcas: ['iPhone', 'Samsung'], preco: 99.9, de: null, classe: 'c-grafite c-mag', nota: 4.8, av: 88, selo: null },
+    { id: 10, nome: 'Couro Caramelo', tipo: 'couro', marcas: ['iPhone'], preco: 129.9, de: 149.9, classe: 'c-caramelo', nota: 4.9, av: 64, selo: null },
+    { id: 11, nome: 'Transparente Glitter', tipo: 'transparente', marcas: ['Samsung', 'Motorola', 'Xiaomi'], preco: 44.9, de: null, classe: 'c-transp c-glitter', nota: 4.6, av: 142, selo: null },
+    { id: 12, nome: 'Estampa Terrazzo', tipo: 'silicone', marcas: ['iPhone', 'Xiaomi'], preco: 59.9, de: null, classe: 'c-terrazzo', nota: 4.8, av: 71, selo: null },
+  ];
+  const filtro = { marca: '*', tipo: '*', ordem: 'rel' };
+  const grade = $('[data-produtos]');
 
-// ===== Customizador =====
-const WHATSAPP_NUMBER = '5541988363816'; // mesmo número do site principal (WT Site Lab)
-
-const phoneMock = document.getElementById('phoneMock');
-const phoneMockLg = document.getElementById('phoneMockLg');
-const modelChips = document.querySelectorAll('#modelChips .chip');
-const modeButtons = document.querySelectorAll('#modeRow .mode-btn');
-const colorGroup = document.getElementById('colorGroup');
-const photoGroup = document.getElementById('photoGroup');
-const colorChips = document.querySelectorAll('#colorChips .color-dot');
-const customPrice = document.getElementById('customPrice');
-const previewCaption = document.getElementById('previewCaption');
-const photoInput = document.getElementById('photoInput');
-const photoUploadLabel = document.getElementById('photoUploadLabel');
-const photoUploadText = document.getElementById('photoUploadText');
-const photoThumbRow = document.getElementById('photoThumbRow');
-const photoThumb = document.getElementById('photoThumb');
-const photoRemove = document.getElementById('photoRemove');
-const whatsappCTA = document.getElementById('whatsappCTA');
-
-const precosPorModelo = { iPhone: 69.9, Samsung: 59.9, Motorola: 49.9, Xiaomi: 54.9 };
-const nomesDasCores = {
-  '#D4AF37': 'Dourado',
-  '#0B0B0D': 'Preto Fosco',
-  '#F5F0E6': 'Branco Pérola',
-  '#7A1F2B': 'Bordô',
-  '#C0C0C0': 'Prata',
-};
-
-const state = {
-  modelo: 'iPhone',
-  modo: 'color', // 'color' | 'photo'
-  cor: '#D4AF37',
-  fotoDataUrl: null,
-};
-
-function shade(hex, percent){
-  const num = parseInt(hex.replace('#',''), 16);
-  let r = (num >> 16) + Math.round(2.55 * percent);
-  let g = ((num >> 8) & 0x00FF) + Math.round(2.55 * percent);
-  let b = (num & 0x0000FF) + Math.round(2.55 * percent);
-  r = Math.max(0, Math.min(255, r));
-  g = Math.max(0, Math.min(255, g));
-  b = Math.max(0, Math.min(255, b));
-  return `#${(1 << 24 | r << 16 | g << 8 | b).toString(16).slice(1)}`;
-}
-
-function renderPreview(){
-  [phoneMock, phoneMockLg].forEach(el => {
-    if (!el) return;
-    if (state.modo === 'photo' && state.fotoDataUrl){
-      el.style.backgroundImage = `url(${state.fotoDataUrl})`;
-      el.style.backgroundSize = 'cover';
-      el.style.backgroundPosition = 'center';
-      el.classList.add('has-photo');
-    } else {
-      el.style.backgroundImage = 'none';
-      el.classList.remove('has-photo');
-      const hex = state.modo === 'photo' ? '#D4AF37' : state.cor;
-      el.style.background = `linear-gradient(155deg, ${hex}, ${shade(hex, -35)})`;
-    }
-  });
-  previewCaption.textContent = `Prévia · ${state.modelo}`;
-  updateWhatsAppLink();
-}
-
-function updateWhatsAppLink(){
-  const preco = customPrice.textContent;
-  let detalhe;
-  if (state.modo === 'photo' && state.fotoDataUrl){
-    detalhe = 'personalizada com uma foto minha que já escolhi';
-  } else if (state.modo === 'photo'){
-    detalhe = 'personalizada com foto (ainda vou escolher a imagem)';
-  } else {
-    const nomeCor = nomesDasCores[state.cor] || 'personalizada';
-    detalhe = `na cor ${nomeCor}`;
+  function estrelas(n) { return '★'.repeat(Math.round(n)) + '☆'.repeat(5 - Math.round(n)); }
+  function render() {
+    let lista = PRODUTOS.filter(p => (filtro.marca === '*' || p.marcas.includes(filtro.marca)) && (filtro.tipo === '*' || p.tipo === filtro.tipo));
+    if (filtro.ordem === 'menor') lista.sort((a, b) => a.preco - b.preco);
+    if (filtro.ordem === 'maior') lista.sort((a, b) => b.preco - a.preco);
+    if (filtro.ordem === 'nota') lista.sort((a, b) => b.nota - a.nota || b.av - a.av);
+    $('[data-contagem]').textContent = `${lista.length} ${lista.length === 1 ? 'produto' : 'produtos'}${filtro.marca !== '*' ? ' para ' + filtro.marca : ''}`;
+    grade.innerHTML = lista.map((p, i) => `
+      <article class="produto" style="--i:${i}">
+        <div class="produto-vitrine">
+          ${p.selo ? `<span class="produto-selo">${p.selo}</span>` : ''}
+          <div class="case ${p.classe}"><i class="cam"></i></div>
+          <button type="button" class="produto-add" data-add="${p.id}" aria-label="Adicionar ${p.nome} ao carrinho">+ Adicionar</button>
+        </div>
+        <div class="produto-info">
+          <p class="produto-marcas">${p.marcas.join(' · ')}</p>
+          <h3>${p.nome}</h3>
+          <p class="produto-nota"><span class="estrelas">${estrelas(p.nota)}</span> ${String(p.nota).replace('.', ',')} (${p.av})</p>
+          <p class="produto-preco">${p.de ? `<s>${moeda(p.de)}</s>` : ''}<strong>${moeda(p.preco)}</strong></p>
+        </div>
+      </article>`).join('');
   }
-  const texto = `Olá! Personalizei uma capinha para ${state.modelo} ${detalhe}. Preço estimado: ${preco}. Gostaria de fechar esse pedido!`;
-  whatsappCTA.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(texto)}`;
-}
+  function ligarChips(sel, chave, attr) {
+    $$(`${sel} button`).forEach(b => b.addEventListener('click', () => {
+      $$(`${sel} button`).forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+      filtro[chave] = b.dataset[attr];
+      render();
+    }));
+  }
+  ligarChips('[data-filtro-marca]', 'marca', 'marca');
+  ligarChips('[data-filtro-tipo]', 'tipo', 'tipo');
+  $('[data-ordenar]').addEventListener('change', e => { filtro.ordem = e.target.value; render(); });
+  $$('[data-ir-tipo]').forEach(b => b.addEventListener('click', () => {
+    const alvo = $(`[data-filtro-tipo] [data-tipo="${b.dataset.irTipo}"]`);
+    if (alvo) alvo.click();
+    document.getElementById('produtos').scrollIntoView({ behavior: 'smooth' });
+  }));
+  render();
 
-// Modelo
-modelChips.forEach(chip => {
-  chip.addEventListener('click', () => {
-    modelChips.forEach(c => c.classList.remove('active'));
-    chip.classList.add('active');
-    state.modelo = chip.dataset.model;
-    const preco = precosPorModelo[state.modelo];
-    customPrice.textContent = `R$ ${preco.toFixed(2).replace('.', ',')}`;
-    renderPreview();
-  });
-});
-
-// Modo: cor sólida vs foto
-modeButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    modeButtons.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    state.modo = btn.dataset.mode;
-    colorGroup.hidden = state.modo !== 'color';
-    photoGroup.hidden = state.modo !== 'photo';
-    renderPreview();
-  });
-});
-
-// Cor da capa
-colorChips.forEach(dot => {
-  dot.addEventListener('click', () => {
-    colorChips.forEach(d => d.classList.remove('active'));
-    dot.classList.add('active');
-    state.cor = dot.dataset.color;
-    renderPreview();
-  });
-});
-
-// Upload de foto
-photoInput.addEventListener('change', (e) => {
-  const file = e.target.files && e.target.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = () => {
-    state.fotoDataUrl = reader.result;
-    photoThumb.src = state.fotoDataUrl;
-    photoThumbRow.hidden = false;
-    photoUploadText.innerHTML = 'Foto adicionada ✓ <br><strong>veja a prévia ao lado</strong>';
-    renderPreview();
-  };
-  reader.readAsDataURL(file);
-});
-
-photoRemove.addEventListener('click', () => {
-  state.fotoDataUrl = null;
-  photoInput.value = '';
-  photoThumbRow.hidden = true;
-  photoUploadText.innerHTML = 'Clique para enviar uma foto <br><strong>e veja como fica na capinha</strong>';
-  renderPreview();
-});
-
-// Estado inicial
-renderPreview();
-
-// ===== Produtos (mock — futuro: catálogo com banco de dados) =====
-const produtos = [
-  { nome: 'Capa Fosca Premium', modelo: 'iPhone', preco: 'R$ 69,90', emoji: '📱', cor: '#D4AF37' },
-  { nome: 'Capa Transparente Anti-impacto', modelo: 'iPhone', preco: 'R$ 49,90', emoji: '📱', cor: '#C0C0C0' },
-  { nome: 'Capa Personalizada com Foto', modelo: 'iPhone', preco: 'R$ 79,90', emoji: '🖼️', cor: '#7A1F2B' },
-  { nome: 'Capa Aveludada Samsung', modelo: 'Samsung', preco: 'R$ 59,90', emoji: '📱', cor: '#0B0B0D' },
-  { nome: 'Capa Carteira Samsung', modelo: 'Samsung', preco: 'R$ 64,90', emoji: '📱', cor: '#D4AF37' },
-  { nome: 'Capa Anti-choque Motorola', modelo: 'Motorola', preco: 'R$ 44,90', emoji: '📱', cor: '#C0C0C0' },
-  { nome: 'Capa Slim Motorola', modelo: 'Motorola', preco: 'R$ 39,90', emoji: '📱', cor: '#0B0B0D' },
-  { nome: 'Capa Personalizada com Foto', modelo: 'Xiaomi', preco: 'R$ 49,90', emoji: '🖼️', cor: '#7A1F2B' },
-];
-
-const productGrid = document.getElementById('productGrid');
-const filterStatus = document.getElementById('filterStatus');
-const brandCards = document.querySelectorAll('.brand-card');
-
-function renderProducts(filter){
-  productGrid.innerHTML = '';
-  const list = filter ? produtos.filter(p => p.modelo === filter) : produtos;
-  list.forEach(p => {
-    const card = document.createElement('article');
-    card.className = 'product-card';
-    card.innerHTML = `
-      <div class="product-visual" style="background: linear-gradient(155deg, ${p.cor}, #0B0B0D)"><span>${p.emoji}</span></div>
-      <span class="product-tag">${p.modelo}</span>
-      <h4>${p.nome}</h4>
-      <div class="product-foot">
-        <span class="product-price">${p.preco}</span>
-        <button class="add-btn" aria-label="Adicionar ao carrinho">+</button>
-      </div>
-    `;
-    productGrid.appendChild(card);
-  });
-  filterStatus.textContent = filter ? `Mostrando ${list.length} produtos para ${filter}` : 'Mostrando todos os modelos';
-}
-renderProducts(null);
-
-brandCards.forEach(card => {
-  card.addEventListener('click', () => {
-    const already = card.classList.contains('active');
-    brandCards.forEach(c => c.classList.remove('active'));
-    if (already){
-      renderProducts(null);
+  // ---------- personalizador ----------
+  const PRECO_MODELO = { iPhone: 69.9, Samsung: 59.9, Motorola: 49.9, Xiaomi: 54.9 };
+  const estado = { modelo: 'iPhone', modo: 'cor', cor: '#FF4F8B', nomeCor: 'Rosa', foto: null };
+  const previa = $('[data-previa]');
+  function mudarTom(hex, p) {
+    const n = parseInt(hex.slice(1), 16);
+    const c = [n >> 16, (n >> 8) & 255, n & 255].map(v => Math.max(0, Math.min(255, Math.round(v + 2.55 * p))));
+    return '#' + c.map(v => v.toString(16).padStart(2, '0')).join('');
+  }
+  function renderPrevia() {
+    if (estado.modo === 'foto' && estado.foto) {
+      previa.style.background = `url(${estado.foto}) center/cover`;
     } else {
-      card.classList.add('active');
-      renderProducts(card.dataset.filter);
-      document.getElementById('produtos').scrollIntoView({ behavior: 'smooth' });
+      previa.style.background = `linear-gradient(155deg, ${mudarTom(estado.cor, 12)}, ${mudarTom(estado.cor, -28)})`;
     }
+    previa.classList.toggle('previa-clara', ['#C8F25A', '#F2E6D0'].includes(estado.cor) && estado.modo === 'cor');
+    const desc = estado.modo === 'foto' ? (estado.foto ? 'com sua foto' : 'foto (a escolher)') : estado.nomeCor;
+    $('[data-previa-legenda]').textContent = `Prévia · ${estado.modelo} · ${desc}`;
+    $('[data-preco-monte]').textContent = moeda(PRECO_MODELO[estado.modelo] + (estado.modo === 'foto' ? 10 : 0));
+    const texto = `Olá! Montei uma capinha para ${estado.modelo} ${estado.modo === 'foto' ? 'personalizada com foto' : 'na cor ' + estado.nomeCor}. Preço: ${$('[data-preco-monte]').textContent}.`;
+    $('[data-wa-personalizada]').href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`;
+    previa.classList.remove('gira'); void previa.offsetWidth; previa.classList.add('gira');
+  }
+  $$('[data-modelos] button').forEach(b => b.addEventListener('click', () => {
+    $$('[data-modelos] button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    estado.modelo = b.dataset.modelo; renderPrevia();
+  }));
+  $$('[data-modos] button').forEach(b => b.addEventListener('click', () => {
+    $$('[data-modos] button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    estado.modo = b.dataset.modo;
+    $('[data-grupo-cor]').hidden = estado.modo !== 'cor';
+    $('[data-grupo-foto]').hidden = estado.modo !== 'foto';
+    renderPrevia();
+  }));
+  $$('[data-cores] .cor').forEach(b => b.addEventListener('click', () => {
+    $$('[data-cores] .cor').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    estado.cor = b.dataset.cor; estado.nomeCor = b.dataset.nome; renderPrevia();
+  }));
+  $('[data-foto]').addEventListener('change', e => {
+    const f = e.target.files && e.target.files[0];
+    if (!f || !f.type.startsWith('image/')) return;
+    const leitor = new FileReader();
+    leitor.onload = () => { estado.foto = leitor.result; $('[data-remover-foto]').hidden = false; renderPrevia(); };
+    leitor.readAsDataURL(f);
   });
-});
+  $('[data-remover-foto]').addEventListener('click', () => { estado.foto = null; $('[data-foto]').value = ''; $('[data-remover-foto]').hidden = true; renderPrevia(); });
+  renderPrevia();
 
-// ===== Avaliações (mock) =====
-const avaliacoes = [
-  { nome: 'Bruna T.', texto: 'Capinha chegou rapidinho e é ainda mais bonita pessoalmente. Já comprei outra!', estrelas: 5 },
-  { nome: 'Diego M.', texto: 'Caiu meu celular de uma altura boa e não arranhou nada. Recomendo muito.', estrelas: 5 },
-  { nome: 'Larissa F.', texto: 'Fiz uma com a foto do meu cachorro, ficou perfeita! Qualidade ótima.', estrelas: 5 },
-];
-const reviewsGrid = document.getElementById('reviewsGrid');
-avaliacoes.forEach(r => {
-  const card = document.createElement('article');
-  card.className = 'review-card';
-  card.innerHTML = `
-    <div class="review-stars">${'★'.repeat(r.estrelas)}${'☆'.repeat(5 - r.estrelas)}</div>
-    <p>"${r.texto}"</p>
-    <span class="review-author">${r.nome}</span>
-  `;
-  reviewsGrid.appendChild(card);
-});
+  // ---------- carrinho ----------
+  let carrinho = [];
+  try { carrinho = JSON.parse(localStorage.getItem('case-carrinho')) || []; } catch (e) {}
+  const salvar = () => { try { localStorage.setItem('case-carrinho', JSON.stringify(carrinho)); } catch (e) {} };
+  const gaveta = $('[data-gaveta]');
 
-// Scroll reveal
-const revealTargets = document.querySelectorAll('.product-card, .review-card, .brand-card, .promo-card');
-revealTargets.forEach(el => el.setAttribute('data-reveal',''));
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting){
-      entry.target.classList.add('is-visible');
-      observer.unobserve(entry.target);
-    }
+  function adicionar(item) {
+    const existente = carrinho.find(x => x.chave === item.chave);
+    if (existente) existente.qtd++; else carrinho.push({ ...item, qtd: 1 });
+    salvar(); renderCarrinho(); abrir();
+  }
+  function renderCarrinho() {
+    const qtd = carrinho.reduce((s, x) => s + x.qtd, 0);
+    const sub = carrinho.reduce((s, x) => s + x.qtd * x.preco, 0);
+    const badge = $('[data-qtd]');
+    badge.textContent = qtd; badge.hidden = qtd === 0;
+    $('[data-subtotal]').textContent = moeda(sub);
+    const falta = FRETE_GRATIS - sub;
+    $('[data-frete]').innerHTML = falta > 0
+      ? `Faltam <b>${moeda(falta)}</b> para o frete grátis<i style="--p:${Math.min(100, sub / FRETE_GRATIS * 100)}%"></i>`
+      : '<b>Você ganhou frete grátis!</b><i style="--p:100%"></i>';
+    $('[data-itens]').innerHTML = carrinho.length ? carrinho.map((x, i) => `
+      <li class="item">
+        <div class="item-mini"><div class="case ${x.classe || ''}" style="${x.fundo ? `background:${x.fundo}` : ''}"><i class="cam"></i></div></div>
+        <div class="item-info"><strong>${x.nome}</strong><span>${x.detalhe}</span>
+          <div class="qtd"><button type="button" data-menos="${i}" aria-label="Diminuir">−</button><span>${x.qtd}</span><button type="button" data-mais="${i}" aria-label="Aumentar">+</button></div>
+        </div>
+        <strong class="item-preco">${moeda(x.preco * x.qtd)}</strong>
+      </li>`).join('') : '<li class="vazio">Seu carrinho está vazio. Que tal a <b>Silicone Soft Touch</b>, a mais vendida?</li>';
+    const linhas = carrinho.map(x => `• ${x.qtd}x ${x.nome} (${x.detalhe}) — ${moeda(x.preco * x.qtd)}`).join('\n');
+    $('[data-finalizar]').href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(`Olá! Quero finalizar meu pedido na Case Store:\n${linhas}\nSubtotal: ${moeda(sub)}`)}`;
+    $('[data-finalizar]').toggleAttribute('aria-disabled', carrinho.length === 0);
+  }
+  function abrir() { gaveta.hidden = false; requestAnimationFrame(() => gaveta.classList.add('is-open')); document.body.classList.add('nb-travado'); $('[data-fechar-carrinho]').focus(); }
+  function fechar() { gaveta.classList.remove('is-open'); document.body.classList.remove('nb-travado'); setTimeout(() => { gaveta.hidden = true; }, 350); }
+
+  grade.addEventListener('click', e => {
+    const b = e.target.closest('[data-add]');
+    if (!b) return;
+    const p = PRODUTOS.find(x => x.id === Number(b.dataset.add));
+    const marca = filtro.marca !== '*' && p.marcas.includes(filtro.marca) ? filtro.marca : p.marcas[0];
+    adicionar({ chave: `p${p.id}-${marca}`, nome: p.nome, detalhe: marca, preco: p.preco, classe: p.classe });
   });
-}, { threshold: 0.12 });
-revealTargets.forEach(el => observer.observe(el));
-
-// Contact form (demo — futuro: integração com backend/CRM)
-const form = document.getElementById('contactForm');
-const note = document.getElementById('formNote');
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  note.textContent = 'Mensagem enviada! Nosso time responde em breve. (formulário de demonstração)';
-  form.reset();
-});
+  $('[data-add-personalizada]').addEventListener('click', () => {
+    const preco = PRECO_MODELO[estado.modelo] + (estado.modo === 'foto' ? 10 : 0);
+    const detalhe = `${estado.modelo} · ${estado.modo === 'foto' ? 'com foto' : estado.nomeCor}`;
+    adicionar({ chave: `m-${detalhe}`, nome: 'Capinha personalizada', detalhe, preco, fundo: estado.modo === 'foto' && estado.foto ? null : `linear-gradient(155deg, ${mudarTom(estado.cor, 12)}, ${mudarTom(estado.cor, -28)})` });
+  });
+  $('[data-itens]').addEventListener('click', e => {
+    const mais = e.target.closest('[data-mais]'), menos = e.target.closest('[data-menos]');
+    if (mais) carrinho[Number(mais.dataset.mais)].qtd++;
+    if (menos) { const i = Number(menos.dataset.menos); carrinho[i].qtd--; if (carrinho[i].qtd <= 0) carrinho.splice(i, 1); }
+    if (mais || menos) { salvar(); renderCarrinho(); }
+  });
+  $('[data-abrir-carrinho]').addEventListener('click', abrir);
+  $('[data-fechar-carrinho]').addEventListener('click', fechar);
+  gaveta.addEventListener('click', e => { if (e.target === gaveta) fechar(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !gaveta.hidden) fechar(); });
+  renderCarrinho();
+})();

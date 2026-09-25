@@ -3,172 +3,208 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Doce Encanto — Confeitaria Artesanal</title>
-<meta name="description" content="Doce Encanto: bolos, tortas, doces, salgados e bebidas artesanais feitos com carinho para o seu momento especial.">
+<title>Doce Encanto — Confeitaria artesanal por encomenda</title>
+<meta name="description" content="Bolos, tortas, docinhos e cupcakes feitos à mão por encomenda para aniversários, casamentos e o café da tarde.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FBF4EC">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../kit-negocios/base.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
-<header class="site-header" id="header">
-  <div class="wrap header-inner">
-    <a href="#top" class="brand">
-      <span class="brand-icon">🍰</span>
-      <span class="brand-name">Doce <em>Encanto</em></span>
-    </a>
-    <nav class="main-nav" id="mainNav">
-      <a href="#produtos">Produtos</a>
+<header class="nb-header">
+  <div class="wrap nb-header-inner">
+    <a class="nb-logo" href="#topo">Doce <em>Encanto</em></a>
+    <nav class="nb-nav" aria-label="Principal">
+      <a href="#delicias">Delícias</a>
       <a href="#cardapio">Cardápio</a>
       <a href="#galeria">Galeria</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#contato">Contato</a>
+      <a href="#historia">Nossa história</a>
+      <a href="#encomenda">Encomendas</a>
     </nav>
-    <a href="#contato" class="btn btn-primary nav-cta">Fazer encomenda</a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <a class="btn btn-acc btn-sm nb-header-cta" href="#encomenda">Fazer encomenda</a>
+    <button class="nb-menu-btn" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<main id="top">
-
-  <!-- HERO -->
-  <section class="hero">
+<main id="conteudo">
+  <section class="hero" id="topo">
     <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow">Confeitaria artesanal · Curitiba</p>
-        <h1>Doces que viram <span class="hl">memória afetiva</span>.</h1>
-        <p class="lead">Bolos, tortas e docinhos feitos à mão, com ingredientes selecionados e todo o carinho para o seu aniversário, casamento ou aquele café da tarde.</p>
-        <div class="hero-actions">
-          <a href="#contato" class="btn btn-primary">Encomendar agora</a>
-          <a href="#cardapio" class="btn btn-ghost">Ver cardápio ↓</a>
+      <div class="hero-texto">
+        <p class="eyebrow">Confeitaria artesanal · por encomenda</p>
+        <h1 class="hero-titulo">Doces que viram <em>memória afetiva.</em></h1>
+        <p class="lead">Bolos, tortas e docinhos feitos à mão, com ingredientes de verdade e todo o carinho para o seu aniversário, casamento ou aquele café da tarde.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-acc btn-lg" href="#encomenda">Encomendar agora</a>
+          <a class="btn btn-ghost btn-lg" href="#cardapio">Ver cardápio</a>
+        </div>
+        <p class="hero-nota"><span class="estrelas">★★★★★</span> 4,9 de média em mais de 600 encomendas</p>
+      </div>
+      <div class="hero-midia">
+        <div class="foto hero-foto"><img src="img/hero.jpg" alt="Bolo de chocolate coberto com framboesas frescas" fetchpriority="high"></div>
+        <div class="foto hero-mini"><img src="img/brigadeiro.jpg" alt="Brigadeiros com granulado em forminhas douradas"></div>
+        <svg class="selo-gira" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="circ" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs><text><textPath href="#circ">feito à mão · desde 2016 · feito à mão · desde 2016 ·</textPath></text></svg>
+        <span class="selo-miolo" aria-hidden="true">✿</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="faixa-caixa" aria-hidden="true"><div class="faixa"><div class="faixa-trilho"><span>Bolos recheados</span><span>Naked cakes</span><span>Brigadeiros gourmet</span><span>Tortas</span><span>Cupcakes</span><span>Mesa de doces</span><span>Bolos recheados</span><span>Naked cakes</span><span>Brigadeiros gourmet</span><span>Tortas</span><span>Cupcakes</span><span>Mesa de doces</span></div></div></div>
+
+  <section class="sec" id="delicias">
+    <div class="wrap">
+      <div class="sec-head sec-head-center" data-reveal>
+        <p class="eyebrow">O que fazemos</p>
+        <h2 class="h-sec">Uma vitrine para cada <em>ocasião</em></h2>
+      </div>
+      <div class="categorias" data-reveal-grupo>
+        <a class="categoria" href="#cardapio" data-ir-cat="bolos" data-reveal><div class="foto"><img src="img/morango.jpg" alt="Bolo decorado com morangos" loading="lazy"></div><h3>Bolos</h3><p>Recheados, decorados e personalizados.</p></a>
+        <a class="categoria" href="#cardapio" data-ir-cat="tortas" data-reveal><div class="foto"><img src="img/chocolate-morango.jpg" alt="Torta de chocolate com morangos cobertos" loading="lazy"></div><h3>Tortas</h3><p>Geladas ou assadas na hora.</p></a>
+        <a class="categoria" href="#cardapio" data-ir-cat="doces" data-reveal><div class="foto"><img src="img/docinhos.jpg" alt="Docinhos finos em forminhas coloridas" loading="lazy"></div><h3>Docinhos</h3><p>Brigadeiros gourmet e mesa de doces.</p></a>
+        <a class="categoria" href="#cardapio" data-ir-cat="cupcakes" data-reveal><div class="foto"><img src="img/cupcakes.jpg" alt="Cupcakes red velvet com cobertura" loading="lazy"></div><h3>Cupcakes</h3><p>Para presentear e para festas.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-alt" id="cardapio">
+    <div class="wrap cardapio-grid">
+      <div class="cardapio-lado" data-reveal>
+        <p class="eyebrow">Cardápio</p>
+        <h2 class="h-sec">Sabores que <em>encantam</em></h2>
+        <p class="lead">Monte sua encomenda: toque em <b>+</b> para adicionar e mande a lista pronta no formulário.</p>
+        <div class="foto foto-3x4 cardapio-foto"><img src="img/fatia.jpg" alt="Fatia de bolo de chocolate com cobertura de chantilly" loading="lazy"></div>
+      </div>
+      <div class="cardapio-menu" data-reveal>
+        <div class="cats" role="tablist" data-cats>
+          <button role="tab" aria-selected="true" data-cat="bolos">Bolos</button>
+          <button role="tab" aria-selected="false" data-cat="tortas">Tortas</button>
+          <button role="tab" aria-selected="false" data-cat="doces">Docinhos</button>
+          <button role="tab" aria-selected="false" data-cat="cupcakes">Cupcakes</button>
+          <button role="tab" aria-selected="false" data-cat="bebidas">Bebidas</button>
+        </div>
+        <ul class="menu" data-menu aria-live="polite"></ul>
+        <div class="sacola" data-sacola hidden>
+          <div><span class="sacola-rot">Sua encomenda</span><strong data-sacola-resumo></strong></div>
+          <a class="btn btn-dark btn-sm" href="#encomenda">Continuar</a>
         </div>
       </div>
-      <div class="hero-visual" aria-hidden="true">
-        <div class="cake-illustration">
-          <div class="cake-layer cake-layer-3"></div>
-          <div class="cake-layer cake-layer-2"></div>
-          <div class="cake-layer cake-layer-1"></div>
-          <div class="cake-cherry"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="como">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <p class="eyebrow">Como encomendar</p>
+        <h2 class="h-sec">Do pedido à mesa em quatro passos</h2>
+      </div>
+      <ol class="passos" data-reveal-grupo>
+        <li data-reveal><h3>Escolha</h3><p>Sabores, tamanho e decoração pelo cardápio ou por uma referência sua.</p></li>
+        <li data-reveal><h3>Confirme</h3><p>Enviamos o orçamento e a data de retirada ou entrega.</p></li>
+        <li data-reveal><h3>Preparamos</h3><p>Tudo é feito para o seu pedido, nunca com dias de antecedência.</p></li>
+        <li data-reveal><h3>Aproveite</h3><p>Retirada no ateliê ou entrega refrigerada na região.</p></li>
+      </ol>
+      <p class="aviso-prazo" data-reveal>Bolos decorados: encomende com <b>5 dias</b> de antecedência · Docinhos e cupcakes: <b>3 dias</b></p>
+    </div>
+  </section>
+
+  <section class="sec sec-dark" id="galeria">
+    <div class="wrap">
+      <div class="sec-head sec-head-row" data-reveal>
+        <div><p class="eyebrow">Galeria</p><h2 class="h-sec">Alguns momentos <em>doces</em></h2></div>
+        <p class="lead">Toque em uma foto para ampliar.</p>
+      </div>
+      <div class="galeria" data-lightbox data-reveal>
+        <a class="g-a" href="img/naked.jpg" data-legenda="Naked cake de chocolate com nozes"><img src="img/naked.jpg" alt="Naked cake de chocolate com nozes" loading="lazy"></a>
+        <a class="g-b" href="img/redvelvet.jpg" data-legenda="Fatia de red velvet"><img src="img/redvelvet.jpg" alt="Fatia de red velvet" loading="lazy"></a>
+        <a class="g-c" href="img/brigadeiro.jpg" data-legenda="Brigadeiro gourmet"><img src="img/brigadeiro.jpg" alt="Brigadeiro gourmet" loading="lazy"></a>
+        <a class="g-d" href="img/morango.jpg" data-legenda="Bolo de morango com chantilly"><img src="img/morango.jpg" alt="Bolo de morango com chantilly" loading="lazy"></a>
+        <a class="g-e" href="img/cupcakes.jpg" data-legenda="Cupcakes red velvet"><img src="img/cupcakes.jpg" alt="Cupcakes red velvet" loading="lazy"></a>
+        <a class="g-f" href="img/fatia.jpg" data-legenda="Fatia de bolo de chocolate com chantili"><img src="img/fatia.jpg" alt="Fatia de bolo de chocolate com chantili" loading="lazy"></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="historia">
+    <div class="wrap split">
+      <div class="historia-midia" data-reveal>
+        <div class="foto foto-4x3"><img src="img/chocolate-morango.jpg" alt="Bolo de chocolate decorado com morangos" loading="lazy"></div>
+        <p class="assinatura">Marina Alves<span>confeiteira e fundadora</span></p>
+      </div>
+      <div data-reveal>
+        <p class="eyebrow">Nossa história</p>
+        <h2 class="h-sec">Da cozinha de casa para a <em>sua festa</em></h2>
+        <p class="lead">A Doce Encanto começou em 2016, fazendo docinhos para os aniversários da vizinhança.</p>
+        <p>Hoje atendemos festas e eventos em toda a região, sem perder o cuidado artesanal do primeiro bolo. Cada encomenda é feita sob medida — sabor, tamanho e decoração pensados para o seu momento.</p>
+        <div class="stats mini-stats">
+          <div class="stat"><strong data-count="600" data-sufixo="+">0</strong><span>encomendas por ano</span></div>
+          <div class="stat"><strong data-count="42">0</strong><span>sabores no cardápio</span></div>
         </div>
-        <div class="floating-icon fi-1">🧁</div>
-        <div class="floating-icon fi-2">🍓</div>
-        <div class="floating-icon fi-3">✨</div>
       </div>
     </div>
   </section>
 
-  <!-- PRODUTOS -->
-  <section class="section" id="produtos">
+  <section class="sec sec-alt">
     <div class="wrap">
-      <p class="section-eyebrow">O que fazemos</p>
-      <h2 class="section-title">Nossas categorias</h2>
-      <div class="category-grid">
-        <div class="category-card"><span class="cat-icon">🎂</span><h3>Bolos</h3><p>Recheados, decorados e personalizados para cada ocasião.</p></div>
-        <div class="category-card"><span class="cat-icon">🥧</span><h3>Tortas</h3><p>Doces e salgadas, geladas ou assadas na hora.</p></div>
-        <div class="category-card"><span class="cat-icon">🍬</span><h3>Doces</h3><p>Brigadeiros gourmet, docinhos finos e mesa de doces.</p></div>
-        <div class="category-card"><span class="cat-icon">🥐</span><h3>Salgados</h3><p>Coxinhas, quiches e mini salgados para festas.</p></div>
-        <div class="category-card"><span class="cat-icon">🥤</span><h3>Bebidas</h3><p>Sucos naturais, chás gelados e drinks sem álcool.</p></div>
+      <div class="sec-head sec-head-center" data-reveal>
+        <p class="eyebrow">Quem provou</p>
+        <h2 class="h-sec">Depoimentos</h2>
+      </div>
+      <div class="g3" data-reveal-grupo>
+        <figure class="depo" data-reveal><span class="estrelas">★★★★★</span><blockquote>“O bolo do aniversário da minha filha foi o assunto da festa. Lindo e, mais importante, delicioso.”</blockquote><figcaption><span class="inicial">AL</span><div><strong>Aline L.</strong><span>Bolo decorado</span></div></figcaption></figure>
+        <figure class="depo" data-reveal><span class="estrelas">★★★★★</span><blockquote>“Encomendei a mesa de doces do casamento. Pontualidade e capricho em cada docinho.”</blockquote><figcaption><span class="inicial">GM</span><div><strong>Gustavo M.</strong><span>Mesa de doces</span></div></figcaption></figure>
+        <figure class="depo" data-reveal><span class="estrelas">★★★★★</span><blockquote>“O brigadeiro de chocolate belga é viciante. Já virou presente fixo aqui em casa.”</blockquote><figcaption><span class="inicial">TR</span><div><strong>Tatiane R.</strong><span>Docinhos</span></div></figcaption></figure>
       </div>
     </div>
   </section>
 
-  <!-- CARDÁPIO -->
-  <section class="section section-alt" id="cardapio">
-    <div class="wrap">
-      <p class="section-eyebrow">Cardápio</p>
-      <h2 class="section-title">Sabores que encantam</h2>
-      <div class="menu-tabs" id="menuTabs">
-        <button class="tab-btn active" data-tab="bolos">Bolos</button>
-        <button class="tab-btn" data-tab="tortas">Tortas</button>
-        <button class="tab-btn" data-tab="doces">Doces</button>
-        <button class="tab-btn" data-tab="salgados">Salgados</button>
-        <button class="tab-btn" data-tab="bebidas">Bebidas</button>
-      </div>
-      <div class="menu-list" id="menuList"></div>
-    </div>
-  </section>
-
-  <!-- GALERIA -->
-  <section class="section" id="galeria">
-    <div class="wrap">
-      <p class="section-eyebrow">Galeria</p>
-      <h2 class="section-title">Alguns momentos doces</h2>
-      <div class="gallery-grid" id="galleryGrid"></div>
-    </div>
-  </section>
-
-  <!-- SOBRE -->
-  <section class="section section-alt" id="sobre">
-    <div class="wrap about-grid">
-      <div class="about-photo" aria-hidden="true">👩‍🍳</div>
-      <div>
-        <p class="section-eyebrow">Nossa história</p>
-        <h2 class="section-title">Da cozinha de casa para a sua festa</h2>
-        <p>A Doce Encanto começou em 2016 na cozinha da confeiteira Marina Alves, fazendo docinhos para os aniversários da vizinhança. Hoje, atendemos festas e eventos em toda a região, sem nunca perder o cuidado artesanal do primeiro bolo.</p>
-        <p>Cada encomenda é feita sob medida — sabor, tamanho e decoração pensados para o seu momento.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTATO -->
-  <section class="section" id="contato">
-    <div class="wrap contact-grid">
-      <div>
-        <p class="section-eyebrow">Encomendas</p>
-        <h2 class="section-title">Vamos planejar seu doce?</h2>
-        <p>Preencha os dados abaixo e retornamos com opções de sabor, tamanho e valores.</p>
-        <ul class="contact-info">
-          <li>📍 Curitiba, PR — entregamos na região metropolitana</li>
-          <li>📱 (41) 99876-5432 (WhatsApp)</li>
-          <li>✉️ ola@doceencanto.com.br</li>
+  <section class="sec" id="encomenda">
+    <div class="wrap encomenda">
+      <div data-reveal>
+        <p class="eyebrow">Encomendas</p>
+        <h2 class="h-sec">Vamos planejar seu <em>doce?</em></h2>
+        <p class="lead">Preencha os dados e retornamos com opções de sabor, tamanho e valores.</p>
+        <ul class="contato-lista">
+          <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><strong>Ateliê</strong>Curitiba, PR · entrega na região</div></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><strong>WhatsApp</strong>(41) 00000-0000</div></li>
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><strong>Horário</strong>Ter a sáb · 9h às 18h</div></li>
         </ul>
       </div>
-      <form class="contact-form" id="contactForm">
-        <div class="field">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" required placeholder="Seu nome">
+      <form class="form encomenda-form" data-demo-form data-reveal>
+        <div class="linha">
+          <div class="campo"><label for="e-nome">Nome</label><input id="e-nome" required autocomplete="name"></div>
+          <div class="campo"><label for="e-data">Data desejada</label><input id="e-data" type="date" required></div>
         </div>
-        <div class="field">
-          <label for="ocasiao">Ocasião</label>
-          <select id="ocasiao">
-            <option>Aniversário</option>
-            <option>Casamento</option>
-            <option>Evento corporativo</option>
-            <option>Só porque sim 🍰</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="data">Data desejada</label>
-          <input type="date" id="data">
-        </div>
-        <div class="field">
-          <label for="mensagem">Detalhes da encomenda</label>
-          <textarea id="mensagem" rows="3" placeholder="Quantidade de pessoas, sabor preferido, etc."></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary btn-block">Enviar pedido</button>
-        <p class="form-note" id="formNote" role="status"></p>
+        <div class="campo"><label for="e-ocasiao">Ocasião</label><select id="e-ocasiao"><option>Aniversário</option><option>Casamento</option><option>Evento corporativo</option><option>Só porque sim</option></select></div>
+        <div class="campo"><label for="e-itens">Itens da encomenda</label><textarea id="e-itens" data-itens-encomenda placeholder="Adicione pelo cardápio ou descreva aqui"></textarea></div>
+        <label class="check"><input type="checkbox" required> Concordo com o uso dos meus dados para retorno (LGPD).</label>
+        <button class="btn btn-acc btn-lg" type="submit">Enviar pedido</button>
+        <p class="form-nota" data-form-note role="status"></p>
       </form>
     </div>
   </section>
-
 </main>
 
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <span>© <span id="year"></span> Doce Encanto Confeitaria. Site de demonstração.</span>
-    <span class="footer-note">Exemplo de portfólio — não é uma confeitaria real.</span>
+<footer class="nb-footer">
+  <div class="wrap">
+    <div class="nb-footer-grid">
+      <div><a class="nb-logo" href="#topo">Doce <em>Encanto</em></a><p>Confeitaria artesanal por encomenda.</p></div>
+      <div><h4>Menu</h4><a href="#cardapio">Cardápio</a><a href="#galeria">Galeria</a><a href="#historia">Nossa história</a></div>
+      <div><h4>Encomendas</h4><a href="#encomenda">Fazer pedido</a><a href="#encomenda">(41) 00000-0000</a></div>
+      <div><h4>Social</h4><a href="#topo">Instagram</a><a href="#topo">TikTok</a></div>
+    </div>
+    <div class="nb-legal"><span>© <span data-ano></span> Doce Encanto · confeitaria fictícia de demonstração</span></div>
+    <p class="nb-creditos" data-creditos></p>
   </div>
 </footer>
 
-<!-- Lightbox -->
-<div class="lightbox" id="lightbox" aria-hidden="true">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Fechar">×</button>
-  <div class="lightbox-content" id="lightboxContent"></div>
-</div>
+<a class="nb-wa" href="#encomenda" aria-label="Falar pelo WhatsApp (demonstração)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.7 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.2-3.5-.7-2.9-1.1-4.8-4-5-4.2-.1-.2-1.2-1.6-1.2-3s.7-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .5 0 .7.5.3.7.9 2.2 1 2.4.1.2.1.4 0 .6l-.9 1.1c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.2 2.4 1.5 2.7 1.7.3.2.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.2.6.3.1.2.1.9-.1 1.6Z"/></svg></a>
 
+<script src="img/creditos.js"></script>
+<script src="../kit-negocios/base.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

@@ -1,29 +1,26 @@
-// ===== Funilaria & Pintura Boa Vista =====
-document.getElementById('year').textContent = new Date().getFullYear();
-
-const menuToggle = document.getElementById('menuToggle');
-const mainNav = document.getElementById('mainNav');
-menuToggle.addEventListener('click', () => {
-  const isOpen = mainNav.classList.toggle('open');
-  menuToggle.setAttribute('aria-expanded', String(isOpen));
-});
-mainNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mainNav.classList.remove('open')));
-
-// Scroll reveal
-const revealTargets = document.querySelectorAll('.service-card, .stat');
-revealTargets.forEach(el => el.setAttribute('data-reveal', ''));
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
+// Boa Vista — carro clicável: marca as partes com dano e leva a lista para o formulário.
+(function () {
+  'use strict';
+  const partes = new Set();
+  const lista = document.querySelector('[data-partes-lista]');
+  const msg = document.querySelector('[data-msg-partes]');
+  function atualizar() {
+    lista.innerHTML = partes.size
+      ? [...partes].map(p => `<li><span>${p}</span><button type="button" data-tirar="${p}" aria-label="Remover ${p}">×</button></li>`).join('')
+      : '<li class="vazio">Nenhuma parte marcada ainda.</li>';
+    document.querySelectorAll('.parte').forEach(el => {
+      const on = partes.has(el.dataset.parte);
+      el.classList.toggle('marcada', on);
+      el.setAttribute('aria-pressed', String(on));
+    });
+    msg.value = partes.size ? 'Partes com dano: ' + [...partes].join(', ') + '.' : '';
+  }
+  function alternar(p) { partes.has(p) ? partes.delete(p) : partes.add(p); atualizar(); }
+  document.querySelectorAll('.parte').forEach(el => {
+    el.insertAdjacentHTML('afterbegin', `<title>${el.dataset.parte}</title>`);
+    el.addEventListener('click', () => alternar(el.dataset.parte));
+    el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); alternar(el.dataset.parte); } });
   });
-}, { threshold: 0.15 });
-revealTargets.forEach(el => observer.observe(el));
-
-// Orçamento (demo)
-const form = document.getElementById('contactForm');
-const note = document.getElementById('formNote');
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  note.textContent = 'Recebemos seu pedido! Retornamos com o orçamento em breve. (formulário de demonstração)';
-  form.reset();
-});
+  lista.addEventListener('click', e => { const b = e.target.closest('[data-tirar]'); if (b) { partes.delete(b.dataset.tirar); atualizar(); } });
+  atualizar();
+})();

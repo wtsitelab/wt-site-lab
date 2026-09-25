@@ -3,140 +3,190 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Traço Arquitetura — Projetos Residenciais e Comerciais</title>
-<meta name="description" content="Traço Arquitetura: projetos residenciais, comerciais e de interiores com linguagem minimalista e atenção a cada detalhe construtivo.">
+<title>Traço Arquitetura — Projetos residenciais, comerciais e interiores</title>
+<meta name="description" content="Estúdio de arquitetura e interiores em Curitiba. Projetos enxutos, com intenção em cada detalhe — do estudo preliminar à obra pronta.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#141414">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../kit-negocios/base.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
-<header class="site-header" id="header">
-  <div class="wrap header-inner">
-    <a href="#top" class="brand">
-      <span class="brand-name">TRAÇO</span>
-    </a>
-    <nav class="main-nav" id="mainNav">
+<header class="nb-header sobre-escuro">
+  <div class="wrap nb-header-inner">
+    <a class="nb-logo" href="#topo"><span class="logo-traco" aria-hidden="true"></span>traço<small>arquitetura</small></a>
+    <nav class="nb-nav" aria-label="Principal">
       <a href="#projetos">Projetos</a>
       <a href="#servicos">Serviços</a>
+      <a href="#processo">Processo</a>
       <a href="#estudio">Estúdio</a>
       <a href="#contato">Contato</a>
     </nav>
-    <a href="#contato" class="btn btn-primary nav-cta">Iniciar projeto</a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <a class="btn btn-acc btn-sm nb-header-cta" href="#contato">Iniciar projeto</a>
+    <button class="nb-menu-btn" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<main id="top">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap hero-inner">
-      <p class="eyebrow">Arquitetura &amp; Interiores</p>
-      <h1>Espaços que respiram <span class="hl">simplicidade.</span></h1>
-      <p class="hero-lead">Projetamos casas, escritórios e interiores com uma linguagem enxuta — onde cada elemento tem um motivo claro para existir.</p>
-      <div class="hero-actions">
-        <a href="#contato" class="btn btn-primary">Iniciar um projeto</a>
-        <a href="#projetos" class="btn btn-outline">Ver projetos ↓</a>
+<main id="conteudo">
+  <section class="hero sob-header" id="topo">
+    <img class="hero-img" src="img/hero.jpg" alt="Casa minimalista em concreto com escada e jardim">
+    <div class="hero-veu" aria-hidden="true"></div>
+    <div class="wrap hero-conteudo">
+      <p class="eyebrow">Arquitetura &amp; interiores · Curitiba</p>
+      <h1 class="hero-titulo"><span>Espaços que</span><span>respiram</span><span><em>simplicidade.</em></span></h1>
+      <div class="hero-rodape">
+        <p>Casas, escritórios e interiores com uma linguagem enxuta — onde cada elemento tem um motivo claro para existir.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-acc btn-lg" href="#contato">Iniciar um projeto</a>
+          <a class="btn btn-light btn-lg" href="#projetos">Ver projetos</a>
+        </div>
       </div>
     </div>
+    <ul class="hero-dados wrap" aria-label="O estúdio em números">
+      <li><strong data-count="60" data-sufixo="+">0</strong><span>projetos entregues</span></li>
+      <li><strong>2015</strong><span>ano de fundação</span></li>
+      <li><strong data-count="6">0</strong><span>arquitetos e designers</span></li>
+    </ul>
   </section>
 
-  <!-- PROJETOS -->
-  <section class="section" id="projetos">
+  <section class="sec" id="projetos">
     <div class="wrap">
-      <p class="section-eyebrow">Projetos</p>
-      <h2 class="section-title">Uma seleção do nosso trabalho</h2>
-      <div class="project-filters" id="projectFilters">
-        <button class="filter-btn active" data-filter="todos">Todos</button>
-        <button class="filter-btn" data-filter="residencial">Residencial</button>
-        <button class="filter-btn" data-filter="comercial">Comercial</button>
-        <button class="filter-btn" data-filter="interiores">Interiores</button>
+      <div class="sec-head sec-head-row" data-reveal>
+        <div><p class="eyebrow">Projetos</p><h2 class="h-sec">Uma seleção do nosso trabalho</h2></div>
+        <div class="filtros" data-filtrar="#grade-projetos" role="group" aria-label="Filtrar projetos">
+          <button class="filtro" data-f="*" aria-pressed="true">Todos</button>
+          <button class="filtro" data-f="residencial" aria-pressed="false">Residencial</button>
+          <button class="filtro" data-f="comercial" aria-pressed="false">Comercial</button>
+          <button class="filtro" data-f="interiores" aria-pressed="false">Interiores</button>
+        </div>
       </div>
-      <div class="project-grid" id="projectGrid"></div>
+      <div class="projetos" id="grade-projetos" data-lightbox>
+        <a class="projeto p-alto" href="img/jacaranda.jpg" data-item="residencial" data-legenda="Casa Jacarandá — residencial, 2023">
+          <div class="foto"><img src="img/jacaranda.jpg" alt="Casa com fachada em madeira" loading="lazy"></div>
+          <div class="projeto-info"><span>Residencial · 2023</span><h3>Casa Jacarandá</h3><p>280 m² · Santa Felicidade</p></div>
+        </a>
+        <a class="projeto p-largo" href="img/aurora.jpg" data-item="comercial" data-legenda="Edifício Aurora — comercial, 2022">
+          <div class="foto"><img src="img/aurora.jpg" alt="Edifício comercial com fachada de vidro" loading="lazy"></div>
+          <div class="projeto-info"><span>Comercial · 2022</span><h3>Edifício Aurora</h3><p>3.400 m² · Centro Cívico</p></div>
+        </a>
+        <a class="projeto" href="img/batel.jpg" data-item="interiores" data-legenda="Apartamento Batel — interiores, 2024">
+          <div class="foto"><img src="img/batel.jpg" alt="Sala de estar minimalista em tons claros" loading="lazy"></div>
+          <div class="projeto-info"><span>Interiores · 2024</span><h3>Apartamento Batel</h3><p>112 m² · Batel</p></div>
+        </a>
+        <a class="projeto" href="img/ventosul.jpg" data-item="residencial" data-legenda="Casa Vento Sul — residencial, 2021">
+          <div class="foto"><img src="img/ventosul.jpg" alt="Casa moderna entre árvores" loading="lazy"></div>
+          <div class="projeto-info"><span>Residencial · 2021</span><h3>Casa Vento Sul</h3><p>210 m² · Campo Largo</p></div>
+        </a>
+        <a class="projeto" href="img/studio.jpg" data-item="comercial interiores" data-legenda="Studio Criativo — comercial, 2023">
+          <div class="foto"><img src="img/studio.jpg" alt="Escritório com estante de madeira do piso ao teto" loading="lazy"></div>
+          <div class="projeto-info"><span>Comercial · 2023</span><h3>Studio Criativo</h3><p>160 m² · Mercês</p></div>
+        </a>
+        <a class="projeto p-largo" href="img/cobertura.jpg" data-item="interiores" data-legenda="Cobertura Água Verde — interiores, 2024">
+          <div class="foto"><img src="img/cobertura.jpg" alt="Cozinha com painel ripado de madeira e mesa de jantar" loading="lazy"></div>
+          <div class="projeto-info"><span>Interiores · 2024</span><h3>Cobertura Água Verde</h3><p>190 m² · Água Verde</p></div>
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- SERVIÇOS -->
-  <section class="section section-dark" id="servicos">
+  <section class="sec sec-dark servicos" id="servicos">
+    <div class="wrap split split-top">
+      <div data-reveal>
+        <p class="eyebrow">Serviços</p>
+        <h2 class="h-sec">Do conceito à obra pronta</h2>
+        <p class="lead">Atuamos em todas as etapas — ou só naquela em que você precisa de nós.</p>
+        <div class="foto foto-4x3 servicos-foto"><img src="img/servicos.jpg" alt="Cozinha branca minimalista" loading="lazy"></div>
+      </div>
+      <ol class="servicos-lista" data-reveal-grupo>
+        <li data-reveal><span>01</span><div><h3>Projeto arquitetônico</h3><p>Do estudo preliminar ao projeto executivo, com aprovação na prefeitura e compatibilização de complementares.</p></div></li>
+        <li data-reveal><span>02</span><div><h3>Design de interiores</h3><p>Layout, materiais, marcenaria e iluminação pensados para o jeito como você vive ou trabalha.</p></div></li>
+        <li data-reveal><span>03</span><div><h3>Consultoria e reforma</h3><p>Otimização de espaços existentes — muitas vezes, sem precisar demolir tudo.</p></div></li>
+        <li data-reveal><span>04</span><div><h3>Acompanhamento de obra</h3><p>Visitas técnicas periódicas e relatórios para garantir fidelidade ao projeto e ao orçamento.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec" id="processo">
     <div class="wrap">
-      <p class="section-eyebrow section-eyebrow-light">Serviços</p>
-      <h2 class="section-title section-title-light">Do conceito à obra pronta</h2>
-      <div class="service-list">
-        <article class="service-row"><span>01</span><div><h3>Projeto Arquitetônico</h3><p>Do estudo preliminar ao projeto executivo, com acompanhamento em cada etapa.</p></div></article>
-        <article class="service-row"><span>02</span><div><h3>Design de Interiores</h3><p>Definição de materiais, mobiliário e iluminação para cada ambiente.</p></div></article>
-        <article class="service-row"><span>03</span><div><h3>Consultoria e Reforma</h3><p>Otimização de espaços existentes, sem precisar demolir tudo.</p></div></article>
-        <article class="service-row"><span>04</span><div><h3>Acompanhamento de Obra</h3><p>Visitas técnicas periódicas para garantir fidelidade ao projeto.</p></div></article>
+      <div class="sec-head" data-reveal>
+        <p class="eyebrow">Processo</p>
+        <h2 class="h-sec">Quatro etapas, nenhuma surpresa</h2>
+      </div>
+      <ol class="passos" data-reveal-grupo>
+        <li data-reveal><h3>Escuta</h3><p>Entendemos rotina, desejos e orçamento antes de desenhar a primeira linha.</p></li>
+        <li data-reveal><h3>Estudo</h3><p>Duas ou três propostas de partido, com volumetria e referências de materiais.</p></li>
+        <li data-reveal><h3>Projeto</h3><p>Detalhamento completo, com maquete 3D e caderno de especificações.</p></li>
+        <li data-reveal><h3>Obra</h3><p>Acompanhamento até a entrega das chaves — e um pouco depois.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec sec-alt" id="estudio">
+    <div class="wrap split">
+      <div class="foto foto-4x3" data-reveal><img src="img/estudio.jpg" alt="Interior com teto de madeira e iluminação indireta" loading="lazy"></div>
+      <div data-reveal>
+        <p class="eyebrow">O estúdio</p>
+        <h2 class="h-sec">Arquitetura sem excesso</h2>
+        <p class="lead">O Traço nasceu em 2015 com uma convicção simples: bons espaços não precisam de ornamentos, precisam de intenção.</p>
+        <p>Cada projeto começa com uma pergunta — o que essa família ou empresa realmente precisa desse espaço? — e o desenho nasce dessa resposta. Hoje somos seis pessoas, entre arquitetos e designers de interiores, atuando em Curitiba e região.</p>
+        <blockquote class="citacao">“Tirar o que sobra é a parte mais difícil — e a mais importante — de um projeto.”</blockquote>
       </div>
     </div>
   </section>
 
-  <!-- ESTÚDIO -->
-  <section class="section" id="estudio">
-    <div class="wrap about-grid">
-      <div>
-        <p class="section-eyebrow">O estúdio</p>
-        <h2 class="section-title">Arquitetura sem excesso</h2>
-        <p>O Traço nasceu em 2015 com uma convicção simples: bons espaços não precisam de ornamentos, precisam de intenção. Cada projeto começa com uma pergunta — o que essa família ou empresa realmente precisa desse espaço? — e o desenho nasce dessa resposta.</p>
-        <p>Hoje somos uma equipe de 6 pessoas, entre arquitetos e designers de interiores, atuando em Curitiba e região.</p>
-      </div>
-      <div class="about-stats">
-        <div class="stat"><strong>60+</strong><span>projetos entregues</span></div>
-        <div class="stat"><strong>9</strong><span>anos de estúdio</span></div>
-        <div class="stat"><strong>6</strong><span>pessoas na equipe</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTATO -->
-  <section class="section section-dark" id="contato">
-    <div class="wrap contact-grid">
-      <div>
-        <p class="section-eyebrow section-eyebrow-light">Contato</p>
-        <h2 class="section-title section-title-light">Conte sobre o seu projeto</h2>
-        <p>Respondemos em até 2 dias úteis com os próximos passos.</p>
-        <ul class="contact-info">
-          <li><strong>Endereço</strong> Rua Mateus Leme, 2000 — Curitiba/PR</li>
-          <li><strong>Telefone</strong> (41) 3022-9910</li>
-          <li><strong>E-mail</strong> projetos@traco.arq.br</li>
+  <section class="sec contato" id="contato">
+    <div class="wrap split split-top">
+      <div data-reveal>
+        <p class="eyebrow">Contato</p>
+        <h2 class="h-sec">Conte sobre o seu projeto</h2>
+        <p class="lead">Respondemos em até dois dias úteis com os próximos passos.</p>
+        <ul class="contato-lista">
+          <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><strong>Estúdio</strong>Mercês · Curitiba/PR</div></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><strong>Telefone</strong>(41) 0000-0000</div></li>
+          <li><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><div><strong>E-mail</strong>projetos@traco.exemplo</div></li>
         </ul>
       </div>
-      <form class="contact-form" id="contactForm">
-        <div class="field">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" required placeholder="Seu nome">
+      <form class="form contato-form" data-demo-form data-reveal>
+        <div class="linha">
+          <div class="campo"><label for="c-nome">Nome</label><input id="c-nome" required autocomplete="name"></div>
+          <div class="campo"><label for="c-email">E-mail</label><input id="c-email" type="email" required autocomplete="email"></div>
         </div>
-        <div class="field">
-          <label for="tipo">Tipo de projeto</label>
-          <select id="tipo">
-            <option>Residencial</option>
-            <option>Comercial</option>
-            <option>Interiores</option>
-            <option>Reforma</option>
-          </select>
+        <div class="campo"><span>Tipo de projeto</span>
+          <div class="opcoes" role="radiogroup" aria-label="Tipo de projeto">
+            <label><input type="radio" name="tipo" checked><span>Residencial</span></label>
+            <label><input type="radio" name="tipo"><span>Comercial</span></label>
+            <label><input type="radio" name="tipo"><span>Interiores</span></label>
+            <label><input type="radio" name="tipo"><span>Reforma</span></label>
+          </div>
         </div>
-        <div class="field">
-          <label for="mensagem">Conte sobre o espaço</label>
-          <textarea id="mensagem" rows="4" placeholder="Metragem, localização, ideia inicial..."></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary btn-block">Enviar mensagem</button>
-        <p class="form-note" id="formNote" role="status"></p>
+        <div class="campo"><label for="c-area">Área aproximada</label><select id="c-area"><option>Até 80 m²</option><option>80 a 150 m²</option><option>150 a 300 m²</option><option>Acima de 300 m²</option></select></div>
+        <div class="campo"><label for="c-msg">Conte sobre o espaço</label><textarea id="c-msg"></textarea></div>
+        <label class="check"><input type="checkbox" required> Concordo com o uso dos meus dados para retorno do contato (LGPD).</label>
+        <button class="btn btn-acc btn-lg" type="submit">Enviar mensagem</button>
+        <p class="form-nota" data-form-note role="status"></p>
       </form>
     </div>
   </section>
-
 </main>
 
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <span>© <span id="year"></span> Traço Arquitetura. CAU A12345-6 — site de demonstração.</span>
-    <span class="footer-note">Exemplo de portfólio — não é um escritório real.</span>
+<footer class="nb-footer">
+  <div class="wrap">
+    <div class="nb-footer-grid">
+      <div><a class="nb-logo" href="#topo"><span class="logo-traco" aria-hidden="true"></span>traço<small>arquitetura</small></a><p>Arquitetura e interiores com intenção em cada detalhe.</p></div>
+      <div><h4>Navegação</h4><a href="#projetos">Projetos</a><a href="#servicos">Serviços</a><a href="#estudio">Estúdio</a></div>
+      <div><h4>Contato</h4><a href="#contato">Iniciar projeto</a><a href="#contato">(41) 0000-0000</a></div>
+      <div><h4>Social</h4><a href="#topo">Instagram</a><a href="#topo">Pinterest</a></div>
+    </div>
+    <div class="nb-legal"><span>© <span data-ano></span> Traço Arquitetura · escritório fictício de demonstração</span><span>CAU fictício</span></div>
+    <p class="nb-creditos" data-creditos></p>
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script src="img/creditos.js"></script>
+<script src="../kit-negocios/base.js"></script>
 </body>
 </html>

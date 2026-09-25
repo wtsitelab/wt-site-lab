@@ -3,222 +3,245 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Case Store — Capinhas para todos os celulares</title>
-<meta name="description" content="Case Store: capinhas para iPhone, Samsung, Motorola e Xiaomi com estilo, proteção e entrega rápida.">
+<title>Case Store — Capinhas para iPhone, Samsung, Motorola e Xiaomi</title>
+<meta name="description" content="Capinhas com proteção anti-impacto e design: monte a sua com cor ou foto, escolha pelo modelo do celular e receba em todo o Brasil.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0E0E10">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../kit-negocios/base.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
-<div class="promo-bar">🚚 Frete grátis para todo o Brasil em compras acima de R$ 99 · Use o cupom <strong>CASE10</strong></div>
+<div class="anuncio"><div class="anuncio-trilho"><span>Frete grátis acima de R$ 99</span><span>Cupom <b>CASE10</b> na primeira compra</span><span>Troca grátis em 30 dias</span><span>Envio em 24h úteis</span><span>Frete grátis acima de R$ 99</span><span>Cupom <b>CASE10</b> na primeira compra</span><span>Troca grátis em 30 dias</span><span>Envio em 24h úteis</span></div></div>
 
-<header class="site-header" id="header">
-  <div class="wrap header-inner">
-    <a href="#top" class="brand">
-      <span class="brand-name">Case<span class="brand-dot">.</span>Store</span>
-    </a>
-    <nav class="main-nav" id="mainNav">
+<header class="nb-header">
+  <div class="wrap nb-header-inner">
+    <a class="nb-logo" href="#topo">case<span class="ponto">.</span>store</a>
+    <nav class="nb-nav" aria-label="Principal">
+      <a href="#monte">Monte a sua</a>
       <a href="#produtos">Produtos</a>
-      <a href="#categorias">Categorias</a>
-      <a href="#promocoes">Promoções</a>
+      <a href="#ofertas">Ofertas</a>
       <a href="#avaliacoes">Avaliações</a>
-      <a href="#contato">Contato</a>
+      <a href="#ajuda">Ajuda</a>
     </nav>
-    <a href="#produtos" class="btn btn-primary nav-cta">Comprar agora</a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
-      <span></span><span></span><span></span>
+    <button class="carrinho-btn" type="button" data-abrir-carrinho aria-label="Abrir carrinho">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h13l-1.2 9.5a2 2 0 0 1-2 1.5H9.2a2 2 0 0 1-2-1.6L5 3H2"/><circle cx="9.5" cy="21" r="1"/><circle cx="16.5" cy="21" r="1"/></svg>
+      <span class="carrinho-qtd" data-qtd hidden>0</span>
     </button>
+    <button class="nb-menu-btn" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<main id="top">
-
-  <!-- HERO com customizador -->
-  <section class="hero">
+<main id="conteudo">
+  <section class="hero" id="topo">
     <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow">Nova coleção · proteção + estilo</p>
-        <h1>Sua capinha.<br><span class="hl">Sua cara.</span></h1>
-        <p class="lead">Monte a combinação perfeita: escolha o modelo do seu celular e a cor da capa. Proteção militar contra quedas, sem abrir mão do design.</p>
-        <div class="hero-actions">
-          <a href="#produtos" class="btn btn-primary">Ver produtos</a>
-          <a href="#customizador" class="btn btn-outline">Monte a sua ↓</a>
+      <div class="hero-texto">
+        <p class="tag-nova"><span>Novo</span> Linha MagSafe compatível</p>
+        <h1 class="hero-titulo">Sua capinha.<br><em>Sua cara.</em></h1>
+        <p class="lead">Proteção anti-impacto certificada em quedas de até 3 metros, sem abrir mão do design. Escolha pronta ou monte a sua com cor ou foto.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-acc btn-lg" href="#produtos">Ver produtos</a>
+          <a class="btn btn-ghost btn-lg" href="#monte">Monte a sua</a>
         </div>
-      </div>
-      <div class="hero-visual" aria-hidden="true">
-        <div class="phone-mock" id="phoneMock">
-          <div class="camera-module"><span class="lens"></span><span class="lens"></span><span class="flash"></span></div>
-          <span class="case-wordmark">CASE STORE</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CUSTOMIZADOR -->
-  <section class="section section-dark" id="customizador">
-    <div class="wrap customizer-grid">
-      <div class="customizer-preview">
-        <div class="phone-mock phone-mock-lg" id="phoneMockLg">
-          <div class="camera-module"><span class="lens"></span><span class="lens"></span><span class="flash"></span></div>
-          <span class="case-wordmark">CASE STORE</span>
-        </div>
-        <span class="control-label" id="previewCaption" style="margin:0;">Prévia · iPhone</span>
-      </div>
-      <div class="customizer-controls">
-        <p class="section-eyebrow section-eyebrow-light">Monte a sua</p>
-        <h2 class="section-title section-title-light">Escolha o modelo e personalize</h2>
-        <div class="control-group">
-          <span class="control-label">Modelo</span>
-          <div class="chip-row" id="modelChips">
-            <button class="chip active" data-model="iPhone">iPhone</button>
-            <button class="chip" data-model="Samsung">Samsung</button>
-            <button class="chip" data-model="Motorola">Motorola</button>
-            <button class="chip" data-model="Xiaomi">Xiaomi</button>
-          </div>
-        </div>
-
-        <div class="control-group">
-          <span class="control-label">Como personalizar</span>
-          <div class="mode-row" id="modeRow">
-            <button class="mode-btn active" data-mode="color">Cor sólida</button>
-            <button class="mode-btn" data-mode="photo">Minha foto</button>
-          </div>
-        </div>
-
-        <div class="control-group" id="colorGroup">
-          <span class="control-label">Cor da capa</span>
-          <div class="color-row" id="colorChips">
-            <button class="color-dot active" style="--dot:#D4AF37" data-color="#D4AF37" aria-label="Dourado"></button>
-            <button class="color-dot" style="--dot:#0B0B0D" data-color="#0B0B0D" aria-label="Preto Fosco"></button>
-            <button class="color-dot" style="--dot:#F5F0E6" data-color="#F5F0E6" aria-label="Branco Pérola"></button>
-            <button class="color-dot" style="--dot:#7A1F2B" data-color="#7A1F2B" aria-label="Bordô"></button>
-            <button class="color-dot" style="--dot:#C0C0C0" data-color="#C0C0C0" aria-label="Prata"></button>
-          </div>
-        </div>
-
-        <div class="control-group" id="photoGroup" hidden>
-          <span class="control-label">Sua foto</span>
-          <label class="photo-upload" for="photoInput" id="photoUploadLabel">
-            <input type="file" accept="image/*" id="photoInput" hidden>
-            <span class="photo-upload-icon">📷</span>
-            <span class="photo-upload-text" id="photoUploadText">Clique para enviar uma foto <br><strong>e veja como fica na capinha</strong></span>
-          </label>
-          <div class="photo-thumb-row" id="photoThumbRow" hidden>
-            <img id="photoThumb" class="photo-thumb" alt="Prévia da foto enviada">
-            <button type="button" class="photo-remove" id="photoRemove">Remover foto</button>
-          </div>
-        </div>
-
-        <div class="customizer-price">
-          <span>Preço estimado</span>
-          <strong id="customPrice">R$ 59,90</strong>
-        </div>
-        <a href="#" target="_blank" rel="noopener" class="btn btn-primary btn-block" id="whatsappCTA">Gostei, quero pelo WhatsApp</a>
-        <p class="customizer-hint">Ao clicar, vamos abrir o WhatsApp com os detalhes da sua capinha personalizada.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CATEGORIAS -->
-  <section class="section" id="categorias">
-    <div class="wrap">
-      <p class="section-eyebrow">Categorias</p>
-      <h2 class="section-title">Encontre pelo seu celular</h2>
-      <div class="brand-grid">
-        <button class="brand-card" data-filter="iPhone"><span>📱</span>iPhone</button>
-        <button class="brand-card" data-filter="Samsung"><span>📱</span>Samsung</button>
-        <button class="brand-card" data-filter="Motorola"><span>📱</span>Motorola</button>
-        <button class="brand-card" data-filter="Xiaomi"><span>📱</span>Xiaomi</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRODUTOS -->
-  <section class="section section-dark" id="produtos">
-    <div class="wrap">
-      <div class="section-head-row">
-        <div>
-          <p class="section-eyebrow section-eyebrow-light">Catálogo</p>
-          <h2 class="section-title section-title-light">Produtos em destaque</h2>
-        </div>
-        <span class="filter-status" id="filterStatus">Mostrando todos os modelos</span>
-      </div>
-      <div class="product-grid" id="productGrid"></div>
-    </div>
-  </section>
-
-  <!-- PROMOÇÕES -->
-  <section class="section" id="promocoes">
-    <div class="wrap">
-      <p class="section-eyebrow">Promoções</p>
-      <h2 class="section-title">Ofertas da semana</h2>
-      <div class="promo-grid">
-        <article class="promo-card promo-card-1">
-          <span class="promo-badge">-30%</span>
-          <h3>Leve 2, pague 1 em capinhas transparentes</h3>
-          <p>Válido para todos os modelos, até domingo.</p>
-        </article>
-        <article class="promo-card promo-card-2">
-          <span class="promo-badge">Novidade</span>
-          <h3>Linha MagSafe compatível chegou</h3>
-          <p>Encaixe magnético perfeito para carregadores sem fio.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- AVALIAÇÕES -->
-  <section class="section section-dark" id="avaliacoes">
-    <div class="wrap">
-      <p class="section-eyebrow section-eyebrow-light">Depoimentos</p>
-      <h2 class="section-title section-title-light">O que dizem nossos clientes</h2>
-      <div class="reviews-grid" id="reviewsGrid"></div>
-    </div>
-  </section>
-
-  <!-- CONTATO -->
-  <section class="section" id="contato">
-    <div class="wrap contact-grid">
-      <div>
-        <p class="section-eyebrow">Fale conosco</p>
-        <h2 class="section-title">Dúvidas sobre seu pedido?</h2>
-        <p>Nosso time responde rápido pelo WhatsApp ou e-mail.</p>
-        <ul class="contact-info">
-          <li>📱 (41) 98836-3816</li>
-          <li>✉️ vendas@case.store</li>
-          <li>📦 Envios para todo o Brasil</li>
+        <ul class="hero-garantias">
+          <li><b>4,9</b> ★ em 2.300 avaliações</li>
+          <li><b>3 m</b> teste de queda</li>
+          <li><b>30 dias</b> para trocar</li>
         </ul>
       </div>
-      <form class="contact-form" id="contactForm">
-        <div class="field">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" required placeholder="Seu nome">
-        </div>
-        <div class="field">
-          <label for="email">E-mail</label>
-          <input type="email" id="email" required placeholder="voce@email.com">
-        </div>
-        <div class="field">
-          <label for="mensagem">Mensagem</label>
-          <textarea id="mensagem" rows="3" placeholder="Como podemos ajudar?"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary btn-block">Enviar mensagem</button>
-        <p class="form-note" id="formNote" role="status"></p>
-      </form>
+      <div class="hero-vitrine" aria-hidden="true">
+        <div class="brilho"></div>
+        <div class="case case-xl c-rosa hv-1"><i class="cam"></i></div>
+        <div class="case case-xl c-grafite hv-2"><i class="cam"></i></div>
+        <div class="case case-xl c-lima hv-3"><i class="cam"></i></div>
+      </div>
     </div>
   </section>
 
+  <section class="sec sec-alt" id="monte">
+    <div class="wrap monte">
+      <div class="monte-previa" aria-live="polite">
+        <div class="previa-palco">
+          <div class="case case-xxl" data-previa><i class="cam"></i><span class="case-marca">case.store</span></div>
+        </div>
+        <p class="previa-legenda" data-previa-legenda>Prévia · iPhone · Rosa</p>
+      </div>
+      <div class="monte-painel">
+        <p class="eyebrow">Monte a sua</p>
+        <h2 class="h-sec">Escolha o modelo e personalize</h2>
+        <div class="passo-monte">
+          <span class="rotulo">1. Celular</span>
+          <div class="chips" data-modelos>
+            <button type="button" aria-pressed="true" data-modelo="iPhone">iPhone</button>
+            <button type="button" aria-pressed="false" data-modelo="Samsung">Samsung</button>
+            <button type="button" aria-pressed="false" data-modelo="Motorola">Motorola</button>
+            <button type="button" aria-pressed="false" data-modelo="Xiaomi">Xiaomi</button>
+          </div>
+        </div>
+        <div class="passo-monte">
+          <span class="rotulo">2. Estilo</span>
+          <div class="chips" data-modos>
+            <button type="button" aria-pressed="true" data-modo="cor">Cor sólida</button>
+            <button type="button" aria-pressed="false" data-modo="foto">Minha foto</button>
+          </div>
+        </div>
+        <div class="passo-monte" data-grupo-cor>
+          <span class="rotulo">3. Cor</span>
+          <div class="cores" data-cores>
+            <button type="button" class="cor" style="--c:#FF4F8B" data-cor="#FF4F8B" data-nome="Rosa" aria-label="Rosa" aria-pressed="true"></button>
+            <button type="button" class="cor" style="--c:#2A2B31" data-cor="#2A2B31" data-nome="Grafite" aria-label="Grafite" aria-pressed="false"></button>
+            <button type="button" class="cor" style="--c:#C8F25A" data-cor="#C8F25A" data-nome="Lima" aria-label="Lima" aria-pressed="false"></button>
+            <button type="button" class="cor" style="--c:#6C8CFF" data-cor="#6C8CFF" data-nome="Azul-céu" aria-label="Azul-céu" aria-pressed="false"></button>
+            <button type="button" class="cor" style="--c:#F2E6D0" data-cor="#F2E6D0" data-nome="Areia" aria-label="Areia" aria-pressed="false"></button>
+            <button type="button" class="cor" style="--c:#7A1F2B" data-cor="#7A1F2B" data-nome="Bordô" aria-label="Bordô" aria-pressed="false"></button>
+          </div>
+        </div>
+        <div class="passo-monte" data-grupo-foto hidden>
+          <span class="rotulo">3. Sua foto</span>
+          <label class="upload">
+            <input type="file" accept="image/*" data-foto>
+            <span><strong>Enviar uma foto</strong><br>A imagem fica só no seu navegador — é uma prévia.</span>
+          </label>
+          <button type="button" class="link-remover" data-remover-foto hidden>Remover foto</button>
+        </div>
+        <div class="monte-rodape">
+          <div><span class="rotulo">Preço</span><strong class="preco-grande" data-preco-monte>R$ 69,90</strong><span class="parcela">ou 3x sem juros</span></div>
+          <div class="monte-acoes">
+            <button type="button" class="btn btn-acc btn-lg" data-add-personalizada>Adicionar ao carrinho</button>
+            <a class="btn btn-ghost" data-wa-personalizada target="_blank" rel="noopener">Pedir pelo WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="produtos">
+    <div class="wrap">
+      <div class="sec-head sec-head-row">
+        <div><p class="eyebrow">Catálogo</p><h2 class="h-sec">Produtos em destaque</h2></div>
+        <label class="ordenar"><span>Ordenar</span><select data-ordenar><option value="rel">Mais vendidos</option><option value="menor">Menor preço</option><option value="maior">Maior preço</option><option value="nota">Melhor avaliados</option></select></label>
+      </div>
+      <div class="filtros-loja">
+        <div class="chips" data-filtro-marca>
+          <button type="button" aria-pressed="true" data-marca="*">Todas as marcas</button>
+          <button type="button" aria-pressed="false" data-marca="iPhone">iPhone</button>
+          <button type="button" aria-pressed="false" data-marca="Samsung">Samsung</button>
+          <button type="button" aria-pressed="false" data-marca="Motorola">Motorola</button>
+          <button type="button" aria-pressed="false" data-marca="Xiaomi">Xiaomi</button>
+        </div>
+        <div class="chips chips-sec" data-filtro-tipo>
+          <button type="button" aria-pressed="true" data-tipo="*">Todos</button>
+          <button type="button" aria-pressed="false" data-tipo="silicone">Silicone</button>
+          <button type="button" aria-pressed="false" data-tipo="anti-impacto">Anti-impacto</button>
+          <button type="button" aria-pressed="false" data-tipo="transparente">Transparente</button>
+          <button type="button" aria-pressed="false" data-tipo="magsafe">MagSafe</button>
+          <button type="button" aria-pressed="false" data-tipo="couro">Couro</button>
+        </div>
+      </div>
+      <p class="contagem" data-contagem aria-live="polite"></p>
+      <div class="produtos" data-produtos></div>
+    </div>
+  </section>
+
+  <section class="sec sec-dark" id="ofertas">
+    <div class="wrap">
+      <div class="ofertas">
+        <article class="oferta oferta-a">
+          <span class="oferta-selo">-50%</span>
+          <h3>Leve 2, pague 1 em capinhas transparentes</h3>
+          <p>Válido para todos os modelos, até domingo.</p>
+          <button type="button" class="btn btn-acc" data-ir-tipo="transparente">Aproveitar</button>
+          <div class="oferta-cases" aria-hidden="true"><div class="case c-transp"><i class="cam"></i></div><div class="case c-transp c-inclina"><i class="cam"></i></div></div>
+        </article>
+        <article class="oferta oferta-b">
+          <span class="oferta-selo">Novo</span>
+          <h3>Linha MagSafe compatível</h3>
+          <p>Encaixe magnético para carregadores sem fio e acessórios.</p>
+          <button type="button" class="btn btn-light" data-ir-tipo="magsafe">Conhecer</button>
+          <div class="oferta-cases" aria-hidden="true"><div class="case c-grafite c-mag"><i class="cam"></i></div></div>
+        </article>
+      </div>
+      <div class="estilo">
+        <div class="foto"><img src="img/estilo.jpg" alt="Celular sobre a mesa ao lado de um notebook e uma xícara de café" loading="lazy"></div>
+        <div>
+          <h3>Proteção que acompanha o seu dia</h3>
+          <p>Bordas elevadas para a tela e a câmera, cantos com absorção de impacto e acabamento que não amarela.</p>
+          <ul class="beneficios">
+            <li>Teste de queda de 3 metros</li><li>Compatível com carregador sem fio</li><li>Garantia de 90 dias</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="avaliacoes">
+    <div class="wrap">
+      <div class="sec-head sec-head-row">
+        <div><p class="eyebrow">Avaliações</p><h2 class="h-sec">4,9 de 5 em 2.300 avaliações</h2></div>
+        <div class="barras-nota" aria-label="Distribuição das notas"><div><span>5★</span><i style="--p:88%"></i></div><div><span>4★</span><i style="--p:9%"></i></div><div><span>3★</span><i style="--p:2%"></i></div><div><span>1–2★</span><i style="--p:1%"></i></div></div>
+      </div>
+      <div class="g3">
+        <figure class="depo"><span class="estrelas">★★★★★</span><blockquote>“Caiu da mesa várias vezes e o celular está intacto. E a cor é exatamente a da foto.”</blockquote><figcaption><span class="inicial">JM</span><div><strong>Juliana M.</strong><span>Anti-impacto · iPhone</span></div></figcaption></figure>
+        <figure class="depo"><span class="estrelas">★★★★★</span><blockquote>“Montei com a foto do meu cachorro. Chegou em 3 dias, impressão perfeita.”</blockquote><figcaption><span class="inicial">RS</span><div><strong>Rafael S.</strong><span>Personalizada · Samsung</span></div></figcaption></figure>
+        <figure class="depo"><span class="estrelas">★★★★☆</span><blockquote>“A transparente não amarelou depois de meses. Só queria mais opções de cor na borda.”</blockquote><figcaption><span class="inicial">CL</span><div><strong>Camila L.</strong><span>Transparente · Xiaomi</span></div></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-alt" id="ajuda">
+    <div class="wrap split split-top">
+      <div>
+        <p class="eyebrow">Ajuda</p>
+        <h2 class="h-sec">Dúvidas sobre seu pedido?</h2>
+        <p class="lead">Nosso time responde rápido pelo WhatsApp.</p>
+        <ul class="contato-lista">
+          <li><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><strong>WhatsApp</strong>Atendimento de segunda a sábado</div></li>
+          <li><svg viewBox="0 0 24 24"><path d="M3 7h13v10H3zM16 10h3l2 3v4h-5"/><circle cx="7" cy="18" r="1.5"/><circle cx="17.5" cy="18" r="1.5"/></svg><div><strong>Envio</strong>Para todo o Brasil em até 24h úteis</div></li>
+          <li><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5"/></svg><div><strong>Troca</strong>Grátis em até 30 dias</div></li>
+        </ul>
+      </div>
+      <div class="faq">
+        <details open><summary>Qual é o prazo de entrega?</summary><p>Capitais do Sul e Sudeste recebem em 2 a 4 dias úteis; demais regiões, em 4 a 8 dias úteis. Personalizadas têm 1 dia a mais de produção.</p></details>
+        <details><summary>Como sei qual capinha serve no meu celular?</summary><p>Todos os produtos listam os modelos compatíveis. Na dúvida, mande o modelo pelo WhatsApp que conferimos antes do envio.</p></details>
+        <details><summary>A foto personalizada perde qualidade?</summary><p>Usamos impressão UV de alta resolução. Se a foto enviada tiver baixa resolução, avisamos antes de produzir.</p></details>
+        <details><summary>Posso trocar se não gostar?</summary><p>Sim, em até 30 dias, com frete de troca por nossa conta — exceto capinhas personalizadas com foto, que são produzidas sob encomenda.</p></details>
+      </div>
+    </div>
+  </section>
 </main>
 
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <span>© <span id="year"></span> Case Store. Site de demonstração.</span>
-    <span class="footer-note">Exemplo de portfólio — não é uma loja real.</span>
+<aside class="gaveta" data-gaveta aria-label="Carrinho" hidden>
+  <div class="gaveta-painel" role="dialog" aria-modal="true" aria-labelledby="gaveta-tit">
+    <div class="gaveta-topo"><h2 id="gaveta-tit">Seu carrinho</h2><button type="button" class="gaveta-x" data-fechar-carrinho aria-label="Fechar carrinho">×</button></div>
+    <div class="frete-barra" data-frete></div>
+    <ul class="gaveta-itens" data-itens></ul>
+    <div class="gaveta-rodape">
+      <div class="gaveta-total"><span>Subtotal</span><strong data-subtotal>R$ 0,00</strong></div>
+      <a class="btn btn-acc btn-block btn-lg" data-finalizar target="_blank" rel="noopener">Finalizar pelo WhatsApp</a>
+      <p class="gaveta-nota">Loja de demonstração: o pedido é montado como mensagem de WhatsApp.</p>
+    </div>
+  </div>
+</aside>
+
+<footer class="nb-footer">
+  <div class="wrap">
+    <div class="nb-footer-grid">
+      <div><a class="nb-logo" href="#topo">case<span class="ponto">.</span>store</a><p>Capinhas com proteção e estilo, para os principais celulares.</p></div>
+      <div><h4>Loja</h4><a href="#produtos">Produtos</a><a href="#monte">Monte a sua</a><a href="#ofertas">Ofertas</a></div>
+      <div><h4>Ajuda</h4><a href="#ajuda">Entrega</a><a href="#ajuda">Trocas</a><a href="#ajuda">Contato</a></div>
+      <div><h4>Pagamento</h4><p class="pagamentos"><span>Pix</span><span>Cartão</span><span>Boleto</span></p></div>
+    </div>
+    <div class="nb-legal"><span>© <span data-ano></span> Case Store · loja fictícia de demonstração</span><span>Marcas citadas pertencem aos respectivos fabricantes</span></div>
+    <p class="nb-creditos" data-creditos></p>
   </div>
 </footer>
 
+<script src="img/creditos.js"></script>
+<script src="../kit-negocios/base.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

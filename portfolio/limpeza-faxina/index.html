@@ -3,152 +3,209 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Faxina Fácil — Limpeza Residencial sem Complicação</title>
-<meta name="description" content="Faxina Fácil: agende a limpeza da sua casa em poucos cliques, com profissionais de confiança e planos mensais, quinzenais ou avulsos.">
+<title>Faxina Fácil — Limpeza residencial sem complicação</title>
+<meta name="description" content="Agende a limpeza da sua casa em minutos: avulsa, quinzenal ou mensal, com profissionais verificados e preço na hora.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FBF8FF">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../kit-negocios/base.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
-<header class="site-header" id="header">
-  <div class="wrap header-inner">
-    <a href="#top" class="brand">
-      <span class="brand-icon">🧽</span>
-      <span class="brand-name">Faxina <em>Fácil</em></span>
-    </a>
-    <nav class="main-nav" id="mainNav">
-      <a href="#como-funciona">Como funciona</a>
-      <a href="#planos">Planos</a>
-      <a href="#area">Área de atendimento</a>
-      <a href="#agendar">Agendar</a>
+<header class="nb-header">
+  <div class="wrap nb-header-inner">
+    <a class="nb-logo" href="#topo"><span class="logo-ff" aria-hidden="true">✦</span>faxina fácil</a>
+    <nav class="nb-nav" aria-label="Principal">
+      <a href="#como">Como funciona</a>
+      <a href="#monte">Preços</a>
+      <a href="#bairros">Onde atendemos</a>
+      <a href="#duvidas">Dúvidas</a>
     </nav>
-    <a href="#agendar" class="btn btn-primary nav-cta">Agendar limpeza</a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <a class="btn btn-acc btn-sm nb-header-cta" href="#monte">Agendar limpeza</a>
+    <button class="nb-menu-btn" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<main id="top">
-
-  <!-- HERO -->
-  <section class="hero">
+<main id="conteudo">
+  <section class="hero" id="topo">
     <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow">Limpeza residencial descomplicada</p>
-        <h1>Sua casa limpa, <span class="hl">sem você levantar um dedo.</span></h1>
-        <p class="lead">Agende em minutos, escolha o profissional e pronto — a gente cuida do resto. Sem contrato longo, sem burocracia.</p>
-        <div class="hero-actions">
-          <a href="#agendar" class="btn btn-primary">Agendar minha limpeza</a>
-          <a href="#como-funciona" class="btn btn-outline">Como funciona ↓</a>
+      <div class="hero-texto">
+        <p class="pilula">✨ Limpeza residencial descomplicada</p>
+        <h1 class="hero-titulo">Sua casa limpa, <span class="rabisco">sem você levantar um dedo.</span></h1>
+        <p class="lead">Agende em minutos, veja o preço na hora e pronto — a gente cuida do resto. Sem contrato longo e sem burocracia.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-acc btn-lg" href="#monte">Ver meu preço</a>
+          <a class="btn btn-ghost btn-lg" href="#como">Como funciona</a>
+        </div>
+        <div class="hero-prova"><span class="estrelas">★★★★★</span> <b>4,9</b> em mais de 1.800 limpezas</div>
+      </div>
+      <div class="hero-midia">
+        <div class="blob"></div>
+        <div class="foto hero-foto"><img src="img/cozinha.jpg" alt="Cozinha clara e organizada com janela ampla" fetchpriority="high"></div>
+        <div class="foto hero-kit"><img src="img/kit.jpg" alt="Cesto com produtos e utensílios de limpeza"></div>
+        <span class="brilho b1">✦</span><span class="brilho b2">✦</span><span class="brilho b3">✦</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="como">
+    <div class="wrap">
+      <div class="sec-head sec-head-center" data-reveal>
+        <p class="eyebrow">Como funciona</p>
+        <h2 class="h-sec">Três passos e pronto</h2>
+      </div>
+      <div class="tres" data-reveal-grupo>
+        <article class="passo-card" data-reveal><span class="passo-n">1</span><h3>Monte sua limpeza</h3><p>Tamanho da casa, frequência e extras. O preço aparece na hora.</p></article>
+        <article class="passo-card" data-reveal><span class="passo-n">2</span><h3>Escolha o dia</h3><p>Data e horário que funcionam para a sua rotina. Confirmamos pelo WhatsApp.</p></article>
+        <article class="passo-card" data-reveal><span class="passo-n">3</span><h3>Relaxe</h3><p>A profissional chega com tudo o que precisa. Você só aproveita.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-alt" id="monte">
+    <div class="wrap monte-grid">
+      <div class="monte-form" data-monte data-reveal>
+        <p class="eyebrow">Preços</p>
+        <h2 class="h-sec">Monte sua limpeza</h2>
+        <div class="grupo">
+          <span class="grupo-rot">Tamanho da casa</span>
+          <div class="opcoes" data-grupo="tam">
+            <button type="button" aria-pressed="false" data-v="1">1 quarto</button>
+            <button type="button" aria-pressed="true" data-v="2">2 quartos</button>
+            <button type="button" aria-pressed="false" data-v="3">3 quartos</button>
+            <button type="button" aria-pressed="false" data-v="4">4+ quartos</button>
+          </div>
+        </div>
+        <div class="grupo">
+          <span class="grupo-rot">Frequência</span>
+          <div class="opcoes planos" data-grupo="freq">
+            <button type="button" aria-pressed="false" data-v="avulso"><b>Avulsa</b><small>uma vez</small></button>
+            <button type="button" aria-pressed="true" data-v="quinzenal"><b>Quinzenal</b><small>−15% · mais popular</small></button>
+            <button type="button" aria-pressed="false" data-v="semanal"><b>Semanal</b><small>−20%</small></button>
+          </div>
+        </div>
+        <div class="grupo">
+          <span class="grupo-rot">Extras</span>
+          <div class="extras" data-extras>
+            <label><input type="checkbox" value="geladeira" data-preco="35"><span>Geladeira por dentro <em>+R$ 35</em></span></label>
+            <label><input type="checkbox" value="forno" data-preco="30"><span>Forno <em>+R$ 30</em></span></label>
+            <label><input type="checkbox" value="janelas" data-preco="45"><span>Janelas e vidros <em>+R$ 45</em></span></label>
+            <label><input type="checkbox" value="roupa" data-preco="40"><span>Passar roupa (1h) <em>+R$ 40</em></span></label>
+          </div>
         </div>
       </div>
-      <div class="hero-visual" aria-hidden="true">
-        <div class="bubble-illustration">🧼</div>
-        <span class="floating-icon fi-1">✨</span>
-        <span class="floating-icon fi-2">🧺</span>
-        <span class="floating-icon fi-3">🪣</span>
-      </div>
+      <aside class="resumo" data-reveal>
+        <div class="foto foto-16x10 resumo-foto"><img src="img/banheiro.jpg" alt="Banheiro branco e impecável" loading="lazy"></div>
+        <div class="resumo-corpo">
+          <span class="resumo-rot">Sua limpeza</span>
+          <p class="resumo-desc" data-r-desc>—</p>
+          <ul class="resumo-linhas" data-r-linhas></ul>
+          <div class="resumo-total"><span>Total por visita</span><strong data-r-total>—</strong></div>
+          <p class="resumo-tempo" data-r-tempo></p>
+          <a class="btn btn-acc btn-block btn-lg" href="#agendar" data-r-agendar>Agendar esta limpeza</a>
+        </div>
+      </aside>
     </div>
   </section>
 
-  <!-- COMO FUNCIONA -->
-  <section class="section" id="como-funciona">
+  <section class="sec" id="bairros">
+    <div class="wrap bairros-grid">
+      <div data-reveal>
+        <p class="eyebrow">Onde atendemos</p>
+        <h2 class="h-sec">A gente chega até você?</h2>
+        <p class="lead">Digite seu bairro para conferir.</p>
+        <form class="checa" data-checa>
+          <label for="b-bairro" class="sr-only">Seu bairro</label>
+          <input id="b-bairro" placeholder="Ex.: Água Verde" autocomplete="off" list="lista-bairros">
+          <button class="btn btn-dark" type="submit">Conferir</button>
+        </form>
+        <p class="checa-resp" data-checa-resp aria-live="polite"></p>
+      </div>
+      <ul class="bairros" data-bairros data-reveal></ul>
+      <datalist id="lista-bairros"></datalist>
+    </div>
+  </section>
+
+  <section class="sec sec-alt">
     <div class="wrap">
-      <p class="section-eyebrow">Como funciona</p>
-      <h2 class="section-title">Três passos e pronto</h2>
-      <div class="steps-grid">
-        <article class="step-card"><span class="step-num">1</span><h3>Escolha o plano</h3><p>Avulso, quinzenal ou mensal — você decide a frequência.</p></article>
-        <article class="step-card"><span class="step-num">2</span><h3>Marque o dia</h3><p>Escolha data e horário que funcionam pra sua rotina.</p></article>
-        <article class="step-card"><span class="step-num">3</span><h3>Relaxe</h3><p>Nossa equipe chega, limpa tudo, e você só aproveita.</p></article>
+      <div class="sec-head sec-head-center" data-reveal>
+        <p class="eyebrow">Quem já contratou</p>
+        <h2 class="h-sec">Casa limpa, cliente feliz</h2>
+      </div>
+      <div class="g3" data-reveal-grupo>
+        <figure class="depo" data-reveal><span class="estrelas">★★★★★</span><blockquote>“Agendei pelo celular em cinco minutos. Voltei do trabalho e a casa estava impecável.”</blockquote><figcaption><span class="inicial">PR</span><div><strong>Paula R.</strong><span>Quinzenal · 2 quartos</span></div></figcaption></figure>
+        <figure class="depo" data-reveal><span class="estrelas">★★★★★</span><blockquote>“Sempre a mesma profissional, que já conhece a casa. Faz toda a diferença.”</blockquote><figcaption><span class="inicial">GL</span><div><strong>Gabriel L.</strong><span>Semanal · 3 quartos</span></div></figcaption></figure>
+        <figure class="depo" data-reveal><span class="estrelas">★★★★★</span><blockquote>“Contratei a limpeza avulsa antes de receber a família. Valeu cada centavo.”</blockquote><figcaption><span class="inicial">SM</span><div><strong>Sandra M.</strong><span>Avulsa · 4 quartos</span></div></figcaption></figure>
       </div>
     </div>
   </section>
 
-  <!-- PLANOS -->
-  <section class="section section-alt" id="planos">
-    <div class="wrap">
-      <p class="section-eyebrow">Planos</p>
-      <h2 class="section-title">Escolha a frequência ideal</h2>
-      <div class="plans-grid">
-        <article class="plan-card">
-          <h3>Avulso</h3>
-          <p class="plan-desc">Pra quando você só precisa de uma força pontual.</p>
-          <div class="plan-price"><span>a partir de</span><strong>R$ 150</strong></div>
-        </article>
-        <article class="plan-card plan-card-highlight">
-          <span class="plan-badge">Mais popular</span>
-          <h3>Quinzenal</h3>
-          <p class="plan-desc">Sua casa sempre em dia, a cada 15 dias.</p>
-          <div class="plan-price"><span>a partir de</span><strong>R$ 130</strong><small>/visita</small></div>
-        </article>
-        <article class="plan-card">
-          <h3>Mensal</h3>
-          <p class="plan-desc">Ideal para manutenção com faxinas próprias no meio.</p>
-          <div class="plan-price"><span>a partir de</span><strong>R$ 140</strong><small>/visita</small></div>
-        </article>
+  <section class="sec" id="duvidas">
+    <div class="wrap split split-top">
+      <div data-reveal>
+        <p class="eyebrow">Dúvidas</p>
+        <h2 class="h-sec">Perguntas frequentes</h2>
+        <div class="foto foto-4x3 duvidas-foto"><img src="img/balde.jpg" alt="Balde de limpeza com estampa floral" loading="lazy"></div>
+      </div>
+      <div class="faq" data-reveal>
+        <details open><summary>Preciso fornecer os produtos?</summary><p>Não. A profissional leva produtos e utensílios. Se preferir que use os seus, é só avisar no agendamento.</p></details>
+        <details><summary>As profissionais são verificadas?</summary><p>Sim. Todas passam por entrevista, checagem de antecedentes e treinamento antes do primeiro atendimento.</p></details>
+        <details><summary>Posso cancelar ou remarcar?</summary><p>Pode, sem custo, com até 24 horas de antecedência.</p></details>
+        <details><summary>E se eu não ficar satisfeito?</summary><p>Voltamos em até 48 horas para refazer o que não ficou bom, sem custo adicional.</p></details>
       </div>
     </div>
   </section>
 
-  <!-- ÁREA DE ATENDIMENTO -->
-  <section class="section" id="area">
-    <div class="wrap">
-      <p class="section-eyebrow">Área de atendimento</p>
-      <h2 class="section-title">Onde a gente chega</h2>
-      <div class="area-chips">
-        <span>Curitiba</span><span>Água Verde</span><span>Batel</span><span>Cabral</span>
-        <span>Santa Felicidade</span><span>Boa Vista</span><span>Bigorrilho</span><span>Cristo Rei</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- AGENDAR -->
-  <section class="section section-alt" id="agendar">
-    <div class="wrap contact-grid">
-      <div>
-        <p class="section-eyebrow">Agendar</p>
-        <h2 class="section-title">Marque sua primeira limpeza</h2>
-        <p>Preencha os dados abaixo — confirmamos por WhatsApp em poucos minutos.</p>
-        <ul class="contact-info">
-          <li>📱 (41) 99567-3421</li>
-          <li>✉️ ola@faxinafacil.com.br</li>
+  <section class="sec sec-alt" id="agendar">
+    <div class="wrap agendar-caixa">
+      <div data-reveal>
+        <p class="eyebrow">Agendar</p>
+        <h2 class="h-sec">Marque sua primeira limpeza</h2>
+        <p class="lead">Confirmamos pelo WhatsApp em poucos minutos.</p>
+        <ul class="contato-lista">
+          <li><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><strong>WhatsApp</strong>(41) 00000-0000</div></li>
+          <li><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><div><strong>E-mail</strong>ola@faxinafacil.exemplo</div></li>
         </ul>
       </div>
-      <form class="contact-form" id="contactForm">
-        <div class="field">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" required placeholder="Seu nome">
+      <form class="form agendar-form" data-demo-form data-reveal>
+        <div class="linha">
+          <div class="campo"><label for="a-nome">Nome</label><input id="a-nome" required autocomplete="name"></div>
+          <div class="campo"><label for="a-bairro">Bairro</label><input id="a-bairro" data-a-bairro></div>
         </div>
-        <div class="field">
-          <label for="plano">Plano desejado</label>
-          <select id="plano">
-            <option>Avulso</option>
-            <option>Quinzenal</option>
-            <option>Mensal</option>
-          </select>
+        <div class="linha">
+          <div class="campo"><label for="a-data">Data</label><input id="a-data" type="date" required></div>
+          <div class="campo"><label for="a-hora">Período</label><select id="a-hora"><option>Manhã (8h)</option><option>Tarde (13h)</option></select></div>
         </div>
-        <div class="field">
-          <label for="bairro">Seu bairro</label>
-          <input type="text" id="bairro" placeholder="Onde fica sua casa?">
-        </div>
-        <button type="submit" class="btn btn-primary btn-block">Solicitar agendamento</button>
-        <p class="form-note" id="formNote" role="status"></p>
+        <div class="campo"><label for="a-resumo">Sua limpeza</label><textarea id="a-resumo" data-a-resumo rows="3"></textarea></div>
+        <label class="check"><input type="checkbox" required> Concordo com o uso dos meus dados para retorno (LGPD).</label>
+        <button class="btn btn-acc btn-lg" type="submit">Solicitar agendamento</button>
+        <p class="form-nota" data-form-note role="status"></p>
       </form>
     </div>
   </section>
-
 </main>
 
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <span>© <span id="year"></span> Faxina Fácil. Site de demonstração.</span>
-    <span class="footer-note">Exemplo de portfólio — não é uma empresa real.</span>
+<footer class="nb-footer">
+  <div class="wrap">
+    <div class="nb-footer-grid">
+      <div><a class="nb-logo" href="#topo"><span class="logo-ff" aria-hidden="true">✦</span>faxina fácil</a><p>Limpeza residencial sem complicação.</p></div>
+      <div><h4>Serviço</h4><a href="#como">Como funciona</a><a href="#monte">Preços</a></div>
+      <div><h4>Ajuda</h4><a href="#bairros">Onde atendemos</a><a href="#duvidas">Dúvidas</a></div>
+      <div><h4>Contato</h4><a href="#agendar">(41) 00000-0000</a></div>
+    </div>
+    <div class="nb-legal"><span>© <span data-ano></span> Faxina Fácil · empresa fictícia de demonstração</span><span>Preços ilustrativos</span></div>
+    <p class="nb-creditos" data-creditos></p>
   </div>
 </footer>
 
+<a class="nb-wa" href="#agendar" aria-label="Falar pelo WhatsApp (demonstração)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.7 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.2-3.5-.7-2.9-1.1-4.8-4-5-4.2-.1-.2-1.2-1.6-1.2-3s.7-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .5 0 .7.5.3.7.9 2.2 1 2.4.1.2.1.4 0 .6l-.9 1.1c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.2 2.4 1.5 2.7 1.7.3.2.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.2.6.3.1.2.1.9-.1 1.6Z"/></svg></a>
+
+<script src="img/creditos.js"></script>
+<script src="../kit-negocios/base.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

@@ -3,121 +3,199 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Funilaria & Pintura Boa Vista — Tradição em Reparo Automotivo</title>
-<meta name="description" content="Funilaria & Pintura Boa Vista: mais de 20 anos de bairro cuidando do seu carro com honestidade e preço justo.">
+<title>Funilaria &amp; Pintura Boa Vista — Tradição em reparo automotivo</title>
+<meta name="description" content="Funilaria e pintura de bairro desde 2003: amassados, para-choques, pintura com cor original e polimento. Orçamento sem compromisso.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F8F4EE">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../kit-negocios/base.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
-<header class="site-header" id="header">
-  <div class="wrap header-inner">
-    <a href="#top" class="brand">
-      <span class="brand-icon">🚙</span>
-      <span class="brand-name">Boa Vista</span>
-    </a>
-    <nav class="main-nav" id="mainNav">
+<header class="nb-header">
+  <div class="wrap nb-header-inner">
+    <a class="nb-logo" href="#topo"><span class="logo-bv" aria-hidden="true">BV</span>Boa Vista<small>funilaria &amp; pintura</small></a>
+    <nav class="nb-nav" aria-label="Principal">
       <a href="#servicos">Serviços</a>
-      <a href="#sobre">Sobre</a>
+      <a href="#orcamento">Orçamento</a>
+      <a href="#historia">Nossa história</a>
       <a href="#contato">Contato</a>
     </nav>
-    <a href="#contato" class="btn btn-primary nav-cta">Pedir orçamento</a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <a class="btn btn-acc btn-sm nb-header-cta" href="#orcamento">Pedir orçamento</a>
+    <button class="nb-menu-btn" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<main id="top">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-copy">
+<main id="conteudo">
+  <section class="hero" id="topo">
+    <div class="wrap">
+      <div class="hero-topo">
         <p class="eyebrow">Funilaria e pintura · desde 2003</p>
-        <h1>O funileiro de confiança <span class="hl">do seu bairro.</span></h1>
-        <p class="lead">Mais de vinte anos consertando carros em Curitiba com honestidade, preço justo e aquele cuidado de quem trata o carro do cliente como se fosse o próprio.</p>
-        <div class="hero-actions">
-          <a href="#contato" class="btn btn-primary">Pedir orçamento</a>
-          <a href="#servicos" class="btn btn-outline">Ver serviços ↓</a>
+        <h1 class="hero-titulo">O funileiro de confiança do seu bairro.</h1>
+      </div>
+      <div class="hero-base">
+        <div class="hero-texto">
+          <p class="lead">Mais de vinte anos consertando carros com honestidade, preço justo e o cuidado de quem trata o carro do cliente como se fosse o próprio.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-acc btn-lg" href="#orcamento">Pedir orçamento</a>
+            <a class="btn btn-ghost btn-lg" href="#servicos">Ver serviços</a>
+          </div>
+        </div>
+        <div class="hero-midia">
+          <div class="foto hero-foto"><img src="img/oficina.jpg" alt="Oficina ampla com carro no elevador" fetchpriority="high"></div>
+          <div class="selo-anos"><strong data-count="20" data-sufixo="+">0</strong><span>anos no mesmo endereço</span></div>
         </div>
       </div>
-      <div class="hero-visual" aria-hidden="true">🔧</div>
     </div>
   </section>
 
-  <!-- SERVIÇOS -->
-  <section class="section" id="servicos">
+  <section class="sec" id="servicos">
     <div class="wrap">
-      <p class="section-eyebrow">Serviços</p>
-      <h2 class="section-title">O que fazemos</h2>
-      <div class="services-grid">
-        <article class="service-card"><span class="s-icon">🔨</span><h3>Funilaria</h3><p>Reparo de amassados e para-choques, com ou sem seguro.</p></article>
-        <article class="service-card"><span class="s-icon">🎨</span><h3>Pintura</h3><p>Pintura parcial ou completa, com cor idêntica à original.</p></article>
-        <article class="service-card"><span class="s-icon">🔩</span><h3>Reparo de Lataria</h3><p>Recuperação de estrutura após batidas e amassados profundos.</p></article>
-        <article class="service-card"><span class="s-icon">✨</span><h3>Polimento</h3><p>Recuperação de brilho e remoção de riscos superficiais.</p></article>
+      <div class="sec-head sec-head-row" data-reveal>
+        <div><p class="eyebrow">Serviços</p><h2 class="h-sec">O que fazemos</h2></div>
+        <p class="lead">Com ou sem seguro, do risco no para-choque ao reparo de estrutura.</p>
+      </div>
+      <div class="servicos" data-reveal-grupo>
+        <article class="servico" data-reveal><span class="num">01</span><h3>Funilaria</h3><p>Reparo de amassados e para-choques, com ou sem seguro.</p></article>
+        <article class="servico" data-reveal><span class="num">02</span><h3>Pintura</h3><p>Pintura parcial ou completa, com cor idêntica à original.</p></article>
+        <article class="servico" data-reveal><span class="num">03</span><h3>Reparo de lataria</h3><p>Recuperação de estrutura após batidas e amassados profundos.</p></article>
+        <article class="servico" data-reveal><span class="num">04</span><h3>Polimento</h3><p>Recuperação do brilho e remoção de riscos superficiais.</p></article>
       </div>
     </div>
   </section>
 
-  <!-- SOBRE -->
-  <section class="section section-alt" id="sobre">
-    <div class="wrap about-grid">
-      <div>
-        <p class="section-eyebrow">Nossa história</p>
-        <h2 class="section-title">Duas décadas no mesmo endereço</h2>
-        <p>O Seu Aparecido abriu a Funilaria Boa Vista em 2003, no mesmo terreno onde funcionamos até hoje. Muitos dos nossos clientes já trouxeram o segundo, terceiro carro da família — e é essa confiança que a gente mais valoriza.</p>
+  <section class="sec sec-alt" id="orcamento">
+    <div class="wrap orcamento-grid">
+      <div data-reveal>
+        <p class="eyebrow">Orçamento rápido</p>
+        <h2 class="h-sec">Onde está o estrago?</h2>
+        <p class="lead">Toque nas partes do carro que precisam de reparo. A lista vai direto para o seu pedido de orçamento.</p>
+        <ul class="partes-lista" data-partes-lista><li class="vazio">Nenhuma parte marcada ainda.</li></ul>
+        <a class="btn btn-acc" href="#contato" data-partes-cta>Continuar para o orçamento</a>
       </div>
-      <div class="about-stats">
-        <div class="stat"><strong>20+</strong><span>anos de bairro</span></div>
-        <div class="stat"><strong>3</strong><span>gerações de clientes</span></div>
-        <div class="stat"><strong>100%</strong><span>orçamento sem compromisso</span></div>
+      <div class="carro-box" data-reveal>
+        <svg class="carro" viewBox="0 0 600 200" role="group" aria-label="Carro visto de lado — toque nas partes com dano">
+          <line x1="0" y1="194" x2="600" y2="194" class="chao"/>
+          <path class="parte" data-parte="Para-choque dianteiro" tabindex="0" role="button" d="M20 118 Q20 104 40 102 L75 101 L75 158 L28 158 Q20 158 20 150 Z"/>
+          <path class="parte" data-parte="Para-lama e capô" tabindex="0" role="button" d="M75 101 L190 99 L205 158 L75 158 Z"/>
+          <path class="parte" data-parte="Porta dianteira" tabindex="0" role="button" d="M205 158 L190 99 L262 50 L330 50 L330 158 Z"/>
+          <path class="parte" data-parte="Porta traseira" tabindex="0" role="button" d="M330 158 L330 50 L400 50 L440 76 L420 158 Z"/>
+          <path class="parte" data-parte="Para-lama traseiro" tabindex="0" role="button" d="M420 158 L440 76 L470 98 L525 102 L525 158 Z"/>
+          <path class="parte" data-parte="Para-choque traseiro" tabindex="0" role="button" d="M525 102 L560 104 Q578 108 578 125 L578 150 Q578 158 568 158 L525 158 Z"/>
+          <path class="vidro" d="M212 100 L264 58 L324 58 L324 100 Z"/>
+          <path class="vidro" d="M336 58 L396 58 L428 100 L336 100 Z"/>
+          <circle class="roda" cx="140" cy="158" r="36"/><circle class="aro" cx="140" cy="158" r="17"/>
+          <circle class="roda" cx="468" cy="158" r="36"/><circle class="aro" cx="468" cy="158" r="17"/>
+        </svg>
+        <p class="carro-dica">Dica: tire fotos com boa luz, de frente e de lado para o dano.</p>
       </div>
     </div>
   </section>
 
-  <!-- CONTATO -->
-  <section class="section" id="contato">
-    <div class="wrap contact-grid">
-      <div>
-        <p class="section-eyebrow">Contato</p>
-        <h2 class="section-title">Peça seu orçamento</h2>
-        <ul class="contact-info">
-          <li>📍 Rua Professor Pedro Viriato Parigot, 890 — Boa Vista, Curitiba/PR</li>
-          <li>📞 (41) 3256-7712</li>
-          <li>🕐 Segunda a sexta, 8h às 18h</li>
+  <section class="sec" id="historia">
+    <div class="wrap split">
+      <div data-reveal>
+        <p class="eyebrow">Nossa história</p>
+        <h2 class="h-sec">Duas décadas no mesmo endereço</h2>
+        <p class="lead">O Seu Aparecido abriu a Boa Vista em 2003, no mesmo terreno onde funcionamos até hoje.</p>
+        <p>Muitos dos nossos clientes já trouxeram o segundo, o terceiro carro da família — e é essa confiança que a gente mais valoriza.</p>
+        <ol class="linha-tempo">
+          <li><strong>2003</strong>Abertura, com duas cabines e muito trabalho braçal.</li>
+          <li><strong>2011</strong>Primeira estufa de pintura e sistema de cor computadorizado.</li>
+          <li><strong>2019</strong>Reforma da oficina e ampliação para oito boxes.</li>
+          <li><strong>Hoje</strong>A segunda geração da família à frente do atendimento.</li>
+        </ol>
+      </div>
+      <div class="historia-fotos" data-reveal>
+        <div class="foto foto-4x3"><img src="img/classico.jpg" alt="Carro clássico vermelho no elevador da oficina" loading="lazy"></div>
+        <div class="foto foto-4x3"><img src="img/ferramentas.jpg" alt="Chaves de boca sobre a bancada" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-dark">
+    <div class="wrap">
+      <div class="stats" data-reveal-grupo>
+        <div class="stat" data-reveal><strong data-count="20" data-sufixo="+">0</strong><span>anos de bairro</span></div>
+        <div class="stat" data-reveal><strong data-count="3">0</strong><span>gerações de clientes</span></div>
+        <div class="stat" data-reveal><strong data-count="8">0</strong><span>boxes de trabalho</span></div>
+        <div class="stat" data-reveal><strong data-count="100" data-sufixo="%">0</strong><span>orçamento sem compromisso</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head sec-head-center" data-reveal>
+        <p class="eyebrow">Recém-saídos da oficina</p>
+        <h2 class="h-sec">Brilho de volta</h2>
+      </div>
+      <div class="galeria" data-lightbox data-reveal>
+        <a href="img/azul.jpg" data-legenda="Sedã clássico com pintura recuperada"><img src="img/azul.jpg" alt="Sedã azul com pintura recuperada" loading="lazy"></a>
+        <a href="img/laranja.jpg" data-legenda="Capô e para-lamas repintados"><img src="img/laranja.jpg" alt="Carro laranja com capô aberto" loading="lazy"></a>
+        <a href="img/azul-traseira.jpg" data-legenda="Traseira sem marcas depois do reparo"><img src="img/azul-traseira.jpg" alt="Traseira de sedã azul" loading="lazy"></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-alt">
+    <div class="wrap">
+      <div class="g3" data-reveal-grupo>
+        <figure class="depo" data-reveal><span class="estrelas">★★★★★</span><blockquote>“Levei meu carro depois de uma batida no estacionamento. Ficou como se nada tivesse acontecido, e no prazo combinado.”</blockquote><figcaption><span class="inicial">LF</span><div><strong>Luciana F.</strong><span>Porta e para-lama</span></div></figcaption></figure>
+        <figure class="depo" data-reveal><span class="estrelas">★★★★★</span><blockquote>“Meu pai já consertava o carro aqui. Hoje trago o meu. Honestos no orçamento, sempre.”</blockquote><figcaption><span class="inicial">DM</span><div><strong>Diego M.</strong><span>Cliente desde 2010</span></div></figcaption></figure>
+        <figure class="depo" data-reveal><span class="estrelas">★★★★★</span><blockquote>“A cor ficou idêntica. Não dá para saber qual peça foi pintada.”</blockquote><figcaption><span class="inicial">RS</span><div><strong>Regina S.</strong><span>Pintura de para-choque</span></div></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="contato">
+    <div class="wrap contato-grid">
+      <div data-reveal>
+        <p class="eyebrow">Contato</p>
+        <h2 class="h-sec">Peça seu orçamento</h2>
+        <p class="lead">Traga o carro para avaliação ou mande as fotos. Respondemos no mesmo dia.</p>
+        <ul class="contato-lista">
+          <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><strong>Oficina</strong>Rua Exemplo, 000 · Boa Vista, Curitiba</div></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><strong>Telefone</strong>(41) 0000-0000</div></li>
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><strong>Horário</strong>Segunda a sexta, 8h às 18h</div></li>
         </ul>
       </div>
-      <form class="contact-form" id="contactForm">
-        <div class="field">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" required placeholder="Seu nome">
+      <form class="form contato-form" data-demo-form data-reveal>
+        <div class="linha">
+          <div class="campo"><label for="f-nome">Nome</label><input id="f-nome" required autocomplete="name"></div>
+          <div class="campo"><label for="f-carro">Veículo</label><input id="f-carro" placeholder="Modelo, ano e cor"></div>
         </div>
-        <div class="field">
-          <label for="veiculo">Veículo</label>
-          <input type="text" id="veiculo" placeholder="Marca, modelo e ano">
-        </div>
-        <div class="field">
-          <label for="mensagem">O que precisa ser feito?</label>
-          <textarea id="mensagem" rows="3" placeholder="Conte o que aconteceu com o carro"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary btn-block">Pedir orçamento</button>
-        <p class="form-note" id="formNote" role="status"></p>
+        <div class="campo"><label for="f-msg">O que precisa ser feito?</label><textarea id="f-msg" data-msg-partes></textarea></div>
+        <div class="campo"><label for="f-fotos">Fotos do dano (opcional)</label><input id="f-fotos" type="file" accept="image/*" multiple></div>
+        <label class="check"><input type="checkbox" required> Concordo com o uso dos meus dados para retorno (LGPD).</label>
+        <button class="btn btn-acc btn-lg" type="submit">Pedir orçamento</button>
+        <p class="form-nota" data-form-note role="status"></p>
       </form>
     </div>
   </section>
-
 </main>
 
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <span>© <span id="year"></span> Funilaria & Pintura Boa Vista. Site de demonstração.</span>
-    <span class="footer-note">Exemplo de portfólio — não é uma empresa real.</span>
+<footer class="nb-footer">
+  <div class="wrap">
+    <div class="nb-footer-grid">
+      <div><a class="nb-logo" href="#topo"><span class="logo-bv" aria-hidden="true">BV</span>Boa Vista<small>funilaria &amp; pintura</small></a><p>Funilaria e pintura de bairro, desde 2003.</p></div>
+      <div><h4>Serviços</h4><a href="#servicos">Funilaria</a><a href="#servicos">Pintura</a><a href="#servicos">Polimento</a></div>
+      <div><h4>Oficina</h4><a href="#historia">Nossa história</a><a href="#orcamento">Orçamento</a></div>
+      <div><h4>Contato</h4><a href="#contato">(41) 0000-0000</a></div>
+    </div>
+    <div class="nb-legal"><span>© <span data-ano></span> Funilaria &amp; Pintura Boa Vista · empresa fictícia de demonstração</span></div>
+    <p class="nb-creditos" data-creditos></p>
   </div>
 </footer>
 
+<a class="nb-wa" href="#contato" aria-label="Falar pelo WhatsApp (demonstração)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.7 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.2-3.5-.7-2.9-1.1-4.8-4-5-4.2-.1-.2-1.2-1.6-1.2-3s.7-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .5 0 .7.5.3.7.9 2.2 1 2.4.1.2.1.4 0 .6l-.9 1.1c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.2 2.4 1.5 2.7 1.7.3.2.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.2.6.3.1.2.1.9-.1 1.6Z"/></svg></a>
+
+<script src="img/creditos.js"></script>
+<script src="../kit-negocios/base.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

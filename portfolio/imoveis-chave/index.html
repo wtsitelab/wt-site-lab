@@ -3,138 +3,180 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chave Imóveis — Compra, Venda e Locação em Curitiba</title>
-<meta name="description" content="Chave Imóveis: apartamentos e casas para comprar ou alugar em Curitiba, com atendimento próximo do início ao fim da negociação.">
+<title>Chave Imóveis — Compra, venda e locação em Curitiba</title>
+<meta name="description" content="Apartamentos, casas e salas para comprar ou alugar em Curitiba, com documentação acompanhada de perto e negociação sem enrolação.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F5F6F8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;1,500&family=Epilogue:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../kit-negocios/base.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
-<header class="site-header" id="header">
-  <div class="wrap header-inner">
-    <a href="#top" class="brand">
-      <span class="brand-icon">🔑</span>
-      <span class="brand-name">Chave <em>Imóveis</em></span>
-    </a>
-    <nav class="main-nav" id="mainNav">
+<header class="nb-header">
+  <div class="wrap nb-header-inner">
+    <a class="nb-logo" href="#topo"><span class="logo-ch" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8" cy="12" r="4.5"/><path d="M12.5 12H22M18 12v3.5M21 12v2.5"/></svg></span>Chave<small>imóveis</small></a>
+    <nav class="nb-nav" aria-label="Principal">
       <a href="#imoveis">Imóveis</a>
-      <a href="#como-funciona">Como funciona</a>
+      <a href="#como">Como funciona</a>
+      <a href="#anunciar">Anunciar</a>
       <a href="#sobre">Sobre</a>
       <a href="#contato">Contato</a>
     </nav>
-    <a href="#contato" class="btn btn-primary nav-cta">Anunciar imóvel</a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <a class="btn btn-dark btn-sm nb-header-cta" href="#favoritos" data-ver-favs><span class="coracao" aria-hidden="true">♥</span> Favoritos <b data-fav-qtd>0</b></a>
+    <button class="nb-menu-btn" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<main id="top">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap hero-inner">
-      <p class="eyebrow">Compra, venda e locação</p>
-      <h1>O imóvel certo <span class="hl">começa com a imobiliária certa.</span></h1>
-      <p class="hero-lead">Curadoria de imóveis em Curitiba, documentação acompanhada de perto e negociação sem enrolação — do primeiro contato até a chave na mão.</p>
-      <div class="hero-actions">
-        <a href="#imoveis" class="btn btn-primary">Ver imóveis disponíveis</a>
-        <a href="#contato" class="btn btn-outline">Quero anunciar o meu ↓</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- IMÓVEIS -->
-  <section class="section" id="imoveis">
+<main id="conteudo">
+  <section class="hero" id="topo">
     <div class="wrap">
-      <p class="section-eyebrow">Imóveis disponíveis</p>
-      <h2 class="section-title">Encontre o seu próximo endereço</h2>
-      <div class="listing-filters" id="listingFilters">
-        <button class="filter-btn active" data-filter="todos">Todos</button>
-        <button class="filter-btn" data-filter="comprar">Comprar</button>
-        <button class="filter-btn" data-filter="alugar">Alugar</button>
+      <div class="hero-caixa">
+        <div class="hero-fundo"><img src="img/hero.jpg" alt="Edifícios residenciais com área verde" fetchpriority="high"></div>
+        <div class="hero-conteudo">
+          <p class="hero-tag">Compra, venda e locação em Curitiba</p>
+          <h1 class="hero-titulo">O imóvel certo começa com a imobiliária certa.</h1>
+          <form class="busca" data-busca>
+            <div class="busca-modo" role="radiogroup" aria-label="Finalidade">
+              <button type="button" role="radio" aria-checked="true" data-modo="comprar">Comprar</button>
+              <button type="button" role="radio" aria-checked="false" data-modo="alugar">Alugar</button>
+            </div>
+            <div class="busca-campos">
+              <label><span>Tipo</span><select data-b-tipo><option value="*">Todos os tipos</option><option value="apartamento">Apartamento</option><option value="casa">Casa</option><option value="comercial">Comercial</option></select></label>
+              <label><span>Quartos</span><select data-b-quartos><option value="0">Qualquer</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option></select></label>
+              <button class="btn btn-acc btn-lg" type="submit">Buscar imóveis</button>
+            </div>
+          </form>
+        </div>
       </div>
-      <div class="listing-grid" id="listingGrid"></div>
     </div>
   </section>
 
-  <!-- COMO FUNCIONA -->
-  <section class="section section-dark" id="como-funciona">
+  <section class="sec" id="imoveis">
     <div class="wrap">
-      <p class="section-eyebrow section-eyebrow-light">Como funciona</p>
-      <h2 class="section-title section-title-light">Do interesse à chave na mão</h2>
-      <div class="steps-track">
-        <div class="step-item"><span>01</span><p>Você escolhe o imóvel ou nos conta o que procura</p></div>
-        <div class="step-item"><span>02</span><p>Agendamos a visita no horário que funcionar pra você</p></div>
-        <div class="step-item"><span>03</span><p>Cuidamos da negociação e da documentação</p></div>
-        <div class="step-item"><span>04</span><p>Assinatura do contrato e entrega das chaves</p></div>
+      <div class="sec-head sec-head-row" data-reveal>
+        <div><p class="eyebrow">Imóveis disponíveis</p><h2 class="h-sec">Encontre seu próximo endereço</h2></div>
+        <label class="ordenar"><span>Ordenar</span><select data-ordem><option value="rec">Mais recentes</option><option value="menor">Menor preço</option><option value="maior">Maior preço</option><option value="area">Maior área</option></select></label>
+      </div>
+      <div class="barra-filtros" data-reveal>
+        <div class="chips" data-f-modo>
+          <button type="button" aria-pressed="true" data-v="*">Todos</button>
+          <button type="button" aria-pressed="false" data-v="comprar">Comprar</button>
+          <button type="button" aria-pressed="false" data-v="alugar">Alugar</button>
+          <button type="button" aria-pressed="false" data-v="fav">♥ Favoritos</button>
+        </div>
+        <p class="contagem" data-contagem aria-live="polite"></p>
+      </div>
+      <div class="imoveis" data-lista id="favoritos"></div>
+    </div>
+  </section>
+
+  <section class="sec sec-alt" id="como">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <p class="eyebrow">Como funciona</p>
+        <h2 class="h-sec">Do interesse à chave na mão</h2>
+      </div>
+      <ol class="passos" data-reveal-grupo>
+        <li data-reveal><h3>Escolha</h3><p>Você escolhe o imóvel ou nos conta o que procura.</p></li>
+        <li data-reveal><h3>Visite</h3><p>Agendamos a visita no horário que funcionar para você.</p></li>
+        <li data-reveal><h3>Negocie</h3><p>Cuidamos da proposta, da negociação e da documentação.</p></li>
+        <li data-reveal><h3>Mude-se</h3><p>Assinatura do contrato e entrega das chaves.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec" id="anunciar">
+    <div class="wrap">
+      <div class="anunciar" data-reveal>
+        <div>
+          <p class="eyebrow">Proprietário</p>
+          <h2 class="h-sec">Quer vender ou alugar seu imóvel?</h2>
+          <p>Avaliação gratuita, fotos profissionais e divulgação nos principais portais. Você acompanha cada visita pelo WhatsApp.</p>
+        </div>
+        <ul class="anunciar-lista">
+          <li><strong data-count="21">0</strong><span>dias em média para alugar</span></li>
+          <li><strong data-count="0" data-prefixo="R$ ">0</strong><span>para anunciar</span></li>
+        </ul>
+        <a class="btn btn-acc btn-lg" href="#contato" data-anunciar>Anunciar meu imóvel</a>
       </div>
     </div>
   </section>
 
-  <!-- SOBRE -->
-  <section class="section" id="sobre">
-    <div class="wrap about-grid">
-      <div>
-        <p class="section-eyebrow">Sobre a Chave</p>
-        <h2 class="section-title">Uma imobiliária de bairro, com padrão de grande</h2>
-        <p>Fundada em 2012, a Chave Imóveis nasceu para ser aquela imobiliária que conhece a rua, o prédio e até o síndico — sem abrir mão da organização e da documentação correta em cada negociação.</p>
+  <section class="sec sec-alt" id="sobre">
+    <div class="wrap split">
+      <div data-reveal>
+        <p class="eyebrow">Sobre a Chave</p>
+        <h2 class="h-sec">Uma imobiliária de bairro, com padrão de grande</h2>
+        <p class="lead">A Chave nasceu em 2012 para ser a imobiliária que conhece a rua, o prédio e até o síndico — sem abrir mão da organização e da documentação correta.</p>
       </div>
-      <div class="about-stats">
-        <div class="stat"><strong>420+</strong><span>imóveis negociados</span></div>
-        <div class="stat"><strong>12</strong><span>anos de mercado</span></div>
-        <div class="stat"><strong>4.8★</strong><span>avaliação dos clientes</span></div>
+      <div class="stats sobre-stats" data-reveal-grupo>
+        <div class="stat" data-reveal><strong data-count="420" data-sufixo="+">0</strong><span>imóveis negociados</span></div>
+        <div class="stat" data-reveal><strong data-count="12">0</strong><span>anos de mercado</span></div>
+        <div class="stat" data-reveal><strong data-count="4.8" data-casas="1">0</strong><span>de avaliação dos clientes</span></div>
+        <div class="stat" data-reveal><strong data-count="9">0</strong><span>corretores</span></div>
       </div>
     </div>
   </section>
 
-  <!-- CONTATO -->
-  <section class="section section-dark" id="contato">
-    <div class="wrap contact-grid">
-      <div>
-        <p class="section-eyebrow section-eyebrow-light">Contato</p>
-        <h2 class="section-title section-title-light">Quer comprar, alugar ou anunciar?</h2>
-        <p>Conte o que você precisa e retornamos com opções.</p>
-        <ul class="contact-info">
-          <li><strong>Endereço</strong> Rua Brigadeiro Franco, 1500 — Curitiba/PR</li>
-          <li><strong>Telefone</strong> (41) 3324-6690</li>
-          <li><strong>E-mail</strong> contato@chaveimoveis.com.br</li>
+  <section class="sec" id="contato">
+    <div class="wrap contato-grid">
+      <div data-reveal>
+        <p class="eyebrow">Contato</p>
+        <h2 class="h-sec">Quer comprar, alugar ou anunciar?</h2>
+        <p class="lead">Conte o que você precisa e retornamos com opções.</p>
+        <ul class="contato-lista">
+          <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><strong>Escritório</strong>Rua Exemplo, 0000 · Curitiba</div></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><strong>Telefone</strong>(41) 0000-0000</div></li>
+          <li><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><div><strong>E-mail</strong>contato@chave.exemplo</div></li>
         </ul>
       </div>
-      <form class="contact-form" id="contactForm">
-        <div class="field">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" required placeholder="Seu nome">
+      <form class="form contato-form" data-demo-form data-reveal>
+        <div class="linha">
+          <div class="campo"><label for="k-nome">Nome</label><input id="k-nome" required autocomplete="name"></div>
+          <div class="campo"><label for="k-tel">WhatsApp</label><input id="k-tel" type="tel" autocomplete="tel"></div>
         </div>
-        <div class="field">
-          <label for="interesse">Eu quero</label>
-          <select id="interesse">
-            <option>Comprar um imóvel</option>
-            <option>Alugar um imóvel</option>
-            <option>Anunciar meu imóvel</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="mensagem">Detalhes</label>
-          <textarea id="mensagem" rows="3" placeholder="Bairro, faixa de valor, tipo de imóvel..."></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary btn-block">Enviar mensagem</button>
-        <p class="form-note" id="formNote" role="status"></p>
+        <div class="campo"><label for="k-quero">Eu quero</label><select id="k-quero" data-k-quero><option>Comprar um imóvel</option><option>Alugar um imóvel</option><option>Anunciar meu imóvel</option></select></div>
+        <div class="campo"><label for="k-msg">Detalhes</label><textarea id="k-msg" data-k-msg></textarea></div>
+        <label class="check"><input type="checkbox" required> Concordo com o uso dos meus dados para retorno (LGPD).</label>
+        <button class="btn btn-acc btn-lg" type="submit">Enviar mensagem</button>
+        <p class="form-nota" data-form-note role="status"></p>
       </form>
     </div>
   </section>
-
 </main>
 
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <span>© <span id="year"></span> Chave Imóveis. CRECI-PR 24.680 — site de demonstração.</span>
-    <span class="footer-note">Exemplo de portfólio — não é uma imobiliária real.</span>
+<dialog class="ficha" data-ficha aria-labelledby="ficha-tit">
+  <button class="ficha-x" type="button" data-fechar aria-label="Fechar">×</button>
+  <div class="ficha-foto"><img data-f-img alt=""></div>
+  <div class="ficha-corpo">
+    <p class="ficha-tag" data-f-tag></p>
+    <h2 id="ficha-tit" data-f-nome></h2>
+    <p class="ficha-bairro" data-f-bairro></p>
+    <ul class="ficha-specs" data-f-specs></ul>
+    <p data-f-desc></p>
+    <div class="ficha-rodape"><div><span data-f-rot></span><strong data-f-preco></strong></div><a class="btn btn-acc" href="#contato" data-f-visita>Agendar visita</a></div>
+  </div>
+</dialog>
+
+<footer class="nb-footer">
+  <div class="wrap">
+    <div class="nb-footer-grid">
+      <div><a class="nb-logo" href="#topo"><span class="logo-ch" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8" cy="12" r="4.5"/><path d="M12.5 12H22M18 12v3.5M21 12v2.5"/></svg></span>Chave<small>imóveis</small></a><p>Compra, venda e locação em Curitiba.</p></div>
+      <div><h4>Imóveis</h4><a href="#imoveis">Comprar</a><a href="#imoveis">Alugar</a><a href="#anunciar">Anunciar</a></div>
+      <div><h4>Chave</h4><a href="#como">Como funciona</a><a href="#sobre">Sobre</a></div>
+      <div><h4>Contato</h4><a href="#contato">(41) 0000-0000</a></div>
+    </div>
+    <div class="nb-legal"><span>© <span data-ano></span> Chave Imóveis · imobiliária fictícia de demonstração · CRECI 00000-J</span><span>Imóveis e valores ilustrativos</span></div>
+    <p class="nb-creditos" data-creditos></p>
   </div>
 </footer>
 
+<script src="img/creditos.js"></script>
+<script src="../kit-negocios/base.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

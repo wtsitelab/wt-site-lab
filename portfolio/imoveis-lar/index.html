@@ -3,131 +3,201 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lar Imóveis — Beatriz Andrade, Corretora de Imóveis</title>
-<meta name="description" content="Beatriz Andrade, corretora de imóveis em Curitiba: acompanhamento pessoal na compra, venda ou locação do seu próximo lar.">
+<title>Lar Imóveis — Beatriz Andrade, corretora de imóveis</title>
+<meta name="description" content="Corretora de imóveis com atendimento pessoal: uma curadoria enxuta de casas e apartamentos em Curitiba, visitados e avaliados um a um.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FAF6F2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Petrona:ital,wght@0,500;0,600;1,500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../kit-negocios/base.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
-<header class="site-header" id="header">
-  <div class="wrap header-inner">
-    <a href="#top" class="brand">
-      <span class="brand-name">Lar <em>Imóveis</em></span>
-    </a>
-    <nav class="main-nav" id="mainNav">
-      <a href="#imoveis">Imóveis selecionados</a>
+<header class="nb-header">
+  <div class="wrap nb-header-inner">
+    <a class="nb-logo" href="#topo"><span class="logo-lar" aria-hidden="true">L</span>Lar Imóveis<small>Beatriz Andrade</small></a>
+    <nav class="nb-nav" aria-label="Principal">
+      <a href="#selecao">Imóveis</a>
+      <a href="#simulador">Financiamento</a>
       <a href="#sobre">Sobre mim</a>
-      <a href="#depoimentos">Depoimentos</a>
       <a href="#contato">Contato</a>
     </nav>
-    <a href="#contato" class="btn btn-primary nav-cta">Falar comigo</a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <a class="btn btn-acc btn-sm nb-header-cta" href="#contato">Falar comigo</a>
+    <button class="nb-menu-btn" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<main id="top">
-
-  <!-- HERO -->
-  <section class="hero">
+<main id="conteudo">
+  <section class="hero" id="topo">
     <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow">Corretora de imóveis · CRECI-PR 45.120</p>
-        <h1>Encontrar um lar é <span class="hl">encontrar o lugar certo pra sua vida.</span></h1>
-        <p class="lead">Sou a Beatriz Andrade. Acompanho pessoalmente cada cliente, da primeira visita até a assinatura — sem prometer imóveis que não combinam com o que você procura.</p>
-        <div class="hero-actions">
-          <a href="#contato" class="btn btn-primary">Falar comigo</a>
-          <a href="#imoveis" class="btn btn-outline">Ver imóveis ↓</a>
+      <div class="hero-texto">
+        <p class="eyebrow">Corretora de imóveis · Curitiba</p>
+        <h1 class="hero-titulo">Encontrar um lar é encontrar o lugar certo <em>para a sua vida.</em></h1>
+        <p class="lead">Sou a Beatriz. Acompanho pessoalmente cada cliente, da primeira visita à assinatura — sem empurrar imóveis que não combinam com o que você procura.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-acc btn-lg" href="#selecao">Ver a seleção</a>
+          <a class="btn btn-ghost btn-lg" href="#contato">Contar o que procuro</a>
         </div>
       </div>
-      <div class="hero-portrait" aria-hidden="true">
-        <div class="portrait-frame"><span>BA</span></div>
-        <div class="portrait-badge">+9 anos no mercado imobiliário</div>
+      <div class="hero-midia">
+        <div class="foto hero-foto"><img src="img/hero.jpg" alt="Sala aconchegante com sofá claro e flores" fetchpriority="high"></div>
+        <div class="hero-assinatura"><span class="mono-ba">BA</span><div><strong>+9 anos</strong><span>no mercado imobiliário</span></div></div>
       </div>
     </div>
   </section>
 
-  <!-- IMÓVEIS SELECIONADOS -->
-  <section class="section" id="imoveis">
+  <section class="sec" id="selecao">
     <div class="wrap">
-      <p class="section-eyebrow">Imóveis selecionados</p>
-      <h2 class="section-title">Uma curadoria, não uma vitrine cheia</h2>
-      <p class="section-lead">Trabalho com uma carteira enxuta de imóveis — cada um visitado e avaliado por mim pessoalmente.</p>
-      <div class="listing-grid" id="listingGrid"></div>
-    </div>
-  </section>
-
-  <!-- SOBRE MIM -->
-  <section class="section section-alt" id="sobre">
-    <div class="wrap about-grid">
-      <div class="about-portrait" aria-hidden="true"><span>BA</span></div>
-      <div>
-        <p class="section-eyebrow">Sobre mim</p>
-        <h2 class="section-title">Por que trabalho sozinha, de propósito</h2>
-        <p>Depois de anos numa imobiliária grande, decidi atender um número menor de clientes por vez — assim consigo realmente conhecer cada família, cada busca, cada detalhe que faz diferença na hora de decidir.</p>
-        <p>Hoje atendo compradores, vendedores e locatários em Curitiba, sempre com a mesma proposta: transparência sobre prós e contras de cada imóvel, mesmo que isso signifique dizer "esse não é pra você".</p>
+      <div class="sec-head sec-head-row" data-reveal>
+        <div><p class="eyebrow">Seleção da semana</p><h2 class="h-sec">Uma curadoria, <em>não uma vitrine cheia</em></h2></div>
+        <p class="lead">Cada imóvel aqui foi visitado e avaliado por mim — com prós e contras.</p>
+      </div>
+      <article class="destaque" data-reveal>
+        <div class="destaque-fotos">
+          <div class="foto"><img src="img/alto-gloria.jpg" alt="Casa com deck de madeira e fachada colorida" loading="lazy"></div>
+          <div class="foto"><img src="img/alto-gloria-int.jpg" alt="Corredor iluminado com piso de madeira" loading="lazy"></div>
+        </div>
+        <div class="destaque-info">
+          <span class="rotulo">Casa · Alto da Glória</span>
+          <h3>Casa com deck e jardim</h3>
+          <p class="preco">R$ 780.000</p>
+          <ul class="specs"><li>3 quartos</li><li>160 m²</li><li>2 vagas</li></ul>
+          <div class="nota-bea"><strong>Minha opinião</strong><p>Luz natural o dia inteiro e um deck que vira sala no verão. Ponto de atenção: a rua tem subida forte.</p></div>
+          <button class="btn btn-dark" type="button" data-simular="780000">Simular financiamento</button>
+        </div>
+      </article>
+      <div class="selecao" data-reveal-grupo>
+        <article class="card-imovel" data-reveal>
+          <div class="foto foto-4x3"><img src="img/juveve.jpg" alt="Sala clara com sofá branco e almofadas verdes" loading="lazy"></div>
+          <span class="rotulo">Apartamento · Juvevê</span>
+          <h3>Apartamento reformado</h3>
+          <p class="preco">R$ 540.000</p>
+          <ul class="specs"><li>2 quartos</li><li>72 m²</li><li>1 vaga</li></ul>
+          <p class="nota-curta">“Reforma bem feita e sol da manhã na sala.”</p>
+          <button class="link-simular" type="button" data-simular="540000">Simular financiamento →</button>
+        </article>
+        <article class="card-imovel" data-reveal>
+          <div class="foto foto-4x3"><img src="img/cobertura.jpg" alt="Sala de estar ampla com piso de madeira" loading="lazy"></div>
+          <span class="rotulo">Cobertura · Água Verde</span>
+          <h3>Cobertura com terraço</h3>
+          <p class="preco">R$ 1.100.000</p>
+          <ul class="specs"><li>3 suítes</li><li>190 m²</li><li>3 vagas</li></ul>
+          <p class="nota-curta">“Terraço gourmet com vista aberta para o parque.”</p>
+          <button class="link-simular" type="button" data-simular="1100000">Simular financiamento →</button>
+        </article>
+        <article class="card-imovel" data-reveal>
+          <div class="foto foto-4x3"><img src="img/quarto.jpg" alt="Quarto aconchegante com luminárias acesas" loading="lazy"></div>
+          <span class="rotulo">Apartamento · Cristo Rei</span>
+          <h3>Apartamento aconchegante</h3>
+          <p class="preco">R$ 3.200<small>/mês</small></p>
+          <ul class="specs"><li>2 quartos</li><li>80 m²</li><li>Aluguel</li></ul>
+          <p class="nota-curta">“Silencioso, perto de tudo e com condomínio baixo.”</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- DEPOIMENTOS -->
-  <section class="section" id="depoimentos">
-    <div class="wrap">
-      <p class="section-eyebrow">Depoimentos</p>
-      <h2 class="section-title">Quem já encontrou o lar com a Beatriz</h2>
-      <div class="testimonial-grid" id="testimonialGrid"></div>
-    </div>
-  </section>
-
-  <!-- CONTATO -->
-  <section class="section section-alt" id="contato">
-    <div class="wrap contact-grid">
-      <div>
-        <p class="section-eyebrow">Vamos conversar?</p>
-        <h2 class="section-title">Conte o que você procura</h2>
-        <p>Sem pressa, sem pressão — só uma conversa sobre o que faz sentido pra você.</p>
-        <ul class="contact-info">
-          <li>📍 Curitiba, PR e região metropolitana</li>
-          <li>📱 (41) 99887-6543</li>
-          <li>✉️ contato@larimoveis.com.br</li>
-        </ul>
+  <section class="sec sec-alt" id="simulador">
+    <div class="wrap sim-grid">
+      <div data-reveal>
+        <p class="eyebrow">Financiamento</p>
+        <h2 class="h-sec">Quanto fica a parcela?</h2>
+        <p class="lead">Uma simulação rápida para você planejar. Na hora de financiar, comparo as condições de vários bancos para você.</p>
+        <div class="foto foto-4x3 sim-foto"><img src="img/cozinha.jpg" alt="Cozinha integrada com bancada" loading="lazy"></div>
       </div>
-      <form class="contact-form" id="contactForm">
-        <div class="field">
-          <label for="nome">Seu nome</label>
-          <input type="text" id="nome" required placeholder="Como posso te chamar?">
+      <form class="sim" data-sim data-reveal>
+        <div class="sim-campo"><label for="s-valor">Valor do imóvel</label><output data-o-valor>R$ 780.000</output><input id="s-valor" type="range" min="150000" max="2000000" step="10000" value="780000" data-s-valor></div>
+        <div class="sim-campo"><label for="s-entrada">Entrada</label><output data-o-entrada>20%</output><input id="s-entrada" type="range" min="20" max="70" step="5" value="20" data-s-entrada></div>
+        <div class="sim-campo"><label for="s-prazo">Prazo</label><output data-o-prazo>30 anos</output><input id="s-prazo" type="range" min="5" max="35" step="5" value="30" data-s-prazo></div>
+        <div class="sim-campo"><label for="s-taxa">Juros ao ano</label><output data-o-taxa>11,5%</output><input id="s-taxa" type="range" min="8" max="14" step="0.25" value="11.5" data-s-taxa></div>
+        <div class="sim-resultado">
+          <div><span>Primeira parcela (SAC)</span><strong data-r-sac>—</strong></div>
+          <div><span>Parcela fixa (Price)</span><strong data-r-price>—</strong></div>
+          <div><span>Valor financiado</span><strong data-r-fin>—</strong></div>
         </div>
-        <div class="field">
-          <label for="interesse">Estou buscando</label>
-          <select id="interesse">
-            <option>Comprar um imóvel</option>
-            <option>Vender meu imóvel</option>
-            <option>Alugar um imóvel</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="mensagem">Conte um pouco</label>
-          <textarea id="mensagem" rows="3" placeholder="O que você procura, região, faixa de valor..."></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary btn-block">Enviar mensagem</button>
-        <p class="form-note" id="formNote" role="status"></p>
+        <p class="sim-nota">Simulação ilustrativa, sem seguros e taxas administrativas. As condições reais dependem da análise de crédito do banco.</p>
       </form>
     </div>
   </section>
 
+  <section class="sec" id="sobre">
+    <div class="wrap split">
+      <div class="sobre-mono" data-reveal aria-hidden="true">
+        <span>BA</span>
+        <div class="foto foto-4x3"><img src="img/cobertura-suite.jpg" alt="" loading="lazy"></div>
+      </div>
+      <div data-reveal>
+        <p class="eyebrow">Sobre mim</p>
+        <h2 class="h-sec">Por que trabalho sozinha, <em>de propósito</em></h2>
+        <p class="lead">Depois de anos numa imobiliária grande, decidi atender menos clientes por vez — para conhecer de verdade cada família e cada busca.</p>
+        <p>Atendo compradores, vendedores e locatários em Curitiba sempre com a mesma proposta: transparência sobre prós e contras de cada imóvel, mesmo que isso signifique dizer “esse não é para você”.</p>
+        <ul class="principios">
+          <li><strong>Poucos clientes por vez</strong>para dar atenção de verdade</li>
+          <li><strong>Visito antes de indicar</strong>nenhum imóvel “de catálogo”</li>
+          <li><strong>Documentação conferida</strong>antes de qualquer proposta</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-alt">
+    <div class="wrap">
+      <div class="sec-head sec-head-center" data-reveal>
+        <p class="eyebrow">Depoimentos</p>
+        <h2 class="h-sec">Quem já encontrou o lar <em>com a Beatriz</em></h2>
+      </div>
+      <div class="g3" data-reveal-grupo>
+        <figure class="depo" data-reveal><blockquote>“Procurava um apê para alugar havia meses. Com ela, fechei em duas semanas, no bairro certo e no valor que eu podia pagar.”</blockquote><figcaption><span class="inicial">TA</span><div><strong>Thiago A.</strong><span>Locação · Cristo Rei</span></div></figcaption></figure>
+        <figure class="depo" data-reveal><blockquote>“Ela nos desaconselhou uma casa que estávamos quase comprando. Três meses depois, achamos a certa.”</blockquote><figcaption><span class="inicial">CR</span><div><strong>Carla e Renato</strong><span>Compra · Alto da Glória</span></div></figcaption></figure>
+        <figure class="depo" data-reveal><blockquote>“Vendeu meu apartamento com fotos lindas e visitas bem filtradas. Nenhuma visita perdida.”</blockquote><figcaption><span class="inicial">MS</span><div><strong>Márcia S.</strong><span>Venda · Juvevê</span></div></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="contato">
+    <div class="wrap contato-caixa">
+      <div data-reveal>
+        <p class="eyebrow">Vamos conversar?</p>
+        <h2 class="h-sec">Conte o que você procura</h2>
+        <p class="lead">Sem pressa e sem pressão — só uma conversa sobre o que faz sentido para você.</p>
+        <ul class="contato-lista">
+          <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><strong>Atendimento</strong>Curitiba e região metropolitana</div></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><strong>WhatsApp</strong>(41) 00000-0000</div></li>
+          <li><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><div><strong>E-mail</strong>contato@lar.exemplo</div></li>
+        </ul>
+      </div>
+      <form class="form contato-form" data-demo-form data-reveal>
+        <div class="campo"><label for="l-nome">Seu nome</label><input id="l-nome" required autocomplete="name"></div>
+        <div class="campo"><label for="l-busca">Estou buscando</label><select id="l-busca"><option>Comprar um imóvel</option><option>Vender meu imóvel</option><option>Alugar um imóvel</option></select></div>
+        <div class="campo"><label for="l-msg">Conte um pouco</label><textarea id="l-msg" data-l-msg placeholder="Bairros, número de quartos, faixa de valor…"></textarea></div>
+        <label class="check"><input type="checkbox" required> Concordo com o uso dos meus dados para retorno (LGPD).</label>
+        <button class="btn btn-acc btn-lg" type="submit">Enviar mensagem</button>
+        <p class="form-nota" data-form-note role="status"></p>
+      </form>
+    </div>
+  </section>
 </main>
 
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <span>© <span id="year"></span> Beatriz Andrade — Lar Imóveis. CRECI-PR 45.120 — site de demonstração.</span>
-    <span class="footer-note">Exemplo de portfólio — não é uma profissional real.</span>
+<footer class="nb-footer">
+  <div class="wrap">
+    <div class="nb-footer-grid">
+      <div><a class="nb-logo" href="#topo"><span class="logo-lar" aria-hidden="true">L</span>Lar Imóveis<small>Beatriz Andrade</small></a><p>Atendimento pessoal, do primeiro contato à chave.</p></div>
+      <div><h4>Imóveis</h4><a href="#selecao">Seleção</a><a href="#simulador">Financiamento</a></div>
+      <div><h4>Beatriz</h4><a href="#sobre">Sobre mim</a><a href="#contato">Contato</a></div>
+      <div><h4>Contato</h4><a href="#contato">(41) 00000-0000</a></div>
+    </div>
+    <div class="nb-legal"><span>© <span data-ano></span> Lar Imóveis · corretora fictícia de demonstração · CRECI 00000-F</span><span>Imóveis e valores ilustrativos</span></div>
+    <p class="nb-creditos" data-creditos></p>
   </div>
 </footer>
 
+<a class="nb-wa" href="#contato" aria-label="Falar pelo WhatsApp (demonstração)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.7 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.2-3.5-.7-2.9-1.1-4.8-4-5-4.2-.1-.2-1.2-1.6-1.2-3s.7-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .5 0 .7.5.3.7.9 2.2 1 2.4.1.2.1.4 0 .6l-.9 1.1c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.2 2.4 1.5 2.7 1.7.3.2.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.2.6.3.1.2.1.9-.1 1.6Z"/></svg></a>
+
+<script src="img/creditos.js"></script>
+<script src="../kit-negocios/base.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
